@@ -1,0 +1,71 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\subsubsection{Notation and Coordinates} 
+
+I will skip over the very technical mathmatical description of the basic objects (like bodies and points) and skip ahead to the interesting stuff. \\
+
+It is convention to use large latin letters for quantities in the reference configuration and small latin letters for quantities of a particular configuration. One might also refer to the reference configuratoin as the initial configuration.\\
+
+For example: the position of a particle in the reference configuration is called $X$, while it is called $x$ in a particular configuration. \\
+
+This notation gets inherited by all objects in the theory through the variabeles they depend on.
+
+\subsubsection{Eulerian and Lagrangian description}
+
+When describing how the configuration of a body changes over time it can be advantageous to describe different processes from the points of views of different observers. It comes as no surprise that the choice of description does not change the physics but is merely a matter of convencience. There are two canonical descriptions to choose from; \\
+
+In the \textbf{Eulerian description} (or spatial description) $X(x, t)$ is a function of $t$ and $x$. \\
+
+The intutive picture is that of an observer that observes a certain point $x$ in space. Like a hiker resting next to stream, observing it as it flows by. If they encounter particle $P$ at time $t$ (at their point of observation $x$), they can infer the point $X_P(x,t)$, where $P$ would have been in the reference configuration. \\
+
+In this sense $x$ is the only free variable besides $t$. Therefore, quantities in the Eulerian picture are always denoted by small latin letters. \\
+
+In the \textbf{Lagrangian description} (or material description) $x(X,t)$ is a function of $t$ and $X$. \\
+
+In this case the observer follows a particle (or a collection of particles, called a region) as it evolves over time. Imagine the hiker built a raft and rides it down the afformentioned stream (assuming the rafts velocity matches that of the stream). Knowing the point $X$ where they started rafting they can reason where they will end up at time $t$; the point being $x(X,t)$. \\
+
+Hence, here $X$ and $t$ are the free coordinates. All material quantities are denoted by capital greek letters.\\
+
+\subsubsection{Trajectories and Displacment Field}
+
+The object conntecting the afformentioned descriptions is the \textbf{trajectorie $\chi(X,t)$}:
+
+\begin{equation}
+x = \chi(X,t) \quad \Leftrightarrow \quad X = \chi^{-1}(x,t).
+\end{equation}
+
+It maps out where a observed particle that started at $X$ will be at time $t$. Obviously, $\chi$ itself is part of the Lagrangian description ($\chi^{-1}$ belongs to the Eulerian description). A function $f(x,t)$ in Eulerian description can be transformed according to:
+
+\begin{equation}
+f(x,t) \mapsto F (X,t) = f(\chi(X,t), t),
+\end{equation}
+
+where $F$ is now in the Lagrangian description. Though $f$ and $F$ are conceptually equivalent they are, mathematically speaking, two different objects. \\
+
+An example for such a fuunction is the \textbf{displacement field}:
+
+\begin{align}
+\begin{split}
+U(X,t) &= X - x(X,t) \\
+u(x,t) &= X(x,t) - x
+\end{split}
+\end{align}
+\begin{equation}
+U(X,t) \mapsto u(x,t) = U(\chi^{-1}(x,t),t) 
+\end{equation}
+
+The displacement field describes how much a particle is displaced compared to the reference configuration. 
+
+\subsubsection{local changes and Deformation Gradient}
+
+
+
+
+
+
+
+
+
+\end{document}

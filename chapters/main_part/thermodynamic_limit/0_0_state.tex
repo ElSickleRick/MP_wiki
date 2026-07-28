@@ -1,0 +1,218 @@
+\documentclass[../../../maim.tex]{subfiles}
+
+\begin{document}
+
+
+\begin{center}
+\includegraphics[width = \textwidth]{lattice-0-flux-state.jpeg}
+\end{center}
+
+This system is a simple triangular Bravais lattice with primitve translations
+
+\begin{equation}
+	\vec{a}_1 = 
+	\begin{pmatrix}
+		1 \\
+		0
+	\end{pmatrix}, \quad 
+	\vec{a}_2 = 
+	\begin{pmatrix}
+		1/2 \\
+		\sqrt{3}/2
+	\end{pmatrix}.
+\end{equation}
+
+\subsubsection{Pedestrian method}
+
+The tight-binding Hamiltonian is:
+
+\begin{align}
+	H &=  \sum_{i, \delta, \sigma} \frac{t}{2} \left(f_{i\sigma}^\dagger f_{i+\delta \, \sigma} + \text{h.c.}\right) + \mu \sum_{i}\left(f_{i\uparrow}^\dagger f_{i\uparrow} + f_{i\downarrow}^\dagger f_{i\downarrow} - 1\right) + \text{const.} \notag \\
+	&= \sum_{i, \delta, \sigma} \frac{t}{2} \left(f_{i\sigma}^\dagger f_{i+\delta \, \sigma} + \text{h.c.}\right) + \mu \sum_{i, \sigma}f_{i\sigma}^\dagger f_{i\sigma} - \mu N + \text{const.}.
+\end{align}
+
+$i$ runs over sites sites and $\delta$ over nearest neighbours of a generic site. I include the absolute shift for the sake of consistency. The factor 1/2 is also included for consistency. The constant is a product of mean field theory and reads
+
+\begin{equation}
+	\frac12\sum_{i,\delta} 2\tilde{J}\left(1-6\tilde{\kappa}\abs{\langle\chi_{i,i+\delta}}^2\rangle\right)\abs{\langle\chi_{i,i+\delta}\rangle}^2 = 6N\left( \tilde{J}\left(1-6\tilde{\kappa}\abs{\langle\chi_{i,i+\delta}\rangle}^2\rangle\right)\abs{\langle\chi_{i,i+\delta}\rangle}^2\right)
+\end{equation}
+
+The second step can be understood in at least two ways; a) each site has 6 neighbours, or b) there are  bond per primitive unit cell 1 of which is completely inside the unit cell and contributes a 2 and the other 4 shared between 2 unit cells thereby contributing a 1. All bonds are equivalent of course. The afformentioned six nearest neighbours lie at the (relative) positions
+
+\begin{equation}
+\vec{\delta}_1=
+\begin{pmatrix}
+1 \\ 0
+\end{pmatrix} \; 
+\vec{\delta_2}=
+\begin{pmatrix}
+\frac{1}{2} \\ \frac{\sqrt{3}}{2}
+\end{pmatrix} \;
+\vec{\delta_3}=
+\begin{pmatrix}
+\frac{1}{2} \\ -\frac{\sqrt{3}}{2}
+\end{pmatrix}
+\notag 
+\end{equation}
+
+and $-\vec{\delta}_1, \; -\vec{\delta}_2, \; -\vec{\delta}_3$. I will start with the $0-0$ state. To advance, do a Fourier transform:
+
+\begin{equation}
+f_{i \sigma} = \frac{1}{\sqrt{N}}\sum_k e^{i\vec{k}\vec{R}_i} c_{k \sigma}.
+\end{equation}
+
+\begin{align}
+	\Rightarrow H &= \sum_{q,\sigma} \frac{t}{2} \left(c_{q\sigma}^\dagger c_{q\sigma} \left(\sum_\delta e^{i\vec{q}\vec{\delta}} + \mu \right) + \text{h.c.}\right) - \mu N \notag \\
+	&= \sum_{q,\sigma}\left(t\sum_{\delta} \cos(\vec{q}\vec{\delta}) + \mu\right) c_{q\sigma}^\dagger c_{q\sigma} - \mu N
+\end{align}
+
+Using first the symmetrie of the cosine and then the sum identity for the cosine the dispersion reads
+
+\begin{align}
+	\varepsilon(\vec{q}) &= 2t\left[\cos(q_x) + \cos(\frac12(q_x + \sqrt{3}q_y)) + \cos(\frac12(q_x - \sqrt{3}q_y))\right] + \mu \notag \\
+&= 2t \left[\cos(q_x) + 2 \cos(\frac{q_x}{2})\cos(\frac{\sqrt{3}q_y}{2})\right] + \mu
+\end{align}
+
+features:
+
+\begin{itemize}
+	\item $\varepsilon(\vec{q}) \; \in \; [-3t, 6t] + \mu$ $\Rightarrow$ $\mu \; \in \; [-6t, 3t]$
+	\item symmetries $q_x \rightarrow -q_x$ and $q_y \rightarrow -q_y$ (+ should have some rotational symmetrie and (thereby associated) inflections along other axes) \textcolor{red}{could check this}
+	\item periodicity: $4\pi$ in $q_x$, $(4\pi)/\sqrt{3}$ in $q_y$
+\end{itemize}
+
+The mean field parameters are
+
+\begin{equation}
+	\langle \chi_{ij} \rangle  = \frac{1}{2} \langle f_{i \uparrow}^\dagger f_{j \uparrow} + f_{i \downarrow}^\dagger f_{j \downarrow} \rangle = \langle f_{i \uparrow}^\dagger f_{j \uparrow} \rangle
+\end{equation}
+
+Simplify the expression by Fourier transform:
+
+\begin{align}
+	\langle \chi_{ij} \rangle &= \frac{1}{N} \sum_{q,p} e^{i(\vec{q}\vec{R}_j - \vec{k}\vec{R}_i)} \langle c_p^\dagger c_q \rangle \notag \\
+	&= \frac{1}{N}\sum e^{i\vec{q}(\vec{R}_j-\vec{R}_i)}f(\varepsilon(\vec{q}))
+\end{align}
+
+Take the thermodynamic limit $\sum_k \rightarrow (N\Omega)/(2\pi)^2\int dk$ ($\Omega$ is the unit cell volume).
+
+\begin{align}
+	\Rightarrow \langle \chi_{ij} \rangle = \Omega\int\limits_{\text{1.BZ}} \frac{d^2q}{(2\pi)^2} e^{i\vec{q}\left(\vec{R}_j - \vec{R}_i\right)}f(\varepsilon(\vec{q})) 
+\end{align}
+
+\textcolor{red}{It looks like the model allows for different $\chi_{ij}$ in each direction $\vec{R}_j - \vec{R}_i$ (there are 3 of those)?} \\
+
+From this expression, recover the on-site particle number by setting $i=j$ and accounting for the factor $1/2$ in the definition of $\chi_{ij}$:
+
+\begin{equation}
+\langle N_i \rangle = 2\Omega\int \frac{d^2q}{(2\pi)^2} f(\varepsilon(\vec{q})).
+\end{equation}
+
+By construction the particle number is uniform. 
+
+Some elaborations on the integral domain follow. The primite translations of the reciprocal lattice are
+\begin{equation}
+	\vec{b}_1=2\pi
+	\begin{pmatrix}
+		0 \\
+		2/\sqrt{3}
+	\end{pmatrix}, \quad
+	\vec{b}_2 = 2\pi
+	\begin{pmatrix}
+		1 \\
+		-1/\sqrt{3}
+	\end{pmatrix}
+\end{equation}
+
+I do a basis transformation onto thos axes defined by 
+
+\begin{gather}
+	\begin{pmatrix}
+		k_x \\
+		k_y
+	\end{pmatrix} =
+	\begin{pmatrix}
+		1/2 & \sqrt{3}/2 \\
+		1 & 0 
+	\end{pmatrix}
+	\begin{pmatrix}
+		q_x \\
+		q_y
+	\end{pmatrix} \\
+	\Leftrightarrow 
+	\begin{pmatrix}
+		q_x \\
+		q_y
+	\end{pmatrix}=
+	\begin{pmatrix}
+		0 & 1 \\
+		2/\sqrt{3} & -1/\sqrt{3} 
+	\end{pmatrix}
+	\begin{pmatrix}
+		k_x \\
+		k_y
+	\end{pmatrix}\\
+	\Rightarrow \text{det$J$} = -2/\sqrt{3} \\
+	\Rightarrow \varepsilon(\vec{k}) = 2t\left(\cos(k_x) + \cos(k_y) + \cos(k_x -k_y)\right) + \mu
+\end{gather}
+
+The first Brillouin zone is $\{k_x, k_y\} \in [-\pi,\pi]^2$. The unit cell volume is $\Omega = \sqrt{3}/2$. Consistency check: $|\text{det}($J$)|$ = $\Omega^{-1}$, since the substitution simply transforms the unti cell to a square of unit volume. So the integrals that have to be evaluated are of the form
+
+\begin{gather}
+	\langle N_i \rangle = 2\int\limits_{[-\pi,\pi]^2} \frac{d^2k}{(2\pi)^2} f(\varepsilon(\vec{k}), \mu), \\
+	\langle \chi_{ij} \rangle = \int\limits_{[-\pi,\pi]^2} \frac{d^2k}{(2\pi)^2} \exp[i\left(k_y, (1/\sqrt{3})(2k_x-k_y)\right)\cdot(\vec{R}_j-\vec{R}_i)] f(\varepsilon(\vec{k}), \mu)
+\end{gather}
+
+\textcolor{red}{Check that under a particle hole transformation chi changes sign, sign of t is doing just that and this brings the $pi$-flux phase.}
+
+The condition is $\langle N_i \rangle \overset{!}{=} 1 \; \forall i$. By setting setting $t = -1$, the chemical potential is numerically determined in units of $t$ using mathematica. I choose $t=-1$ because I anticipate $t$ to be negative for a positive $\chi$. (This may not be true depending on $\kappa$ and $\chi$, but as long as it is self-consistent evrything is fine.) For the numerical integration I used a Fermi-function with a small temperature ($\beta = 200t$) instead of a step-function, since the ladder is not analytical and causes problems for the numerical algorithm. The result is $\mu = -0.834737 \; t$. The bond-parameters are calulcated the same way, the result is $\langle \chi_{ij} \rangle = 0.164713$. \\
+
+Now, it is possible to express $\mu$ only in units of $J$. Use the formula
+
+\begin{equation}
+	t_{ij} = -J \langle\chi_{ij}\rangle^* (1 + \kappa/2 - 4 \kappa \left|\langle\chi_{ij}\rangle \right|^2).
+\end{equation}
+
+Set $\kappa = 10$:
+
+\begin{gather}
+	t_{ij} = -0.8095 \; J \\
+	\mu = -0.67574 \; J \\
+	\langle \chi_{ij} \rangle = 0.164713
+\end{gather}
+
+The energy density (that is also the free energy desnity at $T=0$) is  
+
+\begin{equation}
+	\frac{\langle H \rangle}{N} = 2\int\limits_{[-\pi,\pi]^2}\frac{d^2k}{(2\pi)^2} \varepsilon(\vec{k}) f(\varepsilon(\vec{k})) - \mu + 6 \tilde{J}\left(1-6\tilde{\kappa}\abs{\langle\chi_{i,i+\delta}\rangle}^2\rangle\right)\abs{\langle\chi_{i,i+\delta}\rangle}^2
+\ = -0.888304 \, J
+\end{equation}
+
+Observtaion; the chemical potential drops out of the Free energy. \\ 
+
+One can also directly calculate results for the state with all fluxes $\pi$ by performing a particle-hole-transformation:
+
+\begin{gather}
+	t \rightarrow -t \notag \\
+	\mu \rightarrow -\mu \\
+	\Rightarrow \varepsilon(\vec{k}) \rightarrow -\varepsilon(\vec{k}) \\
+	\Rightarrow f(\varepsilon(\vec{k})) \rightarrow 1-f(\varepsilon(\vec{k})
+\end{gather}
+
+It can be shown that
+
+\begin{equation}
+\chi \rightarrow -\chi.
+\end{equation}
+
+The result is:
+
+\begin{equation}
+	\frac{\langle H \rangle_\pi}{N} = -0.888302 \, J
+\end{equation}
+
+\subsubsection{Pedro's method}
+
+The longer explenation for this method is in the next section. Here I will only say that the free energy is the same except for $\gamma$, which gets replaced by a factor $\phi$ (as mentioned above the chemical potentioal does not contribute to the free energy):
+
+\end{document}

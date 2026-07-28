@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[left=3cm, right=3cm, top=2cm, bottom=3cm]{geometry} %Zur Einstellung der Seitenränder
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{subfiles}
+\usepackage{bbold}
+\usepackage{titlesec} % Manipulation der section header
+\usepackage{enumitem}
+\usepackage{physics}
+\usepackage{empheq}
+\usepackage{cancel}
+
+%verhindert Einrücken am Beginn der nächsten Zeile nach \\
+\setlength{\parindent}{0em}
+
+% command zum Erstellen des Titels: n. Hausaufgabe AL10
+\newcommand{\header}[0]{
+\begin{center}
+{\huge\textbf{(title)}}
+\end{center}}
+
+%define command for problem headers
+\newcommand{\trieq}[0]{\overset{\wedge}{=}}
+
+\newcommand{\uuline}[1]{\underline{\underline{#1}}}
+
+% originally this commmand did something else, but now its just a bit obsolete, I could delete this if i just exchanged \tvec for \tilde everywhere
+\newcommand{\tvec}[1]{\tilde{#1}}
+
+\newcommand{\dist}[0]{f_{\vec{k}}}
+
+\newcommand{\kv}[0]{\vec{k}}
+
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+\begin{document}
+
+\begin{equation}
+\mathcal{H} = \frac{J_H}{M^\prime} \sum_{\langle ij \rangle} \vec{S}_i \cdot \vec{S}_j + \frac{\kappa}{\left(M^\prime\right)^2} \left(\vec{S}_i \cdot \vec{S}_j\right)^2
+\end{equation}
+
+
+transformations:
+
+\begin{align}
+\text{Eric}: \;\vec{S}_i &= \sum_{\alpha\beta} f_{i\alpha}^\dagger \frac{\vec{\sigma}}{2} f_{i\beta} \Rightarrow \vec{S}_i\cdot\vec{S}_j = \frac14 - \frac12 \sum_{\alpha\beta} f_{i\alpha}^\dagger f_{j\alpha} f_{j\beta}^\dagger f_{i\beta} \\
+\text{Pedro}: \; S_i^{\beta \alpha} &= f_{i\beta}^\dagger f_{i\alpha} - \frac{Q}{M} \delta_{\alpha \beta} \Rightarrow \vec{S}_i \cdot \vec{S}_j = \frac{M}{4} - \sum_{\alpha \beta} f_{i\alpha}^\dagger f_{j\alpha} f_{j\beta}^\dagger f_{i\beta} 
+\end{align}
+
+difference of factor 2 for M = 2, which is my case. (Also, for me $M^\prime = 1$ while Pedro used $M^\prime = M$.) 
+
+mean field Hamiltonains:
+
+\begin{alignat}{2}
+	\text{Eric}: \mathcal{H} &\approx -J\sum_{\langle ij \rangle} &&\bigg[ (1+\kappa/2 - 4\kappa\abs{\langle \chi_{ij} \rangle}^2 \langle \chi_{ij} \rangle \left( f_{j\uparrow}^\dagger f_{i\uparrow} + f_{j\downarrow}^\dagger f_{i\downarrow}\right) + \text{h.c.} \\
+	& && +2(-1-\kappa/2 + 6\kappa \abs{\langle \chi_{ij} \rangle}^2) \abs{\langle \chi_{ij} \rangle}^2\bigg] \\
+	\text{Pedro}: \mathcal{H} &\approx -J\sum_{\langle ij \rangle} &&\bigg[2+\boxed{2\kappa}-16\kappa \abs{\langle \chi_{ij} \rangle}^2) \langle \chi_{ij} \rangle \left( f_{j\uparrow}^\dagger (f_{i\uparrow} + f_{j\downarrow}^\dagger f_{i\downarrow}\right) + \text{h.c.} \\
+	& && +2(-2 \, \boxed{-2\kappa} +24\kappa \abs{\langle \chi_{ij} \rangle}^2)\abs{\langle \chi_{ij} \rangle}^2 \bigg]
+\end{alignat}
+
+Every term without a $\kappa$ (coming from the bilinear exchange term) is off by a factor of 2. Every term with a $\kappa$ (coming from the biquadratic exchange term) is off by a factor of 4. Hence, the only problem is the factor 2 in the fermionic representation. The boxed terms dont appear in Pedros notes as they go like $M^{-1}$ and are therfore irrelevant in the large $M$ limit.
+
+\end{document}

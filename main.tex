@@ -1,0 +1,65 @@
+
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[left=3cm, right=3cm, top=2cm, bottom=3cm]{geometry} %Zur Einstellung der Seitenränder
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{subfiles}
+\usepackage{bbold}
+\usepackage{titlesec} % Manipulation der section header
+\usepackage{enumitem}
+\usepackage{physics}
+\usepackage{empheq}
+\usepackage{cancel}
+
+%verhindert Einrücken am Beginn der nächsten Zeile nach \\
+\setlength{\parindent}{0em}
+
+\newcommand{\uuline}[1]{\underline{\underline{#1}}}
+
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+% Section counter:
+% \setcounter{section}{-1}
+
+\titleformat{\section}
+{\Large\bfseries}
+{\underline{\thesection.\enspace}}
+{-0.15em}
+{\underline}
+
+\begin{document}
+
+\tableofcontents
+
+\newpage
+\part{preliminaries}
+
+\section{Basics of Magnetism}
+\subfile{chapters/preliminaries/basics-of-magnetism/basics-of-magnetism.tex}
+
+\section{Partons}
+\subfile{chapters/preliminaries/partons/partons.tex}
+
+\section{Mechanics of Continua}
+\subfile{chapters/preliminaries/mechanics-of-continua/mechanics-of-continua.tex}
+
+\newpage
+\part{main part}
+
+\section{Hamiltonian}
+\subfile{chapters/main_part/hamiltonian/hamiltonian.tex}
+
+\section{Thermodynamic Limit of Unstrained model}
+\subfile{chapters/main_part/thermodynamic_limit/thermodynamic_limit.tex}
+
+\newpage
+\part{other}
+
+\section{mail 10.07}
+\subfile{chapters/other/mail1007/mail1007.tex}
+
+\end{document}

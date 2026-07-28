@@ -1,0 +1,128 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\subsubsection{Coulomb exchange}
+
+We are looking for a mechanism that can explain magnetic ordering at high temperatures. One might expect that this requires a spin-dependent interaction, however, no such interaction of this strength is known. This is where direct exchange enters the stage. It is made up of multiple mechanics, the first one (canonically) being Coulomb exchange. This idea goes back to Heisenberg. It is able to explain how ferromagnetic order comes about in a system of localized spins (e.g. spins of unpaired valence electrons). \textcolor{red}{ More precise? } The most remarkable thing: the story starts with the (spin-indepedent!) Coulomb interaction between the electrons. In second quantization the Coulomb interaction reads
+
+\begin{equation}
+H_{\text{C}} = \frac12 \frac{e^2}{4 \pi \varepsilon_0} \int  d^3r_1 \int  d^3r_2 \sum_{\sigma_1, \sigma_2} \Psi_{\sigma_1}^\dagger(\vec{r}_1) \Psi_{\sigma_2}^\dagger(\vec{r}_2) \frac{1}{\abs{\vec{r}_1-\vec{r}_2}} \Psi_{\sigma_2}(\vec{r}_2) \Psi_{\sigma_1}(\vec{r}_1).
+\end{equation}
+
+$\Psi_{\sigma_1}^\dagger(\vec{r}_1)$ is a field operator that creates an electron with spin $\sigma_1$ at position $\vec{r}_1$. These are now expanded in orthonormal wavefunctions localized around the ions (Wannier functions) $\phi_{\vec{R},m}(\vec{r})$ and spinors $\chi_\sigma$:
+
+\begin{equation}
+	\Psi_{\sigma_1}^\dagger(\vec{r}_1) = \sum_{\vec{R}, m} a^\dagger_{\vec{R} m \sigma_1} \phi_{\vec{R}m} (\vec{r}_1) \chi_{\sigma_1}. 
+\end{equation}
+
+
+The sum over $\vec{R}$ goes over the positions of all Ions. m counts all angular degrees of freedom, but not the spin. $a_{\vec{R}, m, \sigma_1}^\dagger$ is a fermionic creation operator. One finds
+
+\begin{align}
+	H_{\text{C}} = \frac12 &\frac{e^2}{4\pi \varepsilon_0}  \sum_{\substack{\vec{R}^{(1)} ... \vec{R}^{(4)} \\ m^{(1)} ... m^{(4)}}} \int d^3 r_1 \; \int d^3 r_2 \; \phi_{\vec{R}^{(1)} m^{(1)}}^* (\vec{r}_1) \phi_{\vec{R}^{(2)} m^{(2)}}^* (\vec{r}_2) \frac{1}{\abs{\vec{r}_1-\vec{r}_2}} \phi_{\vec{R}^{(3)} m^{(3)}}(\vec{r}_2) \phi_{\vec{R}^{(4)} m^{(4)}}(\vec{r}_1) \notag \\
+	& \times \sum_{\sigma_1, \sigma_2} \chi_{\sigma_1}^\dagger \chi_{\sigma_2}^\dagger \chi_{\sigma_2} \chi_{\sigma_1} a_{\vec{R}^{(1)} m^{(1)} \sigma_1}^\dagger a_{\vec{R}^{(2)} m^{(2)} \sigma_2}^\dagger a_{\vec{R}^{(3)} m^{(3)} \sigma_2} a_{\vec{R}^{(4)} m^{(4)} \sigma_1}. 
+\end{align}
+
+The expression is simplified by evaluating the spinor product.
+
+\begin{equation}
+\begin{split}
+	H_{\text{C}} = \frac12 \frac{e^2}{4\pi\varepsilon_0} \sum_{\substack{\vec{R}^{(1)} ... \vec{R}^{(4)} \\ m^{(1)} ... m^{(4)} \\ \sigma_1, \sigma_2 }} &\bigg\langle \vec{R}^{(1)} m^{(1)}, \vec{R}^{(2)} m^{(2)} \bigg| \frac{1}{\abs{\vec{r}_1-\vec{r}_2}} \bigg | \vec{R}^{(3)} m^{(3)}, \vec{R}^{(4)} m^{(4)} \bigg\rangle  \\
+	&\times a_{\vec{R}^{(1)} m^{(1)} \sigma_1}^\dagger a_{\vec{R}^{(2)} m^{(2)} \sigma_2}^\dagger a_{\vec{R}^{(3)} m^{(3)} \sigma_2} a_{\vec{R}^{(4)} m^{(4)} \sigma_1} 
+\end{split}
+\end{equation}
+
+It is worthwile to take a few detours in order to explore different effects of the Coulomb interaction, increasing the complexity in the mean-time. \\
+
+\underline{on-site, single orbital: Hubbard U-term} \\
+
+First, focus on the on-site effects $\vec{R}^{(1)} = \vec{R}^{(2)} = \vec{R}^{(3)} = \vec{R}^{(4)}$, dropping the position quantum numbers. The easiest case is that of a single orbital per site, $m^{(1)} = m^{(2)} = m^{(3)} = m^{(4)} \equiv m$.
+
+\begin{equation}
+\Rightarrow H_{\text{C}} = \frac12 \sum_{\vec{R}}\sum_{\sigma_1 \sigma_2} \bigg\langle \frac{1}{\abs{\vec{r}_1-\vec{r}_2}} \bigg\rangle_{m,m} a_{\sigma_1}^\dagger a_{\sigma_2}^\dagger a_{\sigma_2} a_{\sigma_1}
+\end{equation}
+
+The position indices of the ladder operators have been supressed.
+
+\begin{equation}
+	\sum_{\sigma_1 \sigma_2} a_{\sigma_1}^\dagger a_{\sigma_2}^\dagger a_{\sigma_2} a_{\sigma_1} = a_{\downarrow}^\dagger a_{\uparrow}^\dagger a_{\uparrow} a_{\downarrow} + a_{\uparrow}^\dagger a_{\downarrow}^\dagger a_\downarrow a_\uparrow = 2a_{\downarrow}^\dagger a_{\uparrow}^\dagger a_{\uparrow} a_{\downarrow}
+\end{equation}
+
+Two out of the four terms ( $\sigma_1 = \sigma_2 = \uparrow$ and $\sigma_1 = \sigma_2 = \downarrow$) are identically zero, since $(a_{\downarrow/\uparrow})^2=0$. In other words: due to Pauli principle the spin allignement is already fixed. So no exchange interaction can arise here. The technical reason is that we assumed a single orbital on a single site (2 states), leaving the electrons no other choice. We'll have to loosen the approximations to see exchange play out. Let's close with one last observation regarding the one-site, single orbital story;
+
+\begin{equation}
+	\Rightarrow H_{\text{C}} = \sum_{\vec{R}} U a_{\downarrow}^\dagger a_{\uparrow}^\dagger a_{\uparrow} a_{\downarrow}, \quad U = \frac{e^2}{4\pi\varepsilon_0}\int d^3r_1 \int d^3r_2 \; \abs{\phi(\vec{r}_1)}^2 \frac{1}{\abs{\vec{r}_1-\vec{r}_2}} \abs{\phi(\vec{r}_2)}^2 
+\end{equation}
+
+This gives the Hubbard U-term. It's interpretation is pretty straight forward: electrons occupying the same orbital have increased Coulomb energy, given by $U$. This presents a convenient way to include Coulomb interaction in tight-binding models. It is only an approximation, since all other terms (multiple sites, different orbitals) have been ignored so far. It is also clear that this contribution is the largest off all effects arising from the Coulomb interaction as the overlap is biggest here. \\
+
+
+
+\underline{on-site, multiple orbitals: Hund's rule} \\
+
+The first step of complexification is to allow multiple orbitals at every ion, thereby reintroducing the $m^{(i)}$ quantum numbers. If one treats the Coulomb interaction perturbatively, in first order the creation/ annihilation operators have to be grouped into pairs in order to produce non-vanishing contributions. \textcolor{red}{I am not satisfied with this.} There are two possibilities: $m^{(1)} = m^{(3)}, \; m^{(2)} = m^{(4)}$ and $m^{(1)} = m^{(4)}, \; m^{(2)} = m^{(3)}$. 
+
+\begin{align}
+	K_{m^{(1)} m^{(2)}} &:= \frac{e^2}{4\pi \varepsilon_0} \bigg\langle m^{(1)}, m^{(2)} \bigg| \frac{1}{\abs{\vec{r}_1-\vec{r}_2}} \bigg| m^{(2)}, m^{(1)} \bigg\rangle \notag \\
+	&= \frac{e^2}{4\pi\varepsilon_0} \int d^3 r_1 \int d^3 r_2 \; \abs{\phi_{m^{(1)}}(\vec{r}_1)}^2 \frac{1}{\abs{\vec{r}_1-\vec{r}_2}} \abs{\phi_{m^{(2)}}(\vec{r}_2)}^2 \\
+	J_{m^{(1)} m^{(2)}} &:= \frac{e^2}{4\pi \varepsilon_0} \bigg\langle m^{(1)}, m^{(2)} \bigg| \frac{1}{\abs{\vec{r}_1-\vec{r}_2}} \bigg| m^{(1)}, m^{(2)} \bigg\rangle \notag \\
+	&= \frac{e^2}{4\pi\varepsilon_0} \int d^3 r_1 \int d^3 r_2 \; \phi_{m^{(1)}}^*(\vec{r}_1) \phi_{m^{(2)}}^*(\vec{r}_2)  \frac{1}{\abs{\vec{r}_1-\vec{r}_2}} \phi_{m^{(1)}}(\vec{r}_2) \phi_{m^{(2)}}(\vec{r}_1)
+\end{align}
+
+\begin{align}
+	\Rightarrow H_{C} \approx \frac12 \sum_{\vec{R}} \sum_{\substack{m^{(1)}, m^{(2)} \\\sigma_1, \sigma_2}} \bigg( &K_{m^{(1)} m^{(2)}} a_{m^{(1)} \sigma_1}^\dagger a_{ m^{(2)} \sigma_2}^\dagger a_{ m^{(2)} \sigma_2} a_{ m^{(1)} \sigma_1} \notag \\  + &J_{m^{(1)} m^{(2)}} a_{ m^{(1)} \sigma_1}^\dagger a_{m^{(2)} \sigma_2}^\dagger a_{m^{(1)} \sigma_2} a_{m^{(2)} \sigma_1} \bigg)
+\end{align}
+
+The position indices have been supressed! The exchange term may be reexpressed as 
+
+\begin{equation}
+\begin{split}
+	-\sum_{\vec{R}}\sum_{m^{(1)}, m^{(2)}} J_{m^{(1)} m^{(2)}}\bigg( &\left(a_{m^{(1)} \uparrow}^\dagger a_{m^{(1)} \uparrow} - a_{m^{(1)} \downarrow}^\dagger a_{m^{(1)}\downarrow} \right)\left(a_{m^{(2)} \uparrow}^\dagger a_{m^{(2)} \uparrow} - a_{m^{(2)} \downarrow}^\dagger a_{m^{(2)}\downarrow}\right) \\
+	&+ a_{m^{(1)}\uparrow}^\dagger a_{m^{(1)}\downarrow} a_{m^{(2)}\downarrow}^\dagger a_{m^{(2)}\uparrow} + a_{m^{(1)}\downarrow}^\dagger a_{m^{(1)}\uparrow} a_{m^{(2)}\uparrow}^\dagger a_{m^{(2)}\downarrow} \\
+	& + a_{m^{(1)}\uparrow}^\dagger a_{m^{(1)} \uparrow} a_{m^{(2)} \downarrow}^\dagger a_{m^{(2)} \downarrow} + a_{m^{(1)}\downarrow}^\dagger a_{m^{(1)} \downarrow} a_{m^{(2)} \uparrow}^\dagger a_{m^{(2)} \uparrow} \bigg). 
+\end{split}
+\end{equation}
+
+Technically there are terms missing from the Fermi-algebra. However, these are only bilinear and thus act as a siengle-particle potential and are not relevant here. With the mapping/ substitution
+
+
+\begin{gather}
+	n_{m} = a_{m\uparrow}^\dagger a_{m\uparrow} + a_{m\downarrow}^\dagger a_{m\downarrow} , \quad	s_{mz} = \frac12 \left(a_{m\uparrow}^\dagger a_{m\uparrow} - a_{m\downarrow}^\dagger a_{m\downarrow}\right), \quad s_{m+} = a_{m\uparrow}^\dagger a_{m\downarrow}
+\end{gather}
+
+one ends up with 
+
+\begin{equation}
+	H_{\text{C}} = \frac12 \sum_{\vec{R}} \sum_{m^{(1)}, m^{(2)}}  \left( K_{m^{(1)} m^{(2)}} - \frac12 J_{m^{(1)} m^{(2)}} \right) n_{m^{(1)}}n_{m^{(2)}} - 2J_{m^{(1)}m^{(2)}} \vec{s}_{m^{(1)}} \cdot \vec{s}_{m^{(2)}}.
+\end{equation}
+
+The first term is the on-site Coulomb interaction between electrons in different orbitals on the same site. Additionally, $K_{m^{(1)}m^{(2)}} - \frac12 J_{m^{(1)}m^{(2)}} > 0$, meaning the Coulomb interaction remains repulsive. Returnung to the exchange term; using
+
+\begin{equation}
+	\frac{1}{\abs{\vec{r}_1-\vec{r}_2}} = \int \frac{d^3k}{(2\pi)^3} \frac{4\pi}{k^2}e^{i\vec{k}(\vec{r}_1-\vec{r}_2)}
+\end{equation}
+
+\begin{equation}
+	\Rightarrow J_{m^{(1)}m^{(2)}} = \frac{e^2}{\varepsilon_0} \int \frac{d^3k}{(2\pi)^3} \frac{1}{k^2} \underbrace{\int d^3r_1 \; \phi_{m^{(1)}}^*(\vec{r}_1) \phi_{m^{(2)}}(\vec{r}_1) e^{i\vec{k}\vec{r}_1}}_{I(\vec{r})} \underbrace{\int d^3r_2 \; \phi_{m^{(1)}}(\vec{r}_2) \phi_{m^{(2)}}^*(\vec{r}_2) e^{-i\vec{k}\vec{r}_2}}_{I^*(\vec{r})}.
+\end{equation}
+
+Hence, $J_{m^{(1)}m^{(2)}}$ is positive. Therefore the interaction is minimized by ferromagnetic allignement. This is the derivation of Hund's first rule: the ground state of a partially filled shell is the one that maximizes $\vec{s}_{\text{tot}}$. \\
+
+\underline{different site, single orbital: Coulomb exchange} \\
+
+Assuming again singular orbitals $m^{(1)} = m^{(2)} = m^{(3)} = m^{(4)} \equiv m$, whilst reinstating the position quantum numbers the calculation is symmetrical to that in the last subchapter.
+
+\begin{gather}
+\Rightarrow H_{\text{C}} = \frac12 \sum_{\vec{R}^{(1)}, \vec{R}^{(2)}} \bigg( K_{\vec{R}^{(1)} \vec{R}^{(2)}} - \frac12 J_{\vec{R}^{(1)} \vec{R}^{(2)}} \bigg) n_{\vec{R}^{(1)}} n_{\vec{R}^{(2)}} - 2 J_{\vec{R}^{(1)} \vec{R}^{(2)}} \vec{s}_{\vec{R}^{(1)}} \cdot \vec{s}_{\vec{R}^{(2)}} \\
+	K_{\vec{R}^{(1)} \vec{R}^{(2)}} = \frac{e^2}{4 \pi \varepsilon_0} \int d^3r_1 \int d^3r_2 \abs{\phi_{\vec{R}^{(1)}}(\vec{r}_1)}^2 \frac{1}{\abs{\vec{r}_1-\vec{r}_2}} \abs{\phi_{\vec{R}^{(2)}}(\vec{r}_2)}^2 \\
+	J_{\vec{R}^{(1)}\vec{R}^{(2)}} = \frac{e^2}{4\pi\varepsilon_0} \int d^3r_1 \int d^3r_2 \phi_{\vec{R}^{(1)}}^* (\vec{r}_1) \phi_{\vec{R}^{(2)}}^*(\vec{r}_2) \frac{1}{\abs{\vec{r}_1-\vec{r}_2}} \phi_{\vec{R}^{(1)}}(\vec{r}_2) \phi_{\vec{R}^{(2)}}(\vec{r}_1)
+\end{gather}
+
+As in the last chapter $J_{\vec{R}^{(1)} \vec{R}^{(2)}} > 0$, so again the interaction is ferromagnetic. The interpretation is the same as for the previous subchapter; electrons in a triplet state avoid each other in real space due to Pauli-principle ("exchange hole"), thereby reducing their Coulomb energy. \\ 
+
+In terms of explaining magnetic ordering this obviously can't be the end of the story, since we haven't found a way to explain anti-ferromagnetic order yet.
+
+
+
+\end{document}

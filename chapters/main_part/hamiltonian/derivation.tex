@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[left=3cm, right=3cm, top=2cm, bottom=3cm]{geometry} %Zur Einstellung der Seitenränder
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{subfiles}
+\usepackage{bbold}
+\usepackage{titlesec} % Manipulation der section header
+\usepackage{enumitem}
+\usepackage{physics}
+\usepackage{empheq}
+\usepackage{cancel}
+
+%verhindert Einrücken am Beginn der nächsten Zeile nach \\
+\setlength{\parindent}{0em}
+
+% command zum Erstellen des Titels: n. Hausaufgabe AL10
+\newcommand{\header}[0]{
+\begin{center}
+{\huge\textbf{(title)}}
+\end{center}}
+
+%define command for problem headers
+\newcommand{\trieq}[0]{\overset{\wedge}{=}}
+
+\newcommand{\uuline}[1]{\underline{\underline{#1}}}
+
+% originally this commmand did something else, but now its just a bit obsolete, I could delete this if i just exchanged \tvec for \tilde everywhere
+\newcommand{\tvec}[1]{\tilde{#1}}
+
+\newcommand{\dist}[0]{f_{\vec{k}}}
+
+\newcommand{\kv}[0]{\vec{k}}
+
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+\begin{document}
+
+The Hamiltonian is 
+
+\begin{equation}
+	\mathcal{H} = \sum_{\langle ij \rangle} J_{ij}\left(\vec{S}_i\cdot \vec{S}_j + \kappa \left(\vec{S}_i\cdot \vec{S}_j\right)^2\right)
+\end{equation}
+
+Using the Abrikosov representation of the spin in terms of fermions:
+
+\begin{equation}
+	\vec{S}_i = \sum_{\alpha \beta} f_{i\alpha}^\dagger \frac{\vec{\sigma}}{2} f_{i\beta}
+\end{equation}
+
+\begin{align}
+	\Rightarrow \vec{S}_i\cdot \vec{S}_j &= \frac14 \sum\limits_{\alpha \beta \gamma \delta} f_{i\alpha}^\dagger f_{i\beta} f_{j\gamma}^\dagger f_{j\delta} \underbrace{\vec{\sigma}_{\alpha \beta} \vec{\sigma}_{\gamma \delta}}_{= \delta_{\alpha \delta}\delta_{\beta \gamma} - \delta_{\alpha\beta}\delta_{\gamma \delta}} \notag \\
+	&= \frac14 \sum\limits_{\alpha \beta} 2 f_{i\alpha}^\dagger f_{i\beta}f_{j\beta}^\dagger f_{j\alpha} - f_{i\alpha}^\dagger f_{i\alpha} f_{j\beta}^\dagger f_{j\beta} \notag 
+\end{align}
+
+Move the last annihilation operator in the first term to the second postion: use $ f_{j\beta}^\dagger f_{j\alpha} = \delta_{\alpha \beta} - f_{j\alpha}f_{j\beta}^\dagger$ and acquire 1 minus signs. After that bring the other annihilation operator to the last position which gives another minus.
+
+\begin{align}
+	\vec{S}_i\cdot \vec{S}_j &= \frac14 \sum\limits_{\alpha \beta} -2f_{i\alpha}^\dagger f_{j\alpha}f_{j\beta}^\dagger f_{j\beta} + 2 f_{i\alpha}f_{i\beta}\delta_{\alpha \beta} - f_{i\alpha}^\dagger f_{i\alpha} f_{j\beta}^\dagger f_{j\beta} 
+\end{align}
+
+
+The second term is $n_i$ and the third is $n_i n_j$. For the first term I introduce the shorthand
+
+\begin{equation}
+	\chi_{ij} = \frac12\sum_{\alpha} f_{i\alpha}^\dagger f_{j\alpha}
+\end{equation}
+
+\begin{equation}
+	\vec{S}_i\cdot \vec{S}_j = -2\chi_{ij}\chi_{ji} + \frac12 n_i -\frac14 n_i n_j
+\end{equation}
+
+Using the constaint $n_i = n_j = 1$, the final expression is 
+
+\begin{equation}
+	\vec{S}_i\cdot \vec{S}_j = -2\chi_{ij}\chi_{ji} + \frac14
+\end{equation}
+
+Relevant for the Hamiltonian is also the term:
+
+\begin{gather}
+	\Rightarrow \left( \vec{S}_i \cdot \vec{S}_j \right)^2 =  \frac{1}{16}  - \chi_{ij} \chi_{ji} + 4\left(\chi_{ij}\chi_{ji}\right)^2
+\end{gather}
+
+The mean field decoupling works like 
+
+\begin{align}
+	\chi_{ij}\chi_{ji} &\approx \langle \chi_{ij} \rangle \chi_{ji} + \langle \chi_{ji} \rangle \chi_{ij} - \abs{\langle \chi_{ij}\rangle}^2 \\
+	\left(\chi_{ij}\chi_{ji}\right)^2 &\approx 2\abs{\langle \chi_{ij}\rangle}^2\langle \chi_{ij} \rangle \chi_{ji} + 2\abs{ \langle \chi_{ij} \rangle}^2\langle \chi_{ji} \rangle \chi_{ij} - 3 \abs{\langle \chi_{ij}\rangle}^4
+\end{align}
+
+
+\begin{gather}
+	\Rightarrow \vec{S}_i\cdot \vec{S}_j \approx -2\langle \chi_{ij} \rangle \chi_{ji} + \text{h.c.} + 2\abs{\langle \chi_{ij}\rangle}^2 + \frac14\\
+	\Rightarrow \left( \vec{S}_i \cdot \vec{S}_j \right)^2 \approx -\langle \chi_{ij} \rangle \chi_{ji} + 8 \abs{\langle \chi_{ij} \rangle}^2\langle \chi_{ij} \rangle \chi_{ji} + \text{h.c.} + \abs{\langle \chi_{ij} \rangle}^2 - 12\abs{\langle \chi_{ij} \rangle}^4 + \frac{1}{16}
+\end{gather}
+
+
+Bringing everything together: 
+
+
+\begin{align}
+	\begin{split}
+		\mathcal{H} \approx \sum_{\langle ij \rangle} J_{ij}&\bigg[ \left(-1 - \kappa/2 + 4 \kappa \abs{\langle \chi_{ij}\rangle}^2\right)\langle \chi_{ij} \rangle \left(f_{j\uparrow}^\dagger f_{i\uparrow} + f_{j\downarrow}^\dagger f_{i\downarrow}\right) + \text{h.c} \\
+		&+ \left( 2 + \kappa - 12\kappa \abs{\langle \chi_{ij} \rangle}^2 \right) \abs{\langle \chi_{ij} \rangle}^2 + \frac{1}{4} + \frac{\kappa}{16}\bigg] 
+	\end{split}
+\end{align}
+
+It is sometimes handy to define 
+
+\begin{equation}
+	\tilde{J}_{ij} = J_{ij}\left( 1+ \kappa/2\right), \quad \tilde{\kappa} = \kappa/(1+\kappa/2)
+\end{equation}
+
+I drop the constant:
+
+\begin{align}
+	\begin{split}
+		\mathcal{H} \approx \sum_{\langle ij \rangle} \tilde{J}_{ij}&\bigg[ -\left(1 - 4 \tilde{\kappa} \abs{\langle \chi_{ij}\rangle}^2\right)\langle \chi_{ij} \rangle \left(f_{j\uparrow}^\dagger f_{i\uparrow} + f_{j\downarrow}^\dagger f_{i\downarrow}\right) + \text{h.c} \\
+		&+ 2\left( 1 - 6\tilde{\kappa} \abs{\langle \chi_{ij} \rangle}^2 \right) \abs{\langle \chi_{ij} \rangle}^2 \bigg] 
+	\end{split}
+\end{align}
+
+\end{document}
