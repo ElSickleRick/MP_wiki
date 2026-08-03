@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  28 JUL 2026 14:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  3 AUG 2026 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -504,47 +504,32 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 (./chapters/preliminaries/basics-of-magnetism/basics-of-magnetism.tex
 (./chapters/preliminaries/basics-of-magnetism/direct-exchange.tex
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 38--39
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
 )) (./chapters/preliminaries/partons/partons.tex
-(./chapters/preliminaries/partons/su2-slave-fermions.tex
+(./chapters/preliminaries/partons/su2-slave-fermions.tex [4]
 Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-[4]
+
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
@@ -658,7 +643,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--104
  []
 
 [11pdfTeX warning (ext4): destination with the same identifier (name{equation.5
-.52}) has been already used, duplicate ignored
+.54}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.109 \end{equation}
@@ -698,7 +683,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 8.
 
 (./chapters/main_part/thermodynamic_limit/0_pi_state.tex
-<chapters/main_part/thermodynamic_limit//lattice-pi-0-flux-state.jpeg, id=290, 
+<chapters/main_part/thermodynamic_limit//lattice-pi-0-flux-state.jpeg, id=292, 
 1284.8pt x 963.6pt>
 File: chapters/main_part/thermodynamic_limit//lattice-pi-0-flux-state.jpeg Grap
 hic file (type jpg)
@@ -786,7 +771,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 (./chapters/main_part/thermodynamic_limit/pi_half_pi_half_state.tex
 <chapters/main_part/thermodynamic_limit//lattice-pi-half-flux-state.jpeg, id=38
-6, 2055.68pt x 1459.4525pt>
+8, 2055.68pt x 1459.4525pt>
 File: chapters/main_part/thermodynamic_limit//lattice-pi-half-flux-state.jpeg G
 raphic file (type jpg)
 <use chapters/main_part/thermodynamic_limit//lattice-pi-half-flux-state.jpeg>
@@ -796,14 +781,17 @@ f-flux-state.jpeg  used on input line 6.
  [20 <./chapters/main_part/thermodynamic_limit//lattice-pi-half-flux-state.jpeg
 >] [21]))
 [22] (./chapters/other/mail1007/mail1007.tex) [23] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 06A274AA74A90112F94F91DC5E5C8669;4727.
  ) 
 Here is how much of TeX's memory you used:
- 12992 strings out of 478287
- 203897 string characters out of 5849289
+ 12996 strings out of 478287
+ 203959 string characters out of 5849289
  529067 words of memory out of 5000000
- 30730 multiletter control sequences out of 15000+600000
+ 30732 multiletter control sequences out of 15000+600000
  480008 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,22n,77p,853b,570s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -823,10 +811,10 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/
 cm-super/sfrm1000.pfb>
-Output written on main.pdf (23 pages, 688276 bytes).
+Output written on main.pdf (23 pages, 689466 bytes).
 PDF statistics:
- 555 PDF objects out of 1000 (max. 8388607)
- 490 compressed objects within 5 object streams
- 218 named destinations out of 1000 (max. 500000)
+ 557 PDF objects out of 1000 (max. 8388607)
+ 492 compressed objects within 5 object streams
+ 220 named destinations out of 1000 (max. 500000)
  248 words of extra memory for PDF output out of 10000 (max. 10000000)
 
