@@ -2,7 +2,7 @@
 
 \begin{document}
 
-The method described here to represent spins in terms of Fermions was first eomployed by Abrikosov in 1965 and later reformulated in terms of gauge theory by Affleck in 1988. The idea (for spin 1/2!) is to introduce two new flavours of fermions: $c_{i\uparrow}^\dagger, \, c_{i\downarrow}^\dagger$ on each site. The transformation reads
+The method described here to represent spins in terms of Fermions was first employed by Abrikosov in 1965 and later reformulated in terms of gauge theory by Affleck in 1988. The idea (for spin 1/2!) is to introduce two new flavours of fermions: $c_{i\uparrow}^\dagger, \, c_{i\downarrow}^\dagger$ on each site. The transformation reads
 
 \begin{equation}\label{Abrfer}
 \vec{S}_i = \frac12 \sum_{\alpha, \beta} c_{i\alpha}^\dagger \vec{\sigma}_{\alpha \beta} c_{i\beta},
@@ -25,19 +25,33 @@ The local Hilbert space, however, gets enlarged. We drop the site-indices from n
 The two-fermion Hilbert space on the other hand is four-dimenstional
 
 \begin{equation}
-	\mathcal{H}_{\text{fermions}} = \text{span}\left(\ket{00}, \ket{10}, \ket{01}, \ket{11}\right)
+	\mathcal{H}_{\text{fermions}} = \text{span}\left(\ket{00}, \ket{10}, \ket{01}, \ket{11}\right).
 \end{equation}
 
-The idea of \ref{Abrfer} is to identify $\mathcal{H}_{S=\frac12}$ with the one-particle sector of $\mathcal{H}_{\text{fermions}}$. This leaves two un-physical states: $\ket{00}$ and $\ket{11}$. The spin-operators $S^\alpha$ act trivially on these, which is why everything goes through smoothly on the operator level. \\
+The idea of \ref{Abrfer} is to identify $\mathcal{H}_{S=\frac12}$ with the one-particle sector of $\mathcal{H}_{\text{fermions}}$:
+
+\begin{equation}\label{strong_constr}
+	\left(n_{i\uparrow} + n_{i\downarrow}\right)\ket{\psi} \overset{!}{=} \ket{\psi} \; \forall i,
+\end{equation}
+
+which leaves us with two un-physical states: $\ket{00}$ and $\ket{11}$. \\
 
 
-Therefore, as long as the Hamiltonian only consists of spin operators, the un-physical states do not influence any physical results (apart from normalization, maybe). This can not garuanteed anymore when treating the system perturbatively using for example a mean-field theory. For this reason we introduce the constraint 
+All spin-operators $S^\alpha$ act trivially on these, which is why everything goes through smoothly on the operator level. Therefore, as long as the Hamiltonian only consists of spin operators, the un-physical states do not influence any results (apart from normalization, maybe). \\
+
+This can not be garuanteed anymore when treating the system perturbatively using for example a mean-field theory. For this reason we introduce the constraint 
+
+\begin{equation}\label{weak_constr}
+\bra{\psi} n_{i\downarrow} + n_{i\uparrow}\ket{\psi} = 1 \; \forall i.
+\end{equation}
+
+which is a constraint on the state $\ket{\psi}$. Acknowledge, that this constraint is weaker then $n_i = 1 \; \forall i$, for example
 
 \begin{equation}
-\bra{\psi} n_{i\downarrow} + n_{i\uparrow}\ket{\psi} = 1,
+	\ket{\psi} = \frac{1}{\sqrt{2}}\left(\ket{00} + \ket{11} \right) \quad \Rightarrow \quad \bra{\psi} n_{\uparrow} + n_{\downarrow} \ket{\psi} = 1\quad \text{but} \quad \left(n_{i\uparrow} + n_{i\downarrow}\right)\ket{\psi} = \sqrt{2}\ket{11} \not= \ket{\psi}.
 \end{equation}
 
-which is a constraint on the state $\ket{\psi}$. 
+Obviously all normalized states that fulfill \ref{strong_constr} also comply with \ref{weak_constr}.
 
 \subsubsection{global SU(2) symmetrie}
 
@@ -89,10 +103,10 @@ c_\downarrow
 c_\uparrow \\
 c_\downarrow 
 \end{pmatrix} \quad
-	\vec{\sigma} \rightarrow \vec{\sigma}
-\end{gather}.
+	\vec{\sigma} \rightarrow \vec{\sigma}.
+\end{gather}
 
-$c_\downarrow, \, c_\uparrow$ transform as a SU(2) doublet under left multiplication by an SU(2) matrix. To cosntruct the conjugate doublet, which transforms in the same manner, consider 
+$c_\downarrow, \, c_\uparrow$ transform as a SU(2) doublet under left multiplication by an SU(2) matrix. To construct the conjugate doublet, which transforms in the same manner, consider 
 
 \begin{equation}
 \begin{pmatrix}

@@ -33,9 +33,11 @@ The expression is simplified by evaluating the spinor product.
 \end{split}
 \end{equation}
 
-It is worthwile to take a few detours in order to explore different effects of the Coulomb interaction, increasing the complexity in the mean-time. \\
+It is worthwile to take a few detours in order to explore different effects of the Coulomb interaction, increasing the complexity in the mean-time. 
 
-\underline{on-site, single orbital: Hubbard U-term} \\
+\paragraph{on-site, single orbital: Hubbard U-term} 
+
+\hfill \newline
 
 First, focus on the on-site effects $\vec{R}^{(1)} = \vec{R}^{(2)} = \vec{R}^{(3)} = \vec{R}^{(4)}$, dropping the position quantum numbers. The easiest case is that of a single orbital per site, $m^{(1)} = m^{(2)} = m^{(3)} = m^{(4)} \equiv m$.
 
@@ -55,11 +57,13 @@ Two out of the four terms ( $\sigma_1 = \sigma_2 = \uparrow$ and $\sigma_1 = \si
 	\Rightarrow H_{\text{C}} = \sum_{\vec{R}} U a_{\downarrow}^\dagger a_{\uparrow}^\dagger a_{\uparrow} a_{\downarrow}, \quad U = \frac{e^2}{4\pi\varepsilon_0}\int d^3r_1 \int d^3r_2 \; \abs{\phi(\vec{r}_1)}^2 \frac{1}{\abs{\vec{r}_1-\vec{r}_2}} \abs{\phi(\vec{r}_2)}^2 
 \end{equation}
 
-This gives the Hubbard U-term. It's interpretation is pretty straight forward: electrons occupying the same orbital have increased Coulomb energy, given by $U$. This presents a convenient way to include Coulomb interaction in tight-binding models. It is only an approximation, since all other terms (multiple sites, different orbitals) have been ignored so far. It is also clear that this contribution is the largest off all effects arising from the Coulomb interaction as the overlap is biggest here. \\
+This gives the Hubbard U-term. It's interpretation is pretty straight forward: electrons occupying the same orbital have increased Coulomb energy, given by $U$. This presents a convenient way to include Coulomb interaction in tight-binding models. It is only an approximation, since all other terms (multiple sites, different orbitals) have been ignored so far. It is also clear that this contribution is the largest off all effects arising from the Coulomb interaction as the overlap is biggest here. 
 
 
 
-\underline{on-site, multiple orbitals: Hund's rule} \\
+\paragraph{on-site, multiple orbitals: Hund's rule} 
+
+\hfill \newline
 
 The first step of complexification is to allow multiple orbitals at every ion, thereby reintroducing the $m^{(i)}$ quantum numbers. If one treats the Coulomb interaction perturbatively, in first order the creation/ annihilation operators have to be grouped into pairs in order to produce non-vanishing contributions. \textcolor{red}{I am not satisfied with this.} There are two possibilities: $m^{(1)} = m^{(3)}, \; m^{(2)} = m^{(4)}$ and $m^{(1)} = m^{(4)}, \; m^{(2)} = m^{(3)}$. 
 
@@ -107,9 +111,11 @@ The first term is the on-site Coulomb interaction between electrons in different
 	\Rightarrow J_{m^{(1)}m^{(2)}} = \frac{e^2}{\varepsilon_0} \int \frac{d^3k}{(2\pi)^3} \frac{1}{k^2} \underbrace{\int d^3r_1 \; \phi_{m^{(1)}}^*(\vec{r}_1) \phi_{m^{(2)}}(\vec{r}_1) e^{i\vec{k}\vec{r}_1}}_{I(\vec{r})} \underbrace{\int d^3r_2 \; \phi_{m^{(1)}}(\vec{r}_2) \phi_{m^{(2)}}^*(\vec{r}_2) e^{-i\vec{k}\vec{r}_2}}_{I^*(\vec{r})}.
 \end{equation}
 
-Hence, $J_{m^{(1)}m^{(2)}}$ is positive. Therefore the interaction is minimized by ferromagnetic allignement. This is the derivation of Hund's first rule: the ground state of a partially filled shell is the one that maximizes $\vec{s}_{\text{tot}}$. \\
+Hence, $J_{m^{(1)}m^{(2)}}$ is positive. Therefore the interaction is minimized by ferromagnetic allignement. This is the derivation of Hund's first rule: the ground state of a partially filled shell is the one that maximizes $\vec{s}_{\text{tot}}$. 
 
-\underline{different site, single orbital: Coulomb exchange} \\
+\paragraph{different site, single orbital: Coulomb exchange} 
+
+\hfill \newline
 
 Assuming again singular orbitals $m^{(1)} = m^{(2)} = m^{(3)} = m^{(4)} \equiv m$, whilst reinstating the position quantum numbers the calculation is symmetrical to that in the last subchapter.
 
