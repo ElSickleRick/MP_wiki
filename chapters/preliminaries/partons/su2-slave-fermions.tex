@@ -1,4 +1,4 @@
-\documentclass[../../main.tex]{subfiles}
+\documentclass[../../../main.tex]{subfiles}
 
 \begin{document}
 
@@ -69,7 +69,7 @@ c_\downarrow
 \end{pmatrix}
 \end{equation}
 
-the spin rotation can be represented by $\vec{\sigma_2} \mapsto V^{-1}\vec{\sigma}V^{-1}$, with $V$ an element of SU(2). The task at hand is to determine, how the spin rotation acts on the ladder operators. One may reinterpret 
+the spin rotation can be represented by $\vec{\sigma_2} \mapsto V^{-1}\vec{\sigma}V$, with $V$ an element of SU(2). The task at hand is to determine, how the spin rotation acts on the ladder operators. One may reinterpret 
 
 \begin{gather}
 	\vec{S} \rightarrow \frac12 
@@ -164,7 +164,7 @@ It is convention two write these two doublets in matrix:
 \psi = 
 \begin{pmatrix}
 c_\uparrow & c_\downarrow \\
-c_\downarrow^\dagger & 	-c_\uparrow 		 
+c_\downarrow^\dagger & 	-c_\uparrow^\dagger 		 
 \end{pmatrix}
 \end{equation}
 
@@ -177,6 +177,43 @@ The last section described how to recover the two dimenstional spin-1/2 Hilbert-
 \begin{equation}
 	\left[ S^\alpha_i, S^\beta_j \right] = i\delta_{ij} \, \varepsilon_{\alpha\beta\gamma} \,  S^\gamma_i.
 \end{equation}
+
+
+Consider
+
+\begin{equation}
+	S_+\ket{\downarrow} = \ket{\uparrow},
+\end{equation}
+
+which is an operation on $\mathcal{H}_{S=\frac12}$. When translating this into $\mathcal{H}_{\text{fermions}}$:
+
+\begin{equation}
+	S_+ = \frac12(S_x + iS_y) \rightarrow c_\uparrow^\dagger c_\downarrow,
+\end{equation}
+
+one uncovers a redundancy in the description:
+
+\begin{equation}
+	c_\uparrow^\dagger c_\downarrow = \sin^2(\theta)c_\uparrow^\dagger c_\downarrow + \cos^2(\theta)c_\uparrow^\dagger c_\downarrow = \sin^2(\theta) c_\uparrow^\dagger c_\downarrow - \cos^2(\theta)c_\downarrow c_\uparrow^\dagger.
+\end{equation}
+ 
+On the hilbert space level, this can be understood as different walks connecting the same initial and final states (hence, an artifact of the enlargement).
+
+\begin{center}
+	\includegraphics[width = 0.35\textwidth]{raising_operation.jpeg}.
+\end{center}
+
+Suddenly, we have a gauge-structure at our hands. The next questions come naturally: what are gauge transformations and what are gauge invariants? Staying with the example at hand:
+
+\begin{equation}
+\sin^2(\theta) c_\uparrow^\dagger c_\downarrow - \cos^2(\theta)c_\downarrow c_\uparrow^\dagger = 
+\end{equation}
+
+
+
+
+
+
 
 
 \end{document}
