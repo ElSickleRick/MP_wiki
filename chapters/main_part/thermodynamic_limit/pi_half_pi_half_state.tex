@@ -29,7 +29,7 @@ b_{q\sigma}
 
 So the only difference is $\cos\left( \vec{q} \vec{\delta}_1 \right) \rightarrow \sin\left(\vec{q}\vec{\delta}_1\right)$. Therefore, I will skip ahead in the calculations:
 
-\textcolor{red}{Maybe I should show explicitly that $\mu = 0$, I guess $\mu_a = - \mu_b = \mu$ is clear}
+\textcolor{red}{Maybe I should show explicitly that $\mu = 0$, I guess $\mu_a = - \mu_b = \mu$ is clear} \textcolor{red}{I fucked up here again (bc I copied what was already wrong above). It is very lucky that this, though corresponding to a different unit cell than the shown in the cartoon, also gives a $\pi/2-\pi/2$-state.}
 
 \begin{gather}
 	\mu_a = \mu_b = 0, \\
@@ -103,5 +103,56 @@ f_0 =\tilde{J} \left(\frac{1}{4\tilde{\kappa}} - \frac{2\alpha}{9} \sqrt{\frac{3
 \end{equation}
 
 The methods agree.
+
+\subsubsection{Chern number}
+
+Here I will calculate the Chern number associated with the state. The relevant formula for a 2-band system is is 
+
+\begin{equation}\label{Chernform}
+	C = \frac{1}{4\pi} \int\limits_{\text{1.BZ}} d^2q \, \hat{h} \cdot \left(\partial_{q_x} \hat{h} \times \partial_{q_y} \hat{h}\right),
+\end{equation}
+
+where $\hat{h}$ is the normalized Bloch vector (\textcolor{red}{is this the correct terminology?}).
+
+\begin{equation}
+	\vec{h} = 2t
+	\begin{pmatrix}
+		\cos\left(\frac12(q_x - \sqrt{3}q_y)\right) \\
+		\sin\left(\frac12(q_x + \sqrt{3}q_y)\right) \\
+		\sin(q_x)
+	\end{pmatrix} \equiv 2t
+	\begin{pmatrix}
+		\cos(\delta_3) \\
+		\sin(\delta_2) \\
+		\sin(\delta_1)
+	\end{pmatrix}, \quad \abs{\vec{h}} \equiv \varepsilon(\vec{q})
+\end{equation}
+
+\textcolor{red}{Noteice that this is different than the one given above, I will resolve this at another time} I first simplify \ref{Chernform} a bit using
+
+\begin{equation}
+	\partial_\alpha \hat{h} = \frac{1}{\abs{\vec{h}}}\left(\partial_\alpha\vec{h} - \hat{h}\cdot\left(\partial_\alpha \vec{h}\right)\hat{h}\right).
+\end{equation}
+
+When applying this to \ref{Chernform}, 3 out of the for terms that appear are proportional to $\hat{h} \times \hat{h} = \vec{0}$.
+
+\begin{equation}
+	\Rightarrow C = \frac{1}{4\pi} \int\limits_{1.BZ}d^2q \, [\varepsilon(\vec{q})]^{-3} \vec{h} \cdot \left( \partial_{q_x}\vec{h} \times \partial_{q_y}\vec{h}\right)
+\end{equation}
+
+\begin{equation}
+	\partial_{q_x}\vec{h} = t
+	\begin{pmatrix}
+		-\sin(\delta_3) \\
+		\cos(\delta_2) \\
+		2\cos(\delta_1)
+	\end{pmatrix}, \qquad 
+	\partial_{q_y}\vec{h} = \sqrt{3}t
+	\begin{pmatrix}
+		\sin(\delta_1) \\
+		\cos(\delta_2) \\
+		0
+	\end{pmatrix}
+\end{equation}
 
 \end{document}
