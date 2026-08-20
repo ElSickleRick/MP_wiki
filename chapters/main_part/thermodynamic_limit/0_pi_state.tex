@@ -111,12 +111,9 @@ This yields
 
 \begin{align}
 	\cos(\vec{q}\vec{\delta}_1)  &\rightarrow \cos(k_y) \notag\\
-	\cos(\vec{q}\vec{\delta}_2) &\rightarrow \cos(k_y - k_x/2) \\
-	\sin(\vec{q}\vec{\delta}_3) &\rightarrow \sin(k_x/2)
+	\sin(\vec{q}\vec{\delta}_2) &\rightarrow\sin(k_x/2) \\
+	\cos(\vec{q}\vec{\delta}_3) &\rightarrow \cos(k_y-k_x/2)
 \end{align}
-
-\textcolor{red}{I fucked up here, it should be $\sin{\vec{q}\vec{\delta}_2}$ and  $\cos{\vec{q}\vec{\delta_3}}$. Luckily, this also corresponds to a unit cell with $0$ flux in down traingles and $\pi$ flux in the up traingles. (Graphically  this means all bonds in the in the 2-direction are positive while the ones in the 3-direction alternate.)}
-
 
 The dispersion relation is 
 
@@ -333,7 +330,7 @@ with
 	\gamma = \int\limits_{[-\pi, \pi]^2} \frac{d^2k}{(2\pi)^2}\sqrt{\cos^2(k_y) + \cos^2(k_y - k_x/2) + \sin^2(k_x/2)} \approx 1.18524
 \end{equation}
 
-\textcolor{red}{compared to Pedros results there is also a factor 2, besides other problems, because Pedro calculates $f/M \, (f/2)$!}
+Compared to Pedros results there is also a factor 2, besides other problems, because Pedro calculates $f/M \, (f/2)$!
 
 
 \begin{equation}

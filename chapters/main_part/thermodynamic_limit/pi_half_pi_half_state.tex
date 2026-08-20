@@ -8,10 +8,17 @@
 
 \subsubsection{Pedestrian Method}
 
-This is very similar to the $\pi-0-$flux-state. The Bloch Hamiltonian in this case reads
+This is very similar to the $\pi-0-$flux-state. The bare Hamiltonian is
+\begin{align}
+	\begin{split}
+		H  = \sum_{i,\sigma}\bigg(\frac{t}{2}\bigg[  &-ia_{i\sigma}^\dagger a_{i+\delta_1;\sigma} + ia_{i\sigma}^\dagger a_{i-\delta_1;\sigma} - a_{i\sigma}^\dagger b_{i+\delta_2; \sigma} + a_{i\sigma}^\dagger b_{i-\delta_2;\sigma}+ a_{i\sigma}^\dagger b_{i+\delta_3;\sigma} + a_{i\sigma}^\dagger b_{i-\delta_3;\sigma} \\
+		&+ib_{i\sigma}^\dagger b_{i+\delta_1;\sigma} - i b_{i\sigma}^\dagger b_{i-\delta_1;\sigma} + b_{i\sigma}^\dagger a_{i+\delta_2;\sigma} - b_{i\sigma}^\dagger a_{i-\delta_2;\sigma} + a_{i\sigma}^\dagger b_{i+\delta_3;\sigma} + a_{i\sigma}^\dagger b_{i-\delta_3;\sigma}\bigg] \\
+		&+\mu_a a_{i\sigma}^\dagger a_{i\sigma} + \mu_b b_{i\sigma}^\dagger b_{i\sigma}\bigg) - \frac{N(\mu_a + \mu_b)}{2} 
+	\end{split}
+\end{align}
 
 \begin{equation}
-H = 
+\Rightarrow H = 
 \sum_{q,\sigma} 
 \begin{pmatrix}
 a_{q\sigma}^\dagger & b_{q\sigma}^\dagger 
@@ -27,12 +34,25 @@ b_{q\sigma}
 .
 \end{equation}
 
-So the only difference is $\cos\left( \vec{q} \vec{\delta}_1 \right) \rightarrow \sin\left(\vec{q}\vec{\delta}_1\right)$. Therefore, I will skip ahead in the calculations:
+\textcolor{red}{Maybe I should show explicitly that $\mu = 0$, I guess $\mu_a = - \mu_b = \mu$ is clear}
 
-\textcolor{red}{Maybe I should show explicitly that $\mu = 0$, I guess $\mu_a = - \mu_b = \mu$ is clear} \textcolor{red}{I fucked up here again (bc I copied what was already wrong above). It is very lucky that this, though corresponding to a different unit cell than the shown in the cartoon, also gives a $\pi/2-\pi/2$-state.}
+Using $\mu_a = \mu_b = 0$:
+
+\begin{equation}
+	\vec{h} = 2t
+	\begin{pmatrix}
+		\cos(\vec{q}\vec{\delta}_1) \\
+		\sin(\vec{q}\vec{\delta}_2) \\
+		\sin(\vec{q}\vec{\delta}_3)
+	\end{pmatrix} \mapsto 2t
+	\begin{pmatrix}
+		\cos(k_y-k_x/2) \\
+		\sin(k_x/2) \\
+		\sin(k_y) 
+	\end{pmatrix}
+\end{equation}
 
 \begin{gather}
-	\mu_a = \mu_b = 0, \\
 	\varepsilon(\vec{k})_{\pm} = \pm 2|t|\sqrt{\sin^2(k_y) +\cos^2(k_y-k_x/2) + \sin^2(k_x/2)}
 \end{gather}
 
@@ -128,10 +148,10 @@ where $\hat{h}$ is the normalized Bloch vector (\textcolor{red}{is this the corr
 	\end{pmatrix}, \quad \abs{\vec{h}} \equiv \varepsilon(\vec{q})
 \end{equation}
 
-\textcolor{red}{Noteice that this is different than the one given above, I will resolve this at another time} I first simplify \ref{Chernform} a bit using
+I first simplify \ref{Chernform} a bit using
 
 \begin{equation}
-	\partial_\alpha \hat{h} = \frac{1}{\abs{\vec{h}}}\left(\partial_\alpha\vec{h} - \hat{h}\cdot\left(\partial_\alpha \vec{h}\right)\hat{h}\right).
+	\partial_\alpha \hat{h} = \frac{1}{\abs{\vec{h}}}\left(\partial_\alpha\vec{h} - \left(\hat{h}\cdot\partial_\alpha \vec{h}\right)\hat{h}\right).
 \end{equation}
 
 When applying this to \ref{Chernform}, 3 out of the for terms that appear are proportional to $\hat{h} \times \hat{h} = \vec{0}$.
@@ -155,4 +175,35 @@ When applying this to \ref{Chernform}, 3 out of the for terms that appear are pr
 	\end{pmatrix}
 \end{equation}
 
+\begin{align}
+	\Rightarrow \vec{h} \cdot \left( \partial_{q_x} \vec{h} \times \partial_{q_y} \vec{h} \right) &= 4 \sqrt{3} t^3\left( -\cos(\delta_1)\cos(\delta_2)\cos(\delta_3) + \cos(\delta_1)\sin(\delta_2)\sin(\delta_3) - \sin(\delta_1)\cos(\delta_2)\sin(\delta_3)\right) \notag \\
+	&= 4 \sqrt{3} t^3\left(\sin(\delta_1)\sin(\delta_2)\cos(\delta_3) -1\right)
+\end{align}
+
+\begin{equation}
+	\Rightarrow C = \frac{\sqrt{3}}{8\pi} \int\limits_{\text{1.BZ}} d^2q \frac{\sin(\delta_1)\sin(\delta_2)\cos(\delta_3)-1}{\left(\sin^2(\delta_1) + \sin^2(\delta_2) + \cos^2(\delta_3)\right)^{3/2}}  
+\end{equation}
+
+For evaluation I use the transformation:
+
+\begin{equation}
+	\begin{pmatrix}
+		q_x \\
+		q_y
+	\end{pmatrix}=
+	\begin{pmatrix}
+		0 & 1 \\
+		1\sqrt{3} & -1/\sqrt{3}
+	\end{pmatrix}
+	\begin{pmatrix}
+		k_x \\
+		k_y
+	\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+	\Rightarrow C = \frac{1}{8\pi} \int\limits_{[-\pi,\pi]^2} d^2k \frac{\sin(k_y)\sin(k_y-k_x/2)\cos(k_x/2)-1}{\left(\sin^2(k_y) + \sin^2(k_y-k_x/2) + \cos^2(k_x/2)\right)^{3/2}}  
+\end{equation}
+
+The result is $C=-1$.
 \end{document}
