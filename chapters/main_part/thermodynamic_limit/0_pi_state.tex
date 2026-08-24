@@ -429,14 +429,50 @@ where $k, m \in \mathbb{Z}$. This means that the fermi surface is a collection o
 Mind you that these points are not equivalent! Evidently they are time-reversal partners. To access the low-energy physics we must approximate the Hamiltonian around the fermi-points using
 
 \begin{equation}
-	f\left(\vec{q}_0 + \delta \vec{q}\right) \approx f(\vec{q}_0) + \left(\nabla_{\vec{q}}f(\vec{q})\rvert_{\vec{q}=\vec{q}_0}\right)\cdot\delta\vec{q}
+	f\left(\vec{q}_0 + \delta \vec{q}\right) \approx f(\vec{q}_0) + \left(\nabla_{\vec{q}}f(\vec{q})\rvert_{\vec{q}=\vec{q}_0}\right)\cdot\delta\vec{q}.
 \end{equation}
 
+Around $\vec{K}$:
+
 \begin{align}
-	\cos(q_x) &\approx 0 + (-1)^{k}\delta q_x \\
+	\cos(q_x) &\approx 0  -\delta q_x \\
 	\sin\left(\frac12\left(q_x + \sqrt{3}q_y\right)\right) & \approx 0 + \frac12 \delta q_x + \frac{\sqrt{3}}{2} \delta q_y \\
-	\cos\left(\frac12\left(q_x - \sqrt{3}q_y\right)\right) & \approx 0 + (-1)^k\left(-\frac12 \delta q_x + \frac{\sqrt{3}}{2} \delta q_y\right) 
+	\cos\left(\frac12\left(q_x - \sqrt{3}q_y\right)\right) & \approx 0 - \frac12 \delta q_x + \frac{\sqrt{3}}{2} \delta q_y
+\end{align}
+
+\begin{equation}
+\Rightarrow H(\vec{K})  \approx 2t
+	\begin{pmatrix}
+		-\delta q_x & \frac12\left(-\delta q_x + \sqrt{3} \delta q_y\right) -\frac{i}{2}\left( \delta q_x + \sqrt{3} \delta q_y\right) \\
+		\frac12\left(-\delta q_x + \sqrt{3} \delta q_y\right) + \frac{i}{2}\left( \delta q_x + \sqrt{3} \delta q_y\right) & \delta q_x
+	\end{pmatrix}
+\end{equation}
+
+
+Around $\vec{K}^\prime$:
+
+\begin{align}
+	\cos(q_x) &\approx 0  + \delta q_x \\
+	\sin\left(\frac12\left(q_x + \sqrt{3}q_y\right)\right) & \approx 0 + \frac12 \delta q_x + \frac{\sqrt{3}}{2} \delta q_y \\
+	\cos\left(\frac12\left(q_x - \sqrt{3}q_y\right)\right) & \approx 0 + \frac12 \delta q_x - \frac{\sqrt{3}}{2} \delta q_y
 \end{align}
 
 
+\begin{equation}
+\Rightarrow H(\vec{K}^\prime)  \approx 2t
+	\begin{pmatrix}
+		-\delta q_x & \frac12\left(\delta q_x - \sqrt{3} \delta q_y\right) -\frac{i}{2}\left( \delta q_x + \sqrt{3} \delta q_y\right) \\
+		\frac12\left(\delta q_x - \sqrt{3} \delta q_y\right) + \frac{i}{2}\left( \delta q_x + \sqrt{3} \delta q_y\right) & \delta q_x
+	\end{pmatrix}
+\end{equation}
+
+
+This gives the dispersion relation (for both cones)
+
+\begin{align}
+	\varepsilon &\approx 2t\sqrt{ \left( \delta q_x \right)^2 + \frac14\left(\delta q_x + \sqrt{3}\delta q_y\right)^2 + \frac14\left(\delta q_x -  \sqrt{3}\delta q_y\right)^2} \notag \\
+	&\approx \sqrt{6}t \sqrt{ \left(\delta q_x\right)^2 + \left( \delta q_y \right)^2}
+\end{align}
+
+Thus, the fermi velocity is $v_F = \sqrt{6}t$. \textcolor{red}{Maybe do a spin-rotation or gauge transformation to bring the Hamiltonian into Weyl form?As far as I can tell, this should be possbile since the fermions are masless. Therefore the particles should have well-defined chirality (whatever that means in this context).}
 \end{document}
