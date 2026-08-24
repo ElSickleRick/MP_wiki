@@ -149,7 +149,7 @@ b_{q\sigma}
 2t\cos(k_y-k_x/2)) \\
 2t\sin(k_x/2)\\
 2t\cos(k_y) + \mu
-\end{pmatrix}^T
+\end{pmatrix}
 \end{equation}
 
 Then $\varepsilon(\vec{q})_{\pm} = \pm |\vec{h}|$ and 
@@ -367,6 +367,76 @@ with the free energy
 
 These correspond to the values I calculated using the pedestrian method above. Mind that under particle-hole transformation the calculation doesn't change (the reason basically being the absolute value in the energy, or more physically the particle-hole symmetry of the system).
 
+\subsubsection{low energy physics}
+
+The dispersion relation reads 
+
+\begin{equation}
+	\varepsilon(\vec{q})  =2\abs{t}\sqrt{ \cos^2(q_x) + \sin^2\left(\frac12\left( q_x +\sqrt{3}q_y\right)\right) + \cos^2\left(\frac12\left(q_x - \sqrt{3}q_y\right)\right)}
+\end{equation}
+
+I will start by calculating the fermi surface $\varepsilon(\vec{q}) = 0$, which means that the expression under the square root must vanish. Using
+
+\begin{equation}
+	\sin^2\left(\frac12\left( q_x +\sqrt{3}q_y\right)\right) + \cos^2\left(\frac12\left(q_x - \sqrt{3}q_y\right)\right) = 1 + \sin(q_x)\sin(\sqrt{3}q_y)
+\end{equation},
+
+I obtain the following equation for the fermi surface:
+
+\begin{equation}
+	\underbrace{1 + \cos^2(q_{0}^x)}_{\in [1, 2]} = \underbrace{-\sin(q_{0}^x)\sin(\sqrt{3}q_{0}^y)}_{\in [-1, 1]}.
+\end{equation}
+
+
+The equation can be simplified by comparing the ranges of both sides (see above)
+
+\begin{equation}
+	\Rightarrow 1 + \cos^2(q_0^x) \overset{!}{=} 1\Rightarrow q^0_x = \frac{\pi}{2} + \pi k, \quad k \in \mathbb{Z}
+\end{equation}
+
+\begin{equation}
+	\Rightarrow \sin(\sqrt{3}q_0^y) = 
+	\begin{cases}
+		-1 & \text{k even} \\
+		1 & \text{k odd}
+	\end{cases}
+\end{equation}
+
+
+The solution (and thereby the Fermi surface) is 
+
+\begin{align}
+	q_0^x &= \frac{\pi}{2} + \pi k \\
+	q_0^y &= \frac{1}{\sqrt{3}}\left(\frac{(-1)^{k+1}\pi}{2} + 2 \pi m\right),
+\end{align}
+
+where $k, m \in \mathbb{Z}$. This means that the fermi surface is a collection of isolated points. More scientifically spoken: the state is a semi-metal. Two of those Fermi-points lie in the first Brillouin zone:
+
+
+\begin{align}
+	\vec{K} &= \frac{\pi}{2} 
+	\begin{pmatrix}
+		1 \\
+		-1/\sqrt{3}
+	\end{pmatrix} \quad \text{(k = m =0)} \\
+	\vec{K}^\prime &= \frac{\pi}{2}
+	\begin{pmatrix}
+		-1 \\
+		1/\sqrt{3}
+	\end{pmatrix} \quad \text{(k = -1, m =0)}.
+\end{align}
+
+Mind you that these points are not equivalent! Evidently they are time-reversal partners. To access the low-energy physics we must approximate the Hamiltonian around the fermi-points using
+
+\begin{equation}
+	f\left(\vec{q}_0 + \delta \vec{q}\right) \approx f(\vec{q}_0) + \left(\nabla_{\vec{q}}f(\vec{q})\rvert_{\vec{q}=\vec{q}_0}\right)\cdot\delta\vec{q}
+\end{equation}
+
+\begin{align}
+	\cos(q_x) &\approx 0 + (-1)^{k}\delta q_x \\
+	\sin\left(\frac12\left(q_x + \sqrt{3}q_y\right)\right) & \approx 0 + \frac12 \delta q_x + \frac{\sqrt{3}}{2} \delta q_y \\
+	\cos\left(\frac12\left(q_x - \sqrt{3}q_y\right)\right) & \approx 0 + (-1)^k\left(-\frac12 \delta q_x + \frac{\sqrt{3}}{2} \delta q_y\right) 
+\end{align}
 
 
 \end{document}
