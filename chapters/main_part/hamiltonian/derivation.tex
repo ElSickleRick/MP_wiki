@@ -39,6 +39,10 @@
 
 \begin{document}
 
+\textcolor{red}{rename this section to something like model?}
+
+\subsubsection{Construction of the Hamiltonian}
+
 The Hamiltonian is 
 
 \begin{equation}
@@ -99,7 +103,7 @@ The mean field decoupling works like
 \end{gather}
 
 
-Bringing everything together: 
+\textcolor{red}{Maybe comment of the fact that the mean-field parameters know about the fermi sea and thereby about many states. In this sense the states do speak with each other}. Bringing everything together: 
 
 
 \begin{align}
@@ -127,11 +131,66 @@ I drop the constant:
 Hence, the mean field produces the effective hopping amplitude $t^{\text{MF}}$:
 
 \begin{equation}
-	t^{\text{MF}}_{ji} = - \tilde{J}_{ij}\langle \chi_{ji} \rangle \left(1 - 4\tilde{\kappa} \abs{ \langle \chi_{ij} \rangle}^2\right) =  -J_{ij}\langle \chi_{ij} \rangle \left(1 + \kappa/2  - 4 \kappa \abs{\langle \chi_{ij} \rangle}^2 \right).
+	t^{\text{MF}}_{ji} = - \tilde{J}_{ij}\langle \chi_{ij} \rangle \left(1 - 4\tilde{\kappa} \abs{ \langle \chi_{ij} \rangle}^2\right) =  -J_{ij}\langle \chi_{ij} \rangle \left(1 + \kappa/2  - 4 \kappa \abs{\langle \chi_{ij} \rangle}^2 \right).
 \end{equation}
 
 \begin{equation}
 	\Rightarrow \mathcal{H} \approx \sum_{\langle ij \rangle} t^{\text{MF}}_{ji}\left( f_{j\uparrow}^\dagger f_{i\uparrow} + f_{j\downarrow}^\dagger f_{i\downarrow} \right) + \text{const.}
 \end{equation}
+
+This is pretty interesting: the hopping-amplitude $i \rightarrow j$ is directly proportional to the hopping-amplitude $j \rightarrow i$. \textcolor{red}{Here are a few ideas how to make use/discuss this insight:
+\begin{itemize}
+	\item Maybe one can also make the argument that we start with a "symmetric" model, i.e. a model wohtout internal sense of direction, a feature that is now preserved in the Mean field Hamiltonian. 
+	\item Or maybe, even more suffisticated, one could make argument using straucture of the spin-singlet states.
+	\item Maybe one can use this fact to siplify the Mean-field equation?
+\end{itemize}}
+
+\subsubsection{Continuity equation and probability current}
+
+The probability (/particle) density on site $k$ is 
+
+\begin{equation}
+	n_k = \sum_\sigma f_{k\sigma}^\dagger f_{k\sigma}.
+\end{equation}
+
+Now I derive the corresponding probability current density:
+
+\begin{equation}
+	\frac{\partial n_k}{\partial t} = -i\sum_\sigma\left([f_{k\sigma}^\dagger, H]f_{k\sigma} + f_{k\sigma}^\dagger [f_{k\sigma},H]\right)
+\end{equation}
+
+\begin{align}
+	\begin{split}
+		[f_{k\sigma}^\dagger, H]f_{k\sigma} &= - \sum\limits_{\delta} t_{k+\delta;k}f_{k+\delta;\sigma}^\dagger f_{k\sigma} - \mu_k f_{k\sigma}^\dagger f_{k\sigma}\\
+		f_{k\sigma}^\dagger [f_{k\sigma}, H] &= \sum\limits_{\delta} t_{k;k+\delta}f_{k\sigma}^\dagger f_{k+\delta;\sigma} + \mu f_{k\sigma}^\dagger f_{k\sigma}
+	\end{split}
+\end{align}
+
+\begin{equation}
+	\Rightarrow \frac{\partial n_k}{\partial t}= -\sum_\delta i \left( \sum_{\sigma} t_{k,k+\delta} f_{k\sigma}^\dagger f_{k+\delta;\sigma}-t_{k+\delta,k} f_{k+\delta;\sigma}^\dagger f_{k\sigma} \right)
+\end{equation}
+
+Define 
+
+\begin{equation}
+	J_{k \rightarrow k+\delta} \equiv i \left( \sum_{\sigma} t_{k,k+\delta} f_{k\sigma}^\dagger f_{k+\delta;\sigma}-t_{k+\delta,k} f_{k+\delta;\sigma}^\dagger f_{k\sigma} \right) 
+\end{equation}
+
+$J_{k \rightarrow k+\delta}$ is the (directed!) current density along the bond $\vec{R}_k \rightarrow \vec{R}_{k+\delta}$. The discrete (/lattice) continuity equation reads
+
+\begin{equation}
+	\frac{\partial n_k}{\partial t} = -\sum_{\delta} J_{k \rightarrow k+\delta}.
+\end{equation}
+
+Something interesting happens when calculating $\langle J_{k\rightarrow k+\delta} \rangle$:
+
+\begin{align}
+	\langle J_{k\rightarrow k+\delta} \rangle &= i\left(t_{k,k+\delta}\left\langle \sum_\sigma f_{k\sigma}^\dagger f_{k+\delta;\sigma}\right\rangle - t_{k+\delta,k} \left\langle \sum_\sigma f_{k+\delta;\sigma}^\dagger f_{k\sigma} \right\rangle\right) \notag \\
+	&= 2i\left(t_{k,k+\delta}\langle \chi_{k,k+\delta} \rangle - t_{k+\delta,k} \langle \chi_{k+\delta,k} \rangle\right) \notag \\
+	&=-2i \tilde{J}_{k;k+\delta}\left(1-4\tilde{\kappa}\abs{\langle\chi_{k,k+\delta}\rangle}^2\right)\bigg(\langle\chi_{k+\delta;k}\rangle\langle\chi_{k;k+\delta}\rangle - \langle\chi_{k;k+\delta}\rangle\langle \chi_{k+\delta;k}\rangle\bigg) \notag \\
+	&= 0.
+\end{align}
+
+Apparently, the current on each bond vanishes in the ground state by construction. \textcolor{red}{This still leaves the possibilitie that single states have non-zero probability currents. However, it remains to investigate how this is possible for e.g. states with a singular (topologically protected) edge mode. One would guess that this feature would lead to a non-zero current in the ground state.}
 
 \end{document}
