@@ -373,7 +373,7 @@ with the free energy
 
 These correspond to the values I calculated using the pedestrian method above. Mind that under particle-hole transformation the calculation doesn't change (the reason basically being the absolute value in the energy, or more physically the particle-hole symmetry of the system).
 
-\subsubsection{low energy physics}
+\subsubsection{fermi surface}
 
 The dispersion relation reads 
 
@@ -432,7 +432,11 @@ where $k, m \in \mathbb{Z}$. This means that the fermi surface is a collection o
 	\end{pmatrix} \quad \text{(k = -1, m =0)}.
 \end{align}
 
-Mind you that these points are not equivalent! Evidently they are time-reversal partners. To access the low-energy physics we must approximate the Hamiltonian around the fermi-points using
+Mind you that these points are not equivalent! Evidently they are time-reversal partners. 
+
+
+
+To access the low-energy physics we must approximate the Hamiltonian around the fermi-points using
 
 \begin{equation}
 	f\left(\vec{q}_0 + \delta \vec{q}\right) \approx f(\vec{q}_0) + \left(\nabla_{\vec{q}}f(\vec{q})\rvert_{\vec{q}=\vec{q}_0}\right)\cdot\delta\vec{q}.
@@ -441,34 +445,36 @@ Mind you that these points are not equivalent! Evidently they are time-reversal 
 Around $\vec{K}$:
 
 \begin{align}
-	\cos(q_x) &\approx 0  -\delta q_x \\
-	\sin\left(\frac12\left(q_x + \sqrt{3}q_y\right)\right) & \approx 0 + \frac12 \delta q_x + \frac{\sqrt{3}}{2} \delta q_y \\
-	\cos\left(\frac12\left(q_x - \sqrt{3}q_y\right)\right) & \approx 0 - \frac12 \delta q_x + \frac{\sqrt{3}}{2} \delta q_y
+	\cos(\vec{\delta}_1(\vec{K} + \vec{p})) &\approx \cos(\vec{\delta}_1\vec{K}) - \sin(\vec{\delta}_1\vec{K})\vec{\delta}_1\vec{p} \\
+	\sin(\vec{\delta}_2(\vec{K} + \vec{p})) &\approx \sin(\vec{\delta}_2\vec{K}) + \cos(\vec{\delta}_2\vec{K}) \vec{\delta}_2\vec{p} \\
+	\cos(\vec{\delta}_3(\vec{K} + \vec{p})) &\approx \cos(\vec{\delta}_3\vec{K}) - \sin(\vec{\delta}_3\vec{K}) \vec{\delta}_3\vec{p}
 \end{align}
 
+Use 
+
+\begin{align}
+	\vec{\delta}_1\vec{K} &= \frac{\pi}{2} \\
+	\vec{\delta}_2\vec{K} &=0 \\
+	\vec{\delta}_3\vec{K} &= \frac{\pi}{2}
+\end{align}
+
+to obtain 
 \begin{equation}
-\Rightarrow H(\vec{K})  \approx 2t
+	\Rightarrow H(\vec{K} + \vec{p})  \approx 2t
 	\begin{pmatrix}
-		-\delta q_x & \frac12\left(-\delta q_x + \sqrt{3} \delta q_y\right) -\frac{i}{2}\left( \delta q_x + \sqrt{3} \delta q_y\right) \\
-		\frac12\left(-\delta q_x + \sqrt{3} \delta q_y\right) + \frac{i}{2}\left( \delta q_x + \sqrt{3} \delta q_y\right) & \delta q_x
+		-\vec{\delta}_1\vec{p} & \left(\vec{\delta}_3 -i \vec{\delta}_2\right)\vec{p} \\
+		\left(\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p}  & \vec{\delta}_1\vec{p}
 	\end{pmatrix}
 \end{equation}
 
 
-Around $\vec{K}^\prime$:
-
-\begin{align}
-	\cos(q_x) &\approx 0  + \delta q_x \\
-	\sin\left(\frac12\left(q_x + \sqrt{3}q_y\right)\right) & \approx 0 + \frac12 \delta q_x + \frac{\sqrt{3}}{2} \delta q_y \\
-	\cos\left(\frac12\left(q_x - \sqrt{3}q_y\right)\right) & \approx 0 + \frac12 \delta q_x - \frac{\sqrt{3}}{2} \delta q_y
-\end{align}
-
+And around $\vec{K}^\prime = -\vec{K}$:
 
 \begin{equation}
-\Rightarrow H(\vec{K}^\prime)  \approx 2t
+	\Rightarrow H(\vec{K}^\prime + \vec{p})  \approx 2t
 	\begin{pmatrix}
-		-\delta q_x & \frac12\left(\delta q_x - \sqrt{3} \delta q_y\right) -\frac{i}{2}\left( \delta q_x + \sqrt{3} \delta q_y\right) \\
-		\frac12\left(\delta q_x - \sqrt{3} \delta q_y\right) + \frac{i}{2}\left( \delta q_x + \sqrt{3} \delta q_y\right) & \delta q_x
+		\vec{\delta}_1\vec{p} & \left(-\vec{\delta}_3 -i \vec{\delta}_2\right)\vec{p} \\
+		\left(-\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p}  & -\vec{\delta}_1\vec{p}
 	\end{pmatrix}
 \end{equation}
 
@@ -476,9 +482,112 @@ Around $\vec{K}^\prime$:
 This gives the dispersion relation (for both cones)
 
 \begin{align}
-	\varepsilon &\approx 2t\sqrt{ \left( \delta q_x \right)^2 + \frac14\left(\delta q_x + \sqrt{3}\delta q_y\right)^2 + \frac14\left(\delta q_x -  \sqrt{3}\delta q_y\right)^2} \notag \\
-	&\approx \sqrt{6}t \sqrt{ \left(\delta q_x\right)^2 + \left( \delta q_y \right)^2}
+	\varepsilon &\approx 2t\sqrt{ p_x ^2 + \frac14\left(p_x + \sqrt{3}p_y\right)^2 + \frac14\left(p_x -  \sqrt{3}p_y\right)^2} \notag \\
+	&= \sqrt{6}t \sqrt{ p_x^2 + p_y ^2} \notag\\
+	&= \sqrt{6}t \abs{\vec{p}}
 \end{align}
 
-Thus, the fermi velocity is $v_F = \sqrt{6}t$. \textcolor{red}{Maybe do a spin-rotation or gauge transformation to bring the Hamiltonian into Weyl form?As far as I can tell, this should be possbile since the fermions are masless. Therefore the particles should have well-defined chirality (whatever that means in this context).}
+Thus, the fermi velocity is $v_F = \sqrt{6}t$. \textcolor{blue}{Maybe do a spin-rotation or gauge transformation to bring the Hamiltonian into Weyl form?As far as I can tell, this should be possbile since the fermions are masless. Therefore the particles should have well-defined chirality (whatever that means in this context).} \\
+
+Next I will derive the low-energy Hamilotnian in real space, as a continuum theory (/field theory). The real space Hamiltonian reads (copied from above with the chemical potentials set to zero)
+
+\begin{align}
+	\begin{split}
+		H = \frac{t}{2} \sum_{i \sigma} &\bigg( a_{i\sigma}^\dagger a_{i+\delta_1;\sigma} + a_{i\sigma}^\dagger a_{i-\delta_1;\sigma} - a_{i\sigma}^\dagger b_{i+\delta_2;\sigma} + a_{i\sigma}^\dagger b_{i-\delta_2;\sigma} + a_{i\sigma}^\dagger b_{i+\delta_3;\sigma} + a_{i\sigma}^\dagger b_{i-\delta_3;\sigma} \\
+		&-b_{i\sigma}^\dagger b_{i+\delta_1;\sigma} - b_{i\sigma}^\dagger b_{i-\delta_1;\sigma} + b_{i\sigma}^\dagger a_{i+\delta_2;\sigma} - b_{i\sigma}^\dagger a_{i-\delta_2;\sigma} + b_{i\sigma}^\dagger a_{i+\delta_3;\sigma} + b_{i\sigma}^\dagger a_{i-\delta_3;\sigma}^\dagger \bigg)  \\
+	\end{split}
+\end{align}
+
+The idea is to decompose the the real-space wavefuntion by its momentum - one part is the momentum is the momentum of the dirac point, the other point describes a small deviation from the dirac point (small wavevector -> large wavelength -> slowly varying in real space). This justifies a gradient expansin of the "deviation field". \textcolor{red}{think of a better explenation for this. But I guess its correct in its spirit.}
+
+
+\begin{align}
+	\begin{split}
+		a_{i\sigma} &\sim e^{-i\vec{K}\vec{R}_i} A_{K\sigma}(\vec{R}_i) + e^{-i\vec{K}^\prime\vec{R}_i} A_{K^\prime\sigma} (\vec{R}_i) \\
+		b_i &\sim e^{-i\vec{K}\vec{R}_i} B_{K\sigma}(\vec{R}_i) + e^{-i\vec{K}^\prime\vec{R}_i} B_{K^\prime\sigma} (\vec{R}_i)
+	\end{split}
+\end{align}
+
+$A_{K\sigma}, A_{K^\prime\sigma}, B_{K\sigma}$ aqnd $ B_{K^\prime\sigma}$ are slowly varying fermionic fields. I begin with the expansion around the $K$-point. \textcolor{red}{If the above expansion is correct, the cross terms should vanish. Why?} The protoypical method is 
+
+\begin{align}
+	a_{i\sigma}^\dagger a_{i+\delta;\sigma} &\sim e^{-i\vec{K}\delta}A^\dagger_{K\sigma}(\vec{R}_i)A_{K\sigma}(\vec{R}_i + \vec{\delta}) \notag \\
+	&\approx e^{-i\vec{K}\vec{\delta}} A^\dagger_{K\sigma}(\vec{R}_i)\left(1+\vec{\delta}\vec{\nabla}_{\vec{R}}\right)A_{K\sigma}(\vec{R}_i) \notag \\
+	&= e^{-i\vec{K}\vec{\delta}} A^\dagger_{K\sigma}(\vec{R}_i)\left(1+i\vec{\delta}\vec{p}\right)A_{k\sigma}(\vec{R}_i),
+\end{align}
+
+where $\vec{p} = -i\vec{\nabla}_{\vec{R}}$. The diagonal terms are 
+
+\begin{gather}
+	A^\dagger_{K\sigma}(\vec{R}_i)\left[e^{-i\vec{K}\vec{\delta}_1}(1+i\vec{\delta}_1\vec{p}) + e^{i\vec{K}\vec{\delta}_1}(1-i\vec{\delta}_1\vec{p})\right]A_{K\sigma}(\vec{R}_i) \\
+	B^\dagger_{K\sigma}(\vec{R}_i)\left[-e^{-i\vec{K}\vec{\delta}_1}(1+i\vec{\delta}_1\vec{p}) - e^{i\vec{K}\vec{\delta}_1}(1-i\vec{\delta}_1\vec{p})\right]B_{K\sigma}(\vec{R}_i).
+\end{gather}
+
+The off-diagonal terms are 
+
+\begin{gather}
+	A^\dagger_{K\sigma}(\vec{R}_i)\frac{t}{2}\left[-e^{-i\vec{\delta}_2\vec{K}}(1+i\vec{\delta}_2\vec{p}) + e^{i\vec{\delta}_2\vec{K}}(1-i\vec{\delta}_2\vec{p}) + e^{-i\vec{\delta}_3\vec{K}}(1+i\vec{\delta}_3\vec{p}) + e^{i\vec{\delta}_3\vec{K}}(1-i\vec{\delta}_3\vec{p})\right]B_{K\sigma}(\vec{R}_i) \\
+B^\dagger_{K\sigma}(\vec{R}_i)\frac{t}{2}\left[e^{-i\vec{\delta}_2\vec{K}}(1+i\vec{\delta}_2\vec{p}) - e^{i\vec{\delta}_2\vec{K}}(1-i\vec{\delta}_2\vec{p}) + e^{-i\vec{\delta}_3\vec{K}}(1+i\vec{\delta}_3\vec{p}) + e^{i\vec{\delta}_3\vec{K}}(1-i\vec{\delta}_3\vec{p})\right]A_{K\sigma}(\vec{R}_i)\end{gather}
+
+Use 
+
+\begin{align}
+	\vec{\delta}_1\vec{K} &= \frac{\pi}{2} \\
+	\vec{\delta}_2\vec{K} &=0 \\
+	\vec{\delta}_3\vec{K} &= \frac{\pi}{2}
+\end{align}
+
+to obtain 
+
+\begin{equation}
+	H(\vec{K}+\vec{p}) \approx \sum_\sigma 2t \int d^2\vec{R} \quad
+	\Psi^\dagger_{K\sigma}(\vec{R})
+	\begin{pmatrix}
+		\vec{\delta}_1\vec{p} & \left(\vec{\delta}_3-i\vec{\delta}_2\right)\vec{p} \\
+		\left(\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p} & -\vec{\delta}_1\vec{p}
+	\end{pmatrix}
+	\Psi_{K\sigma}(\vec{R}),
+\end{equation}
+
+with 
+
+\begin{equation}
+	\Psi_{K\sigma}(\vec{R}) =
+	\begin{pmatrix}
+		A_{K\sigma}(\vec{R}) \\
+		B_{K\sigma}(\vec{R})
+	\end{pmatrix}.
+\end{equation}
+
+\textcolor{blue}{Maybe find a few things to write about Isospin? However this is probably not the real Isospin of theory yet as $H$ is not diagonal.} \\
+
+Doing the same around $\vec{K}^\prime$ gives 
+
+\begin{equation}
+	H(\vec{K}^\prime+\vec{p}) \approx \sum_\sigma 2t \int d^2\vec{R} \quad 
+	\Psi^\dagger_{K^\prime\sigma} (\vec{R})
+	\begin{pmatrix}
+		-\vec{\delta}_1\vec{p} & \left(-\vec{\delta}_3-i\vec{\delta}_2\right)\vec{p} \\
+		\left( -\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p} & \vec{\delta}_1\vec{p}
+	\end{pmatrix}
+	\Psi_{K^\prime\sigma}(\vec{R})
+\end{equation}
+
+\textcolor{red}{Why is the sign in front of the $\sigma_z$-term wrong? Maybe different defintions of the Fourier transform? Maybe a-b sites got flipped somehow?} \\
+
+\textcolor{blue}{Maybe it is handy to write $\vec{\delta}_1 = \vec{\delta}_2 + \vec{\delta}_3$.} When Comparing this to the results obtained by expanding in reciprocal space, keep in mind that $\vec{p}$ here is an operator. So technically, one would have to do a kind of fourier transform for the fermionic fields to find the exact representation as found in recriprocal space. This is why the Hamiltonian looks so similar, even though we are still in real space here. \\
+
+Imagine we did the Fourier transform and we found the reciprocal space Hamiltonian (replace the mometum operator by its eigenvalues!), the corresponding disperion relation would then read
+
+\begin{equation}
+	\varepsilon(\vec{p}) = \abs{2t
+		\begin{pmatrix}
+			\pm \vec{\delta}_3\vec{p} \\
+			\vec{\delta}_2\vec{p} \\
+			\pm \vec{\delta}_3\vec{p}
+		\end{pmatrix} } = \sqrt{6}t\sqrt{p_x^2 + p_y^2} = \sqrt{6}t\abs{\vec{p}},
+\end{equation}
+
+which complies with the k-space result. \textcolor{blue}{In case I want to diagonalize this in operator form at some point; since the problem is non-interacting there must be a harmonic oscillator hidden in there.}
+
 \end{document}
