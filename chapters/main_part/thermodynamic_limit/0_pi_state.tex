@@ -29,7 +29,15 @@ Hence, two types of lattice sites exist, a and b (see sketch). Also $\chi_{ij}$,
 	H = \frac12\sum_{\langle i,j \rangle, \sigma}\left( t a_{i\sigma}^\dagger a_{j\sigma} - t b_{i\sigma}^\dagger b_{j\sigma}+ t^{(ab)}_{ij} a_{i\sigma}^\dagger b_{j\sigma} + \text{h.c.} \right) +  \mu_a\sum_{i,\sigma}\left( a_{i\sigma}^\dagger a_{i\sigma} - 1\right) + \mu_b\sum_{i,\sigma} \left( b_{i\sigma}^\dagger b_{i\sigma} - 1 \right) + \text{const}.
 \end{equation}
 
-*$a$ and $b$ sites are connectd by bonds of both flavours. Mind that the sum above generates 24 terms. The constant is the same as for the 0-flux case, provided that the absolute value of $\chi_{i,i+\delta}$ is uniform.
+\begin{align}
+	\begin{split}
+		H = \frac{t}{2} \sum_{i \sigma} &\bigg( a_{i\sigma}^\dagger a_{i+\delta_1;\sigma} + a_{i\sigma}^\dagger a_{i-\delta_1;\sigma} - a_{i\sigma}^\dagger b_{i+\delta_2;\sigma} + a_{i\sigma}^\dagger b_{i-\delta_2;\sigma} + a_{i\sigma}^\dagger b_{i+\delta_3;\sigma} + a_{i\sigma}^\dagger b_{i-\delta_3;\sigma} \\
+		&-b_{i\sigma}^\dagger b_{i+\delta_1;\sigma} - b_{i\sigma}^\dagger b_{i-\delta_1;\sigma} + b_{i\sigma}^\dagger a_{i+\delta_2;\sigma} - b_{i\sigma}^\dagger a_{i-\delta_2;\sigma} + b_{i\sigma}^\dagger a_{i+\delta_3;\sigma} + b_{i\sigma}^\dagger a_{i-\delta_3;\sigma}^\dagger  \\
+		&+\mu_a a_{i\sigma}^\dagger a_{i\sigma} + \mu_b b_{i\sigma}^\dagger b_{i\sigma} \bigg) - \frac{N(\mu_a + \mu_b)}{2a}
+	\end{split}
+\end{align}
+
+\textcolor{red}{The site index notation is not ideal, as a and b sites by definition cant have the same site indices.} The constant is the same as for the 0-flux case, provided that the absolute value of $\chi_{i,i+\delta}$ is uniform.
 
 \begin{align}
 	\frac12\sum_{i,\delta} 2\tilde{J}\left(1-6\abs{\langle\chi_{i,i+\delta}}^2\rangle\right)\abs{\langle\chi_{i,i+\delta}\rangle}^2 = 6N \tilde{J}\left(1-6\tilde{\kappa}\abs{\langle\chi_{i,i+\delta}\rangle}^2\right)\abs{\langle\chi_{i,i+\delta}\rangle}^2
