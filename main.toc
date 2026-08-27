@@ -3,9 +3,9 @@
 \contentsline {section}{\numberline {1}Basics of Magnetism}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Direct Exchange}{2}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}Coulomb exchange}{2}{subsubsection.1.1.1}%
-\contentsline {paragraph}{on-site, single orbital: Hubbard U-term}{2}{equation.4}%
-\contentsline {paragraph}{on-site, multiple orbitals: Hund's rule}{3}{equation.7}%
-\contentsline {paragraph}{different site, single orbital: Coulomb exchange}{4}{equation.15}%
+\contentsline {paragraph}{on-site, single orbital: Hubbard U-term}{2}{equation.1.4}%
+\contentsline {paragraph}{on-site, multiple orbitals: Hund's rule}{3}{equation.1.7}%
+\contentsline {paragraph}{different site, single orbital: Coulomb exchange}{4}{equation.1.15}%
 \contentsline {section}{\numberline {2}Partons}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1} SU(2) Slave Fermions}{4}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Hilbert space and un-physical states}{5}{subsubsection.2.1.1}%
@@ -28,10 +28,10 @@
 \contentsline {subsection}{\numberline {5.2}0-$\pi $ and $\pi $-0 States}{16}{subsection.5.2}%
 \contentsline {subsubsection}{\numberline {5.2.1}pedestrian method}{16}{subsubsection.5.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.2}Pedro's method}{21}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}low energy physics}{22}{subsubsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.3}$\pi /2$-$\pi /2$ and $-\pi /2$ - $-\pi /2$ States}{24}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Pedestrian Method}{24}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Pedro's Method}{26}{subsubsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.3}Chern number}{26}{subsubsection.5.3.3}%
-\contentsline {part}{III\hspace {1em}other}{28}{part.3}%
-\contentsline {section}{\numberline {6}mail 10.07}{28}{section.6}%
+\contentsline {subsubsection}{\numberline {5.2.3}fermi surface}{22}{subsubsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.3}$\pi /2$-$\pi /2$ and $-\pi /2$ - $-\pi /2$ States}{27}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Pedestrian Method}{27}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Pedro's Method}{29}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Chern number}{29}{subsubsection.5.3.3}%
+\contentsline {part}{III\hspace {1em}other}{31}{part.3}%
+\contentsline {section}{\numberline {6}mail 10.07}{31}{section.6}%

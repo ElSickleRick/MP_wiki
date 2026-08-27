@@ -445,9 +445,9 @@ To access the low-energy physics we must approximate the Hamiltonian around the 
 Around $\vec{K}$:
 
 \begin{align}
-	\cos(\vec{\delta}_1(\vec{K} + \vec{p})) &\approx \cos(\vec{\delta}_1\vec{K}) - \sin(\vec{\delta}_1\vec{K})\vec{\delta}_1\vec{p} \\
-	\sin(\vec{\delta}_2(\vec{K} + \vec{p})) &\approx \sin(\vec{\delta}_2\vec{K}) + \cos(\vec{\delta}_2\vec{K}) \vec{\delta}_2\vec{p} \\
-	\cos(\vec{\delta}_3(\vec{K} + \vec{p})) &\approx \cos(\vec{\delta}_3\vec{K}) - \sin(\vec{\delta}_3\vec{K}) \vec{\delta}_3\vec{p}
+	\cos(\vec{\delta}_1(\vec{K} + \vec{p})) &\approx \cos(\vec{\delta}_1\vec{K}) - \sin(\vec{\delta}_1\vec{K})\vec{\delta}_1\vec{p} = - \vec{\delta}_1\vec{p}\\
+	\sin(\vec{\delta}_2(\vec{K} + \vec{p})) &\approx \sin(\vec{\delta}_2\vec{K}) + \cos(\vec{\delta}_2\vec{K}) \vec{\delta}_2\vec{p} = \vec{\delta}_2\vec{p} \\
+	\cos(\vec{\delta}_3(\vec{K} + \vec{p})) &\approx \cos(\vec{\delta}_3\vec{K}) - \sin(\vec{\delta}_3\vec{K}) \vec{\delta}_3\vec{p} = - \vec{\delta}_3\vec{p}
 \end{align}
 
 Use 
@@ -462,8 +462,8 @@ to obtain
 \begin{equation}
 	\Rightarrow H(\vec{K} + \vec{p})  \approx 2t
 	\begin{pmatrix}
-		-\vec{\delta}_1\vec{p} & \left(\vec{\delta}_3 -i \vec{\delta}_2\right)\vec{p} \\
-		\left(\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p}  & \vec{\delta}_1\vec{p}
+		-\vec{\delta}_1\vec{p} & \left(-\vec{\delta}_3 -i \vec{\delta}_2\right)\vec{p} \\
+		\left(-\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p}  & \vec{\delta}_1\vec{p}
 	\end{pmatrix}
 \end{equation}
 
@@ -473,8 +473,8 @@ And around $\vec{K}^\prime = -\vec{K}$:
 \begin{equation}
 	\Rightarrow H(\vec{K}^\prime + \vec{p})  \approx 2t
 	\begin{pmatrix}
-		\vec{\delta}_1\vec{p} & \left(-\vec{\delta}_3 -i \vec{\delta}_2\right)\vec{p} \\
-		\left(-\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p}  & -\vec{\delta}_1\vec{p}
+		\vec{\delta}_1\vec{p} & \left(\vec{\delta}_3 -i \vec{\delta}_2\right)\vec{p} \\
+		\left(\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p}  & -\vec{\delta}_1\vec{p}
 	\end{pmatrix}
 \end{equation}
 
@@ -503,31 +503,31 @@ The idea is to decompose the the real-space wavefuntion by its momentum - one pa
 
 \begin{align}
 	\begin{split}
-		a_{i\sigma} &\sim e^{-i\vec{K}\vec{R}_i} A_{K\sigma}(\vec{R}_i) + e^{-i\vec{K}^\prime\vec{R}_i} A_{K^\prime\sigma} (\vec{R}_i) \\
-		b_i &\sim e^{-i\vec{K}\vec{R}_i} B_{K\sigma}(\vec{R}_i) + e^{-i\vec{K}^\prime\vec{R}_i} B_{K^\prime\sigma} (\vec{R}_i)
+		a_{i\sigma} &\sim e^{i\vec{K}\vec{R}_i} A_{K\sigma}(\vec{R}_i) + e^{i\vec{K}^\prime\vec{R}_i} A_{K^\prime\sigma} (\vec{R}_i) \\
+		b_i &\sim e^{i\vec{K}\vec{R}_i} B_{K\sigma}(\vec{R}_i) + e^{i\vec{K}^\prime\vec{R}_i} B_{K^\prime\sigma} (\vec{R}_i)
 	\end{split}
 \end{align}
 
 $A_{K\sigma}, A_{K^\prime\sigma}, B_{K\sigma}$ aqnd $ B_{K^\prime\sigma}$ are slowly varying fermionic fields. I begin with the expansion around the $K$-point. \textcolor{red}{If the above expansion is correct, the cross terms should vanish. Why?} The protoypical method is 
 
 \begin{align}
-	a_{i\sigma}^\dagger a_{i+\delta;\sigma} &\sim e^{-i\vec{K}\delta}A^\dagger_{K\sigma}(\vec{R}_i)A_{K\sigma}(\vec{R}_i + \vec{\delta}) \notag \\
-	&\approx e^{-i\vec{K}\vec{\delta}} A^\dagger_{K\sigma}(\vec{R}_i)\left(1+\vec{\delta}\vec{\nabla}_{\vec{R}}\right)A_{K\sigma}(\vec{R}_i) \notag \\
-	&= e^{-i\vec{K}\vec{\delta}} A^\dagger_{K\sigma}(\vec{R}_i)\left(1+i\vec{\delta}\vec{p}\right)A_{k\sigma}(\vec{R}_i),
+	a_{i\sigma}^\dagger a_{i+\delta;\sigma} &\sim e^{i\vec{K}\vec{\delta}}A^\dagger_{K\sigma}(\vec{R}_i)A_{K\sigma}(\vec{R}_i + \vec{\delta}) \notag \\
+	&\approx e^{i\vec{K}\vec{\delta}} A^\dagger_{K\sigma}(\vec{R}_i)\left(1+\vec{\delta}\vec{\nabla}_{\vec{R}}\right)A_{K\sigma}(\vec{R}_i) \notag \\
+	&= e^{i\vec{K}\vec{\delta}} A^\dagger_{K\sigma}(\vec{R}_i)\left(1+i\vec{\delta}\vec{p}\right)A_{k\sigma}(\vec{R}_i),
 \end{align}
 
 where $\vec{p} = -i\vec{\nabla}_{\vec{R}}$. The diagonal terms are 
 
 \begin{gather}
-	A^\dagger_{K\sigma}(\vec{R}_i)\left[e^{-i\vec{K}\vec{\delta}_1}(1+i\vec{\delta}_1\vec{p}) + e^{i\vec{K}\vec{\delta}_1}(1-i\vec{\delta}_1\vec{p})\right]A_{K\sigma}(\vec{R}_i) \\
-	B^\dagger_{K\sigma}(\vec{R}_i)\left[-e^{-i\vec{K}\vec{\delta}_1}(1+i\vec{\delta}_1\vec{p}) - e^{i\vec{K}\vec{\delta}_1}(1-i\vec{\delta}_1\vec{p})\right]B_{K\sigma}(\vec{R}_i).
+	A^\dagger_{K\sigma}(\vec{R}_i)\left[e^{i\vec{K}\vec{\delta}_1}(1+i\vec{\delta}_1\vec{p}) + e^{-i\vec{K}\vec{\delta}_1}(1-i\vec{\delta}_1\vec{p})\right]A_{K\sigma}(\vec{R}_i) \label{mael11}\\
+	B^\dagger_{K\sigma}(\vec{R}_i)\left[-e^{i\vec{K}\vec{\delta}_1}(1+i\vec{\delta}_1\vec{p}) - e^{-i\vec{K}\vec{\delta}_1}(1-i\vec{\delta}_1\vec{p})\right]B_{K\sigma}(\vec{R}_i).
 \end{gather}
 
 The off-diagonal terms are 
 
 \begin{gather}
-	A^\dagger_{K\sigma}(\vec{R}_i)\frac{t}{2}\left[-e^{-i\vec{\delta}_2\vec{K}}(1+i\vec{\delta}_2\vec{p}) + e^{i\vec{\delta}_2\vec{K}}(1-i\vec{\delta}_2\vec{p}) + e^{-i\vec{\delta}_3\vec{K}}(1+i\vec{\delta}_3\vec{p}) + e^{i\vec{\delta}_3\vec{K}}(1-i\vec{\delta}_3\vec{p})\right]B_{K\sigma}(\vec{R}_i) \\
-B^\dagger_{K\sigma}(\vec{R}_i)\frac{t}{2}\left[e^{-i\vec{\delta}_2\vec{K}}(1+i\vec{\delta}_2\vec{p}) - e^{i\vec{\delta}_2\vec{K}}(1-i\vec{\delta}_2\vec{p}) + e^{-i\vec{\delta}_3\vec{K}}(1+i\vec{\delta}_3\vec{p}) + e^{i\vec{\delta}_3\vec{K}}(1-i\vec{\delta}_3\vec{p})\right]A_{K\sigma}(\vec{R}_i)\end{gather}
+	A^\dagger_{K\sigma}(\vec{R}_i)\frac{t}{2}\left[-e^{i\vec{\delta}_2\vec{K}}(1+i\vec{\delta}_2\vec{p}) + e^{-i\vec{\delta}_2\vec{K}}(1-i\vec{\delta}_2\vec{p}) + e^{i\vec{\delta}_3\vec{K}}(1+i\vec{\delta}_3\vec{p}) + e^{-i\vec{\delta}_3\vec{K}}(1-i\vec{\delta}_3\vec{p})\right]B_{K\sigma}(\vec{R}_i) \\
+B^\dagger_{K\sigma}(\vec{R}_i)\frac{t}{2}\left[e^{i\vec{\delta}_2\vec{K}}(1+i\vec{\delta}_2\vec{p}) - e^{-i\vec{\delta}_2\vec{K}}(1-i\vec{\delta}_2\vec{p}) + e^{i\vec{\delta}_3\vec{K}}(1+i\vec{\delta}_3\vec{p}) + e^{-i\vec{\delta}_3\vec{K}}(1-i\vec{\delta}_3\vec{p})\right]A_{K\sigma}(\vec{R}_i)\end{gather}
 
 Use 
 
@@ -543,8 +543,8 @@ to obtain
 	H(\vec{K}+\vec{p}) \approx \sum_\sigma 2t \int d^2\vec{R} \quad
 	\Psi^\dagger_{K\sigma}(\vec{R})
 	\begin{pmatrix}
-		\vec{\delta}_1\vec{p} & \left(\vec{\delta}_3-i\vec{\delta}_2\right)\vec{p} \\
-		\left(\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p} & -\vec{\delta}_1\vec{p}
+		-\vec{\delta}_1\vec{p} & \left(-\vec{\delta}_3-i\vec{\delta}_2\right)\vec{p} \\
+		\left(-\vec{\delta}_3 + i \vec{\delta}_2\right)\vec{p} & \vec{\delta}_1\vec{p}
 	\end{pmatrix}
 	\Psi_{K\sigma}(\vec{R}),
 \end{equation}
@@ -567,13 +567,11 @@ Doing the same around $\vec{K}^\prime$ gives
 	H(\vec{K}^\prime+\vec{p}) \approx \sum_\sigma 2t \int d^2\vec{R} \quad 
 	\Psi^\dagger_{K^\prime\sigma} (\vec{R})
 	\begin{pmatrix}
-		-\vec{\delta}_1\vec{p} & \left(-\vec{\delta}_3-i\vec{\delta}_2\right)\vec{p} \\
-		\left( -\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p} & \vec{\delta}_1\vec{p}
+		\vec{\delta}_1\vec{p} & \left(\vec{\delta}_3-i\vec{\delta}_2\right)\vec{p} \\
+		\left(\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p} & -\vec{\delta}_1\vec{p}
 	\end{pmatrix}
 	\Psi_{K^\prime\sigma}(\vec{R})
 \end{equation}
-
-\textcolor{red}{Why is the sign in front of the $\sigma_z$-term wrong? Maybe different defintions of the Fourier transform? Maybe a-b sites got flipped somehow?} \\
 
 \textcolor{blue}{Maybe it is handy to write $\vec{\delta}_1 = \vec{\delta}_2 + \vec{\delta}_3$.} When Comparing this to the results obtained by expanding in reciprocal space, keep in mind that $\vec{p}$ here is an operator. So technically, one would have to do a kind of fourier transform for the fermionic fields to find the exact representation as found in recriprocal space. This is why the Hamiltonian looks so similar, even though we are still in real space here. \\
 
@@ -582,12 +580,96 @@ Imagine we did the Fourier transform and we found the reciprocal space Hamiltoni
 \begin{equation}
 	\varepsilon(\vec{p}) = \abs{2t
 		\begin{pmatrix}
-			\pm \vec{\delta}_3\vec{p} \\
+			\mp \vec{\delta}_3\vec{p} \\
 			\vec{\delta}_2\vec{p} \\
-			\pm \vec{\delta}_3\vec{p}
+			\mp \vec{\delta}_3\vec{p}
 		\end{pmatrix} } = \sqrt{6}t\sqrt{p_x^2 + p_y^2} = \sqrt{6}t\abs{\vec{p}},
 \end{equation}
 
-which complies with the k-space result. \textcolor{blue}{In case I want to diagonalize this in operator form at some point; since the problem is non-interacting there must be a harmonic oscillator hidden in there.}
+which complies with the k-space result. \textcolor{blue}{In case I want to diagonalize this in operator form at some point; since the problem is non-interacting there must be a harmonic oscillator hidden in there.} \\
+
+To introduce strain into the model, I first establish its effect on the coordinates and exchange couplings \textcolor{red}{Awkward formulation}
+
+\begin{align}
+	\vec{R}_i &\mapsto \vec{R}_i^\prime = \vec{R}_i + \vec{U}(\vec{R}_i) \\
+	\vec{\delta}_{ij} &\mapsto \vec{\delta}_{ij}^\prime = \vec{\delta}_{ij} + \vec{U}(\vec{R}_j) - \vec{U}(\vec{R}_i)
+\end{align}
+
+\textcolor{blue}{$\vec{\delta}_{ij} = \vec{R}_j-\vec{R}_i$ ;)} \\
+
+$\vec{U}(\vec{R})$ is the displacement field. We approximate that $\vec{U}$ varies slowly with $\vec{R}$:
+
+\begin{gather}
+	\vec{U}(\vec{R}_j) = \vec{U}(\vec{R}_i + \vec{\delta}_{ij}) \approx \vec{U}(\vec{R}_i) + \left(\vec{\delta}_{ij}\vec{\nabla}_{\vec{R}}\right) \vec{U}(\vec{R}) \big\rvert_{\vec{R}_i} \\
+\end{gather}
+
+
+Furthermore it is convenient to redefine 
+
+\begin{equation}
+	\left( \vec{\delta}_{ij} \vec{\nabla}_{\vec{R}} \right) \vec{U}(\vec{R})\big\rvert_{\vec{R}_i} = \underline{u} \cdot \vec{\delta}_{ij},
+\end{equation}
+
+where $u_{\alpha\beta} = \partial_{\beta}U_{\alpha}$ is the strain tensor. \\
+
+\begin{equation}
+	\Rightarrow \vec{\delta}_{ij}^\prime \approx \vec{\delta}_{ij} + \underline{u}\cdot\vec{\delta}_{ij} 
+\end{equation}
+
+I do the same thing for the exchange couplings 
+
+\begin{align}
+	J(\vec{\delta}_{ij}) &\mapsto J(\vec{\delta}_{ij}^\prime) \\
+	&\approx J\left(\vec{\delta}_{ij} + \underline{u}\cdot\vec{\delta}_{ij}\right) \\
+	&\approx J(\vec{\delta}_{ij}) + \left(\underline{u}\cdot\vec{\delta}_{ij}\right) \cdot \left( \vec{\nabla}_{\vec{\delta}}J(\vec{\delta})\big\rvert_{\delta_{ij}}\right)
+\end{align}
+
+For the function $J(\vec{\delta})$ one usually uses the form
+
+\begin{equation}
+	J(\vec{\delta}) = J\exp\left[-\beta\left(|\vec{\delta}|/a-1\right)\right] \approx J\left(1 -\beta\left(|\vec{\delta}|/a-1\right)\right),
+\end{equation}
+
+where $a$ is the lattice constant and $\beta = -d\ln(J)/d\ln(|\vec{\delta}|)\big\rvert_{a}$ the magneto-elastic coupling. This form is essentially motivated by the large U-limit of the Hubbar model. In this limit the exchange coupling is proportional to the overlap of the orbitals of neighbopuring atoms. In this sense one can approximate those as two expoential functions, that are decreasing away from the position of their respective atoms. Therefore, their overlap also decreases exponentially. \\
+
+\begin{align}
+	\Rightarrow \vec{\nabla}_{\vec{\delta}}J(\vec{\delta})\big\rvert_{\delta_{ij}} \overset{|\vec{\delta}_{ij}| = a}{=} -\frac{J\beta}{a^2} \vec{\delta}_{ij} \notag  \\
+	\Rightarrow J(\vec{\delta}_{ij}) \approx J(\vec{\delta}_{ij}) - \frac{J\beta}{a^2}\left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)
+\end{align}
+
+Looking at the matrix elments (\ref{mael11} and below), one also requires the expansion of $\exp[i\vec{\delta}_{ij}\vec{K}]$. To summarize:
+
+\begin{align}
+	\vec{\delta}_{ij}^\prime &\approx \vec{\delta}_{ij} + \underline{u} \cdot \vec{\delta}_{ij} \\
+	J(\vec{\delta}_{ij}^\prime) &\approx J - \frac{J\beta}{a^2}\left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \\
+	e^{i\vec{\delta}_{ij}^\prime\vec{K}} &\approx e^{i\vec{\delta}_{ij}\vec{K}} + ie^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}
+	\right)
+\end{align}
+
+\textcolor{red}{I think that the terms proportional to $\exp(i\vec{\delta}_{ij}) J(\vec{\delta}_{ij})$ (see matrix elements) vanish. But I still have to check that.}
+The terms that "generate" the strain effects are of the form
+
+\begin{equation}
+	e^{i\vec{\delta}_{ij}^\prime\vec{K}}J(\vec{\delta}_{ij}^\prime)\vec{\delta}_{ij}^\prime, \quad i \in [1,2,3]
+\end{equation}
+
+\textcolor{red}{In this approximation the Mean field does not react to the strain at all??}
+
+Accoring to the formulae above this generates the following 8 terms (arranged by order in $\underline{u}$):
+
+\begin{align}
+	&Je^{i\vec{\delta}_{ij}\vec{K}}\vec{\delta}_{ij} &  \\ \hline 
+	&iJe^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)  \vec{\delta}_{ij} & \text{contributes to A}\\
+	&-\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \vec{\delta}_{ij} & \text{contributes to A} \\ 
+	&Je^{i\vec{\delta}_{ij}\vec{K}}\left(\underline{u} \cdot \vec{\delta}_{ij}\right) &\text{\textcolor{red}{some sources say fermi velocity?}} \\ \hline
+	&-i\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \vec{\delta}_{ij} & \text{contributes to A} \\
+	&-\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \left(\underline{u} \cdot \vec{\delta}_{ij}\right) \\
+	& iJe^{i\vec{\delta}_{ij}\vec{K}} \left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \left( \underline{u} \cdot \vec{\delta}_{ij} \right) \\ \hline
+	&-i\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)\left( \underline{u} \cdot \vec{\delta}_{ij} \right)
+\end{align}
+
+\textcolor{red}{This is not the full expansion up to third order! In total there are 6 terms in the second and 10 terms the third order.}
+
+
 
 \end{document}
