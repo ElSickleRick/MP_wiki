@@ -659,17 +659,24 @@ Accoring to the formulae above this generates the following 8 terms (arranged by
 
 \begin{align}
 	&Je^{i\vec{\delta}_{ij}\vec{K}}\vec{\delta}_{ij} &  \\ \hline 
-	&iJe^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)  \vec{\delta}_{ij} & \text{contributes to A}\\
-	&-\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \vec{\delta}_{ij} & \text{contributes to A} \\ 
-	&Je^{i\vec{\delta}_{ij}\vec{K}}\left(\underline{u} \cdot \vec{\delta}_{ij}\right) &\text{\textcolor{red}{some sources say fermi velocity?}} \\ \hline
-	&-i\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \vec{\delta}_{ij} & \text{contributes to A} \\
+	&iJe^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)  \vec{\delta}_{ij} & \text{contributes to A in Graphene}\\
+	&-\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \vec{\delta}_{ij} & \text{contributes to A in Graphene} \\ 
+	&Je^{i\vec{\delta}_{ij}\vec{K}}\left(\underline{u} \cdot \vec{\delta}_{ij}\right) &\text{\textcolor{red}{some sources say fermi velocity in Graphene?}} \\ \hline
+	&-i\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \vec{\delta}_{ij} & \text{contributes to A in Graphene} \\
 	&-\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \left(\underline{u} \cdot \vec{\delta}_{ij}\right) \\
 	& iJe^{i\vec{\delta}_{ij}\vec{K}} \left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \left( \underline{u} \cdot \vec{\delta}_{ij} \right) \\ \hline
 	&-i\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)\left( \underline{u} \cdot \vec{\delta}_{ij} \right)
 \end{align}
 
-\textcolor{red}{This is not the full expansion up to third order! In total there are 6 terms in the second and 10 terms the third order.}
+\textcolor{red}{This is not the full expansion up to third order! In total there are 6 terms in the second and 10 terms the third order.} I define 
 
+\begin{equation}
+	\xi_{\vec{K}}(\vec{\delta}_{ij}) \equiv \left(\underline{u} \cdot \vec{\delta}_{ij} \right)\cdot\left(i\vec{K} - \frac{J\beta}{a^2}\vec{\delta}_{ij}\right)
+\end{equation}
+
+\begin{equation}
+	\Rightarrow J(\vec{\delta}_{ij})e^{i\vec{K}\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij} \vec{p}) \approx (1+\xi_{\vec{K}}(\vec{\delta}_{ij}))J(\vec{\delta}_{ij})e^{i\vec{K}\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij}\vec{p}) + J(\vec{\delta}_{ij})e^{i\vec{K}\vec{\delta}_{ij}} \left( \underline{u} \cdot \vec{\delta}_{ij} \right) 
+\end{equation}
 
 
 \end{document}
