@@ -604,7 +604,7 @@ $\vec{U}(\vec{R})$ is the displacement field. We approximate that $\vec{U}$ vari
 \end{gather}
 
 
-Furthermore it is convenient to redefine 
+It is convenient to redefine 
 
 \begin{equation}
 	\left( \vec{\delta}_{ij} \vec{\nabla}_{\vec{R}} \right) \vec{U}(\vec{R})\big\rvert_{\vec{R}_i} = \underline{u} \cdot \vec{\delta}_{ij},
@@ -616,7 +616,7 @@ where $u_{\alpha\beta} = \partial_{\beta}U_{\alpha}$ is the strain tensor. \\
 	\Rightarrow \vec{\delta}_{ij}^\prime \approx \vec{\delta}_{ij} + \underline{u}\cdot\vec{\delta}_{ij} 
 \end{equation}
 
-I do the same thing for the exchange couplings 
+I do the same approximation for the exchange couplings 
 
 \begin{align}
 	J(\vec{\delta}_{ij}) &\mapsto J(\vec{\delta}_{ij}^\prime) \\
@@ -646,37 +646,25 @@ Looking at the matrix elments (\ref{mael11} and below), one also requires the ex
 	\right)
 \end{align}
 
-\textcolor{red}{I think that the terms proportional to $\exp(i\vec{\delta}_{ij}) J(\vec{\delta}_{ij})$ (see matrix elements) vanish. But I still have to check that.}
-The terms that "generate" the strain effects are of the form
-
-\begin{equation}
-	e^{i\vec{\delta}_{ij}^\prime\vec{K}}J(\vec{\delta}_{ij}^\prime)\vec{\delta}_{ij}^\prime, \quad i \in [1,2,3]
-\end{equation}
 
 \textcolor{red}{In this approximation the Mean field does not react to the strain at all??}
+\textcolor{red}{Nayga, Rachel and Vojta neglect prodcuts of order $u^{1}\cdot\vec{p}^{1}$. Why does that make sense? I dont know...}
 
-Accoring to the formulae above this generates the following 8 terms (arranged by order in $\underline{u}$):
-
-\begin{align}
-	&Je^{i\vec{\delta}_{ij}\vec{K}}\vec{\delta}_{ij} &  \\ \hline 
-	&iJe^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)  \vec{\delta}_{ij} & \text{contributes to A in Graphene}\\
-	&-\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \vec{\delta}_{ij} & \text{contributes to A in Graphene} \\ 
-	&Je^{i\vec{\delta}_{ij}\vec{K}}\left(\underline{u} \cdot \vec{\delta}_{ij}\right) &\text{\textcolor{red}{some sources say fermi velocity in Graphene?}} \\ \hline
-	&-i\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \vec{\delta}_{ij} & \text{contributes to A in Graphene} \\
-	&-\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \left(\underline{u} \cdot \vec{\delta}_{ij}\right) \\
-	& iJe^{i\vec{\delta}_{ij}\vec{K}} \left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \left( \underline{u} \cdot \vec{\delta}_{ij} \right) \\ \hline
-	&-i\frac{J\beta}{a^2}e^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)\left( \underline{u} \cdot \vec{\delta}_{ij} \right)
-\end{align}
-
-\textcolor{red}{This is not the full expansion up to third order! In total there are 6 terms in the second and 10 terms the third order.} I define 
+The matrix elements of the strained Hamiltonian are of the form 
 
 \begin{equation}
-	\xi_{\vec{K}}(\vec{\delta}_{ij}) \equiv \left(\underline{u} \cdot \vec{\delta}_{ij} \right)\cdot\left(i\vec{K} - \frac{J\beta}{a^2}\vec{\delta}_{ij}\right)
+	\frac12\left[J(\vec{\delta}_{ij}^\prime)e^{i\vec{K}\vec{\delta}_{ij}^\prime}(1+i\vec{\delta}_{ij}^\prime\vec{p}) + J(-\vec{\delta}_{ij}^\prime)e^{-i\vec{K}\vec{\delta}_{ij}^\prime}(1-i\vec{\delta}_{ij}^\prime\vec{p})\right]
 \end{equation}
+
+I expand in strain but keep only terms of zeroth order in strain and field gradient as well as terms of either first order in strain or first order in field-gradient:
+
 
 \begin{equation}
-	\Rightarrow J(\vec{\delta}_{ij})e^{i\vec{K}\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij} \vec{p}) \approx (1+\xi_{\vec{K}}(\vec{\delta}_{ij}))J(\vec{\delta}_{ij})e^{i\vec{K}\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij}\vec{p}) + J(\vec{\delta}_{ij})e^{i\vec{K}\vec{\delta}_{ij}} \left( \underline{u} \cdot \vec{\delta}_{ij} \right) 
+	J(\vec{\delta}_{ij}^\prime)e^{i\vec{K}\vec{\delta}_{ij}^\prime}(1+i\vec{\delta}_{ij}^\prime\vec{p}) \approx Je^{i\vec{K}\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij}\vec{p}) + iJe^{i\vec{\delta}_{ij}\vec{K}}\left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) - \frac{J\beta}{a^2} e^{i\vec{\delta}_{ij}\vec{K}} \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)
 \end{equation}
 
+The first term is the zeroth order. It turns out that when adding up two terms corresponding to opposite directions the first term in first order accquires a factor of 2 while the second term vanishes. \textcolor{blue}{The cancelling of the second term is a Bravais lattice effect that is not present in e.g. Graphene!} \textcolor{red}{The second term in first order would have been imaginary, what is the significance of that?} \\
+
+\textcolor{red}{Maybe make progress by splitting the strain tensor into symmetric and antisymmetric parts and thereby obtain a term proportional to $\vec{\delta}_{ij}$ which would then be the effective vector potential.}
 
 \end{document}
