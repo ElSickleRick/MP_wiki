@@ -434,7 +434,7 @@ where $k, m \in \mathbb{Z}$. This means that the fermi surface is a collection o
 
 Mind you that these points are not equivalent! Evidently they are time-reversal partners. 
 
-
+\subsubsection{small momentum expansion}
 
 To access the low-energy physics we must approximate the Hamiltonian around the fermi-points using
 
@@ -460,10 +460,17 @@ Use
 
 to obtain 
 \begin{equation}
-	\Rightarrow H(\vec{K} + \vec{p})  \approx 2t
+	\Rightarrow H_{\vec{K}}  \approx 2t \sum_{p, \sigma}
+	\begin{pmatrix}
+		a_{p\sigma}^\dagger & b_{p\sigma}^\dagger
+	\end{pmatrix}
 	\begin{pmatrix}
 		-\vec{\delta}_1\vec{p} & \left(-\vec{\delta}_3 -i \vec{\delta}_2\right)\vec{p} \\
 		\left(-\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p}  & \vec{\delta}_1\vec{p}
+	\end{pmatrix}
+	\begin{pmatrix}
+		a_{p\sigma} \\
+		b_{p\sigma}
 	\end{pmatrix}
 \end{equation}
 
@@ -471,10 +478,17 @@ to obtain
 And around $\vec{K}^\prime = -\vec{K}$:
 
 \begin{equation}
-	\Rightarrow H(\vec{K}^\prime + \vec{p})  \approx 2t
+	\Rightarrow H_{\vec{K}^\prime}  \approx 2t \sum_{p, \sigma}
+	\begin{pmatrix}
+		a_{p\sigma}^\dagger & b_{p\sigma}^\dagger
+	\end{pmatrix}
 	\begin{pmatrix}
 		\vec{\delta}_1\vec{p} & \left(\vec{\delta}_3 -i \vec{\delta}_2\right)\vec{p} \\
 		\left(\vec{\delta}_3 +i \vec{\delta}_2\right)\vec{p}  & -\vec{\delta}_1\vec{p}
+	\end{pmatrix}
+	\begin{pmatrix}
+		a_{p\sigma} \\
+		b_{p\sigma}
 	\end{pmatrix}
 \end{equation}
 
@@ -487,7 +501,9 @@ This gives the dispersion relation (for both cones)
 	&= \sqrt{6}t \abs{\vec{p}}
 \end{align}
 
-Thus, the fermi velocity is $v_F = \sqrt{6}t$. \textcolor{blue}{Maybe do a spin-rotation or gauge transformation to bring the Hamiltonian into Weyl form?As far as I can tell, this should be possbile since the fermions are masless. Therefore the particles should have well-defined chirality (whatever that means in this context).} \\
+Thus, the fermi velocity is $v_F = \sqrt{6}t$. \textcolor{blue}{ $\vec{K}$ and $\vec{K}^\prime$ are time revearsel partners, thus the two hamiltonains should map onto each other under time revearesal. I would guess that $T = -C$ in k-space, where C is complex conjugation, which would be consistent with the form of the Hamiltonian.} \\ 
+
+\subsubsection{Continuum Model/ Gradient Expansion}
 
 Next I will derive the low-energy Hamilotnian in real space, as a continuum theory (/field theory). The real space Hamiltonian reads (copied from above with the chemical potentials set to zero)
 
@@ -540,7 +556,7 @@ Use
 to obtain 
 
 \begin{equation}
-	H(\vec{K}+\vec{p}) \approx \sum_\sigma 2t \int d^2\vec{R} \quad
+	H_{\vec{K}} \approx \sum_\sigma 2t \int d^2\vec{R} \quad
 	\Psi^\dagger_{K\sigma}(\vec{R})
 	\begin{pmatrix}
 		-\vec{\delta}_1\vec{p} & \left(-\vec{\delta}_3-i\vec{\delta}_2\right)\vec{p} \\
@@ -564,7 +580,7 @@ with
 Doing the same around $\vec{K}^\prime$ gives 
 
 \begin{equation}
-	H(\vec{K}^\prime+\vec{p}) \approx \sum_\sigma 2t \int d^2\vec{R} \quad 
+	H_{\vec{K}^\prime} \approx \sum_\sigma 2t \int d^2\vec{R} \quad 
 	\Psi^\dagger_{K^\prime\sigma} (\vec{R})
 	\begin{pmatrix}
 		\vec{\delta}_1\vec{p} & \left(\vec{\delta}_3-i\vec{\delta}_2\right)\vec{p} \\
@@ -573,9 +589,9 @@ Doing the same around $\vec{K}^\prime$ gives
 	\Psi_{K^\prime\sigma}(\vec{R})
 \end{equation}
 
-\textcolor{blue}{Maybe it is handy to write $\vec{\delta}_1 = \vec{\delta}_2 + \vec{\delta}_3$.} When Comparing this to the results obtained by expanding in reciprocal space, keep in mind that $\vec{p}$ here is an operator. So technically, one would have to do a kind of fourier transform for the fermionic fields to find the exact representation as found in recriprocal space. This is why the Hamiltonian looks so similar, even though we are still in real space here. \\
+\textcolor{blue}{Maybe it is handy to write $\vec{\delta}_1 = \vec{\delta}_2 + \vec{\delta}_3$.} When Comparing this to the results obtained by expanding in reciprocal space, keep in mind that here $\vec{p}$ is an operator. So technically, one would have to do a kind of fourier transform for the fermionic fields to find the exact representation as found in recriprocal space. This is why the Hamiltonian looks so similar, even though we are still in real space here. \\
 
-Imagine we did the Fourier transform and we found the reciprocal space Hamiltonian (replace the mometum operator by its eigenvalues!), the corresponding disperion relation would then read
+Imagine we did this \textcolor{red}{small frequency?} Fourier expansion and we found the reciprocal space Hamiltonian (replace the momentum operator by its eigenvalue!), the corresponding disperion relation would then read
 
 \begin{equation}
 	\varepsilon(\vec{p}) = \abs{2t
@@ -586,85 +602,5 @@ Imagine we did the Fourier transform and we found the reciprocal space Hamiltoni
 		\end{pmatrix} } = \sqrt{6}t\sqrt{p_x^2 + p_y^2} = \sqrt{6}t\abs{\vec{p}},
 \end{equation}
 
-which complies with the k-space result. \textcolor{blue}{In case I want to diagonalize this in operator form at some point; since the problem is non-interacting there must be a harmonic oscillator hidden in there.} \\
-
-To introduce strain into the model, I first establish its effect on the coordinates and exchange couplings \textcolor{red}{Awkward formulation}
-
-\begin{align}
-	\vec{R}_i &\mapsto \vec{R}_i^\prime = \vec{R}_i + \vec{U}(\vec{R}_i) \\
-	\vec{\delta}_{ij} &\mapsto \vec{\delta}_{ij}^\prime = \vec{\delta}_{ij} + \vec{U}(\vec{R}_j) - \vec{U}(\vec{R}_i)
-\end{align}
-
-\textcolor{blue}{$\vec{\delta}_{ij} = \vec{R}_j-\vec{R}_i$ ;)} \\
-
-$\vec{U}(\vec{R})$ is the displacement field. We approximate that $\vec{U}$ varies slowly with $\vec{R}$:
-
-\begin{gather}
-	\vec{U}(\vec{R}_j) = \vec{U}(\vec{R}_i + \vec{\delta}_{ij}) \approx \vec{U}(\vec{R}_i) + \left(\vec{\delta}_{ij}\vec{\nabla}_{\vec{R}}\right) \vec{U}(\vec{R}) \big\rvert_{\vec{R}_i} \\
-\end{gather}
-
-
-It is convenient to redefine 
-
-\begin{equation}
-	\left( \vec{\delta}_{ij} \vec{\nabla}_{\vec{R}} \right) \vec{U}(\vec{R})\big\rvert_{\vec{R}_i} = \underline{u} \cdot \vec{\delta}_{ij},
-\end{equation}
-
-where $u_{\alpha\beta} = \partial_{\beta}U_{\alpha}$ is the strain tensor. \\
-
-\begin{equation}
-	\Rightarrow \vec{\delta}_{ij}^\prime \approx \vec{\delta}_{ij} + \underline{u}\cdot\vec{\delta}_{ij} 
-\end{equation}
-
-I do the same approximation for the exchange couplings 
-
-\begin{align}
-	J(\vec{\delta}_{ij}) &\mapsto J(\vec{\delta}_{ij}^\prime) \\
-	&\approx J\left(\vec{\delta}_{ij} + \underline{u}\cdot\vec{\delta}_{ij}\right) \\
-	&\approx J(\vec{\delta}_{ij}) + \left(\underline{u}\cdot\vec{\delta}_{ij}\right) \cdot \left( \vec{\nabla}_{\vec{\delta}}J(\vec{\delta})\big\rvert_{\delta_{ij}}\right)
-\end{align}
-
-For the function $J(\vec{\delta})$ one usually uses the form
-
-\begin{equation}
-	J(\vec{\delta}) = J\exp\left[-\beta\left(|\vec{\delta}|/a-1\right)\right] \approx J\left(1 -\beta\left(|\vec{\delta}|/a-1\right)\right),
-\end{equation}
-
-where $a$ is the lattice constant and $\beta = -d\ln(J)/d\ln(|\vec{\delta}|)\big\rvert_{a}$ the magneto-elastic coupling. This form is essentially motivated by the large U-limit of the Hubbar model. In this limit the exchange coupling is proportional to the overlap of the orbitals of neighbopuring atoms. In this sense one can approximate those as two expoential functions, that are decreasing away from the position of their respective atoms. Therefore, their overlap also decreases exponentially. \\
-
-\begin{align}
-	\Rightarrow \vec{\nabla}_{\vec{\delta}}J(\vec{\delta})\big\rvert_{\delta_{ij}} \overset{|\vec{\delta}_{ij}| = a}{=} -\frac{J\beta}{a^2} \vec{\delta}_{ij} \notag  \\
-	\Rightarrow J(\vec{\delta}_{ij}) \approx J(\vec{\delta}_{ij}) - \frac{J\beta}{a^2}\left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)
-\end{align}
-
-Looking at the matrix elments (\ref{mael11} and below), one also requires the expansion of $\exp[i\vec{\delta}_{ij}\vec{K}]$. To summarize:
-
-\begin{align}
-	\vec{\delta}_{ij}^\prime &\approx \vec{\delta}_{ij} + \underline{u} \cdot \vec{\delta}_{ij} \\
-	J(\vec{\delta}_{ij}^\prime) &\approx J - \frac{J\beta}{a^2}\left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \\
-	e^{i\vec{\delta}_{ij}^\prime\vec{K}} &\approx e^{i\vec{\delta}_{ij}\vec{K}} + ie^{i\vec{\delta}_{ij}\vec{K}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}
-	\right)
-\end{align}
-
-
-\textcolor{red}{In this approximation the Mean field does not react to the strain at all??}
-\textcolor{red}{Nayga, Rachel and Vojta neglect prodcuts of order $u^{1}\cdot\vec{p}^{1}$. Why does that make sense? I dont know...}
-
-The matrix elements of the strained Hamiltonian are of the form 
-
-\begin{equation}
-	\frac12\left[J(\vec{\delta}_{ij}^\prime)e^{i\vec{K}\vec{\delta}_{ij}^\prime}(1+i\vec{\delta}_{ij}^\prime\vec{p}) + J(-\vec{\delta}_{ij}^\prime)e^{-i\vec{K}\vec{\delta}_{ij}^\prime}(1-i\vec{\delta}_{ij}^\prime\vec{p})\right]
-\end{equation}
-
-I expand in strain but keep only terms of zeroth order in strain and field gradient as well as terms of either first order in strain or first order in field-gradient:
-
-
-\begin{equation}
-	J(\vec{\delta}_{ij}^\prime)e^{i\vec{K}\vec{\delta}_{ij}^\prime}(1+i\vec{\delta}_{ij}^\prime\vec{p}) \approx Je^{i\vec{K}\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij}\vec{p}) + iJe^{i\vec{\delta}_{ij}\vec{K}}\left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) - \frac{J\beta}{a^2} e^{i\vec{\delta}_{ij}\vec{K}} \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)
-\end{equation}
-
-The first term is the zeroth order. It turns out that when adding up two terms corresponding to opposite directions the first term in first order accquires a factor of 2 while the second term vanishes. \textcolor{blue}{The cancelling of the second term is a Bravais lattice effect that is not present in e.g. Graphene!} \textcolor{red}{The second term in first order would have been imaginary, what is the significance of that?} \\
-
-\textcolor{red}{Maybe make progress by splitting the strain tensor into symmetric and antisymmetric parts and thereby obtain a term proportional to $\vec{\delta}_{ij}$ which would then be the effective vector potential.}
-
+which complies with the k-space result. \textcolor{blue}{In case I want to diagonalize this in operator form at some point; since the problem is non-interacting there must be a harmonic oscillator hidden in there.} \
 \end{document}

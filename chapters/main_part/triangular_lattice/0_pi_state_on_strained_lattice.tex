@@ -1,0 +1,142 @@
+\documentclass[../../../main.tex]{subfiles}
+
+
+\begin{document} 
+
+\subsubsection{Basics of Strain}
+
+For the purpose of introducing strain into the model, I first establish its effect on the coordinates and exchange couplings \textcolor{red}{Awkward formulation}
+
+\begin{align}
+	\vec{R}_i &\mapsto \vec{R}_i^\prime = \vec{R}_i + \vec{U}(\vec{R}_i) \\
+	\vec{\delta}_{ij} &\mapsto \vec{\delta}_{ij}^\prime = \vec{\delta}_{ij} + \vec{U}(\vec{R}_j) - \vec{U}(\vec{R}_i)
+\end{align}
+
+\textcolor{blue}{$\vec{\delta}_{ij} = \vec{R}_j-\vec{R}_i$ ;)} \\
+
+$\vec{U}(\vec{R})$ is the displacement field. We approximate that $\vec{U}$ varies slowly with $\vec{R}$:
+
+\begin{gather}
+	\vec{U}(\vec{R}_j) = \vec{U}(\vec{R}_i + \vec{\delta}_{ij}) \approx \vec{U}(\vec{R}_i) + \left(\vec{\delta}_{ij}\vec{\nabla}_{\vec{R}}\right) \vec{U}(\vec{R}) \big\rvert_{\vec{R}_i} \\
+\end{gather}
+
+
+It is convenient to redefine 
+
+\begin{equation}
+	\left( \vec{\delta}_{ij} \vec{\nabla}_{\vec{R}} \right) \vec{U}(\vec{R})\big\rvert_{\vec{R}_i} = \underline{u} \cdot \vec{\delta}_{ij},
+\end{equation}
+
+where $u_{\alpha\beta} = \partial_{\beta}U_{\alpha}$ is the strain tensor. \\
+
+\begin{equation}
+	\Rightarrow \vec{\delta}_{ij}^\prime \approx \vec{\delta}_{ij} + \underline{u}\cdot\vec{\delta}_{ij} 
+\end{equation}
+
+I do the same approximation for the exchange couplings 
+
+\begin{align}
+	J(\vec{\delta}_{ij}) &\mapsto J(\vec{\delta}_{ij}^\prime) \\
+	&\approx J\left(\vec{\delta}_{ij} + \underline{u}\cdot\vec{\delta}_{ij}\right) \\
+	&\approx J(\vec{\delta}_{ij}) + \left(\underline{u}\cdot\vec{\delta}_{ij}\right) \cdot \left( \vec{\nabla}_{\vec{\delta}}J(\vec{\delta})\big\rvert_{\delta_{ij}}\right)
+\end{align}
+
+For the function $J(\vec{\delta})$ one usually uses the form
+
+\begin{equation}
+	J(\vec{\delta}) = J\exp\left[-\beta\left(|\vec{\delta}|/a-1\right)\right] \approx J\left(1 -\beta\left(|\vec{\delta}|/a-1\right)\right),
+\end{equation}
+
+where $a$ is the lattice constant and $\beta = -d\ln(J)/d\ln(|\vec{\delta}|)\big\rvert_{a}$ the magneto-elastic coupling. This form is essentially motivated by the large U-limit of the Hubbar model. In this limit the exchange coupling is proportional to the overlap of the orbitals of neighbopuring atoms. In this sense one can approximate those as two expoential functions, that are decreasing away from the position of their respective atoms. Therefore, their overlap also decreases exponentially. \\
+
+\begin{align}
+	\Rightarrow \vec{\nabla}_{\vec{\delta}}J(\vec{\delta})\big\rvert_{\delta_{ij}} \overset{|\vec{\delta}_{ij}| = a}{=} -\frac{J\beta}{a^2} \vec{\delta}_{ij} \notag  \\
+	\Rightarrow J(\vec{\delta}_{ij}) \approx J(\vec{\delta}_{ij}) - \frac{J\beta}{a^2}\left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)
+\end{align}
+
+
+
+Looking at the matrix elments (\ref{mael11} and below), one also requires the expansion of $\exp[i\vec{\delta}_{ij}\vec{K}]$. To summarize:
+
+\begin{align}
+	\vec{\delta}_{ij}^\prime &\approx \vec{\delta}_{ij} + \underline{u} \cdot \vec{\delta}_{ij} \\
+	J(\vec{\delta}_{ij}^\prime) &\approx J - \frac{J\beta}{a^2}\left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \\
+	e^{i\vec{K} \cdot \vec{\delta}_{ij}^\prime} &\approx e^{i\vec{K}\cdot\vec{\delta}_{ij}} + ie^{i\vec{K}\cdot\vec{\delta}_{ij}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}
+	\right)
+\end{align}
+
+
+\textcolor{red}{In this approximation the Mean field does not react to the strain at all??} 
+
+\subsubsection{Straining the 0-$\pi$-State}
+
+The matrix elements of the strained Hamiltonian are of the form 
+
+\begin{equation}
+	\frac12\left[J(\vec{\delta}_{ij}^\prime)e^{i\vec{K}\cdot\vec{\delta}_{ij}^\prime}(1+i\vec{\delta}_{ij}^\prime\vec{p}) + J(-\vec{\delta}_{ij}^\prime)e^{-i\vec{K}\cdot\vec{\delta}_{ij}^\prime}(1-i\vec{\delta}_{ij}^\prime\vec{p})\right]
+\end{equation}
+
+I expand in strain but keep only terms of zeroth order in strain and field gradient as well as terms of either first order in strain or first order in field-gradient:
+
+
+\begin{equation}
+	J(\vec{\delta}_{ij}^\prime)e^{i\vec{K}\cdot\vec{\delta}_{ij}^\prime}(1+i\vec{\delta}_{ij}^\prime\vec{p}) \approx Je^{i\vec{K}\cdot\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij}\vec{p}) + iJe^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) - \frac{J\beta}{a^2} e^{i\vec{K}\cdot\vec{\delta}_{ij}} \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)
+\end{equation}
+
+\textcolor{red}{How do different orders of strain and field gradients compare??}
+
+The first term is the zeroth order. It turns out that when adding up two terms corresponding to opposite directions the first term in first order accquires a factor of 2 while the second term vanishes. \textcolor{blue}{The cancelling of the second term is a Bravais lattice effect that is not present in e.g. Graphene!} \textcolor{red}{The second term in first order would have been imaginary, what is the significance of that?} \\
+
+Using 
+
+\begin{equation}
+	\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} = \vec{\delta}_{ij} \cdot \underline{u}^T \cdot \vec{K},
+\end{equation}
+
+I rename $\vec{R}^\prime \rightarrow \vec{R}$ and get 
+
+\begin{equation}
+	H_{\vec{K}} \approx \sum_\sigma 2t \int d^2\vec{R} \quad
+	\Psi^\dagger_{K\sigma}(\vec{R})
+	\begin{pmatrix}
+		-\vec{\delta}_1\left(\vec{p}+\underline{u}^T \cdot \vec{K}\right) & \left(-\vec{\delta}_3-i\vec{\delta}_2\right)\left(\vec{p} + \underline{u}^T \cdot K \right) \\
+		\left(-\vec{\delta}_3 + i \vec{\delta}_2\right)\left(\vec{p} + \underline{u}^T \cdot \vec{K} \right)& \vec{\delta}_1\left(\vec{p} + \underline{u}^T \cdot \vec{K} \right)
+	\end{pmatrix}
+	\Psi_{K\sigma}(\vec{R}),
+\end{equation}
+
+Doing the same procedure around $\vec{K}^\prime = -\vec{K}$ I get
+
+\begin{equation}
+	H_{\vec{K}^\prime} \approx \sum_\sigma 2t \int d^2\vec{R} \quad 
+	\Psi^\dagger_{K^\prime\sigma} (\vec{R})
+	\begin{pmatrix}
+		\vec{\delta}_1\left(\vec{p} + \underline{u}^T\cdot\vec{K}^\prime\right) & \left(\vec{\delta}_3-i\vec{\delta}_2\right)\left(\vec{p} + \underline{u}^T\cdot\vec{K}^\prime\right) \\
+		\left(\vec{\delta}_3 +i \vec{\delta}_2\right)\left(\vec{p} + \underline{u}^T\cdot\vec{K}^\prime\right) & -\vec{\delta}_1\left(\vec{p} + \underline{u}^T\cdot\vec{K}^\prime\right)
+	\end{pmatrix}
+	\Psi_{K^\prime\sigma}(\vec{R})
+\end{equation}
+
+
+
+therefore the effective vector potential is
+
+\begin{align}
+	\vec{A}_{\vec{K}} &=  - \vec{A}_{\vec{K}^\prime} \\
+	&= \underline{u}^T \cdot \vec{K} \\ &= \frac{\pi}{2}
+	\begin{pmatrix}
+		u_{xx} - \frac{u_{yx}}{\sqrt{3}} \\
+		u_{xy} - \frac{u_{yy}}{\sqrt{3}}
+	\end{pmatrix}.
+\end{align}
+
+Sadly, this vector potential produces no pseudo-magnetic field. \textcolor{red}{What about higher orders?}
+
+
+\begin{equation}
+	\vec{B} = \left(\partial_x A_y - \partial_y A_x\right)\hat{e}_z
+\end{equation}
+
+\textcolor{red}{Judging from the form of theHamiltoin one would have a hard time introoducing a $\vec{\delta}_{ij}$-dependent shift of the momentum in any case. There is probably a smart argument why this cant be achieved for a Bravais lattice.}
+
+\end{document}

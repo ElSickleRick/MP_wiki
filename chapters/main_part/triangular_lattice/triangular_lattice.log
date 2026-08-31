@@ -1,11 +1,17 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  3 AUG 2026 12:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  31 AUG 2026 16:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**../../../main.tex
-(../../../main.tex
+**triangular_lattice.tex
+(./triangular_lattice.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
+Document Class: subfiles 2020/11/14 v2.2 Multi-file projects (class)
+Preamble taken from file `../../../main.tex'
+(/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+Package: import 2020/04/01  v 6.2
+) (../../../main.tex
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -321,10 +327,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 (/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.sty
 Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
-
-(/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
-Package: import 2020/04/01  v 6.2
-))
+)
 (/usr/share/texlive/texmf-dist/tex/latex/bbold/bbold.sty
 Package: bbold 1994/04/06 Bbold symbol package
 LaTeX Font Info:    Redeclaring math alphabet \mathbb on input line 42.
@@ -385,27 +388,28 @@ Package: empheq 2017/03/31 v2.15 Emphasizing equations
 )
 (/usr/share/texlive/texmf-dist/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
-) (./main.aux)
-\openout1 = `main.aux'.
+)))
+(./triangular_lattice.aux)
+\openout1 = `triangular_lattice.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -463,7 +467,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 34.
+Package hyperref Info: Link coloring ON on input line 3.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -475,64 +479,299 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count301
 )
-LaTeX Info: Redefining \ref on input line 34.
-LaTeX Info: Redefining \pageref on input line 34.
-LaTeX Info: Redefining \nameref on input line 34.
+LaTeX Info: Redefining \ref on input line 3.
+LaTeX Info: Redefining \pageref on input line 3.
+LaTeX Info: Redefining \nameref on input line 3.
 
-(./main.out) (./main.out)
+(./triangular_lattice.out) (./triangular_lattice.out)
 \@outlinefile=\write3
-\openout3 = `main.out'.
+\openout3 = `triangular_lattice.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+
+(./construction_of_hamiltonian.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2])
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 8.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 8.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 8.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 8.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 8.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 8.
+
+(./0_0_state.tex
+<lattice-0-flux-state.jpeg, id=119, 1284.8pt x 963.6pt>
+File: lattice-0-flux-state.jpeg Graphic file (type jpg)
+<use lattice-0-flux-state.jpeg>
+Package pdftex.def Info: lattice-0-flux-state.jpeg  used on input line 7.
+(pdftex.def)             Requested size: 443.57848pt x 332.67761pt.
+ [3] [4 <./lattice-0-flux-state.jpeg>]
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+[5pdfTeX warning (ext4): destination with the same identifier (name{equation.0.
+27}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.125 \end{equation}
+                    ]
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
+
+ []
+
+[6])
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 11.
+
+(./0_pi_state.tex
+<lattice-pi-0-flux-state.jpeg, id=164, 1284.8pt x 963.6pt>
+File: lattice-pi-0-flux-state.jpeg Graphic file (type jpg)
+<use lattice-pi-0-flux-state.jpeg>
+Package pdftex.def Info: lattice-pi-0-flux-state.jpeg  used on input line 8.
+(pdftex.def)             Requested size: 443.57848pt x 332.67761pt.
+ [7] [8 <./lattice-pi-0-flux-state.jpeg>]
+Overfull \hbox (13.77144pt too wide) detected at line 128
+[][][]\OML/cmm/m/it/10 "\OT1/cmr/m/n/10 ([])[] = \OML/cmm/m/it/10 ^^V[] \OT1/cm
+r/m/n/10 + \OML/cmm/m/it/10 ^^V[] \OMS/cmsy/m/n/10 ^^F []
+ []
+
+[9]
+LaTeX Font Info:    Trying to load font information for U+bbold on input line 1
+82.
+ (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
+Overfull \hbox (28.40489pt too wide) in paragraph at lines 196--197
+[]\OT1/cmr/m/n/10 Due to the unit cell dou-bling the ther-mo-dy-namic limit has
+ to be slightly mod-i-fied $[][] \OMS/cmsy/m/n/10 ! \OT1/cmr/m/n/10 ((
+\OML/cmm/m/it/10 N\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =[][]\OT1/cmr/m/n/10 )\OML/
+cmm/m/it/10 =\OT1/cmr/m/n/10 (2\OML/cmm/m/it/10 ^^Y\OT1/cmr/m/n/10 )[] [] \OML/
+cmm/m/it/10 dk$\OT1/cmr/m/n/10 .
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+
+ []
+
+[12] [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 504--505
+
+ []
+
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 592--593
+
+ []
+
 )
-No file main.toc.
-\tf@toc=\write4
-\openout4 = `main.toc'.
 
-[1
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 14.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-! LaTeX Error: File `chapters/preliminaries/basics-of-magnetism/basics-of-magne
-tism.tex' not found.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 14.
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
 
-Enter file name: q
-(/usr/share/texlive/texmf-dist/tex/latex/tools/q.tex File ignored
-)
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 14.
 
-! LaTeX Error: File `chapters/preliminaries/partons/partons.tex' not found.
+(./0_pi_state_on_strained_lattice.tex
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
+ []
 
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.45 ...hapters/preliminaries/partons/partons.tex}
-                                                  ^^M
-*** (cannot \read from terminal in nonstop modes)
 
- 
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 71.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 71.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 71.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
+[18])
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 17.
+
+(./pi_half_pi_half_state.tex
+<lattice-pi-half-flux-state.jpeg, id=335, 2055.68pt x 1459.4525pt>
+File: lattice-pi-half-flux-state.jpeg Graphic file (type jpg)
+<use lattice-pi-half-flux-state.jpeg>
+Package pdftex.def Info: lattice-pi-half-flux-state.jpeg  used on input line 6.
+
+(pdftex.def)             Requested size: 443.57848pt x 314.91191pt.
+ [19] [20 <./lattice-pi-half-flux-state.jpeg>]
+[21]
+Overfull \hbox (5.13951pt too wide) detected at line 183
+[]
+ []
+
+[22]) [23] (./triangular_lattice.aux)
+
+Package rerunfilecheck Warning: File `triangular_lattice.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `triangular_lattice.out':
+(rerunfilecheck)             Before: AC076511E6845B08B4B15905202060E8;3331
+(rerunfilecheck)             After:  2BEAF504C7CBB6D98DD226E1A4DB3973;3319.
+ ) 
 Here is how much of TeX's memory you used:
- 12579 strings out of 478287
- 194790 string characters out of 5849289
- 503016 words of memory out of 5000000
- 30605 multiletter control sequences out of 15000+600000
- 472472 words of font info for 41 fonts, out of 8000000 for 9000
+ 12958 strings out of 478287
+ 200743 string characters out of 5849289
+ 534293 words of memory out of 5000000
+ 30706 multiletter control sequences out of 15000+600000
+ 477665 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,5n,77p,338b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 88i,18n,94p,794b,485s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/
+cm-super/sfrm1000.pfb>
+Output written on triangular_lattice.pdf (23 pages, 680269 bytes).
+PDF statistics:
+ 523 PDF objects out of 1000 (max. 8388607)
+ 458 compressed objects within 5 object streams
+ 243 named destinations out of 1000 (max. 500000)
+ 168 words of extra memory for PDF output out of 10000 (max. 10000000)
+
