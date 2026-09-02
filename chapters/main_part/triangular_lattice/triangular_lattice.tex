@@ -1,5 +1,8 @@
 \documentclass[../../../main.tex]{subfiles}
 
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
+
 \begin{document}
 
 \subsection{Construction of Hamiltonian}
@@ -16,5 +19,8 @@
 
 \subsection{$\pi/2$-$\pi/2$ and $-\pi/2$ - $-\pi/2$ States}
 \subfile{pi_half_pi_half_state.tex}
+
+\nocite{*}
+\printbibliography
 
 \end{document}

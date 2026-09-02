@@ -33,7 +33,7 @@
 \contentsline {subsubsection}{\numberline {4.3.5}Continuum Model/ Gradient Expansion}{24}{subsubsection.4.3.5}%
 \contentsline {subsection}{\numberline {4.4}0-$\pi $ State on Strained Lattice}{25}{subsection.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.1}Basics of Strain}{25}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Straining the 0-$pi$-State}{26}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2}Straining the 0-$\pi $-State}{26}{subsubsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.5}$\pi /2$-$\pi /2$ and $-\pi /2$ - $-\pi /2$ States}{28}{subsection.4.5}%
 \contentsline {subsubsection}{\numberline {4.5.1}Pedestrian Method}{28}{subsubsection.4.5.1}%
 \contentsline {subsubsection}{\numberline {4.5.2}Pedro's Method}{30}{subsubsection.4.5.2}%

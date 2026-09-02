@@ -1,7 +1,9 @@
 \documentclass[../../../main.tex]{subfiles}
 
 
-\begin{document} 
+\begin{document}
+
+references are \cite{Nayga2019}, \cite{Kitt2012}, \cite{Ramezani_Masir2013}, \cite{Castro_Neto2009} and \cite{Sun2023}
 
 \subsubsection{Basics of Strain}
 
@@ -73,14 +75,14 @@ Looking at the matrix elments (\ref{mael11} and below), one also requires the ex
 The matrix elements of the strained Hamiltonian are of the form 
 
 \begin{equation}
-	\frac12\left[J(\vec{\delta}_{ij}^\prime)e^{i\vec{K}\cdot\vec{\delta}_{ij}^\prime}(1+i\vec{\delta}_{ij}^\prime\vec{p}) + J(-\vec{\delta}_{ij}^\prime)e^{-i\vec{K}\cdot\vec{\delta}_{ij}^\prime}(1-i\vec{\delta}_{ij}^\prime\vec{p})\right]
+	\frac12\left[J(\vec{\delta}_{ij}^\prime)e^{i\vec{K}\cdot\vec{\delta}_{ij}^\prime}(1+i\vec{\delta}_{ij}^\prime\cdot\vec{p}) + J(-\vec{\delta}_{ij}^\prime)e^{-i\vec{K}\cdot\vec{\delta}_{ij}^\prime}(1-i\vec{\delta}_{ij}^\prime\cdot\vec{p})\right]
 \end{equation}
 
 I expand in strain but keep only terms of zeroth order in strain and field gradient as well as terms of either first order in strain or first order in field-gradient:
 
 
 \begin{equation}
-	J(\vec{\delta}_{ij}^\prime)e^{i\vec{K}\cdot\vec{\delta}_{ij}^\prime}(1+i\vec{\delta}_{ij}^\prime\vec{p}) \approx Je^{i\vec{K}\cdot\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij}\vec{p}) + iJe^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) - \frac{J\beta}{a^2} e^{i\vec{K}\cdot\vec{\delta}_{ij}} \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)
+	J(\vec{\delta}_{ij}^\prime)e^{i\vec{K}\cdot\vec{\delta}_{ij}^\prime}(1+i\vec{\delta}_{ij}^\prime\cdot\vec{p}) \approx Je^{i\vec{K}\cdot\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij}\cdot\vec{p}) + iJe^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) - \frac{J\beta}{a^2} e^{i\vec{K}\cdot\vec{\delta}_{ij}} \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)
 \end{equation}
 
 \textcolor{red}{How do different orders of strain and field gradients compare??}
@@ -137,6 +139,6 @@ Sadly, this vector potential produces no pseudo-magnetic field. \textcolor{red}{
 	\vec{B} = \left(\partial_x A_y - \partial_y A_x\right)\hat{e}_z
 \end{equation}
 
-\textcolor{red}{Judging from the form of theHamiltoin one would have a hard time introoducing a $\vec{\delta}_{ij}$-dependent shift of the momentum in any case. There is probably a smart argument why this cant be achieved for a Bravais lattice.}
+\textcolor{red}{Judging from the form of theHamiltoin one would have a hard time introoducing a $\vec{\delta}_{ij}$-dependent shift of the momentum in any case. Maybe there is a smart argument why this cant be achieved for a Bravais lattice.}
 
 \end{document}
