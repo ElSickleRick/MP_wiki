@@ -38,8 +38,7 @@ where $u_{\alpha\beta} = \partial_{\beta}U_{\alpha}$ is the strain tensor. \\
 I do the same approximation for the exchange couplings 
 
 \begin{align}
-	J(\vec{\delta}_{ij}) &\mapsto J(\vec{\delta}_{ij}^\prime) \\
-	&\approx J\left(\vec{\delta}_{ij} + \underline{u}\cdot\vec{\delta}_{ij}\right) \\
+	J(\vec{\delta}_{ij}) \mapsto J(\vec{\delta}_{ij}^\prime) &\approx J\left(\vec{\delta}_{ij} + \underline{u}\cdot\vec{\delta}_{ij}\right) \\
 	&\approx J(\vec{\delta}_{ij}) + \left(\underline{u}\cdot\vec{\delta}_{ij}\right) \cdot \left( \vec{\nabla}_{\vec{\delta}}J(\vec{\delta})\big\rvert_{\delta_{ij}}\right)
 \end{align}
 
@@ -72,28 +71,67 @@ Looking at the matrix elments (\ref{mael11} and below), one also requires the ex
 
 \subsubsection{Straining the 0-$\pi$-State}
 
-The matrix elements of the strained Hamiltonian are of the form 
+The prototypical form of the matrix elements is (expanding around $\vec{K}$)
 
 \begin{equation}
-	\frac12\left[J(\vec{\delta}_{ij}^\prime)e^{i\vec{K}\cdot\vec{\delta}_{ij}^\prime}(1+i\vec{\delta}_{ij}^\prime\cdot\vec{p}) + J(-\vec{\delta}_{ij}^\prime)e^{-i\vec{K}\cdot\vec{\delta}_{ij}^\prime}(1-i\vec{\delta}_{ij}^\prime\cdot\vec{p})\right]
+	J(\vec{\delta}_{ij})a_{i\sigma}^\dagger a_{i+\delta_{ij};\sigma} \sim A_{K\sigma}^\dagger \left(J(\vec{\delta}_{ij})e^{i\vec{K}\cdot\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij}\cdot\vec{p})\right) A_{K\sigma}
 \end{equation}
 
-I expand in strain but keep only terms of zeroth order in strain and field gradient as well as terms of either first order in strain or first order in field-gradient:
+Expanding up to first order in strain I acquire the following terms 
 
+
+\begin{align*}
+	&Je^{i\vec{K}\cdot\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij}\cdot\vec{p}) & \text{unstrained Hamiltonian/ zeroth order} \\
+	& iJe^{i\vec{K}\cdot\vec{\delta}_{ij}} \left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) & \text{contribution to $\vec{A}$ of $\mathcal{O}\left( \underline{u}^1\right)$} \\
+	& -\frac{J\beta}{a^2} e^{i\vec{K}\cdot\vec{\delta}_{ij}} \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) &\text{contribution to $\vec{A}$ of $\mathcal{O}\left( \underline{u}^1\right)$}   \\
+	& -Je^{i\vec{K}\cdot\vec{\delta}_{ij}}\left( \vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)\left(\vec{\delta}_{ij}\cdot\vec{p}\right) &\text{correction to $v_F$ of $\mathcal{O}\left( \underline{u}^1 \right)$}\\
+	& -i\frac{J\beta}{a^2}e^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right)\left(\vec{\delta}_{ij}\cdot\vec{p}\right) &\text{correction to $v_F$ of $\mathcal{O}\left( \underline{u}^1 \right)$}\\
+	& iJe^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(\underline{u}\cdot\vec{\delta}_{ij}\right)\cdot\vec{p} &\text{correction to $v_F$ of $\mathcal{O}\left( \underline{u}^1 \right)$}
+\end{align*}
+
+(I drop the lattice constant again from now on) I will focus on the terms of order zero + terms of either order 1 in field gradient or order 1 in strain \cite{Nayga2019}. \textcolor{red}{I havent come up with a good argument for this yet. How does one even compares orders between different expansions?} This gives
+
+\begin{align}
+	\begin{split}
+		J(\vec{\delta}_{ij})e^{i\vec{K}\cdot\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij}\cdot\vec{p}) &\sim  Je^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(1 + i\vec{\delta}_{ij}\cdot\vec{p} + i \left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) - \beta\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right)\right)\\ 
+		&= Je^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(1 + i \vec{\delta}_{ij}\cdot \left[\vec{p} + \underline{u}^T\left(\vec{K} + i \beta\vec{\delta}_{ij}\right)\right]\right)
+	\end{split}
+\end{align}
+
+Hence, on this level
 
 \begin{equation}
-	J(\vec{\delta}_{ij}^\prime)e^{i\vec{K}\cdot\vec{\delta}_{ij}^\prime}(1+i\vec{\delta}_{ij}^\prime\cdot\vec{p}) \approx Je^{i\vec{K}\cdot\vec{\delta}_{ij}}(1+i\vec{\delta}_{ij}\cdot\vec{p}) + iJe^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) - \frac{J\beta}{a^2} e^{i\vec{K}\cdot\vec{\delta}_{ij}} \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right)
+	\vec{A} = -\underline{u}^T\left(\vec{K} + i \beta\vec{\delta}_{ij}\right)
 \end{equation}
 
-\textcolor{red}{How do different orders of strain and field gradients compare??}
-
-The first term is the zeroth order. It turns out that when adding up two terms corresponding to opposite directions the first term in first order accquires a factor of 2 while the second term vanishes. \textcolor{blue}{The cancelling of the second term is a Bravais lattice effect that is not present in e.g. Graphene!} \textcolor{red}{The second term in first order would have been imaginary, what is the significance of that?} \\
-
-Using 
+(the minus comes from minimal coupling). It turns out however, that $\vec{B}=0$, which is explained in what follows. In general, however
 
 \begin{equation}
-	\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij} = \vec{\delta}_{ij} \cdot \underline{u}^T \cdot \vec{K},
+	B = \left(\partial_x A_y - \partial_y A_x\right)
 \end{equation}
+
+The first term is simply rotationless (this was shown here \cite{Ramezani_Masir2013}) and can therefore be "gauged away". \\
+
+Regarding the second term; I take a step back to the dispersion relation of the unstrained model
+
+\begin{equation}
+	H = \sum_{\vec{q}\sigma} \Psi_{q\sigma}^\dagger \cdot \left( \vec{h}(\vec{q})\cdot \vec{\sigma} \right) \cdot \Psi_{q\sigma} \quad \text{with} \quad \vec{h}(\vec{q}) = 2t
+	\begin{pmatrix}
+		\sin(\vec{q}\cdot\vec{\delta}_3) \\
+		\cos(\vec{q}\cdot\vec{\delta}_2) \\
+		\cos(\vec{q}\cdot\vec{\delta}_1)
+	\end{pmatrix} \Rightarrow \varepsilon(\vec{q}) = \abs{\vec{h}(\vec{q})}.
+\end{equation}
+
+By definition, $\varepsilon(\vec{K}^{(\prime)}) =0$. For this to be true, every component of $\vec{h}$ must vanish individually at $\vec{K}^{(\prime)}$. This gives three conditions for $\vec{q}$, one for each direction. \\
+
+Evidently each expression in $\vec{h}$ is obtained by adding contribtions from hopping along $\vec{\delta}_{ij}$ and along the opposite direction ($-\vec{\delta}_{ij}$) (this can be seen nicely by considering that in the directions of $\vec{\delta}_3$ and $\vec{\delta}_2$ one simply has tight-binding chains, leading to the well-known cosine dispersion). \\
+
+For the strain expansion one would have to break these terms (e.g. the cosisne terms) up again into the contributions from hopping in opposite directions. However, since $\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}$ is invariant under $\vec{\delta}_{ij} \mapsto -\vec{\delta}_{ij}$ it acquires the same dispersion-like prefactor as the zeroth order, which vanishes by definition at $\vec{K}^{(\prime)}$. \\
+
+So why does the term vanish? Its a mix of the special structure of the hamiltonian (i.e. the local directions decouple in the pauli-matrix basis) and the fact that the expansion term $\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}$ cant distinguish between $\vec{\delta}_{ij}$ and $-\vec{\delta}_{ij}$. \textcolor{blue}{The same should hold for the $\pi$-flux square lattice. Graphene shows none of these features (the symmetry of the term doesnt change of course but therer is simply no hopping in the opposite direction). For Kagome the first feature is absent.} \\
+
+\textcolor{red}{It is not clear to me how this can be upheld under gauge transformations (wouldn't this mix directions in the Pauli-matrix basis?)}
 
 I rename $\vec{R}^\prime \rightarrow \vec{R}$ and get 
 
@@ -119,26 +157,6 @@ Doing the same procedure around $\vec{K}^\prime = -\vec{K}$ I get
 	\Psi_{K^\prime\sigma}(\vec{R})
 \end{equation}
 
-
-
-therefore the effective vector potential is
-
-\begin{align}
-	\vec{A}_{\vec{K}} &=  - \vec{A}_{\vec{K}^\prime} \\
-	&= \underline{u}^T \cdot \vec{K} \\ &= \frac{\pi}{2}
-	\begin{pmatrix}
-		u_{xx} - \frac{u_{yx}}{\sqrt{3}} \\
-		u_{xy} - \frac{u_{yy}}{\sqrt{3}}
-	\end{pmatrix}.
-\end{align}
-
-Sadly, this vector potential produces no pseudo-magnetic field. \textcolor{red}{What about higher orders?}
-
-
-\begin{equation}
-	\vec{B} = \left(\partial_x A_y - \partial_y A_x\right)\hat{e}_z
-\end{equation}
-
-\textcolor{red}{Judging from the form of theHamiltoin one would have a hard time introoducing a $\vec{\delta}_{ij}$-dependent shift of the momentum in any case. Maybe there is a smart argument why this cant be achieved for a Bravais lattice.}
+\textcolor{blue}{I would expect to find a pseudo-magnetic field in higher orders of strain?}
 
 \end{document}

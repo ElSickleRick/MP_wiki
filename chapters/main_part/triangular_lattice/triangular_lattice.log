@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  2 SEP 2026 12:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  3 SEP 2026 13:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -904,28 +904,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 73.
+(hyperref)                removing `math shift' on input line 72.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 73.
+(hyperref)                removing `\pi' on input line 72.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 73.
+(hyperref)                removing `math shift' on input line 72.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
-[18])
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
+
+ []
+
+[19])
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 20.
@@ -975,19 +995,19 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 20.
 
 (./pi_half_pi_half_state.tex
-<lattice-pi-half-flux-state.jpeg, id=349, 2055.68pt x 1459.4525pt>
+<lattice-pi-half-flux-state.jpeg, id=358, 2055.68pt x 1459.4525pt>
 File: lattice-pi-half-flux-state.jpeg Graphic file (type jpg)
 <use lattice-pi-half-flux-state.jpeg>
 Package pdftex.def Info: lattice-pi-half-flux-state.jpeg  used on input line 6.
 
 (pdftex.def)             Requested size: 443.57848pt x 314.91191pt.
- [19] [20 <./lattice-pi-half-flux-state.jpeg>]
-[21]
+ [20 <./lattice-pi-half-flux-state.jpeg>] [21]
+[22]
 Overfull \hbox (5.13951pt too wide) detected at line 183
 []
  []
 
-[22]) [23] (./triangular_lattice.aux)
+) [23] [24] (./triangular_lattice.aux)
 Package rerunfilecheck Info: File `triangular_lattice.out' has not changed.
 (rerunfilecheck)             Checksum: 2BEAF504C7CBB6D98DD226E1A4DB3973;3319.
 Package logreq Info: Writing requests to 'triangular_lattice.run.xml'.
@@ -995,13 +1015,13 @@ Package logreq Info: Writing requests to 'triangular_lattice.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20441 strings out of 478287
- 348799 string characters out of 5849289
- 1089591 words of memory out of 5000000
+ 20439 strings out of 478287
+ 348764 string characters out of 5849289
+ 1091619 words of memory out of 5000000
  38125 multiletter control sequences out of 15000+600000
  480516 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,18n,94p,794b,1321s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 88i,18n,94p,794b,1358s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-di
@@ -1021,10 +1041,10 @@ s/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
 .pfb>
-Output written on triangular_lattice.pdf (23 pages, 724086 bytes).
+Output written on triangular_lattice.pdf (24 pages, 726929 bytes).
 PDF statistics:
- 574 PDF objects out of 1000 (max. 8388607)
- 502 compressed objects within 6 object streams
- 250 named destinations out of 1000 (max. 500000)
+ 577 PDF objects out of 1000 (max. 8388607)
+ 504 compressed objects within 6 object streams
+ 248 named destinations out of 1000 (max. 500000)
  168 words of extra memory for PDF output out of 10000 (max. 10000000)
 
