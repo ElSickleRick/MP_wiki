@@ -7,7 +7,7 @@ references are \cite{Nayga2019}, \cite{Kitt2012}, \cite{Ramezani_Masir2013}, \ci
 
 \subsubsection{Basics of Strain}
 
-For the purpose of introducing strain into the model, I first establish its effect on the coordinates and exchange couplings \textcolor{red}{Awkward formulation}
+For the purpose of introducing strain into the model, I first establish its effect on the coordinates and exchange couplings 
 
 \begin{align}
 	\vec{R}_i &\mapsto \vec{R}_i^\prime = \vec{R}_i + \vec{U}(\vec{R}_i) \\
@@ -35,6 +35,8 @@ where $u_{\alpha\beta} = \partial_{\beta}U_{\alpha}$ is the strain tensor. \\
 	\Rightarrow \vec{\delta}_{ij}^\prime \approx \vec{\delta}_{ij} + \underline{u}\cdot\vec{\delta}_{ij} 
 \end{equation}
 
+\textcolor{red}{Here $\underline{u}$ is taken at $\vec{R}_i$, however one can derive the same expression but with $\underline{u}$ taken at $\vec{R}_j$. In what follows I choose the expansion around $\vec{R}_i$ as shown in the main text. This however is arbitrary. Something dependening on $\vec{R}_i$ and $\vec{R}_j$ (or $(\vec{R}_i + \vec{R}_j)/2$) would seem more sensible but would complicate later expressions. I was not able to resolve this yet.} \\
+
 I do the same approximation for the exchange couplings 
 
 \begin{align}
@@ -42,13 +44,13 @@ I do the same approximation for the exchange couplings
 	&\approx J(\vec{\delta}_{ij}) + \left(\underline{u}\cdot\vec{\delta}_{ij}\right) \cdot \left( \vec{\nabla}_{\vec{\delta}}J(\vec{\delta})\big\rvert_{\delta_{ij}}\right)
 \end{align}
 
-For the function $J(\vec{\delta})$ one usually uses the form
+For the function $J(\vec{\delta})$ I uses the form
 
 \begin{equation}
 	J(\vec{\delta}) = J\exp\left[-\beta\left(|\vec{\delta}|/a-1\right)\right] \approx J\left(1 -\beta\left(|\vec{\delta}|/a-1\right)\right),
 \end{equation}
 
-where $a$ is the lattice constant and $\beta = -d\ln(J)/d\ln(|\vec{\delta}|)\big\rvert_{a}$ the magneto-elastic coupling. This form is essentially motivated by the large U-limit of the Hubbar model. In this limit the exchange coupling is proportional to the overlap of the orbitals of neighbopuring atoms. In this sense one can approximate those as two expoential functions, that are decreasing away from the position of their respective atoms. Therefore, their overlap also decreases exponentially. \\
+, see e.g. \cite{Pereira2009}, where $a$ is the lattice constant and $\beta = -d\ln(J)/d\ln(|\vec{\delta}|)\big\rvert_{a}$ the magneto-elastic coupling. \\
 
 \begin{align}
 	\Rightarrow \vec{\nabla}_{\vec{\delta}}J(\vec{\delta})\big\rvert_{\delta_{ij}} \overset{|\vec{\delta}_{ij}| = a}{=} -\frac{J\beta}{a^2} \vec{\delta}_{ij} \notag  \\
@@ -101,16 +103,14 @@ Expanding up to first order in strain I acquire the following terms
 Hence, on this level
 
 \begin{equation}
-	\vec{A} = -\underline{u}^T\left(\vec{K} + i \beta\vec{\delta}_{ij}\right)
+	\vec{A} = \underline{u}^T\left(\vec{K} + i \beta\vec{\delta}_{ij}\right).
 \end{equation}
-
-(the minus comes from minimal coupling). It turns out however, that $\vec{B}=0$, which is explained in what follows. In general, however
 
 \begin{equation}
 	B = \left(\partial_x A_y - \partial_y A_x\right)
 \end{equation}
 
-The first term is simply rotationless (this was shown here \cite{Ramezani_Masir2013}) and can therefore be "gauged away". \\
+It turns out however, that $\vec{B}=0$, which is explained in what follows. The first term is simply rotationless (this was shown here \cite{Ramezani_Masir2013}) and can therefore be "gauged away". \\
 
 Regarding the second term; I take a step back to the dispersion relation of the unstrained model
 
@@ -125,37 +125,11 @@ Regarding the second term; I take a step back to the dispersion relation of the 
 
 By definition, $\varepsilon(\vec{K}^{(\prime)}) =0$. For this to be true, every component of $\vec{h}$ must vanish individually at $\vec{K}^{(\prime)}$. This gives three conditions for $\vec{q}$, one for each direction. \\
 
-Evidently each expression in $\vec{h}$ is obtained by adding contribtions from hopping along $\vec{\delta}_{ij}$ and along the opposite direction ($-\vec{\delta}_{ij}$) (this can be seen nicely by considering that in the directions of $\vec{\delta}_3$ and $\vec{\delta}_2$ one simply has tight-binding chains, leading to the well-known cosine dispersion). \\
+Evidently each expression in $\vec{h}$ is obtained by adding contribtions from hopping forwards and backwards along $\vec{\delta}_{ij}$ . However, since $\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}$ is invariant under $\vec{\delta}_{ij} \mapsto -\vec{\delta}_{ij}$ it acquires the same dispersion-like prefactor as the zeroth order, which vanishes by definition at $\vec{K}^{(\prime)}$. \\
 
-For the strain expansion one would have to break these terms (e.g. the cosisne terms) up again into the contributions from hopping in opposite directions. However, since $\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}$ is invariant under $\vec{\delta}_{ij} \mapsto -\vec{\delta}_{ij}$ it acquires the same dispersion-like prefactor as the zeroth order, which vanishes by definition at $\vec{K}^{(\prime)}$. \\
+So why does the term vanish? Its a mix of the special structure of the hamiltonian (i.e. the local directions decouple in the pauli-matrix basis) and the fact that the expansion term $\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}$ cant distinguish between $\vec{\delta}_{ij}$ and $-\vec{\delta}_{ij}$. The latter statement is obviously not model-specific. \textcolor{blue}{The same mechanism shouild be present in the $\pi$-flux square lattice. For uniform hopping (e.g. ordinary Graphene) it is absent (the decoupling of the directions is a cosnequence of the non-uniform hopping/ the mean-field).} \\
 
-So why does the term vanish? Its a mix of the special structure of the hamiltonian (i.e. the local directions decouple in the pauli-matrix basis) and the fact that the expansion term $\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}$ cant distinguish between $\vec{\delta}_{ij}$ and $-\vec{\delta}_{ij}$. \textcolor{blue}{The same should hold for the $\pi$-flux square lattice. Graphene shows none of these features (the symmetry of the term doesnt change of course but therer is simply no hopping in the opposite direction). For Kagome the first feature is absent.} \\
-
-\textcolor{red}{It is not clear to me how this can be upheld under gauge transformations (wouldn't this mix directions in the Pauli-matrix basis?)}
-
-I rename $\vec{R}^\prime \rightarrow \vec{R}$ and get 
-
-\begin{equation}
-	H_{\vec{K}} \approx \sum_\sigma 2t \int d^2\vec{R} \quad
-	\Psi^\dagger_{K\sigma}(\vec{R})
-	\begin{pmatrix}
-		-\vec{\delta}_1\left(\vec{p}+\underline{u}^T \cdot \vec{K}\right) & \left(-\vec{\delta}_3-i\vec{\delta}_2\right)\left(\vec{p} + \underline{u}^T \cdot K \right) \\
-		\left(-\vec{\delta}_3 + i \vec{\delta}_2\right)\left(\vec{p} + \underline{u}^T \cdot \vec{K} \right)& \vec{\delta}_1\left(\vec{p} + \underline{u}^T \cdot \vec{K} \right)
-	\end{pmatrix}
-	\Psi_{K\sigma}(\vec{R}),
-\end{equation}
-
-Doing the same procedure around $\vec{K}^\prime = -\vec{K}$ I get
-
-\begin{equation}
-	H_{\vec{K}^\prime} \approx \sum_\sigma 2t \int d^2\vec{R} \quad 
-	\Psi^\dagger_{K^\prime\sigma} (\vec{R})
-	\begin{pmatrix}
-		\vec{\delta}_1\left(\vec{p} + \underline{u}^T\cdot\vec{K}^\prime\right) & \left(\vec{\delta}_3-i\vec{\delta}_2\right)\left(\vec{p} + \underline{u}^T\cdot\vec{K}^\prime\right) \\
-		\left(\vec{\delta}_3 +i \vec{\delta}_2\right)\left(\vec{p} + \underline{u}^T\cdot\vec{K}^\prime\right) & -\vec{\delta}_1\left(\vec{p} + \underline{u}^T\cdot\vec{K}^\prime\right)
-	\end{pmatrix}
-	\Psi_{K^\prime\sigma}(\vec{R})
-\end{equation}
+\textcolor{red}{It is not clear to me how this can be upheld under gauge transformations (wouldn't this mix directions in the Pauli-matrix basis?)} \\
 
 \textcolor{blue}{I would expect to find a pseudo-magnetic field in higher orders of strain?}
 

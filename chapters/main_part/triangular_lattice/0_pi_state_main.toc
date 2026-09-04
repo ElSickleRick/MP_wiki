@@ -1,0 +1,10 @@
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {0.1}0-$\pi $ and $\pi $-0 States}{2}{subsection.0.1}%
+\contentsline {subsubsection}{\numberline {0.1.1}pedestrian method}{2}{subsubsection.0.1.1}%
+\contentsline {subsubsection}{\numberline {0.1.2}Pedro's method}{7}{subsubsection.0.1.2}%
+\contentsline {subsubsection}{\numberline {0.1.3}fermi surface}{8}{subsubsection.0.1.3}%
+\contentsline {subsubsection}{\numberline {0.1.4}small momentum expansion}{9}{subsubsection.0.1.4}%
+\contentsline {subsubsection}{\numberline {0.1.5}Continuum Model/ Gradient Expansion}{10}{subsubsection.0.1.5}%
+\contentsline {subsection}{\numberline {0.2}0-$\pi $ State on Strained Lattice}{12}{subsection.0.2}%
+\contentsline {subsubsection}{\numberline {0.2.1}Basics of Strain}{12}{subsubsection.0.2.1}%
+\contentsline {subsubsection}{\numberline {0.2.2}Straining the 0-$\pi $-State}{13}{subsubsection.0.2.2}%

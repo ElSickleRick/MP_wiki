@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  4 SEP 2026 13:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  4 SEP 2026 13:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**triangular_lattice.tex
-(./triangular_lattice.tex
+**0_pi_state_main.tex
+(./0_pi_state_main.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
 (/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.cls
@@ -626,8 +626,8 @@ Package: blx-case-expl3 2022/02/02 v3.17 expl3 case changing code for biblatex
 \@quotelevel=\count421
 \@quotereset=\count422
 
-(./triangular_lattice.aux)
-\openout1 = `triangular_lattice.aux'.
+(./0_pi_state_main.aux)
+\openout1 = `0_pi_state_main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
@@ -720,9 +720,9 @@ LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
 LaTeX Info: Redefining \nameref on input line 8.
 
-(./triangular_lattice.out) (./triangular_lattice.out)
+(./0_pi_state_main.out) (./0_pi_state_main.out)
 \@outlinefile=\write4
-\openout4 = `triangular_lattice.out'.
+\openout4 = `0_pi_state_main.out'.
 
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
@@ -733,34 +733,34 @@ File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `triangular_lattice.bcf'.
+\openout3 = `0_pi_state_main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'triangular_lattice.bbl' found.
+Package biblatex Info: ... file '0_pi_state_main.bbl' found.
 
-(./triangular_lattice.bbl)
+(./0_pi_state_main.bbl)
 Package biblatex Info: Reference section=0 on input line 8.
 Package biblatex Info: Reference segment=0 on input line 8.
- (./construction_of_hamiltonian.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+(./0_pi_state_main.toc)
+\tf@toc=\write5
+\openout5 = `0_pi_state_main.toc'.
+
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Citation 'Drechsler2025' on page 2 undefined on input line 131.
-
-[2])
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 13.
 
@@ -783,71 +783,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 13.
-
-(./0_0_state.tex
-<lattice-0-flux-state.jpeg, id=119, 1284.8pt x 963.6pt>
-File: lattice-0-flux-state.jpeg Graphic file (type jpg)
-<use lattice-0-flux-state.jpeg>
-Package pdftex.def Info: lattice-0-flux-state.jpeg  used on input line 7.
-(pdftex.def)             Requested size: 443.57848pt x 332.67761pt.
- [3] [4 <./lattice-0-flux-state.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
-
- []
-
-[5pdfTeX warning (ext4): destination with the same identifier (name{equation.0.
-27}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.125 \end{equation}
-                    ]
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
-
- []
-
-[6])
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 16.
 
 (./0_pi_state.tex
-<lattice-pi-0-flux-state.jpeg, id=164, 1284.8pt x 963.6pt>
+<lattice-pi-0-flux-state.jpeg, id=57, 1284.8pt x 963.6pt>
 File: lattice-pi-0-flux-state.jpeg Graphic file (type jpg)
 <use lattice-pi-0-flux-state.jpeg>
 Package pdftex.def Info: lattice-pi-0-flux-state.jpeg  used on input line 8.
 (pdftex.def)             Requested size: 443.57848pt x 332.67761pt.
- [7] [8 <./lattice-pi-0-flux-state.jpeg>]
+ [2 <./lattice-pi-0-flux-state.jpeg>]
 Overfull \hbox (13.77144pt too wide) detected at line 128
 [][][]\OML/cmm/m/it/10 "\OT1/cmr/m/n/10 ([])[] = \OML/cmm/m/it/10 ^^V[] \OT1/cm
 r/m/n/10 + \OML/cmm/m/it/10 ^^V[] \OMS/cmsy/m/n/10 ^^F []
  []
 
-[9]
+[3]
 LaTeX Font Info:    Trying to load font information for U+bbold on input line 1
 82.
  (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
@@ -859,26 +808,22 @@ cmm/m/it/10 =\OT1/cmr/m/n/10 (2\OML/cmm/m/it/10 ^^Y\OT1/cmr/m/n/10 )[] [] \OML/
 cmm/m/it/10 dk$\OT1/cmr/m/n/10 .
  []
 
-[10]
+[4]
 Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
-[11]
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 263--264
 
  []
 
-[12] [13] [14]
-
-LaTeX Warning: Citation 'Rachel2015' on page 15 undefined on input line 504.
-
-
+[6] [7] [8]
 Underfull \hbox (badness 10000) in paragraph at lines 504--505
 
  []
 
-[15]
+[9]
 File: lattice-pi-0-flux-state.jpeg Graphic file (type jpg)
 <use lattice-pi-0-flux-state.jpeg>
 Package pdftex.def Info: lattice-pi-0-flux-state.jpeg  used on input line 512.
@@ -888,48 +833,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 521--522
 
  []
 
-[16]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 596--597
 
  []
 
-) [17]
+) [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 19.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 19.
+(hyperref)                removing `math shift' on input line 16.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 19.
+(hyperref)                removing `\pi' on input line 16.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 16.
 
 (./0_pi_state_on_strained_lattice.tex
-
-LaTeX Warning: Citation 'Nayga2019' on page 18 undefined on input line 6.
-
-
-LaTeX Warning: Citation 'Kitt2012' on page 18 undefined on input line 6.
-
-
-LaTeX Warning: Citation 'Ramezani_Masir2013' on page 18 undefined on input line
- 6.
-
-
-LaTeX Warning: Citation 'Castro_Neto2009' on page 18 undefined on input line 6.
-
-
-
-LaTeX Warning: Citation 'Sun2023' on page 18 undefined on input line 6.
-
-
-Overfull \hbox (10.4365pt too wide) in paragraph at lines 6--7
-\OT1/cmr/m/n/10 references are [[]], [[]], [[]], [[]] and [[]] 
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
@@ -945,14 +867,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--39
  []
 
 
-LaTeX Warning: Citation 'Pereira2009' on page 18 undefined on input line 53.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
  []
 
-[18]
+[12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 74.
@@ -966,18 +885,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 74.
 
 
-LaTeX Warning: Citation 'Nayga2019' on page 19 undefined on input line 94.
-
-
-LaTeX Warning: Citation 'Ramezani_Masir2013' on page 19 undefined on input line
- 113.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
-[19]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
@@ -997,115 +909,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
-)
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 22.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 22.
-
-(./pi_half_pi_half_state.tex
-<lattice-pi-half-flux-state.jpeg, id=341, 2055.68pt x 1459.4525pt>
-File: lattice-pi-half-flux-state.jpeg Graphic file (type jpg)
-<use lattice-pi-half-flux-state.jpeg>
-Package pdftex.def Info: lattice-pi-half-flux-state.jpeg  used on input line 6.
-
-(pdftex.def)             Requested size: 443.57848pt x 314.91191pt.
- [20] [21 <./lattice-pi-half-flux-state.jpeg>]
-[22]
-Overfull \hbox (5.13951pt too wide) detected at line 183
-[]
- []
-
-[23])
-
-LaTeX Warning: Empty bibliography on input line 26.
-
-[24] (./triangular_lattice.aux)
-
-LaTeX Warning: There were undefined references.
-
-Package rerunfilecheck Info: File `triangular_lattice.out' has not changed.
-(rerunfilecheck)             Checksum: 2BEAF504C7CBB6D98DD226E1A4DB3973;3319.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                triangular_lattice
-(biblatex)                and rerun LaTeX afterwards.
-
-Package logreq Info: Writing requests to 'triangular_lattice.run.xml'.
-\openout1 = `triangular_lattice.run.xml'.
+) [14] (./0_pi_state_main.aux)
+Package rerunfilecheck Info: File `0_pi_state_main.out' has not changed.
+(rerunfilecheck)             Checksum: 25ECAC59689C1CD6B9E7862EEE0DDF2C;1545.
+Package logreq Info: Writing requests to '0_pi_state_main.run.xml'.
+\openout1 = `0_pi_state_main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20391 strings out of 478287
- 347671 string characters out of 5849289
- 1089456 words of memory out of 5000000
- 38089 multiletter control sequences out of 15000+600000
- 477665 words of font info for 63 fonts, out of 8000000 for 9000
+ 20291 strings out of 478287
+ 346239 string characters out of 5849289
+ 1088548 words of memory out of 5000000
+ 38091 multiletter control sequences out of 15000+600000
+ 480181 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,18n,94p,794b,1245s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfrm1000.pfb>
-Output written on triangular_lattice.pdf (24 pages, 683941 bytes).
+ 88i,18n,94p,748b,1321s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on 0_pi_state_main.pdf (14 pages, 296852 bytes).
 PDF statistics:
- 521 PDF objects out of 1000 (max. 8388607)
- 455 compressed objects within 5 object streams
- 239 named destinations out of 1000 (max. 500000)
- 168 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 379 PDF objects out of 1000 (max. 8388607)
+ 324 compressed objects within 4 object streams
+ 143 named destinations out of 1000 (max. 500000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 

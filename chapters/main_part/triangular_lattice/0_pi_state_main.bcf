@@ -2344,25 +2344,23 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Drechsler2025</bcf:citekey>
-    <bcf:citekey order="2">Rachel2015</bcf:citekey>
-    <bcf:citekey order="3">Nayga2019</bcf:citekey>
-    <bcf:citekey order="4">Kitt2012</bcf:citekey>
-    <bcf:citekey order="5">Ramezani_Masir2013</bcf:citekey>
-    <bcf:citekey order="6">Castro_Neto2009</bcf:citekey>
-    <bcf:citekey order="7">Sun2023</bcf:citekey>
-    <bcf:citekey order="8">Pereira2009</bcf:citekey>
-    <bcf:citekey order="9">Nayga2019</bcf:citekey>
-    <bcf:citekey order="10">Ramezani_Masir2013</bcf:citekey>
+    <bcf:citekey order="1">Rachel2015</bcf:citekey>
+    <bcf:citekey order="2">Nayga2019</bcf:citekey>
+    <bcf:citekey order="3">Kitt2012</bcf:citekey>
+    <bcf:citekey order="4">Ramezani_Masir2013</bcf:citekey>
+    <bcf:citekey order="5">Castro_Neto2009</bcf:citekey>
+    <bcf:citekey order="6">Sun2023</bcf:citekey>
+    <bcf:citekey order="7">Pereira2009</bcf:citekey>
+    <bcf:citekey order="8">Nayga2019</bcf:citekey>
+    <bcf:citekey order="9">Ramezani_Masir2013</bcf:citekey>
     <bcf:citekey order="0" nocite="1">*</bcf:citekey>
-    <bcf:citekey order="11">Drechsler2025</bcf:citekey>
-    <bcf:citekey order="12">Rachel2015</bcf:citekey>
-    <bcf:citekey order="13">Nayga2019</bcf:citekey>
-    <bcf:citekey order="14">Kitt2012</bcf:citekey>
-    <bcf:citekey order="15">Ramezani_Masir2013</bcf:citekey>
-    <bcf:citekey order="16">Castro_Neto2009</bcf:citekey>
-    <bcf:citekey order="17">Sun2023</bcf:citekey>
-    <bcf:citekey order="18">Pereira2009</bcf:citekey>
+    <bcf:citekey order="10">Rachel2015</bcf:citekey>
+    <bcf:citekey order="11">Nayga2019</bcf:citekey>
+    <bcf:citekey order="12">Kitt2012</bcf:citekey>
+    <bcf:citekey order="13">Ramezani_Masir2013</bcf:citekey>
+    <bcf:citekey order="14">Castro_Neto2009</bcf:citekey>
+    <bcf:citekey order="15">Sun2023</bcf:citekey>
+    <bcf:citekey order="16">Pereira2009</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

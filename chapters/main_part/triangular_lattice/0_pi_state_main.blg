@@ -1,0 +1,22 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is '0_pi_state_main.blg'
+[51] biber:340> INFO - === Fr Sep  4, 2026, 13:12:25
+[63] Biber.pm:418> INFO - Reading '0_pi_state_main.bcf'
+[107] Biber.pm:972> INFO - Found 7 citekeys in bib section 0
+[118] Biber.pm:4383> INFO - Processing section 0
+[124] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
+[126] bibtex.pm:1713> INFO - LaTeX decoding ...
+[135] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
+[193] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[193] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[194] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[194] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[201] bbl.pm:654> INFO - Writing '0_pi_state_main.bbl' with encoding 'UTF-8'
+[204] bbl.pm:757> INFO - Output to 0_pi_state_main.bbl
+[211] Biber.pm:130> WARN - legacy month field 'Apr' in entry 'Rachel2015' is not an integer - this will probably not sort properly.
+[211] Biber.pm:130> WARN - legacy month field 'Nov' in entry 'Nayga2019' is not an integer - this will probably not sort properly.
+[211] Biber.pm:130> WARN - legacy month field 'Mar' in entry 'Kitt2012' is not an integer - this will probably not sort properly.
+[211] Biber.pm:130> WARN - legacy month field 'Jan' in entry 'Castro_Neto2009' is not an integer - this will probably not sort properly.
+[211] Biber.pm:130> WARN - legacy month field 'Nov' in entry 'Sun2023' is not an integer - this will probably not sort properly.
+[211] Biber.pm:130> WARN - legacy month field 'Jul' in entry 'Pereira2009' is not an integer - this will probably not sort properly.
+[211] Biber.pm:132> INFO - WARNINGS: 6

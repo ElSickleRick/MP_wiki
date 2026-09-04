@@ -505,14 +505,20 @@ Thus, the fermi velocity is $v_F = \sqrt{6}t$. This result has been reported bef
 
 \subsubsection{Continuum Model/ Gradient Expansion}
 
-Next I will derive the low-energy Hamilotnian in real space, as a continuum theory (/field theory). The real space Hamiltonian reads (copied from above with the chemical potentials set to zero)
+Next I will derive the low-energy Hamilotnian in real space, as a continuum theory (/field theory). I start by writing down the real-space hamiltonian, I reshuffled term a bit compared to when I first wrote it down above, the chemical potentials are set to zero.
+
+
+\begin{center} 
+\includegraphics[width = \textwidth]{lattice-pi-0-flux-state.jpeg}
+\end{center}
 
 \begin{align}
 	\begin{split}
-		H = \frac{t}{2} \sum_{i \sigma} &\bigg( a_{i\sigma}^\dagger a_{i+\delta_1;\sigma} + a_{i\sigma}^\dagger a_{i-\delta_1;\sigma} - a_{i\sigma}^\dagger b_{i+\delta_2;\sigma} + a_{i\sigma}^\dagger b_{i-\delta_2;\sigma} + a_{i\sigma}^\dagger b_{i+\delta_3;\sigma} + a_{i\sigma}^\dagger b_{i-\delta_3;\sigma} \\
-		&-b_{i\sigma}^\dagger b_{i+\delta_1;\sigma} - b_{i\sigma}^\dagger b_{i-\delta_1;\sigma} + b_{i\sigma}^\dagger a_{i+\delta_2;\sigma} - b_{i\sigma}^\dagger a_{i-\delta_2;\sigma} + b_{i\sigma}^\dagger a_{i+\delta_3;\sigma} + b_{i\sigma}^\dagger a_{i-\delta_3;\sigma}^\dagger \bigg)  \\
+		H = \frac{t}{2} \sum_{i \sigma} &\bigg( a_{i\sigma}^\dagger a_{i+\delta_1;\sigma}  - a_{i\sigma}^\dagger b_{i+\delta_2;\sigma} + a_{i\sigma}^\dagger b_{i+\delta_3;\sigma} - b_{i\sigma}^\dagger b_{i+\delta_1;\sigma} + b_{i\sigma}^\dagger a_{i+\delta_2;\sigma} + b_{i\sigma}^\dagger a_{i+\delta_3;\sigma} + \text{h.c.} \bigg)  \\
 	\end{split}
 \end{align}
+
+\textcolor{red}{I chose a bad method for indexing the lattice position, I should eventually revise this.} \\
 
 The idea is to decompose the the real-space wavefuntion by its momentum - one part is the momentum is the momentum of the dirac point, the other point describes a small deviation from the dirac point (small wavevector -> large wavelength -> slowly varying in real space). This justifies a gradient expansin of the "deviation field". \textcolor{red}{think of a better explenation for this. But I guess its correct in its spirit.}
 
@@ -524,7 +530,7 @@ The idea is to decompose the the real-space wavefuntion by its momentum - one pa
 	\end{split}
 \end{align}
 
-$A_{K\sigma}, A_{K^\prime\sigma}, B_{K\sigma}$ aqnd $ B_{K^\prime\sigma}$ are slowly varying fermionic fields. I begin with the expansion around the $K$-point. \textcolor{red}{If the above expansion is correct, the cross terms should vanish. Why?} The protoypical method is 
+$A_{K\sigma}, A_{K^\prime\sigma}, B_{K\sigma}$ aqnd $ B_{K^\prime\sigma}$ are slowly varying fermionic fields. I begin with the expansion around the $K$-point. \textcolor{blue}{If the above expansion is correct, the cross terms should vanish. Show this.} The protoypical method is 
 
 \begin{align}
 	a_{i\sigma}^\dagger a_{i+\delta;\sigma} &\sim e^{i\vec{K}\vec{\delta}}A^\dagger_{K\sigma}(\vec{R}_i)A_{K\sigma}(\vec{R}_i + \vec{\delta}) \notag \\
@@ -575,8 +581,6 @@ with
 	\end{pmatrix}.
 \end{equation}
 
-\textcolor{blue}{Maybe find a few things to write about Isospin? However this is probably not the real Isospin of theory yet as $H$ is not diagonal.} \\
-
 Doing the same around $\vec{K}^\prime$ gives 
 
 \begin{equation}
@@ -598,7 +602,7 @@ Imagine we did this \textcolor{red}{small frequency?} Fourier expansion and we f
 		\begin{pmatrix}
 			\mp \vec{\delta}_3\vec{p} \\
 			\vec{\delta}_2\vec{p} \\
-			\mp \vec{\delta}_3\vec{p}
+			\mp \vec{\delta}_1\vec{p}
 		\end{pmatrix} } = \sqrt{6}t\sqrt{p_x^2 + p_y^2} = \sqrt{6}t\abs{\vec{p}},
 \end{equation}
 
