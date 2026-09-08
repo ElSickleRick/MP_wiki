@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
+% $ biblatex bbl format version 3.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,8 +18,8 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global}
-    \entry{DiSante2026}{article}{}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{DiSante2026}{article}{}{}
       \name{author}{8}{}{%
         {{hash=d964bcdd2972bc0537992640ef825b7a}{%
            family={Di\bibnamedelima Sante},
@@ -67,10 +67,12 @@
       }
       \strng{namehash}{19f8fe82e6fa18f1187bc93db5b8f16a}
       \strng{fullhash}{ed1e5538e306b20ec6ab4ed8f12ff24a}
+      \strng{fullhashraw}{ed1e5538e306b20ec6ab4ed8f12ff24a}
       \strng{bibnamehash}{19f8fe82e6fa18f1187bc93db5b8f16a}
       \strng{authorbibnamehash}{19f8fe82e6fa18f1187bc93db5b8f16a}
       \strng{authornamehash}{19f8fe82e6fa18f1187bc93db5b8f16a}
       \strng{authorfullhash}{ed1e5538e306b20ec6ab4ed8f12ff24a}
+      \strng{authorfullhashraw}{ed1e5538e306b20ec6ab4ed8f12ff24a}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
@@ -81,7 +83,6 @@
       \field{title}{Kagome metals}
       \field{volume}{98}
       \field{year}{2026}
-      \true{nocite}
       \field{pages}{015002}
       \range{pages}{1}
       \verb{doi}
@@ -94,7 +95,7 @@
       \verb https://link.aps.org/doi/10.1103/1g9n-wm38
       \endverb
     \endentry
-    \entry{Liu2020}{article}{}
+    \entry{Liu2020}{article}{}{}
       \name{author}{1}{}{%
         {{hash=93d40b6dedb3119d20859f0f5a9ceced}{%
            family={Liu},
@@ -107,10 +108,12 @@
       }
       \strng{namehash}{93d40b6dedb3119d20859f0f5a9ceced}
       \strng{fullhash}{93d40b6dedb3119d20859f0f5a9ceced}
+      \strng{fullhashraw}{93d40b6dedb3119d20859f0f5a9ceced}
       \strng{bibnamehash}{93d40b6dedb3119d20859f0f5a9ceced}
       \strng{authorbibnamehash}{93d40b6dedb3119d20859f0f5a9ceced}
       \strng{authornamehash}{93d40b6dedb3119d20859f0f5a9ceced}
       \strng{authorfullhash}{93d40b6dedb3119d20859f0f5a9ceced}
+      \strng{authorfullhashraw}{93d40b6dedb3119d20859f0f5a9ceced}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
@@ -134,7 +137,7 @@
       \verb https://link.aps.org/doi/10.1103/PhysRevB.102.045151
       \endverb
     \endentry
-    \entry{Xia2026}{article}{}
+    \entry{Xia2026}{article}{}{}
       \name{author}{2}{}{%
         {{hash=ac24f386fe79d8c1d56f0f9a1cf73e0b}{%
            family={Xia},
@@ -152,10 +155,12 @@
       }
       \strng{namehash}{cd850eb99a4ab792b5b10c86ac4294c2}
       \strng{fullhash}{cd850eb99a4ab792b5b10c86ac4294c2}
+      \strng{fullhashraw}{cd850eb99a4ab792b5b10c86ac4294c2}
       \strng{bibnamehash}{cd850eb99a4ab792b5b10c86ac4294c2}
       \strng{authorbibnamehash}{cd850eb99a4ab792b5b10c86ac4294c2}
       \strng{authornamehash}{cd850eb99a4ab792b5b10c86ac4294c2}
       \strng{authorfullhash}{cd850eb99a4ab792b5b10c86ac4294c2}
+      \strng{authorfullhashraw}{cd850eb99a4ab792b5b10c86ac4294c2}
       \field{sortinit}{X}
       \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
       \field{labelnamesource}{author}

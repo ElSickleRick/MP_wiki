@@ -83,7 +83,7 @@ where $N$ is the number of unit cells. This yields
 \begin{equation}
 	H = 2t \sum_{q\sigma}
 	\begin{pmatrix}
-		a_{q\sigma}^\dagger b_{q\sigma}^\dagger c_{q\sigma}^\dagger 
+		a_{q\sigma}^\dagger & b_{q\sigma}^\dagger & c_{q\sigma}^\dagger 
 	\end{pmatrix}
 	\begin{pmatrix}
 		0 & \cos(\vec{q}\cdot\vec{\delta}_2) & \cos(\vec{q}\cdot\vec{\delta}_3) \\
@@ -143,4 +143,43 @@ These touching points lie at the corners of the Brillouin zone, there are two "s
 \subsubsection{filling factor}
 
 \textcolor{red}{The idea is the follwing: The lower two bands contain the same number of states by symmetry. By calculating the number of states of the upper band (should be easy) it shoulb possible to calcualte at what filling factor the low energy physics happen exactly the linear touching points.}
+
+\subsubsection{linearization in reciprocal space}
+
+Use
+
+\begin{equation}
+	\cos(\left(\vec{K}^{(\prime)}+\vec{p}\right)\cdot\vec{\delta}_{ij}) \approx \cos(\vec{K}^{(\prime)}\cdot\vec{\delta}_{ij}) - \sin(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{p}\cdot\vec{\delta}_{ij}\right)
+\end{equation}
+
+
+and
+
+\begin{align}
+	\begin{split}
+		\vec{K}\cdot\vec{\delta}_{1} &= \frac{2\pi}{3} \\
+		\vec{K}\cdot\vec{\delta}_{2} &= \frac{\pi}{3} \\
+		\vec{K}\cdot\vec{\delta}_{3} &= \frac{\pi}{3} \\
+		\vec{K}^\prime &= - \vec{K}
+	\end{split}
+\end{align}
+
+
+\begin{align}
+	H(\vec{K}) \approx t\sum_{p\sigma}
+	\begin{pmatrix}
+		a_{p\sigma}^\dagger b_{p\sigma}^\dagger c_{p\sigma}^\dagger
+	\end{pmatrix}
+	\begin{pmatrix}
+		0 & 1-\sqrt{3}\vec{p}\cdot\vec{\delta}_2 & 1 - \sqrt{3}\vec{p}\cdot\vec{\delta}_3 \\
+		1-\sqrt{3}\vec{p}\cdot\vec{\delta}_2 & 0 & -1-\sqrt{3}\vec{p}\cdot\vec{\delta}_1 \\
+		1-\sqrt{3}\vec{p}\cdot\vec{\delta}_3 & -1-\sqrt{3}\vec{p}\cdot\vec{\delta}_1 & 0
+	\end{pmatrix}
+	\begin{pmatrix}
+		a_{q\sigma} \\
+		b_{q\sigma} \\
+		c_{q\sigma}
+	\end{pmatrix}
+\end{align}
+
 \end{document}
