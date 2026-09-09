@@ -49,7 +49,7 @@ and the primitive translations
 The tight binding hamiltonain is 
 
 \begin{equation}
-	H = -t \sum_{i\sigma} \left(a_{i\sigma}^\dagger c_{i\sigma} + c_{i\sigma}^\dagger b_{i\sigma} + b_{i\sigma}^\dagger a_{i\sigma} + c_{i\sigma}^\dagger b_{i+t_1;\sigma} + c_{i\sigma}^\dagger a_{i+t_1-t_2;\sigma} + a_{i\sigma}^\dagger b_{i+t_2;\sigma} + \text{h.c.}\right)
+	H = t \sum_{i\sigma} \left(a_{i\sigma}^\dagger c_{i\sigma} + c_{i\sigma}^\dagger b_{i\sigma} + b_{i\sigma}^\dagger a_{i\sigma} + c_{i\sigma}^\dagger b_{i+t_1;\sigma} + c_{i\sigma}^\dagger a_{i+t_1-t_2;\sigma} + a_{i\sigma}^\dagger b_{i+t_2;\sigma} + \text{h.c.}\right)
 \end{equation}
 
 The first index refers to the unit cell and the second one to the "species" of the particle, the latter being a product of the parton decomposition.
@@ -81,7 +81,7 @@ The first Brillouin zone is also a hexagon (rotated by 90° wrt to the Wigner-Se
 where $N$ is the number of unit cells. This yields
 
 \begin{equation}
-	H = -2t \sum_{q\sigma}
+	H = 2t \sum_{q\sigma}
 	\begin{pmatrix}
 		a_{q\sigma}^\dagger & b_{q\sigma}^\dagger & c_{q\sigma}^\dagger 
 	\end{pmatrix}
@@ -102,9 +102,9 @@ where $N$ is the number of unit cells. This yields
 The three eigenvalues are 
 
 \begin{align}
-	\varepsilon_1(\vec{q}) &= -t\left(1-\sqrt{4\cos^2(q_x)+4\cos(q_x) \cos(\sqrt{3}q_y)+1}\right) \\
-	\varepsilon_2(\vec{q}) &= -t\left(1+\sqrt{4\cos^2(q_x)+4\cos(q_x) \cos(\sqrt{3}q_y)+1}\right) \\
-	\varepsilon_3(\vec{q}) &= 2t,
+	\varepsilon_1(\vec{q}) &= t\left(1-\sqrt{4\cos^2(q_x)+4\cos(q_x) \cos(\sqrt{3}q_y)+1}\right) \\
+	\varepsilon_2(\vec{q}) &= t\left(1+\sqrt{4\cos^2(q_x)+4\cos(q_x) \cos(\sqrt{3}q_y)+1}\right) \\
+	\varepsilon_3(\vec{q}) &= -2t,
 \end{align}
 
 see \cite{DiSante2026}. I also used 
@@ -166,7 +166,7 @@ and
 
 
 \begin{align}
-	H(\vec{K}) \approx -t\sum_{p\sigma}
+	H_{\vec{K}} \approx t\sum_{p\sigma}
 	\begin{pmatrix}
 		a_{p\sigma}^\dagger b_{p\sigma}^\dagger c_{p\sigma}^\dagger
 	\end{pmatrix}
@@ -181,5 +181,66 @@ and
 		c_{q\sigma}
 	\end{pmatrix}
 \end{align}
+
+Directly at the $\vec{K}$-point the eigenvalues are obviously 
+
+\begin{equation}
+	\varepsilon_1(\vec{K}) = t, \quad \varepsilon_2(\vec{K}) = t, \quad \varepsilon_3(\vec{K}) = -2t,
+\end{equation}
+
+the eigenvector corresponding to the flat band reads at the $\vec{K}$-point:
+
+\begin{equation}
+	\vec{v}_3(\vec{K}) = \frac{1}{\sqrt{3}}
+	\begin{pmatrix}
+		-1 \\
+		1 \\
+		1
+	\end{pmatrix}.
+\end{equation}
+
+Since $H$ is hermitian (/symmetric in this case) there exsit a orthonormal basis of eigenvectors. Obviously the subspace orthonormal to $\vec{v}_3(\vec{K})$ corresponds to the two bands that cross. A possible (orthonormal) basis for this subspace is 
+
+\begin{equation}
+	\vec{v}_1(\vec{K}) = \frac{1}{\sqrt{2}}
+	\begin{pmatrix}
+		1 \\
+		1 \\ 
+		0
+	\end{pmatrix}, \quad
+	\vec{v}_2(\vec{K}) = \frac{1}{\sqrt{6}}
+	\begin{pmatrix}
+		1 \\
+		-1 \\
+		2
+	\end{pmatrix}.
+\end{equation}
+
+\textcolor{red}{Is it important to consider the phases of the states here?}
+
+Projeting $H$ onto this basis yields
+
+\begin{align*}
+		& \vec{v}_1^T \cdot H_{\vec{K}} \cdot \vec{v}_1 = t-\sqrt{3}t\vec{\delta}_2 \cdot \vec{p} & \vec{v}_1^T \cdot H_{\vec{K}} \cdot \vec{v}_2 = -t\left(\vec{\delta}_1 + \vec{\delta}_3\right)\cdot\vec{p} \\ 
+		& \vec{v}_2^T \cdot H_{\vec{K}} \cdot \vec{v}_1 = -t\left(\vec{\delta}_1 + \vec{\delta}_3\right)\cdot\vec{p} & \vec{v}^T_2 \cdot H_{\vec{K}} \cdot \vec{v}_2 = t+\sqrt{3}t\vec{\delta}_2\cdot\vec{p}
+\end{align*}
+
+\begin{equation}
+	\Leftrightarrow t\sigma_0 - \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\sigma_z + t\left(\left(\vec{\delta}_1 + \vec{\delta}_3\right)\cdot\vec{p}\right) \sigma_x
+\end{equation}
+
+This already has the correct dispersiob
+
+\begin{equation}
+	\varepsilon_{1,2}(\vec{K}+\vec{p}) \approx \sqrt{3}t\abs{\vec{p}},
+\end{equation}
+
+but is not yet in the form of the Weyl equation. \textcolor{red}{This can probably achieved by rotating the basis in the degenerate subsapce?}
+
+\textcolor{blue}{Sanity check; directly linearizing the algabraic expressions for $\varepsilon_{1,2}(\vec{q})$ gives
+\begin{equation}
+Please work
+\end{equation}
+}
 
 \end{document}
