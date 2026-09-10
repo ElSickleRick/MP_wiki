@@ -93,7 +93,7 @@
       \verb https://link.aps.org/doi/10.1103/1g9n-wm38
       \endverb
     \endentry
-    \entry{PhysRevB.80.113102}{article}{}
+    \entry{Guo2009}{article}{}
       \name{author}{2}{}{%
         {{hash=28c52241f6429f45e512f41e99afba79}{%
            family={Guo},
@@ -125,7 +125,6 @@
       \field{title}{Topological insulator on the kagome lattice}
       \field{volume}{80}
       \field{year}{2009}
-      \true{nocite}
       \field{pages}{113102}
       \range{pages}{1}
       \verb{doi}
@@ -165,7 +164,6 @@
       \field{title}{Strain-induced pseudomagnetic field and quantum oscillations in kagome crystals}
       \field{volume}{102}
       \field{year}{2020}
-      \true{nocite}
       \field{pages}{045151}
       \range{pages}{1}
       \verb{doi}

@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\subsubsection{real space}
+\subsubsection{Real Space}
 
 The bare Kagome lattice is a triangular Bravais lattice with a three site unit cell (called a, b and c-sites below). The Wigner Seitz-cell is a hexagon (with full symmetries, even if the drawing suggests otherwise ;) ). Geometrically speaking the lattice consists of corner-sharing equilateral triangles.
 
@@ -54,7 +54,7 @@ The tight binding hamiltonain is
 
 The first index refers to the unit cell and the second one to the "species" of the particle, the latter being a product of the parton decomposition.
 
-\subsubsection{reciprocal space}
+\subsubsection{Reciprocal Space}
 
 The recipricoal lattice vectors are 
 
@@ -140,11 +140,11 @@ These touching points lie at the corners of the Brillouin zone, there are two "s
 	\end{pmatrix}, \quad m = 0, s = 1,  l = 0.
 \end{align}
 
-\subsubsection{filling factor}
+\subsubsection{Filling Factor}
 
 \textcolor{red}{The idea is the follwing: The lower two bands contain the same number of states by symmetry. By calculating the number of states of the upper band (should be easy) it shoulb possible to calcualte at what filling factor the low energy physics happen exactly the linear touching points.}
 
-\subsubsection{linearization in reciprocal space}
+\subsubsection{Linearization in Reciprocal Space and Projection}
 
 Use
 
@@ -216,8 +216,6 @@ Since $H$ is hermitian (/symmetric in this case) there exsit a orthonormal basis
 	\end{pmatrix}.
 \end{equation}
 
-\textcolor{red}{Is it important to consider the phases of the states here?}
-
 Projeting $H$ onto this basis yields
 
 \begin{align*}
@@ -235,12 +233,69 @@ This already has the correct dispersiob
 	\varepsilon_{1,2}(\vec{K}+\vec{p}) \approx \sqrt{3}t\abs{\vec{p}},
 \end{equation}
 
-but is not yet in the form of the Weyl equation. \textcolor{red}{This can probably achieved by rotating the basis in the degenerate subsapce?}
+but is not yet in the form of the Weyl equation. To transform the equation into the Weyl equation one can rotate the basis inside the degenerate subspace. I take the following approach; define 
 
-\textcolor{blue}{Sanity check; directly linearizing the algabraic expressions for $\varepsilon_{1,2}(\vec{q})$ gives
+\begin{align}
+	\begin{split}
+		\vec{w}_1 &= \alpha \vec{v}_1 + \beta\vec{v}_2 \\
+		\vec{w}_2 &= \eta \vec{v}_1 + \gamma \vec{v}_2
+	\end{split}
+\end{align}
+
+Othogonality dictates
+
+\begin{align*}
+	\abs{\alpha}^2 + \abs{\beta}^2 = 1 \\
+	\abs{\eta}^2 + \abs{\gamma}^2 = 1 \\
+\alpha^* \eta + \beta^* \gamma = 0.
+\end{align*}
+
+Utilizing $\vec{\delta}_2 + \vec{\delta}_3 = \vec{\delta}_1$ I get:
+
+\begin{align}
+	\vec{w}_1^T \cdot H_{\vec{K}} \cdot \vec{w}_1 &= t + \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(1-2\abs{\alpha}^2-\frac{2\text{Re}(\alpha^*\beta)}{\sqrt{3}}\right) + \sqrt{3}t\left(\vec{\delta}_3\cdot\vec{p}\right)\left( -\frac{4\text{Re}(\alpha^*\beta)}{\sqrt{3}}\right) \\
+	\vec{w}_2^T \cdot H_{\vec{K}} \cdot \vec{w}_2 &= 1 + \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(1-2\abs{\eta}^2-\frac{2\text{Re}(\eta^*\gamma)}{\sqrt{3}}\right) + \sqrt{3}t\left(\vec{\delta}_3\cdot\vec{p}\right)\left(-\frac{4\text{Re}(\eta^*\gamma)}{\sqrt{3}}\right) \\
+	\vec{w}_1^T \cdot H_{\vec{K}} \cdot \vec{w}_2 &= \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(1-2\alpha^*\eta-\frac{\alpha^*\gamma + \beta^*\eta}{\sqrt{3}}\right) + \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(-\frac{2(\alpha^*\gamma +  \beta^*\eta)}{\sqrt{3}}\right) \\
+	\vec{w}_2^T \cdot H_{\vec{K}} \cdot \vec{w}_1 &= \left(\vec{w}_1^T \cdot H_{\vec{K}} \cdot \vec{w}_2\right)^*
+\end{align}
+
+The strategy is to solve for values for $\alpha, \beta, \gamma$ and $\eta$ such that the following combinations occur in the matrix elements:
+
+\begin{align}
+	p_x &= \left( \vec{\delta}_2 + \vec{\delta}_3 \right) \cdot \vec{p} \\
+	p_y &= \frac{1}{\sqrt{3}} \left(\vec{\delta}_2 - \vec{\delta}_3\right) \cdot \vec{p}
+\end{align}
+
+whil still leading to orthonormal basis vectors. The following parameters are a sensible choice 
+
 \begin{equation}
-Please work
+	\alpha = -\frac12, \quad \beta = \frac{\sqrt{3}}{2}, \quad \eta = \frac{\sqrt{3}}{2}, \quad \gamma = \frac12.
 \end{equation}
-}
+
+Thus, the new basis vectors read
+
+\begin{equation}
+	\vec{w}_1 = \frac{1}{\sqrt{2}}
+	\begin{pmatrix}
+		0 \\ -1 \\ 1
+	\end{pmatrix}, \quad
+	\vec{w}_2 = \frac{1}{\sqrt{6}}
+	\begin{pmatrix}
+		2 \\ 1 \\ 1
+	\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+	\Rightarrow \langle H_{\vec{K}} \rangle_{\text{span}(\vec{w}_1, \vec{w}_2)} = t\sigma_0 + \sqrt{3}t p_y \sigma_x + \sqrt{3}tp_x \sigma_z
+\end{equation}
+
+This form was also found in \cite{Guo2009}, a different one was obtained in \cite{Liu2020}. \textcolor{blue}{I expect that I would find the latter if I chose different values for $\alpha$, $\beta$, $\gamma$ and $\eta$.} I decided to stick with this form to keep the expressions real. \\
+
+\textcolor{blue}{I could eliminate the $\sigma_0$ term by introducing chemical potentials but I guess for non-interacting particles it doesn't really matter.} \\
+
+\textcolor{red}{Question: when rotationg the orthonormal basis inside the degnerate subspace there is one free paramters (the rotation angle). On the other hand one can probably also think about the surface of a bloch sphere (the radius is obviously fixed). What is the free parameter in this picture /what is the fixed parameter? It is proably worthwile to explore this at some point, it might reveal the underlying topolgy.}
+
+\subsubsection{Introduction of Strain}
+
 
 \end{document}
