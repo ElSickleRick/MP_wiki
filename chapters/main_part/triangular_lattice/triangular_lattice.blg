@@ -1,23 +1,23 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'triangular_lattice.blg'
-[51] biber:340> INFO - === Fr Sep  4, 2026, 12:16:12
-[65] Biber.pm:418> INFO - Reading 'triangular_lattice.bcf'
-[109] Biber.pm:969> INFO - Using all citekeys in bib section 0
-[118] Biber.pm:4383> INFO - Processing section 0
-[125] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
-[127] bibtex.pm:1713> INFO - LaTeX decoding ...
-[136] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
-[202] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[202] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[202] Biber.pm:4203> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[202] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[210] bbl.pm:654> INFO - Writing 'triangular_lattice.bbl' with encoding 'UTF-8'
-[215] bbl.pm:757> INFO - Output to triangular_lattice.bbl
-[223] Biber.pm:130> WARN - legacy month field 'Mar' in entry 'Drechsler2025' is not an integer - this will probably not sort properly.
-[223] Biber.pm:130> WARN - legacy month field 'Nov' in entry 'Nayga2019' is not an integer - this will probably not sort properly.
-[223] Biber.pm:130> WARN - legacy month field 'Jul' in entry 'Pereira2009' is not an integer - this will probably not sort properly.
-[223] Biber.pm:130> WARN - legacy month field 'Apr' in entry 'Rachel2015' is not an integer - this will probably not sort properly.
-[223] Biber.pm:130> WARN - legacy month field 'Jan' in entry 'Castro_Neto2009' is not an integer - this will probably not sort properly.
+[53] biber:340> INFO - === Fr Sep 11, 2026, 11:48:49
+[68] Biber.pm:418> INFO - Reading 'triangular_lattice.bcf'
+[115] Biber.pm:969> INFO - Using all citekeys in bib section 0
+[125] Biber.pm:4383> INFO - Processing section 0
+[131] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
+[136] bibtex.pm:1713> INFO - LaTeX decoding ...
+[146] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
+[208] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[208] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[208] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[208] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[216] bbl.pm:654> INFO - Writing 'triangular_lattice.bbl' with encoding 'UTF-8'
+[220] bbl.pm:757> INFO - Output to triangular_lattice.bbl
 [223] Biber.pm:130> WARN - legacy month field 'Mar' in entry 'Kitt2012' is not an integer - this will probably not sort properly.
-[223] Biber.pm:130> WARN - legacy month field 'Nov' in entry 'Sun2023' is not an integer - this will probably not sort properly.
-[223] Biber.pm:132> INFO - WARNINGS: 7
+[223] Biber.pm:130> WARN - legacy month field 'Jul' in entry 'Pereira2009' is not an integer - this will probably not sort properly.
+[223] Biber.pm:130> WARN - legacy month field 'Nov' in entry 'Nayga2019' is not an integer - this will probably not sort properly.
+[224] Biber.pm:130> WARN - legacy month field 'Mar' in entry 'Drechsler2025' is not an integer - this will probably not sort properly.
+[224] Biber.pm:130> WARN - legacy month field 'Jan' in entry 'Castro_Neto2009' is not an integer - this will probably not sort properly.
+[224] Biber.pm:130> WARN - legacy month field 'Apr' in entry 'Rachel2015' is not an integer - this will probably not sort properly.
+[224] Biber.pm:130> WARN - legacy month field 'Nov' in entry 'Sun2023' is not an integer - this will probably not sort properly.
+[224] Biber.pm:132> INFO - WARNINGS: 7

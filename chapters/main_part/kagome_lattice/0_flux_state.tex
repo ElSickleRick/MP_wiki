@@ -110,13 +110,13 @@ The three eigenvalues are
 see \cite{DiSante2026}. I also used 
 
 \begin{equation}
-	\cos^2\left(\frac12\left( x + \sqrt{3}q_y\right)\right) + \cos^2\left(\frac12\left(q_x - \sqrt{3}q_y\right)\right) = \cos(q_x)\cos(\sqrt{3}q_y) + 1
+	\cos^2\left(\frac12\left( q_x + \sqrt{3}q_y\right)\right) + \cos^2\left(\frac12\left(q_x - \sqrt{3}q_y\right)\right) = \cos(q_x)\cos(\sqrt{3}q_y) + 1
 \end{equation}.
 
 Interestingly, the top band is completely flat. The other two bands touch when
 
 \begin{equation}
-	\cos^2(x) + \cos(x)\cos(\sqrt{3}y) + 1/4 = 0
+	\cos^2(q_x) + \cos(q_x)\cos(\sqrt{3}q_y) + 1/4 = 0
 \end{equation}
 
 \begin{gather}
@@ -286,7 +286,7 @@ Thus, the new basis vectors read
 \end{equation}
 
 \begin{equation}
-	\Rightarrow \langle H_{\vec{K}} \rangle_{\text{span}(\vec{w}_1, \vec{w}_2)} = t\sigma_0 + \sqrt{3}t p_y \sigma_x + \sqrt{3}tp_x \sigma_z
+	\Rightarrow \langle H_{\vec{K}} \rangle_{\vec{w}_1, \vec{w}_2} = t\sigma_0 + \sqrt{3}t p_y \sigma_x + \sqrt{3}tp_x \sigma_z
 \end{equation}
 
 This form was also found in \cite{Guo2009}, a different one was obtained in \cite{Liu2020}. \textcolor{blue}{I expect that I would find the latter if I chose different values for $\alpha$, $\beta$, $\gamma$ and $\eta$.} I decided to stick with this form to keep the expressions real. \\
@@ -297,5 +297,71 @@ This form was also found in \cite{Guo2009}, a different one was obtained in \cit
 
 \subsubsection{Introduction of Strain}
 
+I show how to expand expressions prototyical for the k-space Hamiltonian in strain:
+
+\begin{equation}
+	t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}}  \approx te^{i\vec{q}\cdot\vec{\delta}_{ij}}\left(1-\beta\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) + i \left(\vec{q}\cdot\underline{u}\cdot\vec{\delta}_{ij}\right)\right),
+\end{equation}
+
+afterwars I expand these expression around $\vec{K}$:
+
+\begin{equation}
+	t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}}  \approx t e^{i\vec{q}\cdot\vec{\delta}_{ij}}\left(1 + \vec{p} \cdot \vec{\delta}_{ij} \right)\left(1-\beta\left(\vec{\delta}_{ij}\cdot\underline{u}\cdot\vec{\delta}_{ij}\right) + i \left(\vec{K}\cdot\underline{u}\cdot\vec{\delta}_{ij}\right) + i \left(\underline{u}\cdot\vec{\delta}_{ij}\right)\cdot\vec{p} \right)
+\end{equation}
+
+\textcolor{blue}{I compared this to the expansion on the triangular lattice, where I used the real space method. The main difference is the order of expansions. As I do the k-space expansion second I find terms of second order in $p$. For the triangular lattice I did it in opposite order, thereby accquiring terms of second order in $\underline{u}$. This means one can only compare terms of zeroth order and of first order either in $\underline{u}$ or in $p$. These terms check out.} \textcolor{red}{Revise this} \\
+
+Keeping only the relevant terms (relevant to this order at least):
+
+\begin{equation}
+	t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}}  \approx t e^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(1+i\vec{p}\cdot\vec{\delta}_{ij} - \beta \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) + i \left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right)\right)
+\end{equation}
+
+\begin{align}
+	\begin{split}
+	\Rightarrow t(-\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}} + t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}} \approx & 2t\cos(\vec{K}\cdot\vec{\delta}_{ij}) - 2t\sin(\vec{K} \cdot \vec{\delta}_{ij})\left(\vec{p}\cdot\vec{\delta}_{ij}\right) \\
+		-&2\beta t\cos(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \\
+		-&2t\sin(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right)
+	\end{split}
+\end{align}
+
+I group the linear corrections by order in $\beta$ to find the two matrices:
+
+\begin{equation}
+	\delta H_1 = -2t\beta
+	\begin{pmatrix}
+		0 & (u_{xx} + 2\sqrt{3}u_{yx}+3u_{yy})/8 & (u_{xx} - 2\sqrt{3}u_{yx}+3u_{yy}/8 \\
+		(u_{xx} + 2\sqrt{3}u_{yx}+3u_{yy})/8 & 0 & -u_{xx}/2 \\
+		(u_{xx} - 2\sqrt{3}u_{yx}+3u_{yy}/8 & - u_{xx}/2 & 0
+	\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+	\delta H_2 = -2t
+	\begin{pmatrix}
+		0 & \pi(\frac{u_{xx}}{\sqrt{3}} + u_{yx})/2 & \pi(\frac{u_{xx}}{\sqrt{3}} - u_{yx} )/2 \\
+		\pi(\frac{u_{xx}}{\sqrt{3}} + u_{yx})/2 & 0 & \pi \frac{u_{xx}}{\sqrt{3}} \\
+		\pi(\frac{u_{xx}}{\sqrt{3}} - u_{yx} )/2 & \pi \frac{u_{xx}}{\sqrt{3}} & 0 
+	\end{pmatrix}
+\end{equation}
+
+The projections are 
+
+\begin{equation}
+	\langle \delta H_1 \rangle_{\vec{w}_1, \vec{w}_2} = -t\beta
+	\begin{pmatrix}
+		u_{xx} & u_{yx} \\
+		u_{yx} & u_{yy}
+	\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+	\langle \delta H_2 \rangle_{\vec{w}_1, \vec{w}_2} = -\frac{2\pi t}{\sqrt{3}}
+	\begin{pmatrix}
+		u_{xx} & u_{yx} \\
+		u_{yx} & -u_{xx}
+	\end{pmatrix}
+	= -\frac{2\pi t}{\sqrt{3}} \left( u_{yx} \sigma_y + u_{xx} \sigma_z\right)
+\end{equation}
 
 \end{document}

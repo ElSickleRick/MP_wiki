@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  8 SEP 2026 15:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  11 SEP 2026 11:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -755,11 +755,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Citation 'Drechsler2025' on page 2 undefined on input line 131.
-
-[2])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2])
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 13.
@@ -785,7 +781,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 13.
 
 (./0_0_state.tex
-<lattice-0-flux-state.jpeg, id=119, 1284.8pt x 963.6pt>
+<lattice-0-flux-state.jpeg, id=121, 1284.8pt x 963.6pt>
 File: lattice-0-flux-state.jpeg Graphic file (type jpg)
 <use lattice-0-flux-state.jpeg>
 Package pdftex.def Info: lattice-0-flux-state.jpeg  used on input line 7.
@@ -836,7 +832,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 16.
 
 (./0_pi_state.tex
-<lattice-pi-0-flux-state.jpeg, id=164, 1284.8pt x 963.6pt>
+<lattice-pi-0-flux-state.jpeg, id=166, 1284.8pt x 963.6pt>
 File: lattice-pi-0-flux-state.jpeg Graphic file (type jpg)
 <use lattice-pi-0-flux-state.jpeg>
 Package pdftex.def Info: lattice-pi-0-flux-state.jpeg  used on input line 8.
@@ -870,10 +866,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--264
  []
 
 [12] [13] [14]
-
-LaTeX Warning: Citation 'Rachel2015' on page 15 undefined on input line 504.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 504--505
 
  []
@@ -907,29 +899,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 19.
 
 (./0_pi_state_on_strained_lattice.tex
-
-LaTeX Warning: Citation 'Nayga2019' on page 18 undefined on input line 6.
-
-
-LaTeX Warning: Citation 'Kitt2012' on page 18 undefined on input line 6.
-
-
-LaTeX Warning: Citation 'Ramezani_Masir2013' on page 18 undefined on input line
- 6.
-
-
-LaTeX Warning: Citation 'Castro_Neto2009' on page 18 undefined on input line 6.
-
-
-
-LaTeX Warning: Citation 'Sun2023' on page 18 undefined on input line 6.
-
-
-Overfull \hbox (10.4365pt too wide) in paragraph at lines 6--7
-\OT1/cmr/m/n/10 references are [[]], [[]], [[]], [[]] and [[]] 
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
@@ -943,9 +912,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
-
-
-LaTeX Warning: Citation 'Pereira2009' on page 18 undefined on input line 53.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 53--54
@@ -964,13 +930,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 74.
-
-
-LaTeX Warning: Citation 'Nayga2019' on page 19 undefined on input line 94.
-
-
-LaTeX Warning: Citation 'Ramezani_Masir2013' on page 19 undefined on input line
- 115.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 115--116
@@ -1047,7 +1006,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 22.
 
 (./pi_half_pi_half_state.tex
-<lattice-pi-half-flux-state.jpeg, id=340, 2055.68pt x 1459.4525pt>
+<lattice-pi-half-flux-state.jpeg, id=359, 2055.68pt x 1459.4525pt>
 File: lattice-pi-half-flux-state.jpeg Graphic file (type jpg)
 <use lattice-pi-half-flux-state.jpeg>
 Package pdftex.def Info: lattice-pi-half-flux-state.jpeg  used on input line 6.
@@ -1059,53 +1018,50 @@ Overfull \hbox (5.13951pt too wide) detected at line 183
 []
  []
 
-[23])
-
-LaTeX Warning: Empty bibliography on input line 26.
-
-[24] (./triangular_lattice.aux)
+[23]) [24] (./triangular_lattice.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `triangular_lattice.out' has not changed.
 (rerunfilecheck)             Checksum: 2BEAF504C7CBB6D98DD226E1A4DB3973;3319.
 
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                triangular_lattice
-(biblatex)                and rerun LaTeX afterwards.
+Package biblatex Warning: Please rerun LaTeX.
 
 Package logreq Info: Writing requests to 'triangular_lattice.run.xml'.
 \openout1 = `triangular_lattice.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20391 strings out of 478287
- 347671 string characters out of 5849289
+ 20441 strings out of 478287
+ 348884 string characters out of 5849289
  1089456 words of memory out of 5000000
- 38089 multiletter control sequences out of 15000+600000
- 477665 words of font info for 63 fonts, out of 8000000 for 9000
+ 38128 multiletter control sequences out of 15000+600000
+ 480516 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,18n,94p,794b,1245s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 88i,18n,94p,794b,1321s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfrm1000.pfb>
-Output written on triangular_lattice.pdf (24 pages, 684143 bytes).
+ts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
+.pfb>
+Output written on triangular_lattice.pdf (24 pages, 726518 bytes).
 PDF statistics:
- 521 PDF objects out of 1000 (max. 8388607)
- 455 compressed objects within 5 object streams
- 239 named destinations out of 1000 (max. 500000)
+ 580 PDF objects out of 1000 (max. 8388607)
+ 507 compressed objects within 6 object streams
+ 247 named destinations out of 1000 (max. 500000)
  168 words of extra memory for PDF output out of 10000 (max. 10000000)
 
