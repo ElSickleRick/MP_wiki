@@ -364,4 +364,28 @@ The projections are
 	= -\frac{2\pi t}{\sqrt{3}} \left( u_{yx} \sigma_y + u_{xx} \sigma_z\right)
 \end{equation}
 
+$\langle \delta H_1 \rangle_{\vec{w}_1, \vec{w}_2}$ can be written as vector potential + scalar potential using:
+
+\begin{align}
+	\begin{split}
+		u_{xx} &= \frac12\left(u_{xx} - u_{yy}\right) + \frac12\left(u_{xx} + u_{yy} \right) \\
+		u_{yy} &= -\frac12\left(u_{xx} - u_{yy}\right) + \frac12\left(u_{xx} + u_{yy} \right). 	
+	\end{split}
+\end{align}
+
+\begin{equation}
+	\Rightarrow \langle H_{\vec{K}} + \delta H_1  + \delta H_2 \rangle_{\vec{w}_1, \vec{w}_2} = (t+\phi)\sigma^0 + \sqrt{3}t\left(p_y + A_y\right)\sigma_x + \sqrt{3}t \left( p_x + A_x\right)\sigma_z
+\end{equation}
+
+
+\begin{align}
+	\phi &= \frac{t}{2}\left(u_{xx}+u_{yy}\right) \\
+	A_x &= -\frac{t\beta}{2\sqrt{3}}\left(u_{xx}-u_{yy}\right) - \frac{2\pi t}{3}u_{xx} \\
+	A_y &= -\frac{t\beta}{\sqrt{3}}u_{yx} - \frac{2\pi t}{3}u_{yx}
+\end{align}
+
+The $\beta$-independent part of $\vec{A}$ can be eliminated using a gauge-transforamtion. This agrees with the results here \cite{Liu2020}. \\
+
+\textcolor{red}{Its Fleißarbeit to do the same for $\vec{K}^\prime$.}
+
 \end{document}
