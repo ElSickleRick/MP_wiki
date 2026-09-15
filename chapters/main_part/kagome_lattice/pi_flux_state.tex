@@ -50,7 +50,7 @@ The real space (effective) tight-binding hamiltonian is
 \begin{align}
 	\begin{split}
 		H = t \sum_{i\sigma}\bigg( &- a_{i\sigma}^\dagger c_{i\sigma} - c_{i\sigma}^\dagger b_{i\sigma} + b_{i\sigma}^\dagger a_{i\sigma} + a_{i\sigma}^\dagger d_{i\sigma} + d_{i\sigma}^\dagger e_{i\sigma} + e_{i\sigma}^\dagger f_{i\sigma} + f_{i\sigma}^\dagger d_{i\sigma} \\
-		&+ b_{i\sigma}c_{i+t_1;\sigma} + b_{i\sigma}e_{i+t_1+t_2;\sigma} + f_{i\sigma}d_{i+t_1;\sigma} + f_{i\sigma}c_{i-t_2;\sigma} +\text{h.c.} \bigg)
+		&+ b_{i\sigma}^\dagger c_{i+t_1;\sigma} + b_{i\sigma}^\dagger e_{i+t_1+t_2;\sigma} + f_{i\sigma}d_{i+t_1;\sigma} + f_{i\sigma}c_{i-t_2;\sigma} +\text{h.c.} \bigg)
 	\end{split}
 \end{align}
 
@@ -88,14 +88,22 @@ After a Fourier transform the $k$-space Hamiltonian reads
 
 where
 \begin{equation}
-	\Psi_{q\sigma} = 
+	\Psi_{q\sigma}^\dagger = 
 	\begin{pmatrix}
-		a_{q\sigma} & b_{q\sigma} & c_{q\sigma} & e_{q\sigma} & f_{q\sigma} & d_{q\sigma} 
+		a_{q\sigma}^\dagger & b_{q\sigma}^\dagger & c_{q\sigma}^\dagger & e_{q\sigma}^\dagger & f_{q\sigma}^\dagger & d_{q\sigma}^\dagger 
 	\end{pmatrix}.
 \end{equation}
 
 \textcolor{red}{If I write this down somewhere serious, I should just label the sites differently.} \\
 
 I used the shorthand $q_i \equiv \vec{q}\cdot\vec{\delta}_i$.
+
+The dispersion relation is shwon in the following picture
+
+\begin{center}
+	\includegraphics[width = \textwidth]{dispersion_relation_pi_flux_state.png}
+\end{center}
+
+The lowest band (flat band) is doubly degenerate. \textcolor{red}{I dont know if it is woth it to obtain the analytical expressions.}
 
 \end{document}

@@ -119,25 +119,36 @@ Interestingly, the top band is completely flat. The other two bands touch when
 	\cos^2(q_x) + \cos(q_x)\cos(\sqrt{3}q_y) + 1/4 = 0
 \end{equation}
 
-\begin{gather}
-	\Rightarrow \cos(q_x) = \frac12\left(-\cos(\sqrt{3}q_y) \pm \sqrt{\cos^2(\sqrt{3}q_y)-1}\right) \\
-	\Rightarrow q_y = \frac{\pi l}{\sqrt{3}}, \; l \in \mathbb{N} \\
-	\Rightarrow q_x = (-1)^s\left(\frac{\pi}{2} + \frac{(-1)^{l}\pi}{6}\right) + 2\pi m , \; m \in \mathbb{N}, \; s \in [0,1]
-\end{gather}
+\textcolor{gray}{
+	\begin{gather}
+		\Rightarrow \cos(q_x) = \frac12\left(-\cos(\sqrt{3}q_y) \pm \sqrt{\cos^2(\sqrt{3}q_y)-1}\right) \\
+		\Rightarrow q_y = \frac{\pi l}{\sqrt{3}}, \; l \in \mathbb{N} \\
+		\Rightarrow q_x = (-1)^s\left(\frac{\pi}{2} + \frac{(-1)^{l}\pi}{6}\right) + 2\pi m , \; m \in \mathbb{N}, \; s \in [0,1]
+	\end{gather}
+}
 
-These touching points lie at the corners of the Brillouin zone, there are two "species". \textcolor{red}{One can imagine that two of the parameters represent translation by recprocal lattice vectors whil the third one selects the species of the touching points. This not what m, l and s do but maybe one can transform them. Also, why does the solution depend on three parameters?}  For example 
+A handy solution to this equation is 
+
+\begin{align}
+	\begin{split}
+		q_x &= (-1)^s\frac{2\pi}{3} + m_1\pi \\
+		q_y &= \frac{\pi}{\sqrt{3}}\left(2m_2-m_1\right),
+	\end{split}
+\end{align}
+
+with $s \in {0,1}$ and $m_1, m_2 \in \mathbb{N}$. These touching points lie at the corners of the Brillouin zone, they come in two flavours. \textcolor{blue}{The parameter s labels the afformentioned flavours while $m_1$ ($m_2$) is a translation by the reciprocal lattice vector $\vec{b}_1$ ($\vec{b}_2$).}  For example 
 
 \begin{align}
 	\vec{K} &= 
 	\begin{pmatrix}
 		2\pi/3 \\
 		0
-	\end{pmatrix}, \quad m=0, s=0, l = 0 \\
+	\end{pmatrix}, \quad s=0, \; m_1 = 0, \; m_2 = 0 \\
 	\vec{K}^\prime &= 
 	\begin{pmatrix}
 		-2\pi/3 \\
 		0
-	\end{pmatrix}, \quad m = 0, s = 1,  l = 0.
+	\end{pmatrix}, \quad s = 1, \; m_1 = 0, \; m_2 = 0.
 \end{align}
 
 \subsubsection{Filling Factor}
@@ -293,23 +304,26 @@ This form was also found in \cite{Guo2009}, a different one was obtained in \cit
 
 \textcolor{blue}{I could eliminate the $\sigma_0$ term by introducing chemical potentials but I guess for non-interacting particles it doesn't really matter.} \\
 
-\textcolor{red}{Question: when rotationg the orthonormal basis inside the degnerate subspace there is one free paramters (the rotation angle). On the other hand one can probably also think about the surface of a bloch sphere (the radius is obviously fixed). What is the free parameter in this picture /what is the fixed parameter? It is proably worthwile to explore this at some point, it might reveal the underlying topolgy.}
+\textcolor{red}{Question: when rotationg the orthonormal basis inside the degnerate subspace there is one free paramters (the rotation angle). On the other hand one can probably also think about the surface of a bloch sphere (the radius is obviously fixed). What is the free parameter in this picture /what is the fixed parameter? It is proably worthwile to explore this at some point, it might reveal the underlying topolgy.} \\
+
+\textcolor{red}{Addition: the counting of free coefficients might not be correct, considering they can be complex. Is the Bloch sphere argument even valid?}
 
 \subsubsection{Introduction of Strain}
 
-I show how to expand expressions prototyical for the k-space Hamiltonian in strain:
+I show how to expand expressions prototyical for the k-space Hamiltonian. First I expand in strain:
 
 \begin{equation}
 	t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}}  \approx te^{i\vec{q}\cdot\vec{\delta}_{ij}}\left(1-\beta\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) + i \left(\vec{q}\cdot\underline{u}\cdot\vec{\delta}_{ij}\right)\right),
 \end{equation}
 
-afterwars I expand these expression around $\vec{K}$:
+afterwars I expand around $\vec{K}$:
 
 \begin{equation}
-	t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}}  \approx t e^{i\vec{q}\cdot\vec{\delta}_{ij}}\left(1 + \vec{p} \cdot \vec{\delta}_{ij} \right)\left(1-\beta\left(\vec{\delta}_{ij}\cdot\underline{u}\cdot\vec{\delta}_{ij}\right) + i \left(\vec{K}\cdot\underline{u}\cdot\vec{\delta}_{ij}\right) + i \left(\underline{u}\cdot\vec{\delta}_{ij}\right)\cdot\vec{p} \right)
+	t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}}  \approx t e^{i\vec{q}\cdot\vec{\delta}_{ij}}\left(1 + \vec{p} \cdot \vec{\delta}_{ij} \right)\left(1-\beta\left(\vec{\delta}_{ij}\cdot\underline{u}\cdot\vec{\delta}_{ij}\right) + i \left(\vec{K}\cdot\underline{u}\cdot\vec{\delta}_{ij}\right) + i \left(\underline{u}\cdot\vec{\delta}_{ij}\right)\cdot\vec{p} \right).
 \end{equation}
 
-\textcolor{blue}{I compared this to the expansion on the triangular lattice, where I used the real space method. The main difference is the order of expansions. As I do the k-space expansion second I find terms of second order in $p$. For the triangular lattice I did it in opposite order, thereby accquiring terms of second order in $\underline{u}$. This means one can only compare terms of zeroth order and of first order either in $\underline{u}$ or in $p$. These terms check out.} \textcolor{red}{Revise this} \\
+\textcolor{red}{Compare to field theory method}
+
 
 Keeping only the relevant terms (relevant to this order at least):
 
