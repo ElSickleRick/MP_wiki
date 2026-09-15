@@ -179,7 +179,7 @@ and
 \begin{align}
 	H_{\vec{K}} \approx t\sum_{p\sigma}
 	\begin{pmatrix}
-		a_{p\sigma}^\dagger b_{p\sigma}^\dagger c_{p\sigma}^\dagger
+		a_{p\sigma}^\dagger & b_{p\sigma}^\dagger & c_{p\sigma}^\dagger
 	\end{pmatrix}
 	\begin{pmatrix}
 		0 & 1-\sqrt{3}\vec{p}\cdot\vec{\delta}_2 & 1 - \sqrt{3}\vec{p}\cdot\vec{\delta}_3 \\
@@ -264,10 +264,10 @@ Othogonality dictates
 Utilizing $\vec{\delta}_2 + \vec{\delta}_3 = \vec{\delta}_1$ I get:
 
 \begin{align}
-	\vec{w}_1^T \cdot H_{\vec{K}} \cdot \vec{w}_1 &= t + \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(1-2\abs{\alpha}^2-\frac{2\text{Re}(\alpha^*\beta)}{\sqrt{3}}\right) + \sqrt{3}t\left(\vec{\delta}_3\cdot\vec{p}\right)\left( -\frac{4\text{Re}(\alpha^*\beta)}{\sqrt{3}}\right) \\
-	\vec{w}_2^T \cdot H_{\vec{K}} \cdot \vec{w}_2 &= 1 + \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(1-2\abs{\eta}^2-\frac{2\text{Re}(\eta^*\gamma)}{\sqrt{3}}\right) + \sqrt{3}t\left(\vec{\delta}_3\cdot\vec{p}\right)\left(-\frac{4\text{Re}(\eta^*\gamma)}{\sqrt{3}}\right) \\
-	\vec{w}_1^T \cdot H_{\vec{K}} \cdot \vec{w}_2 &= \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(1-2\alpha^*\eta-\frac{\alpha^*\gamma + \beta^*\eta}{\sqrt{3}}\right) + \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(-\frac{2(\alpha^*\gamma +  \beta^*\eta)}{\sqrt{3}}\right) \\
-	\vec{w}_2^T \cdot H_{\vec{K}} \cdot \vec{w}_1 &= \left(\vec{w}_1^T \cdot H_{\vec{K}} \cdot \vec{w}_2\right)^*
+	\vec{w}_1^H \cdot H_{\vec{K}} \cdot \vec{w}_1 &= t + \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(1-2\abs{\alpha}^2-\frac{2\text{Re}(\alpha^*\beta)}{\sqrt{3}}\right) + \sqrt{3}t\left(\vec{\delta}_3\cdot\vec{p}\right)\left( -\frac{4\text{Re}(\alpha^*\beta)}{\sqrt{3}}\right) \\
+	\vec{w}_2^H \cdot H_{\vec{K}} \cdot \vec{w}_2 &= 1 + \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(1-2\abs{\eta}^2-\frac{2\text{Re}(\eta^*\gamma)}{\sqrt{3}}\right) + \sqrt{3}t\left(\vec{\delta}_3\cdot\vec{p}\right)\left(-\frac{4\text{Re}(\eta^*\gamma)}{\sqrt{3}}\right) \\
+	\vec{w}_1^H \cdot H_{\vec{K}} \cdot \vec{w}_2 &= \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(-2\alpha^*\eta-\frac{\alpha^*\gamma + \beta^*\eta}{\sqrt{3}}\right) + \sqrt{3}t\left(\vec{\delta}_3\cdot\vec{p}\right)\left(-\frac{2(\alpha^*\gamma +  \beta^*\eta)}{\sqrt{3}}\right) \\
+	\vec{w}_2^H \cdot H_{\vec{K}} \cdot \vec{w}_1 &= \left(\vec{w}_1^H \cdot H_{\vec{K}} \cdot \vec{w}_2\right)^*
 \end{align}
 
 The strategy is to solve for values for $\alpha, \beta, \gamma$ and $\eta$ such that the following combinations occur in the matrix elements:
@@ -322,7 +322,7 @@ afterwars I expand around $\vec{K}$:
 	t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}}  \approx t e^{i\vec{q}\cdot\vec{\delta}_{ij}}\left(1 + \vec{p} \cdot \vec{\delta}_{ij} \right)\left(1-\beta\left(\vec{\delta}_{ij}\cdot\underline{u}\cdot\vec{\delta}_{ij}\right) + i \left(\vec{K}\cdot\underline{u}\cdot\vec{\delta}_{ij}\right) + i \left(\underline{u}\cdot\vec{\delta}_{ij}\right)\cdot\vec{p} \right).
 \end{equation}
 
-\textcolor{red}{Compare to field theory method}
+\textcolor{blue}{This compares well with the field theory method for the triangular lattice where I did the expansions in reverse order.} \\
 
 
 Keeping only the relevant terms (relevant to this order at least):
@@ -331,7 +331,7 @@ Keeping only the relevant terms (relevant to this order at least):
 	t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}}  \approx t e^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(1+i\vec{p}\cdot\vec{\delta}_{ij} - \beta \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) + i \left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right)\right)
 \end{equation}
 
-\begin{align}
+\begin{align}\label{strain_elements}
 	\begin{split}
 	\Rightarrow t(-\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}} + t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}} \approx & 2t\cos(\vec{K}\cdot\vec{\delta}_{ij}) - 2t\sin(\vec{K} \cdot \vec{\delta}_{ij})\left(\vec{p}\cdot\vec{\delta}_{ij}\right) \\
 		-&2\beta t\cos(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \\
@@ -388,18 +388,108 @@ $\langle \delta H_1 \rangle_{\vec{w}_1, \vec{w}_2}$ can be written as vector pot
 \end{align}
 
 \begin{equation}
-	\Rightarrow \langle H_{\vec{K}} + \delta H_1  + \delta H_2 \rangle_{\vec{w}_1, \vec{w}_2} = (t+\phi)\sigma^0 + \sqrt{3}t\left(p_y + A_y\right)\sigma_x + \sqrt{3}t \left( p_x + A_x\right)\sigma_z
+	\Rightarrow \langle H_{\vec{K}} + \delta H_1  + \delta H_2 \rangle_{\vec{w}_1, \vec{w}_2} = (t+\phi)\sigma^0 + \sqrt{3}t\left(p_y + A_{\vec{K}}^y\right)\sigma_x + \sqrt{3}t \left( p_x + A_{\vec{K}}^x\right)\sigma_z
 \end{equation}
 
 
 \begin{align}
 	\phi &= \frac{t}{2}\left(u_{xx}+u_{yy}\right) \\
-	A_x &= -\frac{t\beta}{2\sqrt{3}}\left(u_{xx}-u_{yy}\right) - \frac{2\pi t}{3}u_{xx} \\
-	A_y &= -\frac{t\beta}{\sqrt{3}}u_{yx} - \frac{2\pi t}{3}u_{yx}
+	A_{\vec{K}}^x &= -\frac{t\beta}{2\sqrt{3}}\left(u_{xx}-u_{yy}\right) - \frac{2\pi t}{3}u_{xx} \\
+	A_{\vec{K}}^y &= -\frac{t\beta}{\sqrt{3}}u_{yx} - \frac{2\pi t}{3}u_{yx}
 \end{align}
 
-The $\beta$-independent part of $\vec{A}$ can be eliminated using a gauge-transforamtion. This agrees with the results here \cite{Liu2020}. \\
+The $\beta$-independent part of $\vec{A}_{\vec{K}}$ can be eliminated using a gauge-transforamtion. This agrees with the results here \cite{Liu2020}. \textcolor{red}{It bothers me that only $u_{yx}$ appears but not $u_{xy}$. Check this}\\
 
-\textcolor{red}{Its Fleißarbeit to do the same for $\vec{K}^\prime$.}
+I give a few intermediate results for the derviation of $\vec{A}_{\vec{K}^\prime}$: \\
+
+\textcolor{blue}{The cool kids introduce a cone flavour index and derive the expressioons for both flavours at the same time}
+
+\begin{align}
+	H_{\vec{K}^\prime} \approx t\sum_{p\sigma}
+	\begin{pmatrix}
+		a_{p\sigma}^\dagger & b_{p\sigma}^\dagger & c_{p\sigma}^\dagger
+	\end{pmatrix}
+	\begin{pmatrix}
+		0 & 1+\sqrt{3}\vec{p}\cdot\vec{\delta}_2 & 1 + \sqrt{3}\vec{p}\cdot\vec{\delta}_3 \\
+		1+\sqrt{3}\vec{p}\cdot\vec{\delta}_2 & 0 & -1+\sqrt{3}\vec{p}\cdot\vec{\delta}_1 \\
+		1+\sqrt{3}\vec{p}\cdot\vec{\delta}_3 & -1+\sqrt{3}\vec{p}\cdot\vec{\delta}_1 & 0
+	\end{pmatrix}
+	\begin{pmatrix}
+		a_{q\sigma} \\
+		b_{q\sigma} \\
+		c_{q\sigma}
+	\end{pmatrix}
+\end{align}
+
+(the zeroth order is the same so I make the same Ansatz for the initial basis.)
+
+
+
+\begin{align*}
+		& \vec{v}_1^T \cdot H_{\vec{K}^\prime} \cdot \vec{v}_1 = t+\sqrt{3}t\vec{\delta}_2 \cdot \vec{p} & \vec{v}_1^T \cdot H_{\vec{K}^\prime} \cdot \vec{v}_2 = t\left(\vec{\delta}_1 + \vec{\delta}_3\right)\cdot\vec{p} \\ 
+		& \vec{v}_2^T \cdot H_{\vec{K}^\prime} \cdot \vec{v}_1 = t\left(\vec{\delta}_1 + \vec{\delta}_3\right)\cdot\vec{p} & \vec{v}^T_2 \cdot H_{\vec{K}^\prime} \cdot \vec{v}_2 = t-\sqrt{3}t\vec{\delta}_2\cdot\vec{p}
+\end{align*}
+
+
+\begin{align}
+	\vec{w}_1^H \cdot H_{\vec{K}^\prime} \cdot \vec{w}_1 &= t + \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(-1+2\abs{\alpha}^2+\frac{2\text{Re}(\alpha^*\beta)}{\sqrt{3}}\right) + \sqrt{3}t\left(\vec{\delta}_3\cdot\vec{p}\right)\left( \frac{4\text{Re}(\alpha^*\beta)}{\sqrt{3}}\right) \\
+	\vec{w}_2^H \cdot H_{\vec{K}^\prime} \cdot \vec{w}_2 &= 1 + \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(-1+2\abs{\eta}^2+\frac{2\text{Re}(\eta^*\gamma)}{\sqrt{3}}\right) + \sqrt{3}t\left(\vec{\delta}_3\cdot\vec{p}\right)\left(\frac{4\text{Re}(\eta^*\gamma)}{\sqrt{3}}\right) \\
+	\vec{w}_1^H \cdot H_{\vec{K}^\prime} \cdot \vec{w}_2 &= \sqrt{3}t\left(\vec{\delta}_2\cdot\vec{p}\right)\left(2\alpha^*\eta+\frac{\alpha^*\gamma + \beta^*\eta}{\sqrt{3}}\right) + \sqrt{3}t\left(\vec{\delta}_3\cdot\vec{p}\right)\left(\frac{2(\alpha^*\gamma +  \beta^*\eta)}{\sqrt{3}}\right) \\
+	\vec{w}_2^H \cdot H_{\vec{K}^\prime} \cdot \vec{w}_1 &= \left(\vec{w}_1^H \cdot H_{\vec{K}^\prime} \cdot \vec{w}_2\right)^*
+\end{align}
+
+\begin{equation}
+	\Rightarrow \alpha = \frac{\sqrt{3}}{2}, \; \beta = \frac12, \; \eta = \frac12, \; \gamma = -\frac{\sqrt{3}}{2}
+\end{equation}
+
+\begin{equation}
+	\Rightarrow \vec{w}_1 = \frac{1}{\sqrt{6}}
+	\begin{pmatrix}
+		2 \\
+		1 \\
+		1
+	\end{pmatrix}, \quad 
+	\vec{w}_2 = \frac{1}{\sqrt{2}}
+	\begin{pmatrix}
+		0 \\
+		1 \\ 
+		-1
+	\end{pmatrix}
+\end{equation}
+
+These are the same basis vectors as for $\vec{K}$ just in reverse order.
+
+\begin{equation}
+	\Rightarrow \langle H_{\vec{K}^\prime} \rangle_{\vec{w}_1, \vec{w}_2} = t\sigma_0 + \sqrt{3}tp_y\sigma_x + \sqrt{3}tp_x\sigma_z
+\end{equation}
+
+$\delta H_{1}$ and $\delta H_{2}$ are the same as for $\vec{K}^\prime$ (see \ref{strain_elements} and subsitiute $\vec{K} \rightarrow \vec{K}^\prime = \vec{K}$). With the reversed order of the basis vectors this gives
+
+\begin{equation}
+	\langle \delta H_1 \rangle_{\vec{w}_1, \vec{w}_2} = -t\beta
+	\begin{pmatrix}
+		u_{yy} & u_{yx} \\
+		u_{yx} & u_{xx}
+	\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+	\langle \delta H_2 \rangle_{\vec{w}_1, \vec{w}_2} = -\frac{2\pi t}{\sqrt{3}}
+	\begin{pmatrix}
+		-u_{xx} & u_{yx} \\
+		u_{yx} & u_{xx}
+	\end{pmatrix}
+	= -\frac{2\pi t}{\sqrt{3}} \left( u_{yx} \sigma_y - u_{xx} \sigma_z\right)
+\end{equation}
+
+\begin{align}
+	\phi &= \frac{t}{2}(u_{xx} + u_{yy}) \\
+	A_{\vec{K}^\prime}^x &= \frac{t\beta}{2\sqrt{3}}(u_{xx}-u_{yy}) + \frac{2\pi t}{3}u_{xx} \\
+	A_{\vec{K}^\prime}^y &= \frac{t\beta}{\sqrt{3}} u_{yx} + \frac{2\pi t}{3} u_{yx}
+\end{align}
+
+\begin{equation}
+	\Rightarrow A_{\vec{K}} = - A_{\vec{K}^\prime}
+\end{equation}
 
 \end{document}
