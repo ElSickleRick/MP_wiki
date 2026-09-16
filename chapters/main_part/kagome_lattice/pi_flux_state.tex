@@ -4,7 +4,7 @@
 
 \subsubsection{Real Space}
 
-This lattice is also a triangular Bravais-lattice, only now with unit cell doubling (in the direction of $\vec{t}_2$), hence the unit cell has 6 sites. The Wigner-Seitz cell is a stretched hexagon. In the cartoon a different unit cell is shown.
+This lattice is also a triangular Bravais-lattice \textcolor{red}{that is probably not true}, only now with unit cell doubling (in the direction of $\vec{t}_2$), hence the unit cell has 6 sites. The Wigner-Seitz cell is a stretched hexagon. In the cartoon a different unit cell is shown.
 
 \begin{center}
 	\includegraphics[width=\textwidth]{lattice-pi-flux-state.jpeg}
@@ -94,16 +94,93 @@ where
 	\end{pmatrix}.
 \end{equation}
 
-\textcolor{red}{If I write this down somewhere serious, I should just label the sites differently.} \\
+\textcolor{blue}{If I write this down somewhere serious, I should just label the sites differently.} \\
 
-I used the shorthand $q_i \equiv \vec{q}\cdot\vec{\delta}_i$.
+I used the shorthand $q_i \equiv \vec{q}\cdot\vec{\delta}_i$. 
+
+\subsubsection{dispersion and band trouching poiunts}
 
 The dispersion relation is shwon in the following picture
 
 \begin{center}
-	\includegraphics[width = \textwidth]{dispersion_relation_pi_flux_state.png}
+	\includegraphics[width = \textwidth]{dispersion_relation_pi_flux_state.png} 
 \end{center}
 
-The lowest band (flat band) is doubly degenerate. \textcolor{red}{I dont know if it is woth it to obtain the analytical expressions.}
+The lowest band (flat band) is doubly degenerate. \\
+
+\textcolor{blue}{Directions on how to obtain the analytical expressions:\\ 
+1. write down characteristic polynomial (probably the most annoying step)\\
+2. Divide by the two constant roots corresponding to the flat bands (Polynomial of degree 4 remains) \\
+3. Use symmetrie of remaining 4 bands (write as product of 2 quadratic polynomials; due to the symmetrie plane, one can guess p from the p-q-formula) \\4. Solve remaining 2 quadratice equations \\
+5. ? \\
+6. Profit} \\
+ 
+At half filling the lowest three bands are filled, thus the Fermi-energy is between the yellow and green band.
+
+\begin{center}
+	\includegraphics[width = \textwidth]{touching_points_4th_band.png}
+\end{center}
+
+Shown above is the 4th band (green band). Apparently there are two flavours of touching points with one of each in the first Brillouin zone. They are time revearsel partners. From the numerical data these tow touching points lie at
+
+\begin{equation}
+	\vec{K} = \frac{\pi}{4}
+	\begin{pmatrix}
+		1 \\
+		1/\sqrt{3}
+	\end{pmatrix}, \quad
+	\vec{K}^\prime = -\frac{\pi}{4}
+	\begin{pmatrix}
+		1 \\
+		1/\sqrt{3}
+	\end{pmatrix}.
+\end{equation}
+
+\subsubsection{Linearization in reciproical space and Projection}
+
+For now I only do the calculations for $\vec{K}$. Use  
+
+\begin{align}
+	\vec{K}\cdot\vec{\delta}_1 &= \frac{\pi}{4} \\
+	\vec{K}\cdot\vec{\delta}_2 &= \frac{\pi}{4} \\
+	\vec{K}\cdot\vec{\delta}_3 &= 0
+\end{align}
+
+to obtain the linearized Hamiltonian in the vicinity of $\vec{K}$:
+
+
+\begin{equation}
+	\begin{pmatrix}
+		0 & e^{i\frac{\pi}{4}}(1+ip_2) & -1+ip_3 & 0 & e^{-i\frac{\pi}{4}}(1-ip_2) & 1+ip_3 \\
+		e^{-i\frac{\pi}{4}}(1-ip_2) & 0 & \sqrt{2}i(1+p_1) & e^{i\frac{\pi}{4}}(1+ip_2) & 0 & 0 \\
+		-1-ip_3 & -\sqrt{2}i(1+p_1) & 0 & 1-ip_3 & 0 & 0 \\
+		0 & e^{-i\frac{\pi}{4}}(1-ip_2) & 1+ip_3 & 0 & e^{i\frac{\pi}{4}}(1+ip_2) & 1-ip_3\\
+		e^{i\frac{\pi}{4}}(1+ip_2) & 0 & 0 & e^{-i\frac{\pi}{4}}(1-ip_2) & 0 & \sqrt{2}(1-p_1) \\
+		1-ip_3 & 0 & 0 & 1 + ip_3 & \sqrt{2}(1-p_1) & 0
+	\end{pmatrix} 
+\end{equation}
+
+\textcolor{blue}{To keep the size reasonable maybe its a good idea to split this up into zeroth and first order in p. Might also be a good choice for storytelling purposes.} \\
+
+The shorthand means
+
+\begin{align*}
+	p_i &\equiv \vec{\delta}_i \cdot \vec{p}, 
+\end{align*}
+
+also
+
+\begin{equation}
+	e^{i\frac{\pi}{4}} = \frac{1+i}{\sqrt{2}}.
+\end{equation}
+
+The eigenvalues for the zeroth order (/directly at the $\vec{K}$-point) are 
+
+\begin{align}
+	&\varepsilon_1(\vec{K}) = -2t  &&\varepsilon_2(\vec{K}) = -2t &&\varepsilon_3(\vec{K}) = (1-\sqrt{3})t \notag\\
+	&\varepsilon_4(\vec{K}) = (1-\sqrt{3})t &&\varepsilon_5(\vec{K}) = (1+\sqrt{3})t &&\varepsilon_6(\vec{K}) = (1+\sqrt{3})t
+\end{align}
+
+$\varepsilon_3$ and $\varepsilon_4$ are the relevant ones.
 
 \end{document}
