@@ -181,6 +181,80 @@ The eigenvalues for the zeroth order (/directly at the $\vec{K}$-point) are
 	&\varepsilon_4(\vec{K}) = (1-\sqrt{3})t &&\varepsilon_5(\vec{K}) = (1+\sqrt{3})t &&\varepsilon_6(\vec{K}) = (1+\sqrt{3})t
 \end{align}
 
-$\varepsilon_3$ and $\varepsilon_4$ are the relevant ones.
+$\varepsilon_3$ and $\varepsilon_4$ are the relevant ones. \\
+
+I let mathematice calculate orthonormal eigenvectors for $H$ at $\vec{K}$. The relevant ones (that is bands 3 and 4):
+
+\begin{align}
+	\vec{v}_3(\vec{K}) &= \frac{1}{2\sqrt{6-3\sqrt{3}}}
+	\begin{pmatrix}
+		\frac{1-\sqrt{3}}{2} + \frac{3-\sqrt{3}}{2}i, & \sqrt{2}(1-\sqrt{3}), & (-2+\sqrt{3})i, & \frac{1-\sqrt{3}}{2} + \frac{\sqrt{3}-3}{2}i, & 0, & 1  
+	\end{pmatrix}^T \\
+	\vec{v}_4(\vec{K}) &= \frac{1}{2\sqrt{6(7-4\sqrt{3})}}
+	\begin{pmatrix}
+		(3-2\sqrt{3}) +(-2+\sqrt{3})i, & 0, & i(1-\sqrt{3}), & 3-2\sqrt{3} + (2-\sqrt{3})i, & 2\sqrt{2}(2-\sqrt{3}), & 5-3\sqrt{3}
+	\end{pmatrix}^T
+\end{align}
+
+The projections onto those vectors are 
+
+\begin{align}
+	\begin{split}
+		&\vec{v}_3^H\cdot H_{\vec{K}} \cdot \vec{v}_3 = (1-\sqrt{3})t - \frac{2t}{\sqrt{3}}p_2 + \frac{(\sqrt{3}-1)t}{\sqrt{3}}p_3\\
+		& \vec{v}_4^H\cdot H_{\vec{K}} \cdot \vec{v}_4 = (1-\sqrt{3})t +\frac{2t}{\sqrt{3}}p_2 - \frac{(\sqrt{3}-1)t}{\sqrt{3}}p_3 \\
+		&\vec{v}_3^H\cdot H_{\vec{K}} \cdot \vec{v}_4 = -\frac{2t}{\sqrt{3}}p_2 - \frac{(3+\sqrt{3})t}{3}p_3 \\
+		&\vec{v}_4^H\cdot H_{\vec{K}} \cdot \vec{v}_3 = -\frac{2t}{\sqrt{3}}p_2 - \frac{(3+\sqrt{3})t}{3}p_3 
+	\end{split}
+\end{align}
+
+I transform these to $p_x$ and $p_y$: \textcolor{red}{I only did this by hand I could easily let mathematica check this by using matrix/vector notation}
+
+\begin{align}
+	\begin{split}
+		&\vec{v}_3^H\cdot H_{\vec{K}} \cdot \vec{v}_3 = (1-\sqrt{3})t + \frac{1-\sqrt{3}}{2}tp_x  - \frac{1+\sqrt{3}}{2}tp_y \\
+		& \vec{v}_4^H\cdot H_{\vec{K}} \cdot \vec{v}_4 = (1-\sqrt{3})t - \frac{1-\sqrt{3}}{2}tp_x  + \frac{1+\sqrt{3}}{2}tp_y\\
+		&\vec{v}_3^H\cdot H_{\vec{K}} \cdot \vec{v}_4 = -\frac{1+\sqrt{3}}{2}tp_x - \frac{1-\sqrt{3}}{2}tp_y\\
+		&\vec{v}_4^H\cdot H_{\vec{K}} \cdot \vec{v}_3 = -\frac{1+\sqrt{3}}{2}tp_x - \frac{1-\sqrt{3}}{2}tp_y 
+	\end{split}
+\end{align}
+
+I follow the usual method defining 
+
+\begin{align}
+	\begin{split}
+		\vec{w}_3 &= \alpha \vec{v}_3 + \beta \vec{v}_4 \\
+		\vec{w}_4 &= \eta \vec{v}_3 + \gamma \vec{v}_4
+	\end{split}
+\end{align}
+
+Orthonormality is garuanted by 
+
+\begin{gather}
+	\abs{\alpha}^2 + \abs{\beta}^2 = 1 \\
+	\abs{\eta}^2 + \abs{\gamma}^2 = 1\\
+	\alpha^*\eta + \beta^*\gamma = 0
+\end{gather}
+
+\textcolor{blue}{If my counting is correct, there are 8 parameters to begin with (real and imaginary parts), the equations above eliminate 1 and 1 and 2 (the last equation are really 2 equations, one for real and one for imaginary part), leaving behind 4 free parameters.} I make the following Ansatz for the leftover parameters:
+
+\begin{align}
+	\begin{split}
+		\alpha &= \cos(\phi/2)e^{i(\chi+\theta/2)} e^{i\kappa} \\
+		\beta &= \sin(\phi/2)e^{i(\chi+\theta/2)} \\
+		\eta &= \sin(\phi/2)e^{i(\chi-\theta/2)} e^{i\kappa} \\
+		\gamma &= -\cos(\phi/2)e^{i(\chi-\theta/2)}
+	\end{split}
+\end{align}
+
+\textcolor{blue}{If you want to be fancy about it you can think of what kind of matrix describes the relation between the two bases and then find a suitable parametrization for it}. $\phi$ is a rotation angle, $\chi$ a global phase, $\theta$ the phase difference between the two states and $\kappa$ state-internal phase. It is clear that all physical quantities can not depend on $\chi$. \textcolor{red}{At this point I might as well choose $\chi = 0$.}\\
+
+I find for the projection in the  transformed basis:
+
+\begin{align*}
+	\vec{w}_3^H \cdot H_{\vec{K}} \cdot \vec{w}_3 &= (1-\sqrt{3})t \\
+						      &+ \frac{t}{2}\left((1-\sqrt{3})\cos(\phi) - (1+\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_x \\
+						      &+ \frac{t}{2}\left((1+\sqrt{3})\cos(\phi) - (1-\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_y
+\end{align*}
 
 \end{document}
+
