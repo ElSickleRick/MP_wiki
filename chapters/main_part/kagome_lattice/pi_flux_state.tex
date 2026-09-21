@@ -218,6 +218,17 @@ I transform these to $p_x$ and $p_y$: \textcolor{red}{I only did this by hand I 
 	\end{split}
 \end{align}
 
+The dispersion of this projection is 
+
+\begin{gather}
+	\begin{split}
+		\varepsilon_{3\vec{K}} &= (1-\sqrt{3})t - \sqrt{2}t\sqrt{p_x^2 + p_y^2} \\
+		\varepsilon_{4\vec{K}} &= (1-\sqrt{3})t + \sqrt{2}t\sqrt{p_x^2 + p_y^2}
+	\end{split}
+\end{gather}
+
+\textcolor{red}{Judging from the pictures of the dispursion I didnt expect it to be so isotropical. Check this.} \\
+
 I follow the usual method defining 
 
 \begin{align}
@@ -252,9 +263,33 @@ I find for the projection in the  transformed basis:
 
 \begin{align*}
 	\vec{w}_3^H \cdot H_{\vec{K}} \cdot \vec{w}_3 &= (1-\sqrt{3})t \\
-						      &+ \frac{t}{2}\left((1-\sqrt{3})\cos(\phi) - (1+\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_x \\
-						      &+ \frac{t}{2}\left((1+\sqrt{3})\cos(\phi) - (1-\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_y
+	&+ \frac{t}{2}\left((1-\sqrt{3})\cos(\phi) - (1+\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_x \\
+	&+ \frac{t}{2}\left(-(1+\sqrt{3})\cos(\phi) - (1-\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_y
 \end{align*}
+
+\begin{align*}
+	\vec{w}_4^H \cdot H_{\vec{K}} \cdot \vec{w}_4 &= (1-\sqrt{3})t \\
+	&+ \frac{t}{2} \left(-(1-\sqrt{3})\cos(\phi) +(1+\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_x \\
+	&+ \frac{t}{2} \left((1+\sqrt{3})\cos(\phi) + (1-\sqrt{3})\sin(\phi)\cos(\kappa)\right) p_y
+\end{align*}
+
+\begin{align*}
+	\vec{w}_3^H \cdot H_{\vec{K}} \cdot \vec{w}_4 &= \frac{t}{2}\left((1-\sqrt{3})\sin(\phi)\cos(\theta) - (1+\sqrt{3})\left[-\cos(\phi)\cos(\theta)\cos(\kappa) + \sin(\theta)\sin(\kappa)\right]\right)p_x \\
+	&+\frac{t}{2}\left(-(1+\sqrt{3})\sin(\phi)\cos(\theta) - (1-\sqrt{3})\left[-\cos(\phi)\cos(\theta)\cos(\kappa) + \sin(\theta)\sin(\kappa)\right]\right) p_y \\
+	&+i\frac{t}{2}\left(-(1-\sqrt{3})\sin(\phi)\sin(\theta) - (1+\sqrt{3})\left[\cos(\theta)\sin(\kappa)+\cos(\phi)\sin(\theta)\cos(\kappa)\right]\right) p_x \\
+	&+i\frac{t}{2} \left((1+\sqrt{3})\sin(\phi)\sin(\theta) - (1-\sqrt{3})\left[\cos(\theta)\sin(\kappa)+\cos(\phi)\sin(\theta)\cos(\kappa)\right]\right) p_y 
+\end{align*}
+
+
+\begin{align*}
+	\vec{w}_4^H \cdot H_{\vec{K}} \cdot \vec{w}_3 &= \frac{t}{2}\left((1-\sqrt{3})\sin(\phi)\cos(\theta) - (1+\sqrt{3})\left[-\cos(\phi)\cos(\theta)\cos(\kappa) + \sin(\theta)\sin(\kappa)\right]\right)p_x \\
+	&+\frac{t}{2}\left(-(1+\sqrt{3})\sin(\phi)\cos(\theta) - (1-\sqrt{3})\left[-\cos(\phi)\cos(\theta)\cos(\kappa) + \sin(\theta)\sin(\kappa)\right]\right)p_y \\
+	&+i\frac{t}{2}\left( (1-\sqrt{3})\sin(\phi)\sin(\theta) + (1+\sqrt{3})\left[\cos(\theta)\sin(\kappa) + \cos(\phi)\sin(\theta)\cos(\kappa)\right]\right)p_x \\
+	&+ i\frac{t}{2}\left(-(1+\sqrt{3})\sin(\phi)\sin(\theta) + (1-\sqrt{3})\left[\cos(\theta)\sin(\kappa) + \cos(\phi)\sin(\theta)\cos(\kappa)\right]\right)p_y
+\end{align*}
+
+From these equations the $\sigma_{0,x,y,z}$-components can be read of. \textcolor{blue}{It is probably possible to simplify these equations further, considering that you dont want both momenta in the same component and the one momentum only in one component at once. For now I will just make some assumptions :).} \\
+
 
 \end{document}
 
