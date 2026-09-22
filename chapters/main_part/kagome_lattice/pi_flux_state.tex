@@ -227,6 +227,12 @@ The dispersion of this projection is
 	\end{split}
 \end{gather}
 
+Most importantly 
+
+\begin{equation}
+	v_F = \sqrt{2}t
+\end{equation}
+
 \textcolor{red}{Judging from the pictures of the dispursion I didnt expect it to be so isotropical. Check this.} \\
 
 I follow the usual method defining 
@@ -259,37 +265,112 @@ Orthonormality is garuanted by
 
 \textcolor{blue}{If you want to be fancy about it you can think of what kind of matrix describes the relation between the two bases and then find a suitable parametrization for it}. $\phi$ is a rotation angle, $\chi$ a global phase, $\theta$ the phase difference between the two states and $\kappa$ state-internal phase. It is clear that all physical quantities can not depend on $\chi$. \textcolor{red}{At this point I might as well choose $\chi = 0$.}\\
 
-I find for the projection in the  transformed basis:
+The following relations are impotant to derive the matrix elements in the rotated basis:
 
 \begin{align*}
-	\vec{w}_3^H \cdot H_{\vec{K}} \cdot \vec{w}_3 &= (1-\sqrt{3})t \\
-	&+ \frac{t}{2}\left((1-\sqrt{3})\cos(\phi) - (1+\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_x \\
-	&+ \frac{t}{2}\left(-(1+\sqrt{3})\cos(\phi) - (1-\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_y
+	(2\abs{\alpha}^2-1) &= \cos(\phi) \\
+	2\text{Re}(\alpha^*\beta) &= \sin(\phi)\cos(\kappa) \\
+	\alpha^*\eta - \beta^*\gamma &= \sin(\phi)\cos(\theta) -i \sin(\phi)\sin(\theta) \\
+	\alpha^*\gamma + \beta^*\eta &= \sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)  \\
+	&+ i\big( \sin(\kappa)\cos(\theta) + \cos(\phi)\cos(\kappa)\sin(\theta)\big)
+\end{align*}
+
+Using these, in general (while neglecting the $\sigma_0$-term),
+
+\begin{align}
+	\vec{w}_1^H\cdot H \cdot \vec{w}_1 &\sim  \left(\vec{v}_1^H\cdot H \cdot \vec{v}_1\right)\cos(\phi)+\left(\vec{v}_1^H\cdot H \cdot \vec{v}_2\right)\sin(\phi)\cos(\kappa)
+\end{align}
+
+\begin{align}
+	\begin{split}
+		\vec{w}_1^H \cdot H \cdot \vec{w}_2 &=  \left(\vec{v}_1^H\cdot H \cdot \vec{v}_1\right)\sin(\phi)\cos(\theta) + \left(\vec{v}_1^H\cdot H \cdot \vec{v}_2\right)\left(\sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)\right) \\
+		&+i \left[ -\left(\vec{v}_1^H\cdot H \cdot \vec{v}_1\right)\sin(\phi)\sin(\theta) + \left(\vec{v}_1^H\cdot H \cdot \vec{v}_2\right)\big( \sin(\kappa)\cos(\theta) + \cos(\phi)\cos(\kappa)\sin(\theta)\big)   \right]
+	\end{split}
+\end{align}
+
+I find for the projection in the  transformed basis (I again drop the $\sigma_0$ part as it transforms trivially):
+
+\begin{align*}
+	\frac{\vec{w}_3^H \cdot H_{\vec{K}} \cdot \vec{w}_3}{\sqrt{2}t} &\sim \frac{1}{\sqrt{8}}\left((1-\sqrt{3})\cos(\phi) - (1+\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_x \\
+	&+ \frac{1}{\sqrt{8}}\left(-(1+\sqrt{3})\cos(\phi) - (1-\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_y
 \end{align*}
 
 \begin{align*}
-	\vec{w}_4^H \cdot H_{\vec{K}} \cdot \vec{w}_4 &= (1-\sqrt{3})t \\
-	&+ \frac{t}{2} \left(-(1-\sqrt{3})\cos(\phi) +(1+\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_x \\
-	&+ \frac{t}{2} \left((1+\sqrt{3})\cos(\phi) + (1-\sqrt{3})\sin(\phi)\cos(\kappa)\right) p_y
+	\frac{\vec{w}_4^H \cdot H_{\vec{K}} \cdot \vec{w}_4}{\sqrt{2}t} &\sim \frac{1}{\sqrt{8}} \left(-(1-\sqrt{3})\cos(\phi) +(1+\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_x \\
+	&+ \frac{1}{\sqrt{8}} \left((1+\sqrt{3})\cos(\phi) + (1-\sqrt{3})\sin(\phi)\cos(\kappa)\right) p_y
 \end{align*}
 
 \begin{align*}
-	\vec{w}_3^H \cdot H_{\vec{K}} \cdot \vec{w}_4 &= \frac{t}{2}\left((1-\sqrt{3})\sin(\phi)\cos(\theta) - (1+\sqrt{3})\left[-\cos(\phi)\cos(\theta)\cos(\kappa) + \sin(\theta)\sin(\kappa)\right]\right)p_x \\
-	&+\frac{t}{2}\left(-(1+\sqrt{3})\sin(\phi)\cos(\theta) - (1-\sqrt{3})\left[-\cos(\phi)\cos(\theta)\cos(\kappa) + \sin(\theta)\sin(\kappa)\right]\right) p_y \\
-	&+i\frac{t}{2}\left(-(1-\sqrt{3})\sin(\phi)\sin(\theta) - (1+\sqrt{3})\left[\cos(\theta)\sin(\kappa)+\cos(\phi)\sin(\theta)\cos(\kappa)\right]\right) p_x \\
-	&+i\frac{t}{2} \left((1+\sqrt{3})\sin(\phi)\sin(\theta) - (1-\sqrt{3})\left[\cos(\theta)\sin(\kappa)+\cos(\phi)\sin(\theta)\cos(\kappa)\right]\right) p_y 
+	\frac{\vec{w}_3^H \cdot H_{\vec{K}} \cdot \vec{w}_4}{\sqrt{2}t} &= \frac{1}{\sqrt{8}}\left((1-\sqrt{3})\sin(\phi)\cos(\theta) - (1+\sqrt{3})\left[\sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)\right]\right)p_x \\
+	&+\frac{1}{\sqrt{8}}\left(-(1+\sqrt{3})\sin(\phi)\cos(\theta) - (1-\sqrt{3})\left[\sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)\right]\right) p_y \\
+	&-\frac{i}{\sqrt{8}}\left((1-\sqrt{3})\sin(\phi)\sin(\theta) + (1+\sqrt{3})\left[\sin(\kappa)\cos(\theta)+\cos(\phi)\cos(\kappa)\sin(\theta)\right]\right) p_x \\
+	&-\frac{i}{\sqrt{8}} \left(-(1+\sqrt{3})\sin(\phi)\sin(\theta) + (1-\sqrt{3})\left[\sin(\kappa)\cos(\theta)+\cos(\phi)\cos(\kappa)\sin(\theta)\right]\right) p_y 
 \end{align*}
 
 
 \begin{align*}
-	\vec{w}_4^H \cdot H_{\vec{K}} \cdot \vec{w}_3 &= \frac{t}{2}\left((1-\sqrt{3})\sin(\phi)\cos(\theta) - (1+\sqrt{3})\left[-\cos(\phi)\cos(\theta)\cos(\kappa) + \sin(\theta)\sin(\kappa)\right]\right)p_x \\
-	&+\frac{t}{2}\left(-(1+\sqrt{3})\sin(\phi)\cos(\theta) - (1-\sqrt{3})\left[-\cos(\phi)\cos(\theta)\cos(\kappa) + \sin(\theta)\sin(\kappa)\right]\right)p_y \\
-	&+i\frac{t}{2}\left( (1-\sqrt{3})\sin(\phi)\sin(\theta) + (1+\sqrt{3})\left[\cos(\theta)\sin(\kappa) + \cos(\phi)\sin(\theta)\cos(\kappa)\right]\right)p_x \\
-	&+ i\frac{t}{2}\left(-(1+\sqrt{3})\sin(\phi)\sin(\theta) + (1-\sqrt{3})\left[\cos(\theta)\sin(\kappa) + \cos(\phi)\sin(\theta)\cos(\kappa)\right]\right)p_y
+	\frac{\vec{w}_4^H \cdot H_{\vec{K}}\cdot \vec{w}_3}{\sqrt{2}t}  &= \frac{1}{\sqrt{8}}\left((1-\sqrt{3})\sin(\phi)\cos(\theta) - (1+\sqrt{3})\left[\sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)\right]\right)p_x \\
+	&+\frac{1}{\sqrt{8}}\left(-(1+\sqrt{3})\sin(\phi)\cos(\theta) - (1-\sqrt{3})\left[ \sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)\right]\right)p_y \\
+	&+\frac{i}{\sqrt{8}}\left( (1-\sqrt{3})\sin(\phi)\sin(\theta) + (1+\sqrt{3})\left[\sin(\kappa)\cos(\theta) + \cos(\phi)\cos(\kappa)\sin(\theta)\right]\right)p_x \\
+	&+\frac{i}{\sqrt{8}}\left(-(1+\sqrt{3})\sin(\phi)\sin(\theta) + (1-\sqrt{3})\left[\sin(\kappa)\cos(\theta) + \cos(\phi)\cos(\kappa)\sin(\theta)\right]\right)p_y
 \end{align*}
 
-From these equations the $\sigma_{0,x,y,z}$-components can be read of. \textcolor{blue}{It is probably possible to simplify these equations further, considering that you dont want both momenta in the same component and the one momentum only in one component at once. For now I will just make some assumptions :).} \\
+From these equations the $\sigma_{0,x,y,z}$-components can be read of. I decided to solve for an equation of the form $H=\varepsilon_0\sigma_0 + v_F(p_x \sigma_x + p_y \sigma_z)$. The corresponding angles are  \\
 
+\begin{align}
+	\begin{split}
+		\cos(\phi) &= -\frac{1+\sqrt{3}}{\sqrt{8}} \quad \Rightarrow \quad \phi = \frac{11}{12}\pi\\
+		\cos(\kappa) &= - \frac{1-\sqrt{3}}{\sqrt{4-2\sqrt{3}}} = 1 \quad \Rightarrow \quad \kappa = 0\\
+		\cos(\theta) &= \frac{1-\sqrt{3}}{\sqrt{4-2\sqrt{3}}} = -1\quad \Rightarrow \quad \theta = \pi.
+	\end{split}
+\end{align}
+
+
+\textcolor{blue}{$\sqrt{4-2\sqrt{3}} = \sqrt{3}-1$ :D. First I had lhs=$1-\sqrt{3}$, and it took me around 3 hours to find the mistake.} \\
+
+
+Another solution corresponding to the form $H = \varepsilon_0\sigma_0 + v_F(p_x\sigma_x +p_y\sigma_y)$ is
+
+\begin{align}
+	\begin{split}
+		\phi = -\frac{\pi}{2} \\
+		\kappa = -\frac{\pi}{2} \\
+		\theta = \frac{5}{12}\pi
+	\end{split}
+\end{align}
+
+
+
+\subsubsection{Introduction of strain} 
+
+The relevant equations are 
+
+\begin{equation}
+	t(\vec{\delta}_{ij})e^{i\vec{K}\cdot\vec{\delta}_{ij}}  \approx t e^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(1+i\vec{p}\cdot\vec{\delta}_{ij} - \beta \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) + i \left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right)\right)
+\end{equation}
+
+and 
+
+\begin{align}
+	\begin{split}
+		t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}} + t(-\vec{\delta}_{ij})e^{-i\vec{K}\cdot\vec{\delta}_{ij}}  \approx & 2t\cos(	\vec{q}\cdot\vec{\delta}_{ij}) - 2t\sin(\vec{q} \cdot \vec{\delta}_{ij})\left(\vec{p}\cdot\vec{\delta}_{ij}\right) \\
+		-&2\beta t\cos(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \\
+		-&2t\sin(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right)
+	\end{split}
+\end{align}
+
+and 
+
+\begin{align}
+	\begin{split}
+		t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}}-t(-\vec{\delta}_{ij})e^{-i\vec{q}\cdot\vec{\delta}_{ij}} \approx & 2it \sin(\vec{K}\cdot\vec{\delta}_{ij}) +2it\cos(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{p}\cdot\vec{\delta}_{ij}\right) \\
+		-&2i\beta t \sin(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \\
+		+&2it\cos(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{K}\cdot \underline{u} \cdot \vec{\delta}_{ij}\right)
+	\end{split}
+\end{align}
+
+\textcolor{red}{This assumes $t(\vec{\delta}_{ij}) = t(-\vec{\delta}_{ij})$, which is no longer applicable here.}
+
+I split the everything into two parts, one proportional to $\beta^0$ and one proportional to $\beta^1$.
 
 \end{document}
-
