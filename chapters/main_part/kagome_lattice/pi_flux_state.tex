@@ -4,8 +4,7 @@
 
 \subsubsection{Real Space}
 
-This lattice is also a triangular Bravais-lattice \textcolor{red}{that is probably not true}, only now with unit cell doubling (in the direction of $\vec{t}_2$), hence the unit cell has 6 sites. The Wigner-Seitz cell is a stretched hexagon. In the cartoon a different unit cell is shown.
-
+This system is a monoclinic (\textcolor{red}{Is this correct?}) Bravais-lattice with a six site unit cell. It emerges from the bare Kagome lattice through unit cell doubling (the stranslational symmetry gets broken by the internal mean field). 
 \begin{center}
 	\includegraphics[width=\textwidth]{lattice-pi-flux-state.jpeg}
 \end{center}
@@ -207,7 +206,7 @@ The projections onto those vectors are
 	\end{split}
 \end{align}
 
-I transform these to $p_x$ and $p_y$: \textcolor{red}{I only did this by hand I could easily let mathematica check this by using matrix/vector notation}
+I transform these to $p_x$ and $p_y$: 
 
 \begin{align}
 	\begin{split}
@@ -263,7 +262,7 @@ Orthonormality is garuanted by
 	\end{split}
 \end{align}
 
-\textcolor{blue}{If you want to be fancy about it you can think of what kind of matrix describes the relation between the two bases and then find a suitable parametrization for it}. $\phi$ is a rotation angle, $\chi$ a global phase, $\theta$ the phase difference between the two states and $\kappa$ state-internal phase. It is clear that all physical quantities can not depend on $\chi$. \textcolor{red}{At this point I might as well choose $\chi = 0$.}\\
+\textcolor{blue}{If you want to be fancy about it you can think of what kind of matrix describes the relation between the two bases and then find a suitable parametrization for it. If one thinks of these matrices in terms of groups, maybe there is a suffisticated argument to be made  why $U(1)$ appears.}. $\phi$ is a rotation angle, $\chi$ a global phase, $\theta$ the phase difference between the two states and $\kappa$ state-internal phase. It is clear that all physical quantities can not depend on $\chi$. \textcolor{blue}{At this point I might as well choose $\chi = 0$.}\\
 
 The following relations are impotant to derive the matrix elements in the rotated basis:
 
@@ -339,7 +338,7 @@ Another solution corresponding to the form $H = \varepsilon_0\sigma_0 + v_F(p_x\
 	\end{split}
 \end{align}
 
-
+I will continue to work with this solution from now on. \textcolor{blue}{Typically I will employ the first solution as a sanity check.}
 
 \subsubsection{Introduction of strain} 
 
@@ -369,8 +368,14 @@ and
 	\end{split}
 \end{align}
 
-\textcolor{red}{This assumes $t(\vec{\delta}_{ij}) = t(-\vec{\delta}_{ij})$, which is no longer applicable here.}
+I split the everything into two parts, the first one being proportional to $\beta$:
 
-I split the everything into two parts, one proportional to $\beta^0$ and one proportional to $\beta^1$.
+\begin{equation}
+	\langle \delta H_1 \rangle_{\vec{w}_1, \vec{w}_2} = -\frac{\beta}{2}(1-\sqrt{3})(u_{xx}+u_{yy})\sigma_0.
+\end{equation}
+
+\textcolor{red}{There is also a $\beta^0$-term that I shouldwrite down. However, this term can be gauged away so it not relevant for the physical discussion.} \\
+
+This means that to this order there is no effective vector potential but only an effective scalar potential.
 
 \end{document}
