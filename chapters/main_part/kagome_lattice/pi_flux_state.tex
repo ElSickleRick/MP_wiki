@@ -53,6 +53,39 @@ The real space (effective) tight-binding hamiltonian is
 	\end{split}
 \end{align}
 
+
+\subsection{Symmetries}
+
+On the level of gauge-invaiant quantuities (that is plaquette fluxes), the system does not break any lattice symmetries, that the bare Kagome lattice has. \\
+
+The specific gauge choice however looks like it lowers the translational symmetry in one direction ($\vec{t}_2$). Obviously this is a problem of the gauge-choice, the correct symmetries are dictated by the gauge-independent observables. To "repair" this one can supplement lattice symmetry transforamtions with gauge transforamtions, as gauge transformations are always allowed. Specifically one can translate the system by $\vec{t}_1/2$ (the symmetry operation of the bare kagome lattice) followed by a gauge transformation. The correct gauge transforamtion in this case is 
+
+\begin{center}
+	\includegraphics[width = \textwidth]{gauge_trafo.jpeg}
+\end{center}
+
+This has the effect
+
+\begin{center}
+	\includegraphics[width = \textwidth]{effect_gauge_trafo.jpeg}
+\end{center}
+
+This then reinstates the correct symmetry. So much for the idea. No for the technical implementation. I define lattice translations
+
+\begin{equation}
+	T_{\vec{v}} \equiv e^{i\vec{v}\cdot\vec{q}},
+\end{equation}
+
+,where $\vec{q}$ is the momentum operator \textcolor{red}{(What is the correct momentum operator?)}, and gauge transformations $G$. Apparently the system has a symmetry of the form 
+
+\begin{equation}
+	G\cdot T_{\vec{t}_1/2}.
+\end{equation}
+
+Physically I expect that $[G,T_{\vec{t}_1/2}] = 0$. I think that also implies that the generators of $G$ and $T$ commute. \textcolor{red}{Is this correct?} This would simply mean that a new quantum number is introduced. \\
+
+\textcolor{red}{The next question asks itself: what is the generator of a gauge transformation?}
+
 \subsubsection{Reciprocal Space}
 
 The reciprocal lattice vectrors are 
@@ -368,14 +401,15 @@ and
 	\end{split}
 \end{align}
 
-I split the everything into two parts, the first one being proportional to $\beta$:
+I split the everything into two parts:
 
-\begin{equation}
-	\langle \delta H_1 \rangle_{\vec{w}_1, \vec{w}_2} = -\frac{\beta}{2}(1-\sqrt{3})(u_{xx}+u_{yy})\sigma_0.
-\end{equation}
+\begin{gather}
+	\begin{split}
+		\langle \delta H_1 \rangle_{\vec{w}_1, \vec{w}_2} = -\frac{\beta}{2}(1-\sqrt{3})(u_{xx}+u_{yy})\sigma_0 \\
+		\langle \delta H_2 \rangle_{\vec{w}_1, \vec{w}_2} = \sqrt{2}\pi\left(u_{xx} + \frac{u_{yx}}{\sqrt{3}}\right)\sigma_x + \sqrt{2}\pi\left(u_{xy} + \frac{u_{yy}}{\sqrt{3}}\right)\sigma_y
+	\end{split}
+\end{gather}
 
-\textcolor{red}{There is also a $\beta^0$-term that I shouldwrite down. However, this term can be gauged away so it not relevant for the physical discussion.} \\
-
-This means that to this order there is no effective vector potential but only an effective scalar potential.
+The second term is a gradient field and can be gauged away. This means that to this order there is no effective vector potential but only an effective scalar potential.
 
 \end{document}
