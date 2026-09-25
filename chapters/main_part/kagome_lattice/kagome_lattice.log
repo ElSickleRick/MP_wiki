@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  24 SEP 2026 15:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  25 SEP 2026 10:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -841,7 +841,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--86
  []
 
 [9 <./gauge_trafo.jpeg> <./effect_gauge_trafo.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
@@ -849,60 +849,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 129--130
 File: dispersion_relation_pi_flux_state.png Graphic file (type png)
 <use dispersion_relation_pi_flux_state.png>
 Package pdftex.def Info: dispersion_relation_pi_flux_state.png  used on input l
-ine 138.
+ine 147.
 (pdftex.def)             Requested size: 443.57848pt x 229.92143pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
-[10 <./dispersion_relation_pi_flux_state.png>]
-<touching_points_4th_band.png, id=203, 1850.112pt x 959.0229pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+<touching_points_4th_band.png, id=202, 1850.112pt x 959.0229pt>
 File: touching_points_4th_band.png Graphic file (type png)
 <use touching_points_4th_band.png>
-Package pdftex.def Info: touching_points_4th_band.png  used on input line 153.
+Package pdftex.def Info: touching_points_4th_band.png  used on input line 162.
 (pdftex.def)             Requested size: 443.57848pt x 229.92143pt.
- [11 <./touching_points_4th_band.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+[11 <./dispersion_relation_pi_flux_state.png> <./touching_points_4th_band.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
 
-Overfull \hbox (76.49815pt too wide) detected at line 229
+Overfull \hbox (76.49815pt too wide) detected at line 238
 []
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 298--299
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 361--362
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
  []
 
-) [15] [16] (./kagome_lattice.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
+
+ []
+
+[15]) [16] (./kagome_lattice.aux)
 Package rerunfilecheck Info: File `kagome_lattice.out' has not changed.
 (rerunfilecheck)             Checksum: 71F5AA02D472D209E3B38B09A02C4C09;2533.
 Package logreq Info: Writing requests to 'kagome_lattice.run.xml'.
@@ -910,13 +910,13 @@ Package logreq Info: Writing requests to 'kagome_lattice.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20306 strings out of 478287
- 346612 string characters out of 5849289
- 1101337 words of memory out of 5000000
- 38114 multiletter control sequences out of 15000+600000
+ 20308 strings out of 478287
+ 346649 string characters out of 5849289
+ 1100337 words of memory out of 5000000
+ 38116 multiletter control sequences out of 15000+600000
  480516 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,19n,94p,747b,1358s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 88i,19n,94p,747b,1321s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-di
@@ -935,7 +935,7 @@ st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 frm1000.pfb>
-Output written on kagome_lattice.pdf (16 pages, 1699821 bytes).
+Output written on kagome_lattice.pdf (16 pages, 1704797 bytes).
 PDF statistics:
  376 PDF objects out of 1000 (max. 8388607)
  310 compressed objects within 4 object streams
