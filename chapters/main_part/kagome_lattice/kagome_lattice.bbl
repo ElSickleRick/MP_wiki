@@ -176,6 +176,45 @@
       \verb https://link.aps.org/doi/10.1103/PhysRevB.102.045151
       \endverb
     \endentry
+    \entry{Wen2002}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0e5cbbaef3f573fe1ff3232bf52b70a6}{%
+           family={Wen},
+           familyi={W\bibinitperiod},
+           given={Xiao-Gang},
+           giveni={X\bibinithyphendelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{0e5cbbaef3f573fe1ff3232bf52b70a6}
+      \strng{fullhash}{0e5cbbaef3f573fe1ff3232bf52b70a6}
+      \strng{bibnamehash}{0e5cbbaef3f573fe1ff3232bf52b70a6}
+      \strng{authorbibnamehash}{0e5cbbaef3f573fe1ff3232bf52b70a6}
+      \strng{authornamehash}{0e5cbbaef3f573fe1ff3232bf52b70a6}
+      \strng{authorfullhash}{0e5cbbaef3f573fe1ff3232bf52b70a6}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{16}
+      \field{journaltitle}{Phys. Rev. B}
+      \field{month}{4}
+      \field{title}{Quantum orders and symmetric spin liquids}
+      \field{volume}{65}
+      \field{year}{2002}
+      \field{pages}{165113}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevB.65.165113
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevB.65.165113
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevB.65.165113
+      \endverb
+    \endentry
     \entry{Xia2026}{article}{}
       \name{author}{2}{}{%
         {{hash=ac24f386fe79d8c1d56f0f9a1cf73e0b}{%

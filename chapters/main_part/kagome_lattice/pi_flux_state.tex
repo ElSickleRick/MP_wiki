@@ -58,7 +58,7 @@ The real space (effective) tight-binding hamiltonian is
 
 On the level of gauge-invaiant quantuities (that is plaquette fluxes), the system does not break any lattice symmetries, that the bare Kagome lattice has. \\
 
-The specific gauge choice however looks like it lowers the translational symmetry in one direction ($\vec{t}_2$). Obviously this is a problem of the gauge-choice, the correct symmetries are dictated by the gauge-independent observables. To "repair" this one can supplement lattice symmetry transforamtions with gauge transforamtions, as gauge transformations are always allowed. Specifically one can translate the system by $\vec{t}_1/2$ (the symmetry operation of the bare kagome lattice) followed by a gauge transformation. The correct gauge transforamtion in this case is 
+The specific gauge choice however looks like it lowers the translational symmetry in one direction ($\vec{t}_2$). Obviously this is a problem of the gauge-choice, the correct symmetries are dictated by the gauge-independent observables. To "repair" this one can supplement lattice symmetry transforamtions with gauge transforamtions, as gauge transformations are always allowed. This whole idea was formally introduced here: \cite{Wen2002}. Specifically one can translate the system by $\vec{t}_1/2$ (the symmetry operation of the bare kagome lattice) followed by a gauge transformation. The correct gauge transforamtion in this case is 
 
 \begin{center}
 	\includegraphics[width = \textwidth]{gauge_trafo.jpeg}
@@ -73,27 +73,32 @@ This has the effect
 This then reinstates the correct symmetry. So much for the idea. No for the technical implementation. I define lattice translations
 
 \begin{equation}
-	T_{\vec{v}} \equiv e^{i\vec{v}\cdot\vec{q}},
+	T_{\vec{d}} \equiv e^{i\vec{d}\cdot\vec{q}},
 \end{equation}
 
-,where $\vec{q}$ is the momentum operator \textcolor{red}{(What is the correct momentum operator?)}, and gauge transformations $G$. Apparently the system has a symmetry of the form 
+,where $\vec{q}$ is the momentum operator \textcolor{red}{(What is the correct momentum operator?)}, and a gauge transformations
 
 \begin{equation}
-	G\cdot T_{\vec{t}_1/2}.
+	G_{\{\theta_i\}} \equiv e^{i\sum_i\theta_i n_i}.
 \end{equation}
 
-Physically I expect that $[G,T_{\vec{t}_1/2}] = 0$. I think that also implies that the generators of $G$ and $T$ commute. \textcolor{red}{Is this correct?} This would simply mean that a new quantum number is introduced. \\
+
 
 \textcolor{red}{What follows is a plethora of questions 
 	\begin{itemize}
-		\item what are the generators of gauge transformations? -> particle number?
+		\item What is the point group of the bare kagome lattice?
+		\item Why are the particle numbers generators of the gauge transformations? (What is the connection to the particle number constraint?) 
+		\item Do particle number and momentum commmute? How would I even translate momentum to occupation numbers?
 		\item The description using momentum as quantum numbers must be still correct, no?
 		\item What are the correct quantum numbers considerin the projective symmetry?
 		\item Can one still think about the resciprocal space and which modifications are needed?
+		\item How can one imagine the eigenfunctions of e.g. $G_{\{\theta_i\}}\cdot T_{\vec{t}/2}$?
 		\item The band structure must be gauge-invariant, no?
-		\item How do the bands map under the projective symmetry?	
+		\item How do the bands map under the projective symmetry?
 	\end{itemize}
 }
+
+\textcolor{red}{Looking further ahead at strain, can you maybe argue that this forbids pseudo magnetic fields?}
 
 \subsubsection{Reciprocal Space}
 
