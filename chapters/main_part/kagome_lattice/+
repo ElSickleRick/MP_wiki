@@ -537,9 +537,9 @@ I pick the orthonormal basis vectors
 	\begin{pmatrix}
 		\frac{1+\sqrt{3}}{\sqrt{2}} -i \sqrt{2}(2+\sqrt{3}) & 2 + \sqrt{3} & i\sqrt{2}(2+\sqrt{3}) & \frac{1+\sqrt{3}}{\sqrt{2}} + i \sqrt{2}(2+\sqrt{3}) & 1 & 0
 	\end{pmatrix} \\
-	\vec{v}_5(\vec{K}^{\prime\prime}) &= \frac{\sqrt{2}}{\sqrt{3\sqrt{3}(1+\sqrt{3})}}
+	\vec{v}_5(\vec{K}^{\prime\prime}) &= \frac{2}{3\sqrt{3}(1+\sqrt{3})}
 	\begin{pmatrix}
-		-\frac{1}{2} & -\frac{3}{2\sqrt{2}}(1+ \sqrt{3}) & i \frac{1+\sqrt{3}}{2} & -\frac{1}{2} & \frac{1+\sqrt{3}}{2\sqrt{2}} & 1
+		-\frac{1}{2} & -\frac{3\sqrt{3}}{2}(1+ \sqrt{3}) & i \frac{1+\sqrt{3}}{2} & -\frac{1}{2} & \frac{1+\sqrt{3}}{2\sqrt{2}} & 1
 	\end{pmatrix}
 \end{align}
 
@@ -573,7 +573,7 @@ This yields the angles
 The resulting lowest order terms are 
 
 \begin{align}
-	\langle\delta  H_{1} \rangle_{\vec{w}_4, \vec{w}_5} &= -\frac{\beta}{2}( u_{xx} + u_{yy}) + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{yy}-u_{xx})\sigma_x + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{xy} + u_{yx}) \sigma_y\\
+	\langle\delta  H_{1} \rangle_{\vec{w}_4, \vec{w}_5} &= -\frac{\beta}{2}( u_{xx} + u_{yy}) - \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{xx}-u_{yy})\sigma_x + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{xy} + u_{yx}) \\
 	\langle \delta H_2 \rangle_{\vec{w}_4, \vec{w}_5} &= \sqrt{2}\frac{\pi}{12}(u_{xx} - \sqrt{3}u_{yx})\sigma_x + \sqrt{2}\frac{\pi}{12}(u_{xy} - \sqrt{3} u_{yy})\sigma_y
 \end{align}
 
@@ -584,12 +584,12 @@ Since the second term can be written as a gradient field only the first term con
 	\vec{A}(\vec{K}^{\prime\prime}) = \frac{\beta}{2\sqrt{3}}
 	\begin{pmatrix}
 		u_{yy} - u_{xx} \\
-		u_{xy} + u_{yx}
+		u_{xy} - u_{yx}
 	\end{pmatrix}.
 \end{gather}
 
 \begin{equation}
-	\Rightarrow B(\vec{K}^{\prime\prime}) = \frac{\beta}{2\sqrt{3}} \left(2\partial_x\partial_yU_x +\left[\partial_x^2 - \partial_y^2\right]U_y\right)
+	\Rightarrow B(\vec{K}^{\prime\prime}) = \frac{\beta}{2\sqrt{3}} \left(2\partial_x\partial_yU_x -\left[\partial_x^2 + \partial_y^2\right]U_y\right)
 \end{equation}
 
 For the purpose of verification I do the same calculation for an effective theory of the form $H = \varepsilon_0\sigma_0 + p_x \sigma_x + p_y\sigma_z$. \ref{coeffy} directly gives
@@ -598,11 +598,11 @@ For the purpose of verification I do the same calculation for an effective theor
 	\sin(\theta) &= 0 \\
 	\sin(\kappa) &= 0.
 \end{align}
- 
-Furthermore, from eqs \ref{coeffx} and \ref{coeffy}:
+
+Furthermore, from \ref{coeffz}:
 
 \begin{equation}
-	\tan(\phi) = \sqrt{-\frac{H_{11}^yH_{12}^x}{H_{11}^xH_{12}^y}}.
+	\cos(\phi) = \frac{H_{12}^x}{H_{11}^yH_{12}^x - H_{11}^xH_{12}^y}.
 \end{equation}
 
 \textcolor{red}{I'll have to return to this to fix $\theta$ and $\kappa$, the problem is in structure identical to the other effective theory above.} \\
@@ -614,7 +614,5 @@ The right choice is thus
 	\kappa &= 0 \\
 	\theta &= \pi
 \end{align}
-
-The projections onto those vectors are 
 
 \end{document}
