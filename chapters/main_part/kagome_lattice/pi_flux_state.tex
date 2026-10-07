@@ -330,7 +330,7 @@ Using these, in general (while neglecting the $\sigma_0$-term),
 \begin{align}
 	\begin{split}
 		\vec{w}_1^H \cdot H \cdot \vec{w}_2 &=  \left(\vec{v}_1^H\cdot H \cdot \vec{v}_1\right)\sin(\phi)\cos(\theta) + \left(\vec{v}_1^H\cdot H \cdot \vec{v}_2\right)\left(\sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)\right) \\
-		&+i \left[ -\left(\vec{v}_1^H\cdot H \cdot \vec{v}_1\right)\sin(\phi)\sin(\theta) + \left(\vec{v}_1^H\cdot H \cdot \vec{v}_2\right)\big( \sin(\kappa)\cos(\theta) + \cos(\phi)\cos(\kappa)\sin(\theta)\big)   \right]
+		&-i \left[ \left(\vec{v}_1^H\cdot H \cdot \vec{v}_1\right)\sin(\phi)\sin(\theta) - \left(\vec{v}_1^H\cdot H \cdot \vec{v}_2\right)\big( \sin(\kappa)\cos(\theta) + \cos(\phi)\cos(\kappa)\sin(\theta)\big)   \right]
 	\end{split}
 \end{align}
 
@@ -420,10 +420,155 @@ I split the everything into two parts:
 \begin{gather}
 	\begin{split}
 		\langle \delta H_1 \rangle_{\vec{w}_1, \vec{w}_2} = -\frac{\beta}{2}(1-\sqrt{3})(u_{xx}+u_{yy})\sigma_0 \\
-		\langle \delta H_2 \rangle_{\vec{w}_1, \vec{w}_2} = \sqrt{2}\pi\left(u_{xx} + \frac{u_{yx}}{\sqrt{3}}\right)\sigma_x + \sqrt{2}\pi\left(u_{xy} + \frac{u_{yy}}{\sqrt{3}}\right)\sigma_y
+		\langle \delta H_2 \rangle_{\vec{w}_1, \vec{w}_2} = \sqrt{2}\frac{\pi}{4}\left(u_{xx} + \frac{u_{yx}}{\sqrt{3}}\right)\sigma_x + \sqrt{2}\frac{\pi}{4}\left(u_{xy} + \frac{u_{yy}}{\sqrt{3}}\right)\sigma_y
 	\end{split}
 \end{gather}
 
-The second term is a gradient field and can be gauged away. This means that to this order there is no effective vector potential but only an effective scalar potential.
+The second term is a gradient field and can be gauged away. This means that to this order there is no effective vector potential but only an effective scalar potential. \\
+
+Doing the same calculation for $K^\prime$ basically means transforming the Hamiltonian 
+
+\begin{equation}
+	H \mapsto \tilde{H} \equiv THT,
+\end{equation}
+
+with $T$ the time revearsel. Thus, the eigenvectors of $\tilde{H}$ are $T\vec{v}_1$ and $T\vec{v}_2$ (since $T$ is its own inveres). In this case time revearsel (which can be interpreted as either $\vec{K} \mapsto -\vec{K}$ or $\vec{q} \mapsto -\vec{q}$) is equivalent to complex conjugation. Due to the antilinearity of time revearsel, the matrix elements are conjugated. Thus the parameters have to be adjusted.
+
+\subsubsection{crossing 5-6}
+
+Since bands 5 and 6 cross at the same point as bands 3 and 4, the expansions of the Hamiltonian are still valid. The eigenvectors corresponding to bands 5 and 6 at the $K$-point are 
+
+\begin{align}
+	\vec{v}_5(\vec{K}) &= \frac{1}{\sqrt{\sqrt{6}+3\sqrt{2}}}
+	\begin{pmatrix}
+		-\frac{1}{\sqrt{2}} -i\frac{2+\sqrt{3}}{\sqrt{2}} & -2-\sqrt{3} & i\sqrt{2}(1+\sqrt{3}) & -\frac{1}{\sqrt{2}} + i \frac{2+\sqrt{3}}{\sqrt{2}} & 1 & 0
+	\end{pmatrix} \\
+	\vec{v}_6(\vec{K}) &= \frac{1}{4\sqrt{3}}
+	\begin{pmatrix}
+		1+\sqrt{3} + i(1-\sqrt{3}) & \sqrt{2} + \sqrt{6} & 0 & 1+\sqrt{3} -i (1-\sqrt{3}) & \sqrt{2} + \sqrt{6} & 4
+	\end{pmatrix}
+\end{align}
+
+The projections otno $\vec{v}_5(\vec{K})$ and $\vec{v}_6(\vec{K})$ are
+
+\begin{gather}
+	\begin{split}
+		\vec{v}_5^H \cdot H_{\vec{K}} \cdot \vec{v}_5 &= (1+\sqrt{3})t + \frac{1+\sqrt{3}}{2}t p_x - \frac{1-\sqrt{3}}{2}t p_y \\
+		\vec{v}_6^H \cdot H_{\vec{K}} \cdot \vec{v}_6 &= (1+\sqrt{3})t-\frac{1+\sqrt{3}}{2}t p_x + \frac{1-\sqrt{3}}{2}t p_y \\
+		\vec{v}_5^H \cdot H_{\vec{K}} \cdot \vec{v}_6 &= \frac{1-\sqrt{3}}{2}t p_x + \frac{1+\sqrt{3}}{2}t p_y \\
+		\vec{v}_6^H \cdot H_{\vec{K}} \cdot \vec{v}_5 &= \frac{1-\sqrt{3}}{2}t p_x + \frac{1+\sqrt{3}}{2}t p_y
+	\end{split}
+\end{gather}
+
+\begin{equation}
+	\Rightarrow \langle H_{\vec{K}} \rangle_{\vec{v}_5, \vec{v}_6} = t(1+\sqrt{3})\sigma_0 + \frac{t}{2}\left( (1+\sqrt{3})p_x - (1-\sqrt{3})p_y\right)\sigma_z + \frac{t}{2}\left((1-\sqrt{3})p_x + (1+\sqrt{3})p_y\right) \sigma_x
+\end{equation}
+
+Thus, the dispersions are
+
+\begin{align}
+	\varepsilon_{5\vec{K}}(\vec{p}) &= (1+\sqrt{3})t - \sqrt{2}t\sqrt{p_x^2 + p_y^2} \\
+	\varepsilon_{6\vec{K}}(\vec{p}) &= (1+\sqrt{3})t + \sqrt{2}t\sqrt{p_x^2 + p_y^2}
+\end{align}
+
+Again the Fermi velocity is $v_F= \sqrt{2}t$. I use the usual method and refine it a bit. Consider the coefficients 
+
+\begin{align}
+	&H_{11} \cos(\phi) + H_{12} \sin(\phi) \cos(\kappa) & (\sigma_z) \label{coeffz}\\
+	&H_{11} \sin(\phi)\cos(\theta) + H_{12}\left( \sin(\kappa) \sin(\theta) -\cos(\phi)\cos(\kappa)\cos(\theta)\right) &(\sigma_x) \label{coeffx} \\
+	&H_{11} \sin(\phi) \sin(\theta) - H_{12} \left( \sin(\kappa) \cos(\theta) + \cos(\phi) \cos(\kappa) \sin(\theta)\right) &(\sigma_y) \label{coeffy}
+\end{align}
+
+I used the shorthand $H_{ii} \equiv \vec{v}_i^T \cdot H_{\vec{K}} \cdot \vec{v}_i$. Going forward I split these coefficients into $p_x$ and $p_y$ parts, which I should call $H_{ii}^x$ and $H_{ii}^y$, such that $H_{ii} = H_{ii}^x p_x + H_{ii}^y p_y$. \\
+
+Solving for an equation of the form $H = \varepsilon_0 \sigma_o + p_x \sigma_x + p_y \sigma_y$, eq \ref{coeffz} directly gives
+
+\begin{gather*}
+	\cos(\kappa) = 0 \\
+	\cos(\phi) = 0,
+\end{gather*}
+
+assuming that $H_{11}^{x/y} \not= 0$ and $H_{12}^{x/y} \not= 0$. \textcolor{red}{This is not enough to fix $\kappa$ and $\phi$ yet as both $\pi/2$ and $-\pi/2$ are valid solutions. (I lack a rigorous arguent here)}. Equations \ref{coeffx} and \ref{coeffy} reveal
+
+\begin{equation}
+	\tan(\theta) = - \frac{H_{12}^x}{H_{12}^y}.
+\end{equation}
+
+In this case that means 
+
+\begin{align}
+	\begin{split}
+		\theta &= \arctan\left(-\frac{1-\sqrt{3}}{1+\sqrt{3}}\right) = \frac{\pi}{12}\\
+		\phi &= \pi/2 \\
+		\kappa &= - \pi/2
+	\end{split}
+\end{align}
+
+This resulting strain is 
+
+\begin{align}
+	\langle \delta H_1 \rangle_{\vec{w}_5, \vec{w}_6} &= -\frac{\beta}{2}(1+\sqrt{3})(u_{xx} + u_{yy})\sigma_0 \\
+	\langle \delta H_2 \rangle_{\vec{w}_5, \vec{w}_6} &= \sqrt{2}\frac{\pi}{4}\left(u_{xx} + \frac{u_{yx}}{\sqrt{3}}\right)\sigma_x + \sqrt{2}\frac{\pi}{4} \left(u_{xy} + \frac{u_{yy}}{\sqrt{3}}\right)
+\end{align}
+
+\textcolor{red}{Apparently the scalar potential scales with the energy?}
+
+\subsubsection{crossing 4-5}
+
+The degenercy points lie at 
+
+\begin{equation}
+	\vec{K}^{\prime\prime} = \frac{\pi}{12}
+	\begin{pmatrix}
+		1 \\
+		-\sqrt{3}
+	\end{pmatrix}, \quad
+	\vec{K}^{\prime\prime\prime} = \frac{\pi}{12}
+	\begin{pmatrix}
+		-1 \\
+		\sqrt{3}
+	\end{pmatrix}
+\end{equation}
+
+I pick the orthonormal basis vectors 
+
+\begin{align}
+	\vec{v}_4(\vec{K}^{\prime\prime}) &= \frac{1}{\sqrt{6}\sqrt{5\sqrt{3}+9}}
+	\begin{pmatrix}
+		\frac{1+\sqrt{3}}{\sqrt{2}} -i \sqrt{2}(2+\sqrt{3}) & 2 + \sqrt{3} & i\sqrt{2}(2+\sqrt{3}) & \frac{1+\sqrt{3}}{\sqrt{2}} + i \sqrt{2}(2+\sqrt{3}) & 1 & 0
+	\end{pmatrix} \\
+	\vec{v}_5(\vec{K}^{\prime\prime}) &= \frac{2}{3\sqrt{3}(1+\sqrt{3})}
+	\begin{pmatrix}
+		-\frac{1}{2} & -\frac{3\sqrt{3}}{2}(1+ \sqrt{3}) & i \frac{1+\sqrt{3}}{2} & -\frac{1}{2} & \frac{1+\sqrt{3}}{2\sqrt{2}} & 1
+	\end{pmatrix}
+\end{align}
+
+The projections are 
+
+\begin{align}
+	\vec{v}_4^H \cdot H_{\vec{K}} \cdot \vec{v}_4 &= - \frac{1+\sqrt{3}}{2}tp_x - \frac{1-\sqrt{3}}{2}tp_y  \\
+	\vec{v}_5^H \cdot H_{\vec{K}} \cdot \vec{v}_5 &= \frac{1+\sqrt{3}}{2}tp_x + \frac{1-\sqrt{3}}{2}tp_y \\
+	\vec{v}_4^H \cdot H_{\vec{K}} \cdot \vec{v}_5 &= - \frac{1-\sqrt{3}}{2}tp_x + \frac{1+\sqrt{3}}{2}tp_y
+\end{align}
+
+\begin{equation}
+	\Rightarrow v_F = \sqrt{2}t
+\end{equation}
+
+This yields the angles 
+
+
+\begin{align}
+	\begin{split}
+		\theta &= \arctan(\frac{1-\sqrt{3}}{1+\sqrt{3}}) = -\pi/12 \\
+		\phi &= -\pi/2 \\
+		\kappa &= -\pi/2
+	\end{split}
+\end{align}
+
+\begin{equation}
+	\Rightarrow \langle H_{\vec{K}} \rangle_{\vec{w}_1, \vec{w}_2} = \sqrt{2}tp_x \sigma_x + \sqrt{2}tp_y \sigma_y
+\end{equation}
+
 
 \end{document}

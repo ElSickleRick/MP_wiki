@@ -1,21 +1,21 @@
-[0] Config.pm:307> INFO - This is Biber 2.17
-[0] Config.pm:310> INFO - Logfile is 'kagome_lattice.blg'
-[51] biber:340> INFO - === Mo Sep 28, 2026, 15:46:47
-[65] Biber.pm:418> INFO - Reading 'kagome_lattice.bcf'
-[109] Biber.pm:969> INFO - Using all citekeys in bib section 0
-[119] Biber.pm:4383> INFO - Processing section 0
-[126] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
-[128] bibtex.pm:1713> INFO - LaTeX decoding ...
-[134] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
-[176] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[177] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[177] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[177] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[182] bbl.pm:654> INFO - Writing 'kagome_lattice.bbl' with encoding 'UTF-8'
-[184] bbl.pm:757> INFO - Output to kagome_lattice.bbl
-[187] Biber.pm:130> WARN - legacy month field 'Jan' in entry 'Xia2026' is not an integer - this will probably not sort properly.
-[187] Biber.pm:130> WARN - legacy month field 'Apr' in entry 'Wen2002' is not an integer - this will probably not sort properly.
-[187] Biber.pm:130> WARN - legacy month field 'Sep' in entry 'Guo2009' is not an integer - this will probably not sort properly.
-[187] Biber.pm:130> WARN - legacy month field 'Feb' in entry 'DiSante2026' is not an integer - this will probably not sort properly.
-[187] Biber.pm:130> WARN - legacy month field 'Jul' in entry 'Liu2020' is not an integer - this will probably not sort properly.
-[187] Biber.pm:132> INFO - WARNINGS: 5
+[0] Config.pm:329> INFO - This is Biber 2.22
+[0] Config.pm:332> INFO - Logfile is 'kagome_lattice.blg'
+[60] biber:342> INFO - === Do Okt  1, 2026, 09:30:00
+[74] Biber.pm:421> INFO - Reading 'kagome_lattice.bcf'
+[136] Biber.pm:999> INFO - Using all citekeys in bib section 0
+[149] Biber.pm:4487> INFO - Processing section 0
+[158] Biber.pm:4680> INFO - Looking for bibtex file 'references.bib' for section 0
+[159] bibtex.pm:1713> INFO - LaTeX decoding ...
+[165] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[236] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[237] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[237] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[237] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[254] bbl.pm:676> INFO - Writing 'kagome_lattice.bbl' with encoding 'UTF-8'
+[257] bbl.pm:779> INFO - Output to kagome_lattice.bbl
+[257] Biber.pm:132> WARN - legacy month field 'Jan' in entry 'Xia2026' is not an integer - this will probably not sort properly.
+[257] Biber.pm:132> WARN - legacy month field 'Jul' in entry 'Liu2020' is not an integer - this will probably not sort properly.
+[258] Biber.pm:132> WARN - legacy month field 'Feb' in entry 'DiSante2026' is not an integer - this will probably not sort properly.
+[258] Biber.pm:132> WARN - legacy month field 'Apr' in entry 'Wen2002' is not an integer - this will probably not sort properly.
+[258] Biber.pm:132> WARN - legacy month field 'Sep' in entry 'Guo2009' is not an integer - this will probably not sort properly.
+[258] Biber.pm:134> INFO - WARNINGS: 5
