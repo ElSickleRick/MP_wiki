@@ -54,7 +54,7 @@ The real space (effective) tight-binding hamiltonian is
 \end{align}
 
 
-\subsection{Symmetries}
+\subsubsection{Symmetries}
 
 On the level of gauge-invaiant quantuities (that is plaquette fluxes), the system does not break any lattice symmetries, that the bare Kagome lattice has. \\
 
@@ -119,7 +119,7 @@ The reciprocal lattice vectrors are
 
 After a Fourier transform the $k$-space Hamiltonian reads
 
-\begin{equation}
+\begin{equation} \label{Hpirs}
 	H = t \sum_{q,\sigma} \Psi_{q\sigma}^\dagger 
 	\begin{pmatrix}
 		0 & e^{iq_2} & -e^{-iq_3} & 0 & e^{-iq_2} & e^{iq_3} \\
@@ -146,21 +146,71 @@ I used the shorthand $q_i \equiv \vec{q}\cdot\vec{\delta}_i$.
 
 \subsubsection{dispersion and band trouching poiunts}
 
-The dispersion relation is shwon in the following picture
+The dispersion relation is shwon in the following picture 
 
 \begin{center}
 	\includegraphics[width = \textwidth]{dispersion_relation_pi_flux_state.png} 
 \end{center}
 
-The lowest band (flat band) is doubly degenerate. \\
+This plot was generatey by numerically calculating the eigenvalues of $H$ on a $(q_x, q_y)$-grid. The lowest band (flat band) is doubly degenerate. \\
 
-\textcolor{blue}{Directions on how to obtain the analytical expressions:\\ 
-1. write down characteristic polynomial (probably the most annoying step)\\
-2. Divide by the two constant roots corresponding to the flat bands (Polynomial of degree 4 remains) \\
-3. Use symmetrie of remaining 4 bands (write as product of 2 quadratic polynomials; due to the symmetrie plane, one can guess p from the p-q-formula) \\4. Solve remaining 2 quadratice equations \\
-5. ? \\
-6. Profit} \\
- 
+The characteristic polynomial of \ref{Hpirs} is (this was generate by mathematica)
+
+\begin{equation}
+	x^6-12x^4-8x^3+x^2(30 + 2\Delta_{\vec{q}})+x(24+8\Delta_{\vec{q}})+8\Delta_{\vec{q}}-8 
+\end{equation}
+
+\textcolor{red}{units!} with 
+
+\begin{equation}
+	\Delta_{\vec{q}} = -\cos(4q_2)+\cos(4q_3)-\cos(4q_1).
+\end{equation}
+
+\textcolor{red}{I should verify this uisng Cayley-Hamilton.} To derive analytical expressions for the bands I first divide out the two flat bands (i.e. polynomial division by $(x+2)^2$). The result is
+
+\begin{equation}
+	x^4-4x^3+8x-2+2\Delta_{\vec{q}}.
+\end{equation}
+
+To make progress I postulate (judging from the numeriacl plot of the dispersion) that the above polynomial can be written as a product of two quadratic polynomials. Furtheremore the solutions of said qaudratic equations must be centered around $t$. The p-q forumla yields that the linear coefficents of both quadratic polynomials must therefore be $-2t$.
+
+\begin{align}
+	\begin{split}
+		\Rightarrow x^4-4x^3+8x-2+2\Delta_{\vec{q}} &=(x^2-2x+a)\cdot(x^2-2x +b) \\
+		&= x^4-4x^3+x^2(4+a+b)-2x(a+b)+ab.
+	\end{split}
+\end{align}
+
+\begin{equation}
+	\Rightarrow a+b \overset{!}{=} -4, \quad ab \overset{!}{=} -2+2\Delta_{\vec{q}}.
+\end{equation}
+
+These equations are solved by 
+
+\begin{align}
+	\begin{split}
+		a_{1,2} &= -2 \pm \sqrt{6-2\Delta_{\vec{q}}} \\
+		b_{1,2} &= -2 \mp \sqrt{6-2\Delta_{\vec{q}}}.
+	\end{split}
+\end{align}
+
+Both solution lead to the same result ($a$ and $b$ are exchanged in the second soltuion wrt the first one). This gives the following expressions for the bands 
+
+\begin{align}
+	\begin{split}
+		\varepsilon_1 (\vec{q}) &= -2t \\
+		\varepsilon_2 (\vec{q}) &= -2t \\
+		\varepsilon_3 (\vec{q}) &= \left(1 -\sqrt{3+\sqrt{6-2\Delta_{\vec{q}}}}\right)t \\
+		\varepsilon_4 (\vec{q}) &= \left(1 -\sqrt{3-\sqrt{6-2\Delta_{\vec{q}}}}\right)t \\
+		\varepsilon_5 (\vec{q}) &= \left(1 +\sqrt{3-\sqrt{6-2\Delta_{\vec{q}}}}\right)t \\
+		\varepsilon_6 (\vec{q}) &= \left(1 +\sqrt{3+\sqrt{6-2\Delta_{\vec{q}}}}\right)t.
+	\end{split}
+\end{align}
+
+\begin{equation}
+	\Delta_{\vec{q}} = -\cos(4q_2)+\cos(4q_3)-\cos(4q_1).
+\end{equation}
+
 At half filling the lowest three bands are filled, thus the Fermi-energy is between the yellow and green band.
 
 \begin{center}
@@ -181,6 +231,51 @@ Shown above is the 4th band (green band). Apparently there are two flavours of t
 		1/\sqrt{3}
 	\end{pmatrix}.
 \end{equation}
+
+
+Now I calculate the various touching points. It is clear from the expressions above that bands 3 and 4 as well as bands 5 and 6 touch iff 
+
+\begin{gather}
+	6-2\Delta_{\vec{q}} = 0 \notag \\
+	\Leftrightarrow -\cos(4q_2)+\cos(4q_3)-\cos(4q_1) = 3 \notag \\
+	\Leftrightarrow 2\sin(2q_x)\sin(2\sqrt{3}q_y) - \cos(4q_x) = 3.
+\end{gather}
+
+This can easily be solved considering the ranges of sine and cosine. A possible parametrization of the solution is 
+
+\begin{align}
+	q_x &= (-1)^s \frac{\pi}{4} + m_1 \pi \\
+	q_y &= (-1)^s \frac{\pi}{4\sqrt{3}} +(m_1 + m_2)\frac{\pi}{\sqrt{3}}
+\end{align}
+
+On the other hand, bands 4 and 5 touch when 
+
+\begin{gather}
+	\sqrt{3-\sqrt{6-2\Delta_{\vec{q}}}} = 0 \notag \\
+	\Leftrightarrow 2\Delta_{\vec{q}} = -3 \\
+	\Leftrightarrow 4\sin(2q_x)\sin(2\sqrt{3}q_y) - 2\cos(4q_x) = -3 \notag
+\end{gather}
+
+Using $\cos(2x) = 1-2\sin^2(x)$ I obtain
+
+\begin{gather}
+	\sin^2(2q_x) + \sin(2q_x)\sin(2\sqrt{3}q_y) + \frac14 = 0 \notag \\
+	\Rightarrow \sin(2q_x) = \frac12\left( -\sin(2\sqrt{3}q_y) \pm \sqrt{\sin^2(2\sqrt{3}q_y) - 1}\right)
+\end{gather}
+
+The expression under the square root gives a condition for $q_y$. It tourns out there are two distinct sets of solutions (meaning there are two distinct sets of equivalent touching points).
+
+\begin{align}
+	q_x &= (-1)^s \frac{\pi}{12} + m_1  \pi \\
+	q_y &= (-1)^{s+1} \frac{\pi}{4\sqrt{3}} + (m_1+m_2)\frac{\pi}{\sqrt{3}}
+\end{align}
+
+and 
+
+\begin{align}
+	q_x &= (-1)^s\frac{5\pi}{12} + m_1 \pi \\
+	q_y &= (-1)^s\frac{\sqrt{3}\pi}{4} + (m_1 + m_2)\frac{\pi}{\sqrt{3}}
+\end{align}
 
 \subsubsection{Linearization in reciproical space and Projection}
 
@@ -515,7 +610,7 @@ This resulting strain is
 
 \subsubsection{crossing 4-5}
 
-The degenercy points lie at 
+I begin with the degneracy point at 
 
 \begin{equation}
 	\vec{K}^{\prime\prime} = \frac{\pi}{12}
@@ -523,12 +618,9 @@ The degenercy points lie at
 		1 \\
 		-\sqrt{3}
 	\end{pmatrix}, \quad
-	\vec{K}^{\prime\prime\prime} = \frac{\pi}{12}
-	\begin{pmatrix}
-		-1 \\
-		\sqrt{3}
-	\end{pmatrix}
 \end{equation}
+
+\textcolor{red}{It should be easy to verfy the following calculations by repeating them for $-\vec{K}^{\prime\prime}$.} \\
 
 I pick the orthonormal basis vectors 
 
@@ -573,7 +665,7 @@ This yields the angles
 The resulting lowest order terms are 
 
 \begin{align}
-	\langle\delta  H_{1} \rangle_{\vec{w}_4, \vec{w}_5} &= -\frac{\beta}{2}( u_{xx} + u_{yy}) + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{yy}-u_{xx})\sigma_x + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{xy} + u_{yx}) \sigma_y\\
+	\langle\delta  H_{1} \rangle_{\vec{w}_4, \vec{w}_5} &= -\frac{\beta}{2}( u_{xx} + u_{yy})\sigma_0 + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{yy}-u_{xx})\sigma_x + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{xy} + u_{yx}) \sigma_y\\
 	\langle \delta H_2 \rangle_{\vec{w}_4, \vec{w}_5} &= \sqrt{2}\frac{\pi}{12}(u_{xx} - \sqrt{3}u_{yx})\sigma_x + \sqrt{2}\frac{\pi}{12}(u_{xy} - \sqrt{3} u_{yy})\sigma_y
 \end{align}
 
@@ -602,19 +694,93 @@ For the purpose of verification I do the same calculation for an effective theor
 Furthermore, from eqs \ref{coeffx} and \ref{coeffy}:
 
 \begin{equation}
-	\tan(\phi) = \sqrt{-\frac{H_{11}^yH_{12}^x}{H_{11}^xH_{12}^y}}.
+	\tan(\phi) = \sqrt{-\frac{H_{11}^xH_{12}^y}{H_{11}^yH_{12}^x
+	}}.
 \end{equation}
 
-\textcolor{red}{I'll have to return to this to fix $\theta$ and $\kappa$, the problem is in structure identical to the other effective theory above.} \\
+\textcolor{red}{This is not yet enough to fix the sign of $\phi$. I'll have to return to this to fix $\theta$ and $\kappa$, the problem is in structure identical to the other effective theory above. } \\
 
 The right choice is thus 
 
 \begin{align}
-	\phi &= \frac{5\pi}{12} \\
+	\phi &= \arctan\left(\sqrt{7+4\sqrt{3}}\right)= \frac{5\pi}{12} \\
 	\kappa &= 0 \\
 	\theta &= \pi
 \end{align}
 
 The projections onto those vectors are 
+
+\begin{align}
+	\langle \delta H_1 \rangle_{\vec{w}_4, \vec{w}_5} &= -\frac{\beta}{2}(u_{yy}+u_{xx}) \sigma_0 + \sqrt{2} \frac{\beta}{2 \sqrt{3}}(u_{yy}-u_{xx})\sigma_x + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{xy} + u_{yx}) \sigma_z \\
+	\langle \delta H_2 \rangle_{\vec{w}_4, \vec{w}_5} &= ?
+\end{align}
+
+Now I repeat the same for the other set of degeneracy points. Among those I pick
+
+\begin{equation}
+	\vec{K}^{\prime\prime\prime} = \frac{\pi}{12}
+	\begin{pmatrix}
+		5 \\
+		3\sqrt{3}
+	\end{pmatrix}
+\end{equation}
+
+I choose the vectors
+
+\begin{align}
+	v_4(\vec{K}^{\prime\prime\prime}) &= \frac{1}{\sqrt{6}\sqrt{9-5\sqrt{3}}}
+	\begin{pmatrix}
+		\frac{1-\sqrt{3}}{\sqrt{2}} - i\sqrt{2}(2-\sqrt{3}) & 2-\sqrt{3} & i\sqrt{2}(\sqrt{3}-2) & \frac{1-\sqrt{3}}{\sqrt{2}} + i\sqrt{2}(2-\sqrt{3}) & 1 & 0
+	\end{pmatrix} \\
+	v_5(\vec{K}^{\prime\prime\prime}) &= \frac{\sqrt{2}}{\sqrt{3}\sqrt{3-\sqrt{3}}}
+	\begin{pmatrix}
+		\frac12 & -\frac{\sqrt{3}}{2\sqrt{2}}(1-\sqrt{3}) & i\frac{1-\sqrt{3}}{2} & \frac12 & -\frac{1}{2\sqrt{2}}(1-\sqrt{3}) & 1
+	\end{pmatrix}
+\end{align}
+
+The projection coefficents are 
+
+\begin{align}
+	\begin{split}
+		H_{11}^x &= -\frac{1-\sqrt{3}}{2}t \\
+		H_{11}^y &= \frac{1+\sqrt{3}}{2}t \\
+		H_{12}^x &= -\frac{1+\sqrt{3}}{2}t \\
+		H_{12}^y &= -\frac{1-\sqrt{3}}{2}t.
+	\end{split}
+\end{align}
+
+For a theory of the Form $H = \varepsilon_0 \sigma_0 + p_x \sigma_x + p_y \sigma_y$ the correct parameters are 
+
+\begin{align}
+	\begin{split}
+		\theta &= \arctan(2+\sqrt{3}) = \frac{5\pi}{12} \\
+		\kappa &= -\pi/2 \\
+		\phi &= \pi/2
+	\end{split}
+\end{align}
+
+The projections are 
+
+\begin{align}
+	\langle \delta H_1 \rangle_{\vec{w}_4, \vec{w}_5} &= - \frac{\beta}{2}(u_{xx}+u_{yy})\sigma_0 + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{xx}-u_{yy})\sigma_x - \sqrt{2}\frac{\beta}{2\sqrt{3}}(u_{xy}+u_{yx}) \sigma_y \\
+	\langle \delta H_2 \rangle_{\vec{w}_4, \vec{w}_5} &= \sqrt{2}\frac{\pi}{12}\left(5u_{xx} + 3\sqrt{3}u_{yx}\right)\sigma_x+ \sqrt{2} \frac{\pi}{12}(5u_{xy} + 3\sqrt{3}u_{yy}) \sigma_y
+\end{align}
+
+\begin{gather}
+	\phi (\vec{K}^{\prime\prime\prime}) = -\frac{\beta}{2}(u_{xx} + u_{yy}) \\
+	\vec{A}(\vec{K}^{\prime\prime\prime}) = \frac{\beta}{2\sqrt{3}}
+	\begin{pmatrix}
+		u_{xx}-u_{yy} \\
+		-(u_{xy}+u_{yx})
+	\end{pmatrix}
+\end{gather}
+
+
+It turns out $\vec{A}(\vec{K}^{\prime\prime}) = -\vec{A}(\vec{K}^{\prime\prime\prime})$. The resulting magnetic field is
+
+\begin{equation}
+	B(\vec{K}^{\prime\prime}) = -\frac{\beta}{2\sqrt{3}} \left(2\partial_x\partial_yU_x +\left[\partial_x^2 - \partial_y^2\right]U_y\right).
+\end{equation}
+
 
 \end{document}

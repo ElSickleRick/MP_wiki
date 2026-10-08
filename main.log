@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  15 SEP 2026 09:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  8 OCT 2026 10:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -943,36 +943,56 @@ e.jpeg  used on input line 11.
 
 LaTeX Warning: Citation `DiSante2026' on page 34 undefined on input line 110.
 
-[34] [35] [36]
+[34] [35]
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
 
-LaTeX Warning: Citation `Guo2009' on page 37 undefined on input line 292.
+ []
+
+[36]
+
+LaTeX Warning: Citation `Guo2009' on page 37 undefined on input line 311.
 
 
-LaTeX Warning: Citation `Liu2020' on page 37 undefined on input line 292.
+LaTeX Warning: Citation `Liu2020' on page 37 undefined on input line 311.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--293
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
 
  []
 
 [37]
 
-LaTeX Warning: Citation `Liu2020' on page 38 undefined on input line 387.
+LaTeX Warning: Citation `Liu2020' on page 38 undefined on input line 409.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
 
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
+
+ []
+
+[38]
+
+LaTeX Warning: Reference `strain_elements' on page 39 undefined on input line 4
+74.
 
 )
 
@@ -987,17 +1007,144 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 13.
 
-(./chapters/main_part/kagome_lattice/pi_flux_state.tex
-<chapters/main_part/kagome_lattice//lattice-pi-flux-state.jpeg, id=714, 2055.68
+(./chapters/main_part/kagome_lattice/pi_flux_state.tex [39]
+<chapters/main_part/kagome_lattice//lattice-pi-flux-state.jpeg, id=746, 2055.68
 pt x 1359.0775pt>
 File: chapters/main_part/kagome_lattice//lattice-pi-flux-state.jpeg Graphic fil
 e (type jpg)
 <use chapters/main_part/kagome_lattice//lattice-pi-flux-state.jpeg>
 Package pdftex.def Info: chapters/main_part/kagome_lattice//lattice-pi-flux-sta
-te.jpeg  used on input line 10.
+te.jpeg  used on input line 9.
 (pdftex.def)             Requested size: 443.57848pt x 293.2536pt.
- [38] [39 <./chapters/main_part/kagome_lattice//lattice-pi-flux-state.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+
+LaTeX Warning: Citation `Wen2002' on page 40 undefined on input line 61.
+
+[40 <./chapters/main_part/kagome_lattice//lattice-pi-flux-state.jpeg>]
+<chapters/main_part/kagome_lattice//gauge_trafo.jpeg, id=755, 2055.68pt x 1264.
+725pt>
+File: chapters/main_part/kagome_lattice//gauge_trafo.jpeg Graphic file (type jp
+g)
+<use chapters/main_part/kagome_lattice//gauge_trafo.jpeg>
+Package pdftex.def Info: chapters/main_part/kagome_lattice//gauge_trafo.jpeg  u
+sed on input line 64.
+(pdftex.def)             Requested size: 443.57848pt x 272.89478pt.
+<chapters/main_part/kagome_lattice//effect_gauge_trafo.jpeg, id=756, 2055.68pt 
+x 1148.29pt>
+File: chapters/main_part/kagome_lattice//effect_gauge_trafo.jpeg Graphic file (
+type jpg)
+<use chapters/main_part/kagome_lattice//effect_gauge_trafo.jpeg>
+Package pdftex.def Info: chapters/main_part/kagome_lattice//effect_gauge_trafo.
+jpeg  used on input line 70.
+(pdftex.def)             Requested size: 443.57848pt x 247.77113pt.
+ [41 <./chapters/main_part/kagome_lattice//gauge_trafo.jpeg> <./chapters/main_p
+art/kagome_lattice//effect_gauge_trafo.jpeg>]
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
+
+ []
+
+<chapters/main_part/kagome_lattice//dispersion_relation_pi_flux_state.png, id=7
+61, 1850.112pt x 959.0229pt>
+File: chapters/main_part/kagome_lattice//dispersion_relation_pi_flux_state.png 
+Graphic file (type png)
+<use chapters/main_part/kagome_lattice//dispersion_relation_pi_flux_state.png>
+Package pdftex.def Info: chapters/main_part/kagome_lattice//dispersion_relation
+_pi_flux_state.png  used on input line 152.
+(pdftex.def)             Requested size: 443.57848pt x 229.92143pt.
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
+<chapters/main_part/kagome_lattice//touching_points_4th_band.png, id=775, 1850.
+112pt x 959.0229pt>
+File: chapters/main_part/kagome_lattice//touching_points_4th_band.png Graphic f
+ile (type png)
+<use chapters/main_part/kagome_lattice//touching_points_4th_band.png>
+Package pdftex.def Info: chapters/main_part/kagome_lattice//touching_points_4th
+_band.png  used on input line 167.
+(pdftex.def)             Requested size: 443.57848pt x 229.92143pt.
+[43 <./chapters/main_part/kagome_lattice//dispersion_relation_pi_flux_state.png
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+[44 <./chapters/main_part/kagome_lattice//touching_points_4th_band.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+
+ []
+
+
+Overfull \hbox (76.49815pt too wide) detected at line 243
+[]
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
+
+ []
+
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
+
+ []
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+
+ []
+
+
+LaTeX Warning: Reference `coeffz' on page 49 undefined on input line 484.
+
+
+LaTeX Warning: Reference `coeffx' on page 49 undefined on input line 491.
+
+
+LaTeX Warning: Reference `coeffy' on page 49 undefined on input line 491.
+
+[49]
+Overfull \hbox (2.58197pt too wide) detected at line 544
+[]
+ []
+
+[50]
+
+LaTeX Warning: Reference `coeffy' on page 51 undefined on input line 595.
+
+
+LaTeX Warning: Reference `coeffx' on page 51 undefined on input line 602.
+
+
+LaTeX Warning: Reference `coeffy' on page 51 undefined on input line 602.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 609--610
 
  []
 
@@ -1006,41 +1153,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--98
 l.17 \printbibliography
                        
 ? 
-) [40] (./chapters/other/mail1007/mail1007.tex) [41] (./main.aux)
+) [51] (./chapters/other/mail1007/mail1007.tex) [52] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FFB573F31FA5CBDE0D55D26AACA5D746;8300.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: FFB573F31FA5CBDE0D55D26AACA5D746;8300
+(rerunfilecheck)             After:  F1EA7F418B4B47C8B314C908F2CD0215;9447.
  ) 
 Here is how much of TeX's memory you used:
- 13231 strings out of 478287
- 209096 string characters out of 5849289
- 533353 words of memory out of 5000000
- 30785 multiletter control sequences out of 15000+600000
+ 13365 strings out of 478287
+ 212294 string characters out of 5849289
+ 538353 words of memory out of 5000000
+ 30817 multiletter control sequences out of 15000+600000
  480008 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,22n,77p,852b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfrm1000.pfb>
-Output written on main.pdf (41 pages, 1453145 bytes).
+ 68i,22n,77p,852b,593s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{subsubsection.5.2.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
+/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfrm1000.pfb>
+Output written on main.pdf (52 pages, 2470771 bytes).
 PDF statistics:
- 906 PDF objects out of 1000 (max. 8388607)
- 816 compressed objects within 9 object streams
- 387 named destinations out of 1000 (max. 500000)
- 423 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1071 PDF objects out of 1200 (max. 8388607)
+ 961 compressed objects within 10 object streams
+ 484 named destinations out of 1000 (max. 500000)
+ 443 words of extra memory for PDF output out of 10000 (max. 10000000)
 
