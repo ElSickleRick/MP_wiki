@@ -279,6 +279,22 @@ and
 
 \subsubsection{Linearization in reciproical space and Projection}
 
+For sake of the concept I will try to derive the Fermi-velocities of the band-crossings of the 5th band. I will focus on the crossing with the 4th band at 
+
+\begin{equation}
+	\vec{K}^{\prime\prime\prime} = \frac{\pi}{12}
+	\begin{pmatrix}
+		1 \\
+		-\sqrt{3}
+	\end{pmatrix}
+\end{equation}
+
+The obvious first step is Taylor expansion:
+
+\begin{equation}
+	\varepsilon_5(\vec{K}^{\prime\prime\prime} + \vec{p}) \approx \varepsilon(\vec{K}^{\prime\prime\prime}) + \left(\frac{\partial \varepsilon_5}{\partial \Delta_{\vec{q}}}\right)\left(\vec{\nabla}_{\vec{q}}\Delta_{\vec{q}}\right)\bigg\rvert_{\vec{q} = \vec{K}^{\prime\prime\prime}}\cdot \vec{p} + \mathcal{O}(p^2)
+\end{equation}
+
 For now I only do the calculations for $\vec{K}$. Use  
 
 \begin{align}
@@ -300,6 +316,8 @@ to obtain the linearized Hamiltonian in the vicinity of $\vec{K}$:
 		1-ip_3 & 0 & 0 & 1 + ip_3 & \sqrt{2}(1-p_1) & 0
 	\end{pmatrix} 
 \end{equation}
+
+\textcolor{red}{I should write down a version that is correct at every point in q-space}
 
 \textcolor{blue}{To keep the size reasonable maybe its a good idea to split this up into zeroth and first order in p. Might also be a good choice for storytelling purposes.} \\
 
@@ -782,5 +800,90 @@ It turns out $\vec{A}(\vec{K}^{\prime\prime}) = -\vec{A}(\vec{K}^{\prime\prime\p
 	B(\vec{K}^{\prime\prime}) = -\frac{\beta}{2\sqrt{3}} \left(2\partial_x\partial_yU_x +\left[\partial_x^2 - \partial_y^2\right]U_y\right).
 \end{equation}
 
+\subsection{projection method}
+
+Here I collect the method. Asssume a k-space Hamiltonian $H(\vec{q})$ and a degeneracy point $\vec{K}$ .  Furtheremore, I define
+
+\begin{equation}
+	H(\vec{K}+ \vec{p}) \approx \underbrace{H(\vec{K})}_{\equiv H_{\vec{K}}^0} + \underbrace{\vec{p} \cdot \left(\vec{\nabla}_{\vec{q}}H(\vec{q})\right)\bigg\rvert_{\vec{q} = \vec{K}}}_{\equiv H_{\vec{K}}^1} + \mathcal{O}(p^2).
+\end{equation}
+
+The next ingredient is a orthonormal basis of the degenerate subspace $\{ \vec{v}_1, \vec{v}_2 \}$. I also need the matrix elements of $H_{\vec{K}}^1$ wrt to this basis:
+
+\begin{align}
+	\begin{split}
+		\vec{v}_1^H \cdot H_{\vec{K}}^1 \cdot \vec{v}_1 &\equiv M_{11} = M_{11}^x p_x + M_{11}^y p_y \\
+		\vec{v}_1^H \cdot H_{\vec{K}}^1 \cdot \vec{v}_2 &\equiv M_{12} = M_{12}^x p_y + M_{12}^y p_y \\
+		\vec{v}_2^H \cdot H_{\vec{K}}^1 \cdot \vec{v}_2 &= -M_{11} \\
+		\vec{v}_2^H \cdot H_{\vec{K}}^1 \cdot \vec{v}_2 &= (M_{12})^*
+	\end{split}
+\end{align}
+
+
+The last two identities are motivated by the effect that $(M)_{ij} = M_{ij}$ must be a Hermitian matrix with no absolute part ($\propto \sigma_0$). To obtain an arbitrary basis of the degnerate subspace I do a $SU(2)$-rotation ($SU(2)$ automatically enforces the orthonormality of the new basis):
+
+\begin{equation}
+	\begin{pmatrix}
+		\vec{w}_1 \\
+		\vec{w}_2
+	\end{pmatrix} = 
+	\begin{pmatrix}
+		e^{i\chi} & 0 \\
+		0 & e^{i\chi}
+	\end{pmatrix}
+	\begin{pmatrix}
+		\cos(\phi/2)e^{i(\theta/2+\kappa)} & \sin(\phi/2) e^{i\theta/2}\\
+		\sin(\phi/2)e^{i(-\theta/2+\kappa)} & -\cos(\phi/2)e^{-i\theta/2}
+	\end{pmatrix}
+	\begin{pmatrix}
+		\vec{v}_1 \\
+		\vec{v}_2
+	\end{pmatrix}
+\end{equation}
+
+\textcolor{red}{Parameter ranges?}\textcolor{red}{Optimally I would find a Group-theoretical justification of this representaion}. $\chi$ is a global phase, which I choose to be 0, justified by the $U(1)$-gauge symmetry of quantum mechanics. This leaves three parameters. Now I can write down the projection of $H_{\vec{K}}^1$ onto $\{ \vec{w}_1, \vec{w}_2\}$. I write the resulting hermitian 2x2 matrix in the Pauli-matrix basis (again there is no $\sigma_0$-part):
+
+
+\begin{align}
+	\langle H_{\vec{K}}^1 \rangle_{\{\vec{w}_1, \vec{w}_2\}} = \quad &\sigma_x\left[M_{11} \sin(\phi)\cos(\theta) + M_{12}\left( \sin(\kappa) \sin(\theta) -\cos(\phi)\cos(\kappa)\cos(\theta)\right)\right] \\
+	+&\sigma_y\left[M_{11} \sin(\phi) \sin(\theta) - M_{12} \left( \sin(\kappa) \cos(\theta) + \cos(\phi) \cos(\kappa) \sin(\theta)\right)\right] \\
+	+&\sigma_z \left[M_{11} \cos(\phi) + M_{12} \sin(\phi) \cos(\kappa)\right]
+\end{align}
+
+One might complain that the equations above dont reference the Fermi velocity. However, as long as we only make statements using ratios of $M$-components we still obtain the desired result. Now, $(\phi, \theta, \kappa)$ can be choosen to i.e. give a projected Hamiltonian of the form 
+
+\begin{equation}
+	\langle H_{\vec{K}}^1 \rangle_{\{\vec{w}_1, \vec{w}_2\}} \overset{!}{=} v_F\big(p_x\sigma_x + p_y \sigma_y\big).	
+\end{equation}
+
+A partial solution is 
+
+\begin{align}
+	\begin{split}
+		\cos(\phi) &= 0 \\
+		\cos(\kappa) &= 0 \\
+		\tan(\theta) &= - \frac{M_{12}^x}{M_{12}^y}.
+	\end{split}
+\end{align}
+
+\textcolor{red}{The above is not sufficient to completely fix $\phi$ and $\kappa$ as both $\pi/2$ and $-\pi/2$ are still correct solutions, yet only one combination gives the correct result. However, the partial solutions ensures that the $\sigma_z$ component vanishes in every case. At the moment I just have to try all 4 possibilities until I found a systematic solution. I expect that the answer lies in the signs of the $M_{ij}$.} \\
+
+One could (for example) also pick the form
+
+\begin{equation}
+	\langle H_{\vec{K}}^1 \rangle_{\{\vec{w}_1, \vec{w}_2\}} \overset{!}{=} v_F\big(p_x\sigma_x + p_y \sigma_z\big).	
+\end{equation}
+
+A partial solution for this is
+
+\begin{align}
+	\begin{split}
+		\tan(\phi) &= \sqrt{-\frac{M_{11}^x M_{12}^y}{M_{11}^y M_{12}^x}} \\
+		\sin(\kappa) &= 0 \\
+		\sin(\theta) &= 0.
+	\end{split}
+\end{align}
+
+\textcolor{red}{Again similar problem as above, $\kappa$ and $\theta$ are not completely fixed yet.} In what follows I will usually apply the second form as a consistency check.
 
 \end{document}
