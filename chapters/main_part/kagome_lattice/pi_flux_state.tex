@@ -1,10 +1,10 @@
 \documentclass[../../../main.tex]{subfiles}
 
 \begin{document}
-
 \subsubsection{Real Space}
 
-This system is a monoclinic (\textcolor{red}{Is this correct?}) Bravais-lattice with a six site unit cell. It emerges from the bare Kagome lattice through unit cell doubling (the stranslational symmetry gets broken by the internal mean field). 
+This system is a rectengular Bravais-lattice with a six site unit cell. It emerges from the bare Kagome lattice through unit cell doubling. Even though the Wigner-Seitz-cell is a rectangle I will work with the unit cell shown below. 
+
 \begin{center}
 	\includegraphics[width=\textwidth]{lattice-pi-flux-state.jpeg}
 \end{center}
@@ -53,6 +53,7 @@ The real space (effective) tight-binding hamiltonian is
 	\end{split}
 \end{align}
 
+\iffalse
 
 \subsubsection{Symmetries}
 
@@ -100,7 +101,9 @@ This then reinstates the correct symmetry. So much for the idea. No for the tech
 
 \textcolor{red}{Looking further ahead at strain, can you maybe argue that this forbids pseudo magnetic fields?}
 
-\subsubsection{Reciprocal Space}
+\fi
+
+\subsubsection{Reciprocal Space and Bands}
 
 The reciprocal lattice vectrors are 
 
@@ -117,7 +120,30 @@ The reciprocal lattice vectrors are
 	\end{pmatrix}
 \end{equation}
 
-After a Fourier transform the $k$-space Hamiltonian reads
+I do a Fouriertransform 
+
+
+\begin{equation}
+	\Psi_{q\sigma} \equiv 
+	\begin{pmatrix}
+		a_{q\sigma} \\
+		b_{q\sigma} \\
+		c_{q\sigma} \\
+		e_{q\sigma} \\
+		f_{q\sigma} \\
+		d_{q\sigma} 
+	\end{pmatrix} = \frac{1}{\sqrt{N}} \sum_{i} e^{i\vec{q}\vec{R}_i}
+	\begin{pmatrix}
+		a_{i\sigma} \\
+		b_{i\sigma} \\
+		c_{i\sigma} \\
+		e_{i\sigma} \\
+		f_{i\sigma} \\
+		d_{i\sigma} 
+	\end{pmatrix}
+\end{equation}
+
+($N$ is the numer of unit cells.) \textcolor{red}{The definition of $\Psi$ is a bit awkward. If I write this down somewhere serious I should just label the sites differently.}
 
 \begin{equation} \label{Hpirs}
 	H = t \sum_{q,\sigma} \Psi_{q\sigma}^\dagger 
@@ -132,21 +158,11 @@ After a Fourier transform the $k$-space Hamiltonian reads
 	\Psi_{q\sigma},
 \end{equation}
 
-where
-\begin{equation}
-	\Psi_{q\sigma}^\dagger = 
-	\begin{pmatrix}
-		a_{q\sigma}^\dagger & b_{q\sigma}^\dagger & c_{q\sigma}^\dagger & e_{q\sigma}^\dagger & f_{q\sigma}^\dagger & d_{q\sigma}^\dagger 
-	\end{pmatrix}.
-\end{equation}
+where the shorthand $q_i \equiv \vec{q}\cdot\vec{\delta}_i$ was used. 
 
-\textcolor{blue}{If I write this down somewhere serious, I should just label the sites differently.} \\
+\paragraph{Bands} \hfill \\
 
-I used the shorthand $q_i \equiv \vec{q}\cdot\vec{\delta}_i$. 
-
-\subsubsection{dispersion and band trouching poiunts}
-
-The dispersion relation is shwon in the following picture 
+The dispersion relation is shown in the following picture 
 
 \begin{center}
 	\includegraphics[width = \textwidth]{dispersion_relation_pi_flux_state.png} 
@@ -172,7 +188,7 @@ The characteristic polynomial of \ref{Hpirs} is (this was generate by mathematic
 	x^4-4x^3+8x-2+2\Delta_{\vec{q}}.
 \end{equation}
 
-To make progress I postulate (judging from the numeriacl plot of the dispersion) that the above polynomial can be written as a product of two quadratic polynomials. Furtheremore the solutions of said qaudratic equations must be centered around $t$. The p-q forumla yields that the linear coefficents of both quadratic polynomials must therefore be $-2t$.
+To make progress I postulate (judging from the numeriacl plot of the dispersion) that the above polynomial can be written as a product of two quadratic polynomials. Furtheremore, the solutions of said qaudratic equations must be centered around $t$. The p-q forumla suggests that the linear coefficents of both quadratic polynomials must therefore be $-2t$.
 
 \begin{align}
 	\begin{split}
@@ -211,29 +227,16 @@ Both solution lead to the same result ($a$ and $b$ are exchanged in the second s
 	\Delta_{\vec{q}} = -\cos(4q_2)+\cos(4q_3)-\cos(4q_1).
 \end{equation}
 
-At half filling the lowest three bands are filled, thus the Fermi-energy is between the yellow and green band.
+\paragraph{Band Touching Points} \hfill \\
 
 \begin{center}
 	\includegraphics[width = \textwidth]{touching_points_4th_band.png}
 \end{center}
 
-Shown above is the 4th band (green band). Apparently there are two flavours of touching points with one of each in the first Brillouin zone. They are time revearsel partners. From the numerical data these tow touching points lie at
-
-\begin{equation}
-	\vec{K} = \frac{\pi}{4}
-	\begin{pmatrix}
-		1 \\
-		1/\sqrt{3}
-	\end{pmatrix}, \quad
-	\vec{K}^\prime = -\frac{\pi}{4}
-	\begin{pmatrix}
-		1 \\
-		1/\sqrt{3}
-	\end{pmatrix}.
-\end{equation}
+Shown above is the 4th band (green band). The black rectangle is the First Brillouin zone. Also shown are the position of the various band-touching points. $F$ the Dirac points at 1/2- (and 5/6-) filling. At 2/3-filling the Dirac points are at $C$ and $E$. \\
 
 
-Now I calculate the various touching points. It is clear from the expressions above that bands 3 and 4 as well as bands 5 and 6 touch iff 
+Now I derive the coordiantes. It is clear from the expressions above that bands 3 and 4 as well as bands 5 and 6 touch iff 
 
 \begin{gather}
 	6-2\Delta_{\vec{q}} = 0 \notag \\
@@ -245,8 +248,29 @@ This can easily be solved considering the ranges of sine and cosine. A possible 
 
 \begin{align}
 	q_x &= (-1)^s \frac{\pi}{4} + m_1 \pi \\
-	q_y &= (-1)^s \frac{\pi}{4\sqrt{3}} +(m_1 + m_2)\frac{\pi}{\sqrt{3}}
+	q_y &= (-1)^s \frac{\pi}{4\sqrt{3}} +(m_1 + m_2)\frac{\pi}{\sqrt{3}},
 \end{align}
+
+where
+
+\begin{equation*}
+	s \in [0,1], \quad m_1, m_2 \in \mathbb{Z}.
+\end{equation*}
+
+Both $(s = 0, m_1 = 0, m_2 = 0)$ and $(s = 1, m_1 = 0, m_2 = 0)$ are in the first Brillouin zone:
+
+\begin{equation}
+	\vec{F} = \frac{\pi}{4}
+	\begin{pmatrix}
+		1 \\
+		1/\sqrt{3}
+	\end{pmatrix}, \quad 
+	\vec{F}^\prime = -\frac{\pi}{4}
+	\begin{pmatrix}
+		1 \\
+		1/\sqrt{3}
+	\end{pmatrix}
+\end{equation}.
 
 On the other hand, bands 4 and 5 touch when 
 
@@ -263,7 +287,7 @@ Using $\cos(2x) = 1-2\sin^2(x)$ I obtain
 	\Rightarrow \sin(2q_x) = \frac12\left( -\sin(2\sqrt{3}q_y) \pm \sqrt{\sin^2(2\sqrt{3}q_y) - 1}\right)
 \end{gather}
 
-The expression under the square root gives a condition for $q_y$. It tourns out there are two distinct sets of solutions (meaning there are two distinct sets of equivalent touching points).
+The expression under the square root gives a condition for $q_y$. It tourns out there are two distinct sets of solutions (meaning there are two distinct sets of symmetry-equivalent touching points).
 
 \begin{align}
 	q_x &= (-1)^s \frac{\pi}{12} + m_1  \pi \\
@@ -274,616 +298,385 @@ and
 
 \begin{align}
 	q_x &= (-1)^s\frac{5\pi}{12} + m_1 \pi \\
-	q_y &= (-1)^s\frac{\sqrt{3}\pi}{4} + (m_1 + m_2)\frac{\pi}{\sqrt{3}}
+	q_y &= (-1)^{s+1}\frac{\pi}{4\sqrt{3}} + (m_1 + m_2)\frac{\pi}{\sqrt{3}},
 \end{align}
 
-\subsubsection{Linearization in reciproical space and Projection}
+with the usual parmeters. Once more, there are two of each in the first Brillouin zone corresponding to $(s = 0, m_1 = 0, m_2 = 0)$ and $(s = 1, m_1 = 0, m_2 = 0)$:
 
-For sake of the concept I will try to derive the Fermi-velocities of the band-crossings of the 5th band. I will focus on the crossing with the 4th band at 
+x\begin{gather}
+	\begin{split}
+		\vec{C} = \frac{\pi}{12}
+		\begin{pmatrix}
+			1 \\
+			-\sqrt{3}
+		\end{pmatrix}, \quad 
+		\vec{C}^\prime = \frac{\pi}{12}
+		\begin{pmatrix}
+			-1 \\
+			\sqrt{3}
+		\end{pmatrix},\\	
+		\vec{E} = \frac{\pi}{12}
+		\begin{pmatrix}
+			5 \\
+			-\sqrt{3}
+		\end{pmatrix}, \quad
+		\vec{E}^\prime = \frac{\pi}{12}
+		\begin{pmatrix}
+			-5 \\
+			\sqrt{3}
+		\end{pmatrix}	
+	\end{split}
+\end{gather}
+
+\paragraph{Linearization of $H$/ Field Theory} \hfill \\
+
+To derive an effective (linear) theory in the vicinity of the touching points I linearize the Hamiltonian in $\vec{q}$.
 
 \begin{equation}
-	\vec{K}^{\prime\prime\prime} = \frac{\pi}{12}
-	\begin{pmatrix}
-		1 \\
-		-\sqrt{3}
-	\end{pmatrix}
+	H(\vec{K}+ \vec{p}) \approx \underbrace{H(\vec{K})}_{\equiv H_{\vec{K}}^0} + \underbrace{\vec{p} \cdot \left(\vec{\nabla}_{\vec{q}}H(\vec{q})\right)\bigg\rvert_{\vec{q} = \vec{K}}}_{\equiv H_{\vec{K}}^1} + \mathcal{O}(p^2).
 \end{equation}
 
-The obvious first step is Taylor expansion:
-
 \begin{equation}
-	\varepsilon_5(\vec{K}^{\prime\prime\prime} + \vec{p}) \approx \varepsilon(\vec{K}^{\prime\prime\prime}) + \left(\frac{\partial \varepsilon_5}{\partial \Delta_{\vec{q}}}\right)\left(\vec{\nabla}_{\vec{q}}\Delta_{\vec{q}}\right)\bigg\rvert_{\vec{q} = \vec{K}^{\prime\prime\prime}}\cdot \vec{p} + \mathcal{O}(p^2)
-\end{equation}
-
-For now I only do the calculations for $\vec{K}$. Use  
-
-\begin{align}
-	\vec{K}\cdot\vec{\delta}_1 &= \frac{\pi}{4} \\
-	\vec{K}\cdot\vec{\delta}_2 &= \frac{\pi}{4} \\
-	\vec{K}\cdot\vec{\delta}_3 &= 0
-\end{align}
-
-to obtain the linearized Hamiltonian in the vicinity of $\vec{K}$:
-
-
-\begin{equation}
+	H_{\vec{K}}^0 =
 	\begin{pmatrix}
-		0 & e^{i\frac{\pi}{4}}(1+ip_2) & -1+ip_3 & 0 & e^{-i\frac{\pi}{4}}(1-ip_2) & 1+ip_3 \\
-		e^{-i\frac{\pi}{4}}(1-ip_2) & 0 & \sqrt{2}i(1+p_1) & e^{i\frac{\pi}{4}}(1+ip_2) & 0 & 0 \\
-		-1-ip_3 & -\sqrt{2}i(1+p_1) & 0 & 1-ip_3 & 0 & 0 \\
-		0 & e^{-i\frac{\pi}{4}}(1-ip_2) & 1+ip_3 & 0 & e^{i\frac{\pi}{4}}(1+ip_2) & 1-ip_3\\
-		e^{i\frac{\pi}{4}}(1+ip_2) & 0 & 0 & e^{-i\frac{\pi}{4}}(1-ip_2) & 0 & \sqrt{2}(1-p_1) \\
-		1-ip_3 & 0 & 0 & 1 + ip_3 & \sqrt{2}(1-p_1) & 0
+		0 & e^{iK_2} & -e^{-iK_3} & 0 & e^{-iK_2} & e^{iK_3} \\
+		e^{-iK_2} & 0 & 2i\sin(K_1) & e^{iK_2} & 0 & 0 \\
+		-e^{iK_3} & -2i\sin(K_1) & 0 & e^{-iK_3} & 0 & 0 \\
+		0 & e^{-iK_2} & e^{iK_3} & 0 & e^{iK_2} & e^{-iK_3}\\
+		e^{iK_2} & 0 & 0 & e^{-iK_2} & 0 & 2\cos(K_1) \\
+		e^{-iK_3} & 0 & 0 & e^{iK_3} & 2\cos(K_1) & 0
 	\end{pmatrix} 
 \end{equation}
 
-\textcolor{red}{I should write down a version that is correct at every point in q-space}
-
-\textcolor{blue}{To keep the size reasonable maybe its a good idea to split this up into zeroth and first order in p. Might also be a good choice for storytelling purposes.} \\
-
-The shorthand means
-
-\begin{align*}
-	p_i &\equiv \vec{\delta}_i \cdot \vec{p}, 
-\end{align*}
-
-also
-
 \begin{equation}
-	e^{i\frac{\pi}{4}} = \frac{1+i}{\sqrt{2}}.
+	H_{\vec{K}}^1 =
+	\begin{pmatrix}
+		0 & ie^{iK_2}p_2 & ie^{-iK_3}p_3 & 0 & -ie^{-iK_2}p_2 & ie^{iK_3}p_3 \\
+		-ie^{-iK_2}p_2 & 0 & 2i\cos(p_1) & ie^{iK_2}p_2 & 0 & 0 \\
+		-ie^{iK_3}p_3 & -2i\cos(p_1) & 0 & -ie^{-iK_3}p_3 & 0 & 0 \\
+		0 & -ie^{-iK_2}p_2 & ie^{iK_3}p_3 & 0 & ie^{iK_2}p_2 & -ie^{-iK_3}p_3\\
+		ie^{iK_2}p_2 & 0 & 0 & -ie^{-iK_2}p_2 & 0 & -2\sin(p_1) \\
+		-ie^{-iK_3}p_3 & 0 & 0 & ie^{iK_3}p_3 & -2\cos(p_1) & 0
+	\end{pmatrix} 
 \end{equation}
 
-The eigenvalues for the zeroth order (/directly at the $\vec{K}$-point) are 
+\begin{align*} 
+	K_i &\equiv \vec{K}\cdot\vec{\delta}_i \\
+	p_i &\equiv \vec{p}\cdot\vec{\delta}_i
+\end{align*}
+
+\subsubsection{1/2-Filling}
+
+The Dirac points are at 
+
+\begin{equation}
+	\vec{F} = \frac{\pi}{4}
+	\begin{pmatrix}
+		1 \\
+		1/\sqrt{3}
+	\end{pmatrix}, \quad 
+	\vec{F}^\prime = -\frac{\pi}{4}
+	\begin{pmatrix}
+		1 \\
+		1/\sqrt{3}
+	\end{pmatrix}.
+\end{equation}
+
+I focus on $\vec{F}$ for now. At $\vec{F}$ I choose the basis
 
 \begin{align}
-	&\varepsilon_1(\vec{K}) = -2t  &&\varepsilon_2(\vec{K}) = -2t &&\varepsilon_3(\vec{K}) = (1-\sqrt{3})t \notag\\
-	&\varepsilon_4(\vec{K}) = (1-\sqrt{3})t &&\varepsilon_5(\vec{K}) = (1+\sqrt{3})t &&\varepsilon_6(\vec{K}) = (1+\sqrt{3})t
-\end{align}
-
-$\varepsilon_3$ and $\varepsilon_4$ are the relevant ones. \\
-
-I let mathematice calculate orthonormal eigenvectors for $H$ at $\vec{K}$. The relevant ones (that is bands 3 and 4):
-
-\begin{align}
-	\vec{v}_3(\vec{K}) &= \frac{1}{2\sqrt{6-3\sqrt{3}}}
+	\vec{v}_3(\vec{F}) &= \frac{1}{2\sqrt{6-3\sqrt{3}}}
 	\begin{pmatrix}
 		\frac{1-\sqrt{3}}{2} + \frac{3-\sqrt{3}}{2}i, & \sqrt{2}(1-\sqrt{3}), & (-2+\sqrt{3})i, & \frac{1-\sqrt{3}}{2} + \frac{\sqrt{3}-3}{2}i, & 0, & 1  
 	\end{pmatrix}^T \\
-	\vec{v}_4(\vec{K}) &= \frac{1}{2\sqrt{6(7-4\sqrt{3})}}
+	\vec{v}_4(\vec{F}) &= \frac{1}{2\sqrt{6(7-4\sqrt{3})}}
 	\begin{pmatrix}
 		(3-2\sqrt{3}) +(-2+\sqrt{3})i, & 0, & i(1-\sqrt{3}), & 3-2\sqrt{3} + (2-\sqrt{3})i, & 2\sqrt{2}(2-\sqrt{3}), & 5-3\sqrt{3}
 	\end{pmatrix}^T
 \end{align}
 
-The projections onto those vectors are 
+I obtain 
 
 \begin{align}
 	\begin{split}
-		&\vec{v}_3^H\cdot H_{\vec{K}} \cdot \vec{v}_3 = (1-\sqrt{3})t - \frac{2t}{\sqrt{3}}p_2 + \frac{(\sqrt{3}-1)t}{\sqrt{3}}p_3\\
-		& \vec{v}_4^H\cdot H_{\vec{K}} \cdot \vec{v}_4 = (1-\sqrt{3})t +\frac{2t}{\sqrt{3}}p_2 - \frac{(\sqrt{3}-1)t}{\sqrt{3}}p_3 \\
-		&\vec{v}_3^H\cdot H_{\vec{K}} \cdot \vec{v}_4 = -\frac{2t}{\sqrt{3}}p_2 - \frac{(3+\sqrt{3})t}{3}p_3 \\
-		&\vec{v}_4^H\cdot H_{\vec{K}} \cdot \vec{v}_3 = -\frac{2t}{\sqrt{3}}p_2 - \frac{(3+\sqrt{3})t}{3}p_3 
+		M_{33}^x &= \frac{1-\sqrt{3}}{2}t \\
+		M_{33}^y &= -\frac{1+\sqrt{3}}{2}t \\
+		M_{34}^x &= -\frac{1+\sqrt{3}}{2}t \\
+		M_{34}^y &= -\frac{1-\sqrt{3}}{2}t
 	\end{split}
 \end{align}
 
-I transform these to $p_x$ and $p_y$: 
+\begin{equation}
+	\Rightarrow v_F^{\frac12}(\vec{F}) = \sqrt{2}t
+\end{equation}
+
+
+The correct parameters for a theory of the form $H = \epsilon_0\sigma_0 + p_x\sigma_x + p_y \sigma_y$ are 
 
 \begin{align}
 	\begin{split}
-		&\vec{v}_3^H\cdot H_{\vec{K}} \cdot \vec{v}_3 = (1-\sqrt{3})t + \frac{1-\sqrt{3}}{2}tp_x  - \frac{1+\sqrt{3}}{2}tp_y \\
-		& \vec{v}_4^H\cdot H_{\vec{K}} \cdot \vec{v}_4 = (1-\sqrt{3})t - \frac{1-\sqrt{3}}{2}tp_x  + \frac{1+\sqrt{3}}{2}tp_y\\
-		&\vec{v}_3^H\cdot H_{\vec{K}} \cdot \vec{v}_4 = -\frac{1+\sqrt{3}}{2}tp_x - \frac{1-\sqrt{3}}{2}tp_y\\
-		&\vec{v}_4^H\cdot H_{\vec{K}} \cdot \vec{v}_3 = -\frac{1+\sqrt{3}}{2}tp_x - \frac{1-\sqrt{3}}{2}tp_y 
+		\phi &= -\frac{\pi}{2} \\
+		\kappa &= -\frac{\pi}{2} \\
+		\theta &= \arctan(2+\sqrt{3}) = \frac{5\pi}{12} 
 	\end{split}
 \end{align}
 
-The dispersion of this projection is 
+The projections onto these "correct" basis vectors are 
+
+\begin{align}
+	\begin{split}
+		\langle \delta H_1 \rangle_{\vec{w}_1, \vec{w}_2} &= -\frac{\beta}{2}(1-\sqrt{3})(u_{xx}+u_{yy})\sigma_0 \\
+		\langle \delta H_0 \rangle_{\vec{w}_1, \vec{w}_2} &= \sqrt{2}\frac{\pi}{4}\left(u_{xx} + \frac{u_{yx}}{\sqrt{3}}\right)\sigma_x + \sqrt{2}\frac{\pi}{4}\left(u_{xy} + \frac{u_{yy}}{\sqrt{3}}\right)\sigma_y.
+	\end{split}
+\end{align}
+
+Hence, there is no pseudomagnetic-field but a scalar potential:
+
+\begin{align}
+	\phi^{\frac12}(\vec{F}) &= -\frac{\beta}{2}(1-\sqrt{3})(u_{xx}+u_{yy})\sigma_0 \\
+	\vec{A}^{\frac12}(\vec{F}) &= 0.
+\end{align}
+
+\subsubsection{2/3-Filling}
+
+The Dirac points are at 
 
 \begin{gather}
 	\begin{split}
-		\varepsilon_{3\vec{K}} &= (1-\sqrt{3})t - \sqrt{2}t\sqrt{p_x^2 + p_y^2} \\
-		\varepsilon_{4\vec{K}} &= (1-\sqrt{3})t + \sqrt{2}t\sqrt{p_x^2 + p_y^2}
+		\vec{C} = \frac{\pi}{12}
+		\begin{pmatrix}
+			1 \\
+			-\sqrt{3}
+		\end{pmatrix}, \quad 
+		\vec{C}^\prime = \frac{\pi}{12}
+		\begin{pmatrix}
+			-1 \\
+			\sqrt{3}
+		\end{pmatrix},\\	
+		\vec{E} = \frac{\pi}{12}
+		\begin{pmatrix}
+			5 \\
+			-\sqrt{3}
+		\end{pmatrix}, \quad
+		\vec{E}^\prime = \frac{\pi}{12}
+		\begin{pmatrix}
+			-5 \\
+			\sqrt{3}
+		\end{pmatrix}.	
 	\end{split}
 \end{gather}
 
-Most importantly 
+I will only consider $\vec{E}$ and $\vec{C}$. \\
 
-\begin{equation}
-	v_F = \sqrt{2}t
-\end{equation}
+\paragraph{$\mathbf{\vec{C}}$} \hfill \\
 
-\textcolor{red}{Judging from the pictures of the dispursion I didnt expect it to be so isotropical. Check this.} \\
-
-I follow the usual method defining 
+At $\vec{C}$ I choose the vectors
 
 \begin{align}
-	\begin{split}
-		\vec{w}_3 &= \alpha \vec{v}_3 + \beta \vec{v}_4 \\
-		\vec{w}_4 &= \eta \vec{v}_3 + \gamma \vec{v}_4
-	\end{split}
-\end{align}
-
-Orthonormality is garuanted by 
-
-\begin{gather}
-	\abs{\alpha}^2 + \abs{\beta}^2 = 1 \\
-	\abs{\eta}^2 + \abs{\gamma}^2 = 1\\
-	\alpha^*\eta + \beta^*\gamma = 0
-\end{gather}
-
-\textcolor{blue}{If my counting is correct, there are 8 parameters to begin with (real and imaginary parts), the equations above eliminate 1 and 1 and 2 (the last equation are really 2 equations, one for real and one for imaginary part), leaving behind 4 free parameters.} I make the following Ansatz for the leftover parameters:
-
-\begin{align}
-	\begin{split}
-		\alpha &= \cos(\phi/2)e^{i(\chi+\theta/2)} e^{i\kappa} \\
-		\beta &= \sin(\phi/2)e^{i(\chi+\theta/2)} \\
-		\eta &= \sin(\phi/2)e^{i(\chi-\theta/2)} e^{i\kappa} \\
-		\gamma &= -\cos(\phi/2)e^{i(\chi-\theta/2)}
-	\end{split}
-\end{align}
-
-\textcolor{blue}{If you want to be fancy about it you can think of what kind of matrix describes the relation between the two bases and then find a suitable parametrization for it. If one thinks of these matrices in terms of groups, maybe there is a suffisticated argument to be made  why $U(1)$ appears.}. $\phi$ is a rotation angle, $\chi$ a global phase, $\theta$ the phase difference between the two states and $\kappa$ state-internal phase. It is clear that all physical quantities can not depend on $\chi$. \textcolor{blue}{At this point I might as well choose $\chi = 0$.}\\
-
-The following relations are impotant to derive the matrix elements in the rotated basis:
-
-\begin{align*}
-	(2\abs{\alpha}^2-1) &= \cos(\phi) \\
-	2\text{Re}(\alpha^*\beta) &= \sin(\phi)\cos(\kappa) \\
-	\alpha^*\eta - \beta^*\gamma &= \sin(\phi)\cos(\theta) -i \sin(\phi)\sin(\theta) \\
-	\alpha^*\gamma + \beta^*\eta &= \sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)  \\
-	&+ i\big( \sin(\kappa)\cos(\theta) + \cos(\phi)\cos(\kappa)\sin(\theta)\big)
-\end{align*}
-
-Using these, in general (while neglecting the $\sigma_0$-term),
-
-\begin{align}
-	\vec{w}_1^H\cdot H \cdot \vec{w}_1 &\sim  \left(\vec{v}_1^H\cdot H \cdot \vec{v}_1\right)\cos(\phi)+\left(\vec{v}_1^H\cdot H \cdot \vec{v}_2\right)\sin(\phi)\cos(\kappa)
-\end{align}
-
-\begin{align}
-	\begin{split}
-		\vec{w}_1^H \cdot H \cdot \vec{w}_2 &=  \left(\vec{v}_1^H\cdot H \cdot \vec{v}_1\right)\sin(\phi)\cos(\theta) + \left(\vec{v}_1^H\cdot H \cdot \vec{v}_2\right)\left(\sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)\right) \\
-		&-i \left[ \left(\vec{v}_1^H\cdot H \cdot \vec{v}_1\right)\sin(\phi)\sin(\theta) - \left(\vec{v}_1^H\cdot H \cdot \vec{v}_2\right)\big( \sin(\kappa)\cos(\theta) + \cos(\phi)\cos(\kappa)\sin(\theta)\big)   \right]
-	\end{split}
-\end{align}
-
-I find for the projection in the  transformed basis (I again drop the $\sigma_0$ part as it transforms trivially):
-
-\begin{align*}
-	\frac{\vec{w}_3^H \cdot H_{\vec{K}} \cdot \vec{w}_3}{\sqrt{2}t} &\sim \frac{1}{\sqrt{8}}\left((1-\sqrt{3})\cos(\phi) - (1+\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_x \\
-	&+ \frac{1}{\sqrt{8}}\left(-(1+\sqrt{3})\cos(\phi) - (1-\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_y
-\end{align*}
-
-\begin{align*}
-	\frac{\vec{w}_4^H \cdot H_{\vec{K}} \cdot \vec{w}_4}{\sqrt{2}t} &\sim \frac{1}{\sqrt{8}} \left(-(1-\sqrt{3})\cos(\phi) +(1+\sqrt{3})\sin(\phi)\cos(\kappa)\right)p_x \\
-	&+ \frac{1}{\sqrt{8}} \left((1+\sqrt{3})\cos(\phi) + (1-\sqrt{3})\sin(\phi)\cos(\kappa)\right) p_y
-\end{align*}
-
-\begin{align*}
-	\frac{\vec{w}_3^H \cdot H_{\vec{K}} \cdot \vec{w}_4}{\sqrt{2}t} &= \frac{1}{\sqrt{8}}\left((1-\sqrt{3})\sin(\phi)\cos(\theta) - (1+\sqrt{3})\left[\sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)\right]\right)p_x \\
-	&+\frac{1}{\sqrt{8}}\left(-(1+\sqrt{3})\sin(\phi)\cos(\theta) - (1-\sqrt{3})\left[\sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)\right]\right) p_y \\
-	&-\frac{i}{\sqrt{8}}\left((1-\sqrt{3})\sin(\phi)\sin(\theta) + (1+\sqrt{3})\left[\sin(\kappa)\cos(\theta)+\cos(\phi)\cos(\kappa)\sin(\theta)\right]\right) p_x \\
-	&-\frac{i}{\sqrt{8}} \left(-(1+\sqrt{3})\sin(\phi)\sin(\theta) + (1-\sqrt{3})\left[\sin(\kappa)\cos(\theta)+\cos(\phi)\cos(\kappa)\sin(\theta)\right]\right) p_y 
-\end{align*}
-
-
-\begin{align*}
-	\frac{\vec{w}_4^H \cdot H_{\vec{K}}\cdot \vec{w}_3}{\sqrt{2}t}  &= \frac{1}{\sqrt{8}}\left((1-\sqrt{3})\sin(\phi)\cos(\theta) - (1+\sqrt{3})\left[\sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)\right]\right)p_x \\
-	&+\frac{1}{\sqrt{8}}\left(-(1+\sqrt{3})\sin(\phi)\cos(\theta) - (1-\sqrt{3})\left[ \sin(\kappa)\sin(\theta)-\cos(\phi)\cos(\kappa)\cos(\theta)\right]\right)p_y \\
-	&+\frac{i}{\sqrt{8}}\left( (1-\sqrt{3})\sin(\phi)\sin(\theta) + (1+\sqrt{3})\left[\sin(\kappa)\cos(\theta) + \cos(\phi)\cos(\kappa)\sin(\theta)\right]\right)p_x \\
-	&+\frac{i}{\sqrt{8}}\left(-(1+\sqrt{3})\sin(\phi)\sin(\theta) + (1-\sqrt{3})\left[\sin(\kappa)\cos(\theta) + \cos(\phi)\cos(\kappa)\sin(\theta)\right]\right)p_y
-\end{align*}
-
-From these equations the $\sigma_{0,x,y,z}$-components can be read of. I decided to solve for an equation of the form $H=\varepsilon_0\sigma_0 + v_F(p_x \sigma_x + p_y \sigma_z)$. The corresponding angles are  \\
-
-\begin{align}
-	\begin{split}
-		\cos(\phi) &= -\frac{1+\sqrt{3}}{\sqrt{8}} \quad \Rightarrow \quad \phi = \frac{11}{12}\pi\\
-		\cos(\kappa) &= - \frac{1-\sqrt{3}}{\sqrt{4-2\sqrt{3}}} = 1 \quad \Rightarrow \quad \kappa = 0\\
-		\cos(\theta) &= \frac{1-\sqrt{3}}{\sqrt{4-2\sqrt{3}}} = -1\quad \Rightarrow \quad \theta = \pi.
-	\end{split}
-\end{align}
-
-
-\textcolor{blue}{$\sqrt{4-2\sqrt{3}} = \sqrt{3}-1$ :D. First I had lhs=$1-\sqrt{3}$, and it took me around 3 hours to find the mistake.} \\
-
-
-Another solution corresponding to the form $H = \varepsilon_0\sigma_0 + v_F(p_x\sigma_x +p_y\sigma_y)$ is
-
-\begin{align}
-	\begin{split}
-		\phi = -\frac{\pi}{2} \\
-		\kappa = -\frac{\pi}{2} \\
-		\theta = \frac{5}{12}\pi
-	\end{split}
-\end{align}
-
-I will continue to work with this solution from now on. \textcolor{blue}{Typically I will employ the first solution as a sanity check.}
-
-\subsubsection{Introduction of strain} 
-
-The relevant equations are 
-
-\begin{equation}
-	t(\vec{\delta}_{ij})e^{i\vec{K}\cdot\vec{\delta}_{ij}}  \approx t e^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(1+i\vec{p}\cdot\vec{\delta}_{ij} - \beta \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) + i \left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right)\right)
-\end{equation}
-
-and 
-
-\begin{align}
-	\begin{split}
-		t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}} + t(-\vec{\delta}_{ij})e^{-i\vec{K}\cdot\vec{\delta}_{ij}}  \approx & 2t\cos(	\vec{q}\cdot\vec{\delta}_{ij}) - 2t\sin(\vec{q} \cdot \vec{\delta}_{ij})\left(\vec{p}\cdot\vec{\delta}_{ij}\right) \\
-		-&2\beta t\cos(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \\
-		-&2t\sin(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right)
-	\end{split}
-\end{align}
-
-and 
-
-\begin{align}
-	\begin{split}
-		t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}}-t(-\vec{\delta}_{ij})e^{-i\vec{q}\cdot\vec{\delta}_{ij}} \approx & 2it \sin(\vec{K}\cdot\vec{\delta}_{ij}) +2it\cos(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{p}\cdot\vec{\delta}_{ij}\right) \\
-		-&2i\beta t \sin(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \\
-		+&2it\cos(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{K}\cdot \underline{u} \cdot \vec{\delta}_{ij}\right)
-	\end{split}
-\end{align}
-
-I split the everything into two parts:
-
-\begin{gather}
-	\begin{split}
-		\langle \delta H_1 \rangle_{\vec{w}_1, \vec{w}_2} = -\frac{\beta}{2}(1-\sqrt{3})(u_{xx}+u_{yy})\sigma_0 \\
-		\langle \delta H_2 \rangle_{\vec{w}_1, \vec{w}_2} = \sqrt{2}\frac{\pi}{4}\left(u_{xx} + \frac{u_{yx}}{\sqrt{3}}\right)\sigma_x + \sqrt{2}\frac{\pi}{4}\left(u_{xy} + \frac{u_{yy}}{\sqrt{3}}\right)\sigma_y
-	\end{split}
-\end{gather}
-
-The second term is a gradient field and can be gauged away. This means that to this order there is no effective vector potential but only an effective scalar potential. \\
-
-Doing the same calculation for $K^\prime$ basically means transforming the Hamiltonian 
-
-\begin{equation}
-	H \mapsto \tilde{H} \equiv THT,
-\end{equation}
-
-with $T$ the time revearsel. Thus, the eigenvectors of $\tilde{H}$ are $T\vec{v}_1$ and $T\vec{v}_2$ (since $T$ is its own inveres). In this case time revearsel (which can be interpreted as either $\vec{K} \mapsto -\vec{K}$ or $\vec{q} \mapsto -\vec{q}$) is equivalent to complex conjugation. Due to the antilinearity of time revearsel, the matrix elements are conjugated. Thus the parameters have to be adjusted.
-
-\subsubsection{crossing 5-6}
-
-Since bands 5 and 6 cross at the same point as bands 3 and 4, the expansions of the Hamiltonian are still valid. The eigenvectors corresponding to bands 5 and 6 at the $K$-point are 
-
-\begin{align}
-	\vec{v}_5(\vec{K}) &= \frac{1}{\sqrt{\sqrt{6}+3\sqrt{2}}}
-	\begin{pmatrix}
-		-\frac{1}{\sqrt{2}} -i\frac{2+\sqrt{3}}{\sqrt{2}} & -2-\sqrt{3} & i\sqrt{2}(1+\sqrt{3}) & -\frac{1}{\sqrt{2}} + i \frac{2+\sqrt{3}}{\sqrt{2}} & 1 & 0
-	\end{pmatrix} \\
-	\vec{v}_6(\vec{K}) &= \frac{1}{4\sqrt{3}}
-	\begin{pmatrix}
-		1+\sqrt{3} + i(1-\sqrt{3}) & \sqrt{2} + \sqrt{6} & 0 & 1+\sqrt{3} -i (1-\sqrt{3}) & \sqrt{2} + \sqrt{6} & 4
-	\end{pmatrix}
-\end{align}
-
-The projections otno $\vec{v}_5(\vec{K})$ and $\vec{v}_6(\vec{K})$ are
-
-\begin{gather}
-	\begin{split}
-		\vec{v}_5^H \cdot H_{\vec{K}} \cdot \vec{v}_5 &= (1+\sqrt{3})t + \frac{1+\sqrt{3}}{2}t p_x - \frac{1-\sqrt{3}}{2}t p_y \\
-		\vec{v}_6^H \cdot H_{\vec{K}} \cdot \vec{v}_6 &= (1+\sqrt{3})t-\frac{1+\sqrt{3}}{2}t p_x + \frac{1-\sqrt{3}}{2}t p_y \\
-		\vec{v}_5^H \cdot H_{\vec{K}} \cdot \vec{v}_6 &= \frac{1-\sqrt{3}}{2}t p_x + \frac{1+\sqrt{3}}{2}t p_y \\
-		\vec{v}_6^H \cdot H_{\vec{K}} \cdot \vec{v}_5 &= \frac{1-\sqrt{3}}{2}t p_x + \frac{1+\sqrt{3}}{2}t p_y
-	\end{split}
-\end{gather}
-
-\begin{equation}
-	\Rightarrow \langle H_{\vec{K}} \rangle_{\vec{v}_5, \vec{v}_6} = t(1+\sqrt{3})\sigma_0 + \frac{t}{2}\left( (1+\sqrt{3})p_x - (1-\sqrt{3})p_y\right)\sigma_z + \frac{t}{2}\left((1-\sqrt{3})p_x + (1+\sqrt{3})p_y\right) \sigma_x
-\end{equation}
-
-Thus, the dispersions are
-
-\begin{align}
-	\varepsilon_{5\vec{K}}(\vec{p}) &= (1+\sqrt{3})t - \sqrt{2}t\sqrt{p_x^2 + p_y^2} \\
-	\varepsilon_{6\vec{K}}(\vec{p}) &= (1+\sqrt{3})t + \sqrt{2}t\sqrt{p_x^2 + p_y^2}
-\end{align}
-
-Again the Fermi velocity is $v_F= \sqrt{2}t$. I use the usual method and refine it a bit. Consider the coefficients 
-
-\begin{align}
-	&H_{11} \cos(\phi) + H_{12} \sin(\phi) \cos(\kappa) & (\sigma_z) \label{coeffz}\\
-	&H_{11} \sin(\phi)\cos(\theta) + H_{12}\left( \sin(\kappa) \sin(\theta) -\cos(\phi)\cos(\kappa)\cos(\theta)\right) &(\sigma_x) \label{coeffx} \\
-	&H_{11} \sin(\phi) \sin(\theta) - H_{12} \left( \sin(\kappa) \cos(\theta) + \cos(\phi) \cos(\kappa) \sin(\theta)\right) &(\sigma_y) \label{coeffy}
-\end{align}
-
-I used the shorthand $H_{ii} \equiv \vec{v}_i^T \cdot H_{\vec{K}} \cdot \vec{v}_i$. Going forward I split these coefficients into $p_x$ and $p_y$ parts, which I should call $H_{ii}^x$ and $H_{ii}^y$, such that $H_{ii} = H_{ii}^x p_x + H_{ii}^y p_y$. \\
-
-Solving for an equation of the form $H = \varepsilon_0 \sigma_o + p_x \sigma_x + p_y \sigma_y$, eq \ref{coeffz} directly gives
-
-\begin{gather*}
-	\cos(\kappa) = 0 \\
-	\cos(\phi) = 0,
-\end{gather*}
-
-assuming that $H_{11}^{x/y} \not= 0$ and $H_{12}^{x/y} \not= 0$. \textcolor{red}{This is not enough to fix $\kappa$ and $\phi$ yet as both $\pi/2$ and $-\pi/2$ are valid solutions. (I lack a rigorous arguent here)}. Equations \ref{coeffx} and \ref{coeffy} reveal
-
-\begin{equation}
-	\tan(\theta) = - \frac{H_{12}^x}{H_{12}^y}.
-\end{equation}
-
-In this case that means 
-
-\begin{align}
-	\begin{split}
-		\theta &= \arctan\left(-\frac{1-\sqrt{3}}{1+\sqrt{3}}\right) = \frac{\pi}{12}\\
-		\phi &= \pi/2 \\
-		\kappa &= - \pi/2
-	\end{split}
-\end{align}
-
-This resulting strain is 
-
-\begin{align}
-	\langle \delta H_1 \rangle_{\vec{w}_5, \vec{w}_6} &= -\frac{\beta}{2}(1+\sqrt{3})(u_{xx} + u_{yy})\sigma_0 \\
-	\langle \delta H_2 \rangle_{\vec{w}_5, \vec{w}_6} &= \sqrt{2}\frac{\pi}{4}\left(u_{xx} + \frac{u_{yx}}{\sqrt{3}}\right)\sigma_x + \sqrt{2}\frac{\pi}{4} \left(u_{xy} + \frac{u_{yy}}{\sqrt{3}}\right)  \sigma_y
-\end{align}
-
-\textcolor{red}{Apparently the scalar potential scales with the energy?}
-
-\subsubsection{crossing 4-5}
-
-I begin with the degneracy point at 
-
-\begin{equation}
-	\vec{K}^{\prime\prime} = \frac{\pi}{12}
-	\begin{pmatrix}
-		1 \\
-		-\sqrt{3}
-	\end{pmatrix}, \quad
-\end{equation}
-
-\textcolor{red}{It should be easy to verfy the following calculations by repeating them for $-\vec{K}^{\prime\prime}$.} \\
-
-I pick the orthonormal basis vectors 
-
-\begin{align}
-	\vec{v}_4(\vec{K}^{\prime\prime}) &= \frac{1}{\sqrt{6}\sqrt{5\sqrt{3}+9}}
+	\vec{v}_4(\vec{C}) &= \frac{1}{\sqrt{6}\sqrt{5\sqrt{3}+9}}
 	\begin{pmatrix}
 		\frac{1+\sqrt{3}}{\sqrt{2}} -i \sqrt{2}(2+\sqrt{3}) & 2 + \sqrt{3} & i\sqrt{2}(2+\sqrt{3}) & \frac{1+\sqrt{3}}{\sqrt{2}} + i \sqrt{2}(2+\sqrt{3}) & 1 & 0
 	\end{pmatrix} \\
-	\vec{v}_5(\vec{K}^{\prime\prime}) &= \frac{\sqrt{2}}{\sqrt{3\sqrt{3}(1+\sqrt{3})}}
+	\vec{v}_5(\vec{C}) &= \frac{\sqrt{2}}{\sqrt{3\sqrt{3}(1+\sqrt{3})}}
 	\begin{pmatrix}
 		-\frac{1}{2} & -\frac{3}{2\sqrt{2}}(1+ \sqrt{3}) & i \frac{1+\sqrt{3}}{2} & -\frac{1}{2} & \frac{1+\sqrt{3}}{2\sqrt{2}} & 1
 	\end{pmatrix}
-\end{align}
+\end{align}.
 
-The projections are 
-
-\begin{align}
-	\vec{v}_4^H \cdot H_{\vec{K}} \cdot \vec{v}_4 &= - \frac{1+\sqrt{3}}{2}tp_x - \frac{1-\sqrt{3}}{2}tp_y  \\
-	\vec{v}_5^H \cdot H_{\vec{K}} \cdot \vec{v}_5 &= \frac{1+\sqrt{3}}{2}tp_x + \frac{1-\sqrt{3}}{2}tp_y \\
-	\vec{v}_4^H \cdot H_{\vec{K}} \cdot \vec{v}_5 &= - \frac{1-\sqrt{3}}{2}tp_x + \frac{1+\sqrt{3}}{2}tp_y
-\end{align}
-
-\begin{equation}
-	\Rightarrow v_F = \sqrt{2}t
-\end{equation}
-
-This yields the angles 
-
+The matrix elements are 
 
 \begin{align}
 	\begin{split}
-		\theta &= \arctan(\frac{1-\sqrt{3}}{1+\sqrt{3}}) = -\pi/12 \\
-		\phi &= -\pi/2 \\
-		\kappa &= -\pi/2
+		M_{44}^x &= -\frac{1+\sqrt{3}}{2}t \\
+		M_{44}^y &= -\frac{1-\sqrt{3}}{2}t \\
+		M_{45}^x &= -\frac{1-\sqrt{3}}{2}t \\
+		M_{45}^y &= \frac{1+\sqrt{3}}{2}t
 	\end{split}
 \end{align}
 
+
 \begin{equation}
-	\Rightarrow \langle H_{\vec{K}} \rangle_{\vec{w}_1, \vec{w}_2} = \sqrt{2}tp_x \sigma_x + \sqrt{2}tp_y \sigma_y
+	\Rightarrow v_F^{\frac23}(\vec{C}) = \sqrt{2}t
 \end{equation}
 
-The resulting lowest order terms are 
+The correct parameters for a theory of the form $\varepsilon_0\sigma_0 + p_x\sigma_x + p_y\sigma_y$ are 
+
+\begin{align}
+	\begin{split}
+		\phi &= -\frac{\pi}{2} \\
+		\kappa &= -\frac{\pi}{2} \\
+		\theta &= -\arctan(2-\sqrt{3}) = - \frac{\pi}{12}.
+	\end{split}
+\end{align}
+
+The resulting projections are 
 
 \begin{align}
 	\langle\delta  H_{1} \rangle_{\vec{w}_4, \vec{w}_5} &= -\frac{\beta}{2}( u_{xx} + u_{yy})\sigma_0 + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{yy}-u_{xx})\sigma_x + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{xy} + u_{yx}) \sigma_y\\
-	\langle \delta H_2 \rangle_{\vec{w}_4, \vec{w}_5} &= \sqrt{2}\frac{\pi}{12}(u_{xx} - \sqrt{3}u_{yx})\sigma_x + \sqrt{2}\frac{\pi}{12}(u_{xy} - \sqrt{3} u_{yy})\sigma_y
+	\langle \delta H_0 \rangle_{\vec{w}_4, \vec{w}_5} &= \sqrt{2}\frac{\pi}{12}(u_{xx} - \sqrt{3}u_{yx})\sigma_x + \sqrt{2}\frac{\pi}{12}(u_{xy} - \sqrt{3} u_{yy})\sigma_y
 \end{align}
 
-Since the second term can be written as a gradient field only the first term contributes to a pseudo-magentic field. I find
+For verification pourposes I will also consider a second theory of the form $\varepsilon_0\sigma_0 + p_x\sigma_x + p_y\sigma_z$, the corresponding parameters are
 
-\begin{gather}
-	\phi(\vec{K}^{\prime\prime}) = -\frac{\beta}{2}(u_{xx}+u_{yy}) \\
-	\vec{A}(\vec{K}^{\prime\prime}) = \frac{\beta}{2\sqrt{3}}
+\begin{align}
+	\begin{split}
+		\phi &= \arctan(7+4\sqrt{3}) = \frac{5\pi}{12} \\
+		\kappa &= 0 \\
+		\theta &= \pi.
+	\end{split}
+\end{align}
+
+In this case I find the projections 
+
+\begin{align}
+	\langle \delta H_1 \rangle_{\vec{w}_4, \vec{w}_5} &= -\frac{\beta}{2}(u_{yy}+u_{xx}) \sigma_0 + \sqrt{2} \frac{\beta}{2 \sqrt{3}}(u_{yy}-u_{xx})\sigma_x + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{xy} + u_{yx}) \sigma_z \\
+	\langle \delta H_0 \rangle_{\vec{w}_4, \vec{w}_5} &= ?
+\end{align}
+
+The two cases agree on 
+
+\begin{align}
+	\phi^{\frac23}(\vec{C}) &= -\frac{\beta}{2}(u_{xx} + u_{yy}) \\
+	\vec{A}^{\frac23}(\vec{C}) &= \frac{\beta}{2\sqrt{3}}
 	\begin{pmatrix}
 		u_{yy} - u_{xx} \\
 		u_{xy} + u_{yx}
 	\end{pmatrix}.
-\end{gather}
-
-\begin{equation}
-	\Rightarrow B(\vec{K}^{\prime\prime}) = \frac{\beta}{2\sqrt{3}} \left(2\partial_x\partial_yU_x +\left[\partial_x^2 - \partial_y^2\right]U_y\right)
-\end{equation}
-
-For the purpose of verification I do the same calculation for an effective theory of the form $H = \varepsilon_0\sigma_0 + p_x \sigma_x + p_y\sigma_z$. \ref{coeffy} directly gives
-
-\begin{align}
-	\sin(\theta) &= 0 \\
-	\sin(\kappa) &= 0.
-\end{align}
- 
-Furthermore, from eqs \ref{coeffx} and \ref{coeffy}:
-
-\begin{equation}
-	\tan(\phi) = \sqrt{-\frac{H_{11}^xH_{12}^y}{H_{11}^yH_{12}^x
-	}}.
-\end{equation}
-
-\textcolor{red}{This is not yet enough to fix the sign of $\phi$. I'll have to return to this to fix $\theta$ and $\kappa$, the problem is in structure identical to the other effective theory above. } \\
-
-The right choice is thus 
-
-\begin{align}
-	\phi &= \arctan\left(\sqrt{7+4\sqrt{3}}\right)= \frac{5\pi}{12} \\
-	\kappa &= 0 \\
-	\theta &= \pi
 \end{align}
 
-The projections onto those vectors are 
-
-\begin{align}
-	\langle \delta H_1 \rangle_{\vec{w}_4, \vec{w}_5} &= -\frac{\beta}{2}(u_{yy}+u_{xx}) \sigma_0 + \sqrt{2} \frac{\beta}{2 \sqrt{3}}(u_{yy}-u_{xx})\sigma_x + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{xy} + u_{yx}) \sigma_z \\
-	\langle \delta H_2 \rangle_{\vec{w}_4, \vec{w}_5} &= ?
-\end{align}
-
-Now I repeat the same for the other set of degeneracy points. Among those I pick
 
 \begin{equation}
-	\vec{K}^{\prime\prime\prime} = \frac{\pi}{12}
+	\Rightarrow B^{\frac23}(\vec{C}) = \frac{\beta}{2\sqrt{3}} \left(2\partial_x\partial_yU_x +\left[\partial_x^2 - \partial_y^2\right]U_y\right)
+\end{equation}.
+
+\paragraph{$\mathbf{\vec{E}}$} \hfill \\
+
+At $\vec{E}$ I choose the basis vectors 
+
+
+\begin{align}
+	\vec{v}_4(\vec{E}) &= \frac{1}{\sqrt{6(9-5\sqrt{3})}}
 	\begin{pmatrix}
-		5 \\
-		3\sqrt{3}
-	\end{pmatrix}
-\end{equation}
-
-I choose the vectors
-
-\begin{align}
-	v_4(\vec{K}^{\prime\prime\prime}) &= \frac{1}{\sqrt{6}\sqrt{9-5\sqrt{3}}}
-	\begin{pmatrix}
-		\frac{1-\sqrt{3}}{\sqrt{2}} - i\sqrt{2}(2-\sqrt{3}) & 2-\sqrt{3} & i\sqrt{2}(\sqrt{3}-2) & \frac{1-\sqrt{3}}{\sqrt{2}} + i\sqrt{2}(2-\sqrt{3}) & 1 & 0
+		\sqrt{2}(2-\sqrt{3}) + i\frac{1-\sqrt{3}}{\sqrt{2}} & -2+\sqrt{3} & i\sqrt{2}(2-\sqrt{3}) & \sqrt{2}(2-\sqrt{3}) -i\frac{1-\sqrt{3}}{\sqrt{2}} & 1 & 0
 	\end{pmatrix} \\
-	v_5(\vec{K}^{\prime\prime\prime}) &= \frac{\sqrt{2}}{\sqrt{3}\sqrt{3-\sqrt{3}}}
+	\vec{v}_5(\vec{E}) &= \frac{\sqrt{2}}{\sqrt{3(3-\sqrt{3})}}
 	\begin{pmatrix}
-		\frac12 & -\frac{\sqrt{3}}{2\sqrt{2}}(1-\sqrt{3}) & i\frac{1-\sqrt{3}}{2} & \frac12 & -\frac{1}{2\sqrt{2}}(1-\sqrt{3}) & 1
-	\end{pmatrix}
+		\frac{i}{2} & \frac{\sqrt{3}}{2\sqrt{2}}(1-\sqrt{3}) & -i\frac{1-\sqrt{3}}{2} & -\frac{i}{2} & -\frac{1-\sqrt{3}}{2\sqrt{2}} & 1
+	\end{pmatrix}.
 \end{align}
 
 The projection coefficents are 
 
 \begin{align}
 	\begin{split}
-		H_{11}^x &= -\frac{1-\sqrt{3}}{2}t \\
-		H_{11}^y &= \frac{1+\sqrt{3}}{2}t \\
-		H_{12}^x &= -\frac{1+\sqrt{3}}{2}t \\
-		H_{12}^y &= -\frac{1-\sqrt{3}}{2}t.
+		M_{44}^x &= -\frac{1-\sqrt{3}}{2}t \\
+		M_{44}^y &= \frac{1+\sqrt{3}}{2}t \\
+		M_{45}^x &= -\frac{1+\sqrt{3}}{2}t \\
+		M_{45}^y &= -\frac{1-\sqrt{3}}{2}t.
 	\end{split}
 \end{align}
 
-For a theory of the Form $H = \varepsilon_0 \sigma_0 + p_x \sigma_x + p_y \sigma_y$ the correct parameters are 
+\begin{equation}
+	\Rightarrow v_F^{\frac23}(\vec{E}) = \sqrt{2}t
+\end{equation}
+
+The correct parameters are 
 
 \begin{align}
 	\begin{split}
-		\theta &= \arctan(2+\sqrt{3}) = \frac{5\pi}{12} \\
+		\phi &= \pi/2\\	
 		\kappa &= -\pi/2 \\
-		\phi &= \pi/2
+		\theta &= \arctan(2+\sqrt{3}) = \frac{5\pi}{12}.
 	\end{split}
 \end{align}
 
-The projections are 
+The cooresponding projections are 
 
 \begin{align}
 	\langle \delta H_1 \rangle_{\vec{w}_4, \vec{w}_5} &= - \frac{\beta}{2}(u_{xx}+u_{yy})\sigma_0 + \sqrt{2} \frac{\beta}{2\sqrt{3}}(u_{xx}-u_{yy})\sigma_x - \sqrt{2}\frac{\beta}{2\sqrt{3}}(u_{xy}+u_{yx}) \sigma_y \\
-	\langle \delta H_2 \rangle_{\vec{w}_4, \vec{w}_5} &= \sqrt{2}\frac{\pi}{12}\left(5u_{xx} + 3\sqrt{3}u_{yx}\right)\sigma_x+ \sqrt{2} \frac{\pi}{12}(5u_{xy} + 3\sqrt{3}u_{yy}) \sigma_y
+	\langle \delta H_0 \rangle_{\vec{w}_4, \vec{w}_5} &= \sqrt{2}\frac{\pi}{12}\left(5u_{xx} - \sqrt{3}u_{yx}\right)\sigma_x+ \sqrt{2} \frac{\pi}{12}(5u_{xy} - \sqrt{3}u_{yy}) \sigma_y.
 \end{align}
 
-\begin{gather}
-	\phi (\vec{K}^{\prime\prime\prime}) = -\frac{\beta}{2}(u_{xx} + u_{yy}) \\
-	\vec{A}(\vec{K}^{\prime\prime\prime}) = \frac{\beta}{2\sqrt{3}}
+Therefore,
+
+\begin{align}
+	\phi^{\frac23} (\vec{E}) &= -\frac{\beta}{2}(u_{xx} + u_{yy}) \\
+	\vec{A}^{\frac23}(\vec{E}) &= \frac{\beta}{2\sqrt{3}}
 	\begin{pmatrix}
 		u_{xx}-u_{yy} \\
 		-(u_{xy}+u_{yx})
 	\end{pmatrix}
-\end{gather}
+\end{align}
 
+It turns out $\vec{A}^{\frac23}(\vec{E}) = -\vec{A}^{\frac23}(\vec{C})$. \\
 
-It turns out $\vec{A}(\vec{K}^{\prime\prime}) = -\vec{A}(\vec{K}^{\prime\prime\prime})$. The resulting magnetic field is
+\textcolor{blue}{I verified tthis result by doing the calculation for $\vec{E} + \vec{b}_2$ and obtaining the same results. However, the eigenvectors were not the same why?} 
 
-\begin{equation}
-	B(\vec{K}^{\prime\prime}) = -\frac{\beta}{2\sqrt{3}} \left(2\partial_x\partial_yU_x +\left[\partial_x^2 - \partial_y^2\right]U_y\right).
-\end{equation}
+\subsubsection{5/6-filling} 
 
-\subsection{projection method}
-
-Here I collect the method. Asssume a k-space Hamiltonian $H(\vec{q})$ and a degeneracy point $\vec{K}$ .  Furtheremore, I define
+The Dirac points are once more at 
 
 \begin{equation}
-	H(\vec{K}+ \vec{p}) \approx \underbrace{H(\vec{K})}_{\equiv H_{\vec{K}}^0} + \underbrace{\vec{p} \cdot \left(\vec{\nabla}_{\vec{q}}H(\vec{q})\right)\bigg\rvert_{\vec{q} = \vec{K}}}_{\equiv H_{\vec{K}}^1} + \mathcal{O}(p^2).
+	\vec{F} = \frac{\pi}{4}
+	\begin{pmatrix}
+		1 \\
+		1/\sqrt{3}
+	\end{pmatrix}, \quad 
+	\vec{F}^\prime = -\frac{\pi}{4}
+	\begin{pmatrix}
+		1 \\
+		1/\sqrt{3}
+	\end{pmatrix}.
 \end{equation}
 
-The next ingredient is a orthonormal basis of the degenerate subspace $\{ \vec{v}_1, \vec{v}_2 \}$. I also need the matrix elements of $H_{\vec{K}}^1$ wrt to this basis:
+I will do the calculations for $\vec{F}$. I choose the basis vecors
+
+\begin{align}
+	\vec{v}_5(\vec{F}) &= \frac{1}{\sqrt{\sqrt{6}+3\sqrt{2}}}
+	\begin{pmatrix}
+		-\frac{1}{\sqrt{2}} -i\frac{2+\sqrt{3}}{\sqrt{2}} & -2-\sqrt{3} & i\sqrt{2}(1+\sqrt{3}) & -\frac{1}{\sqrt{2}} + i \frac{2+\sqrt{3}}{\sqrt{2}} & 1 & 0
+	\end{pmatrix} \\
+	\vec{v}_6(\vec{F}) &= \frac{1}{4\sqrt{3}}
+	\begin{pmatrix}
+		1+\sqrt{3} + i(1-\sqrt{3}) & \sqrt{2} + \sqrt{6} & 0 & 1+\sqrt{3} -i (1-\sqrt{3}) & \sqrt{2} + \sqrt{6} & 4
+	\end{pmatrix}
+\end{align}
+
+The matrix elements are 
 
 \begin{align}
 	\begin{split}
-		\vec{v}_1^H \cdot H_{\vec{K}}^1 \cdot \vec{v}_1 &\equiv M_{11} = M_{11}^x p_x + M_{11}^y p_y \\
-		\vec{v}_1^H \cdot H_{\vec{K}}^1 \cdot \vec{v}_2 &\equiv M_{12} = M_{12}^x p_y + M_{12}^y p_y \\
-		\vec{v}_2^H \cdot H_{\vec{K}}^1 \cdot \vec{v}_2 &= -M_{11} \\
-		\vec{v}_2^H \cdot H_{\vec{K}}^1 \cdot \vec{v}_2 &= (M_{12})^*
+		M_{55}^x &= \frac{1+\sqrt{3}}{2}t \\
+		M_{55}^y &= - \frac{1-\sqrt{3}}{2}t \\
+		M_{56}^x &= \frac{1-\sqrt{3}}{2}t \\
+		M_{56}^y &= \frac{1+\sqrt{3}}{2}t.
 	\end{split}
 \end{align}
 
-
-The last two identities are motivated by the effect that $(M)_{ij} = M_{ij}$ must be a Hermitian matrix with no absolute part ($\propto \sigma_0$). To obtain an arbitrary basis of the degnerate subspace I do a $SU(2)$-rotation ($SU(2)$ automatically enforces the orthonormality of the new basis):
-
 \begin{equation}
-	\begin{pmatrix}
-		\vec{w}_1 \\
-		\vec{w}_2
-	\end{pmatrix} = 
-	\begin{pmatrix}
-		e^{i\chi} & 0 \\
-		0 & e^{i\chi}
-	\end{pmatrix}
-	\begin{pmatrix}
-		\cos(\phi/2)e^{i(\theta/2+\kappa)} & \sin(\phi/2) e^{i\theta/2}\\
-		\sin(\phi/2)e^{i(-\theta/2+\kappa)} & -\cos(\phi/2)e^{-i\theta/2}
-	\end{pmatrix}
-	\begin{pmatrix}
-		\vec{v}_1 \\
-		\vec{v}_2
-	\end{pmatrix}
+	\Rightarrow v_F^{\frac56}(\vec{F}) = \sqrt{2}t
 \end{equation}
 
-\textcolor{red}{Parameter ranges?}\textcolor{red}{Optimally I would find a Group-theoretical justification of this representaion}. $\chi$ is a global phase, which I choose to be 0, justified by the $U(1)$-gauge symmetry of quantum mechanics. This leaves three parameters. Now I can write down the projection of $H_{\vec{K}}^1$ onto $\{ \vec{w}_1, \vec{w}_2\}$. I write the resulting hermitian 2x2 matrix in the Pauli-matrix basis (again there is no $\sigma_0$-part):
-
-
-\begin{align}
-	\langle H_{\vec{K}}^1 \rangle_{\{\vec{w}_1, \vec{w}_2\}} = \quad &\sigma_x\left[M_{11} \sin(\phi)\cos(\theta) + M_{12}\left( \sin(\kappa) \sin(\theta) -\cos(\phi)\cos(\kappa)\cos(\theta)\right)\right] \\
-	+&\sigma_y\left[M_{11} \sin(\phi) \sin(\theta) - M_{12} \left( \sin(\kappa) \cos(\theta) + \cos(\phi) \cos(\kappa) \sin(\theta)\right)\right] \\
-	+&\sigma_z \left[M_{11} \cos(\phi) + M_{12} \sin(\phi) \cos(\kappa)\right]
-\end{align}
-
-One might complain that the equations above dont reference the Fermi velocity. However, as long as we only make statements using ratios of $M$-components we still obtain the desired result. Now, $(\phi, \theta, \kappa)$ can be choosen to i.e. give a projected Hamiltonian of the form 
-
-\begin{equation}
-	\langle H_{\vec{K}}^1 \rangle_{\{\vec{w}_1, \vec{w}_2\}} \overset{!}{=} v_F\big(p_x\sigma_x + p_y \sigma_y\big).	
-\end{equation}
-
-A partial solution is 
+Hence, the correct parameters are 
 
 \begin{align}
 	\begin{split}
-		\cos(\phi) &= 0 \\
-		\cos(\kappa) &= 0 \\
-		\tan(\theta) &= - \frac{M_{12}^x}{M_{12}^y}.
+		\phi &= \pi/2 \\
+		\kappa &= - \pi/2 \\
+		\theta &= \arctan\left(2-\sqrt{3}\right) = \frac{\pi}{12}
 	\end{split}
 \end{align}
 
-\textcolor{red}{The above is not sufficient to completely fix $\phi$ and $\kappa$ as both $\pi/2$ and $-\pi/2$ are still correct solutions, yet only one combination gives the correct result. However, the partial solutions ensures that the $\sigma_z$ component vanishes in every case. At the moment I just have to try all 4 possibilities until I found a systematic solution. I expect that the answer lies in the signs of the $M_{ij}$.} \\
-
-One could (for example) also pick the form
-
-\begin{equation}
-	\langle H_{\vec{K}}^1 \rangle_{\{\vec{w}_1, \vec{w}_2\}} \overset{!}{=} v_F\big(p_x\sigma_x + p_y \sigma_z\big).	
-\end{equation}
-
-A partial solution for this is
+Applying strain yields the results 
 
 \begin{align}
-	\begin{split}
-		\tan(\phi) &= \sqrt{-\frac{M_{11}^x M_{12}^y}{M_{11}^y M_{12}^x}} \\
-		\sin(\kappa) &= 0 \\
-		\sin(\theta) &= 0.
-	\end{split}
+	\langle \delta H_1 \rangle_{\vec{w}_5, \vec{w}_6} &= -\frac{\beta}{2}(1+\sqrt{3})(u_{xx} + u_{yy})\sigma_0 \\
+	\langle \delta H_0 \rangle_{\vec{w}_5, \vec{w}_6} &= \sqrt{2}\frac{\pi}{4}\left(u_{xx} + \frac{u_{yx}}{\sqrt{3}}\right)\sigma_x + \sqrt{2}\frac{\pi}{4} \left(u_{xy} + \frac{u_{yy}}{\sqrt{3}}\right)  \sigma_y
 \end{align}
 
-\textcolor{red}{Again similar problem as above, $\kappa$ and $\theta$ are not completely fixed yet.} In what follows I will usually apply the second form as a consistency check.
+\begin{align}
+	\phi^{\frac56}(\vec{F}) &= -\frac{\beta}{2}(1+\sqrt{3})(u_{xx}+u_{yy})\sigma_0 \\
+	\vec{A}^{\frac56}(\vec{F}) &= 0.
+\end{align}
 
 \end{document}

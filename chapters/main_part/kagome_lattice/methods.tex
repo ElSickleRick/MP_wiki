@@ -1,0 +1,127 @@
+\documentclass[../../../main.tex]{subfiles}
+
+\begin{document}
+
+\subsubsection{(smartly) projecting onto a 2-band subspace}
+
+In what follows we will encounter systems with more than two bands. In order to derive an effective theory for a small energy window around a Dirac-point most of these bands are irrelevant and can be safely projected out. Asssume a k-space Hamiltonian $H(\vec{q})$ and a degeneracy point (/Dirac point) $\vec{K}$ .  Furtheremore, I define
+
+\begin{equation}
+	H(\vec{K}+ \vec{p}) \approx \underbrace{H(\vec{K})}_{\equiv H_{\vec{K}}^0} + \underbrace{\vec{p} \cdot \left(\vec{\nabla}_{\vec{q}}H(\vec{q})\right)\bigg\rvert_{\vec{q} = \vec{K}}}_{\equiv H_{\vec{K}}^1} + \mathcal{O}(p^2).
+\end{equation}
+
+The next ingredient is a orthonormal basis of the degenerate subspace $\{ \vec{v}_1, \vec{v}_2 \}$. I also need the matrix elements of $H_{\vec{K}}^1$ wrt to this basis:
+
+\begin{align}
+	\begin{split}
+		\vec{v}_1^H \cdot H_{\vec{K}}^1 \cdot \vec{v}_1 &\equiv M_{11} = M_{11}^x p_x + M_{11}^y p_y \\
+		\vec{v}_1^H \cdot H_{\vec{K}}^1 \cdot \vec{v}_2 &\equiv M_{12} = M_{12}^x p_y + M_{12}^y p_y \\
+		\vec{v}_2^H \cdot H_{\vec{K}}^1 \cdot \vec{v}_2 &= -M_{11} \\
+		\vec{v}_2^H \cdot H_{\vec{K}}^1 \cdot \vec{v}_2 &= (M_{12})^*
+	\end{split}
+\end{align}
+
+
+The last two identities are motivated by the effect that $(M)_{ij} = M_{ij}$ must be a Hermitian matrix with no absolute part ($\propto \sigma_0$). To obtain an arbitrary basis of the degnerate subspace I do a $SU(2)$-rotation ($SU(2)$ automatically enforces the orthonormality of the new basis):
+
+\begin{equation}
+	\begin{pmatrix}
+		\vec{w}_1 \\
+		\vec{w}_2
+	\end{pmatrix} = 
+	\begin{pmatrix}
+		e^{i\chi} & 0 \\
+		0 & e^{i\chi}
+	\end{pmatrix}
+	\begin{pmatrix}
+		\cos(\phi/2)e^{i(\theta/2+\kappa)} & \sin(\phi/2) e^{i\theta/2}\\
+		\sin(\phi/2)e^{i(-\theta/2+\kappa)} & -\cos(\phi/2)e^{-i\theta/2}
+	\end{pmatrix}
+	\begin{pmatrix}
+		\vec{v}_1 \\
+		\vec{v}_2
+	\end{pmatrix}
+\end{equation}
+
+\textcolor{red}{Parameter ranges?}\textcolor{red}{Optimally I would find a Group-theoretical justification of this representaion}. $\chi$ is a global phase, which I choose to be 0, justified by the $U(1)$-gauge symmetry of quantum mechanics. This leaves three parameters. Now I can write down the projection of $H_{\vec{K}}^1$ onto $\{ \vec{w}_1, \vec{w}_2\}$. I write the resulting hermitian 2x2 matrix in the Pauli-matrix basis (again there is no $\sigma_0$-part):
+
+
+\begin{align}
+	\langle H_{\vec{K}}^1 \rangle_{\{\vec{w}_1, \vec{w}_2\}} = \quad &\sigma_x\left[M_{11} \sin(\phi)\cos(\theta) + M_{12}\left( \sin(\kappa) \sin(\theta) -\cos(\phi)\cos(\kappa)\cos(\theta)\right)\right] \\
+	+&\sigma_y\left[M_{11} \sin(\phi) \sin(\theta) - M_{12} \left( \sin(\kappa) \cos(\theta) + \cos(\phi) \cos(\kappa) \sin(\theta)\right)\right] \\
+	+&\sigma_z \left[M_{11} \cos(\phi) + M_{12} \sin(\phi) \cos(\kappa)\right]
+\end{align}
+
+One might complain that the equations above dont reference the Fermi velocity. However, as long as we only make statements using ratios of $M$-components we still obtain the desired result. Now, $(\phi, \theta, \kappa)$ can be choosen to i.e. give a projected Hamiltonian of the form 
+
+\begin{equation}
+	\langle H_{\vec{K}}^1 \rangle_{\{\vec{w}_1, \vec{w}_2\}} \overset{!}{=} v_F\big(p_x\sigma_x + p_y \sigma_y\big).	
+\end{equation}
+
+A partial solution is 
+
+\begin{align}
+	\begin{split}
+		\cos(\phi) &= 0 \\
+		\cos(\kappa) &= 0 \\
+		\tan(\theta) &= - \frac{M_{12}^x}{M_{12}^y}.
+	\end{split}
+\end{align}
+
+\textcolor{red}{The above is not sufficient to completely fix $\phi$ and $\kappa$ as both $\pi/2$ and $-\pi/2$ are still correct solutions, yet only one combination gives the correct result. However, the partial solutions ensures that the $\sigma_z$ component vanishes in every case. At the moment I just have to try all 4 possibilities until I found a systematic solution. I expect that the answer lies in the signs of the $M_{ij}$.} \\
+
+One could (for example) also pick the form
+
+\begin{equation}
+	\langle H_{\vec{K}}^1 \rangle_{\{\vec{w}_1, \vec{w}_2\}} \overset{!}{=} v_F\big(p_x\sigma_x + p_y \sigma_z\big).	
+\end{equation}
+
+A partial solution for this is
+
+\begin{align}
+	\begin{split}
+		\tan(\phi) &= \sqrt{-\frac{M_{11}^x M_{12}^y}{M_{11}^y M_{12}^x}} \\
+		\sin(\kappa) &= 0 \\
+		\sin(\theta) &= 0.
+	\end{split}
+\end{align}
+
+\textcolor{red}{Again similar problem as above, $\kappa$ and $\theta$ are not completely fixed yet.} In what follows I will usually apply the second form as a consistency check.
+
+\subsubsection{Straining the tight-binding model}
+
+I will only give the relevant equations since I have used this method prior. Straining the tight binding model works as follows:
+
+\begin{equation}
+	t(\vec{\delta}_{ij})e^{i\vec{K}\cdot\vec{\delta}_{ij}}  \approx t e^{i\vec{K}\cdot\vec{\delta}_{ij}}\left(1+i\vec{p}\cdot\vec{\delta}_{ij} - \beta \left( \vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) + i \left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right)\right)
+\end{equation}
+
+and 
+
+\begin{align}
+	\begin{split}
+		t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}} + t(-\vec{\delta}_{ij})e^{-i\vec{K}\cdot\vec{\delta}_{ij}}  \approx & 2t\cos(	\vec{q}\cdot\vec{\delta}_{ij}) - 2t\sin(\vec{q} \cdot \vec{\delta}_{ij})\left(\vec{p}\cdot\vec{\delta}_{ij}\right) \\
+		-&2\beta t\cos(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij} \right) \\
+		-&2t\sin(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{K} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right)
+	\end{split}
+\end{align}
+
+and 
+
+\begin{align}
+	\begin{split}
+		t(\vec{\delta}_{ij})e^{i\vec{q}\cdot\vec{\delta}_{ij}}-t(-\vec{\delta}_{ij})e^{-i\vec{q}\cdot\vec{\delta}_{ij}} \approx & 2it \sin(\vec{K}\cdot\vec{\delta}_{ij}) +2it\cos(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{p}\cdot\vec{\delta}_{ij}\right) \\
+		-&2i\beta t \sin(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{\delta}_{ij} \cdot \underline{u} \cdot \vec{\delta}_{ij}\right) \\
+		+&2it\cos(\vec{K}\cdot\vec{\delta}_{ij})\left(\vec{K}\cdot \underline{u} \cdot \vec{\delta}_{ij}\right)
+	\end{split}
+\end{align}
+
+I will usually split everything into two parts:
+
+\begin{equation}
+	\delta H_0 \quad \text{and} \quad \delta H_1,
+\end{equation}
+
+where $\delta H_i$ is of order $i$ in $\beta$.
+
+\end{document}
