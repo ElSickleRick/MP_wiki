@@ -39,21 +39,27 @@
 \contentsline {subsubsection}{\numberline {4.5.2}Pedro's Method}{32}{subsubsection.4.5.2}%
 \contentsline {subsubsection}{\numberline {4.5.3}Chern number}{32}{subsubsection.4.5.3}%
 \contentsline {section}{\numberline {5}Kagome Lattice}{33}{section.5}%
-\contentsline {subsection}{\numberline {5.1}0-flux State}{33}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Real Space}{33}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Reciprocal Space}{34}{subsubsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.3}dispersion and band touching points}{34}{subsubsection.5.1.3}%
-\contentsline {subsubsection}{\numberline {5.1.4}Filling Factor}{35}{subsubsection.5.1.4}%
-\contentsline {subsubsection}{\numberline {5.1.5}Linearization in Reciprocal Space and Projection}{35}{subsubsection.5.1.5}%
-\contentsline {subsubsection}{\numberline {5.1.6}Introduction of Strain}{37}{subsubsection.5.1.6}%
-\contentsline {subsection}{\numberline {5.2}$\pi $-flux State}{40}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Real Space}{40}{subsubsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.3}Symmetries}{40}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Reciprocal Space}{42}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}dispersion and band trouching poiunts}{43}{subsubsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.3}Linearization in reciproical space and Projection}{44}{subsubsection.5.3.3}%
-\contentsline {subsubsection}{\numberline {5.3.4}Introduction of strain}{48}{subsubsection.5.3.4}%
-\contentsline {subsubsection}{\numberline {5.3.5}crossing 5-6}{48}{subsubsection.5.3.5}%
-\contentsline {subsubsection}{\numberline {5.3.6}crossing 4-5}{50}{subsubsection.5.3.6}%
-\contentsline {part}{III\hspace {1em}other}{52}{part.3}%
-\contentsline {section}{\numberline {6}mail 10.07}{52}{section.6}%
+\contentsline {subsection}{\numberline {5.1}Precursor: Methods}{33}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}(smartly) projecting onto a 2-Band Subspace}{33}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Straining the Tight-Binding Model}{34}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}0-flux State}{35}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Real Space}{35}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Reciprocal Space and Bands}{36}{subsubsection.5.2.2}%
+\contentsline {paragraph}{Bands}{36}{equation.5.251}%
+\contentsline {paragraph}{Dirac points}{36}{equation.5.254}%
+\contentsline {paragraph}{Small Momentum Expansion}{37}{equation.5.259}%
+\contentsline {paragraph}{Projection}{37}{equation.5.262}%
+\contentsline {subsubsection}{\numberline {5.2.3}Strain and Pseudo-Potentials}{38}{subsubsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.3}$\pi $-flux State}{38}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Real Space}{38}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Reciprocal Space and Bands}{39}{subsubsection.5.3.2}%
+\contentsline {paragraph}{Bands}{40}{equation.5.280}%
+\contentsline {paragraph}{Dirac Points}{41}{equation.5.288}%
+\contentsline {paragraph}{Linearization of $H$/ Field Theory}{43}{equation.5.299}%
+\contentsline {subsubsection}{\numberline {5.3.3}1/2-Filling}{44}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.4}2/3-Filling}{45}{subsubsection.5.3.4}%
+\contentsline {paragraph}{$\mathbf {\vec {C}}$}{45}{equation.5.312}%
+\contentsline {paragraph}{$\mathbf {\vec {E}}$}{46}{equation.5.325}%
+\contentsline {subsubsection}{\numberline {5.3.5}5/6-filling}{47}{subsubsection.5.3.5}%
+\contentsline {part}{III\hspace {1em}other}{49}{part.3}%
+\contentsline {section}{\numberline {6}mail 10.07}{49}{section.6}%

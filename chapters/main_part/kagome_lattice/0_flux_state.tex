@@ -54,10 +54,9 @@ The tight binding hamiltonain is
 
 The first index refers to the unit cell and the second one to the "species" of the particle, the latter being a product of the parton decomposition.
 
-\subsubsection{Reciprocal Space}
+\subsubsection{Reciprocal Space and Bands}
 
 The recipricoal lattice vectors are 
-
 
 \begin{equation}
 	\vec{b}_1 = \pi
@@ -97,7 +96,7 @@ where $N$ is the number of unit cells. This yields
 	\end{pmatrix}.
 \end{equation}
 
-\subsubsection{dispersion and band touching points}
+\paragraph{Bands} \hfill \\
 
 The three bands are 
 
@@ -143,9 +142,9 @@ with $s \in {0,1}$ and $m_1, m_2 \in \mathbb{N}$. These touching points lie at t
 \end{align}
 
 
-\subsubsection{Linearization in Reciprocal Space and Projection}
+\paragraph{Small Momentum Expansion} \hfill \\
 
-The linearized Hamiltonian according to 
+Linearize the Hamiltonian according to 
 
 \begin{equation}
 	H(\vec{K}+ \vec{p}) \approx \underbrace{H(\vec{K})}_{\equiv H_{\vec{K}}^0} + \underbrace{\vec{p} \cdot \left(\vec{\nabla}_{\vec{q}}H(\vec{q})\right)\bigg\rvert_{\vec{q} = \vec{K}}}_{\equiv H_{\vec{K}}^1} + \mathcal{O}(p^2).
@@ -171,10 +170,11 @@ and
 		0 & \sin(K_2)p_2 & \sin(K_3)p_3 \\
 		\sin(K_2)p_2 & 0 & \sin(K_1)p_1 \\
 		\sin(K_3)p_3 & \sin(K_1)p_1 & 0 
-	\end{pmatrix}
+	\end{pmatrix}.
 \end{equation}
 
 
+\paragraph{Projection} \hfill \\
 
 The eigenvector of $H_{\vec{K}}^0$ corresponding to the flat band reads:
 
@@ -230,7 +230,9 @@ The corresponding parameters for an effective theory of the form $H = \varepsilo
 	\end{split}
 \end{align}
 
-Introducing strain yields the following extra expansion terms of $H$:
+\subsubsection{Strain and Pseudo-Potentials}
+
+Introducing strain yields the following additional expansion terms of $H$:
 
 \begin{equation}
 	\delta H_1 = -2t\beta
@@ -253,8 +255,8 @@ Introducing strain yields the following extra expansion terms of $H$:
 Projecting these onto the correct basis gives 
 
 \begin{align}
-	\langle \delta H_1 \rangle_{\{\vec{w}_1, \vec{w}_2\}} &= -\frac{\beta}{2}(u_{xx} + u_{yy})\sigma_0 + \sqrt{3}\frac{\beta}{2\sqrt{3}}(u_{yy}-u_{xx}) \sigma_x + \sqrt{3} \frac{\beta}{\sqrt{3}}u_{yx} \\
-	\langle \delta H_0 \rangle_{\{\vec{w}_1, \vec{w}_2\}} &= \sqrt{3}\frac{2\pi}{3}u_{xx}\sigma_x + \sqrt{3}\frac{2\pi}{3}u_{yx}.
+	\langle \delta H_1 \rangle_{\{\vec{w}_1, \vec{w}_2\}} &= -\frac{\beta}{2}(u_{xx} + u_{yy})\sigma_0 + \sqrt{3}\frac{\beta}{2\sqrt{3}}(u_{yy}-u_{xx}) \sigma_x + \sqrt{3} \frac{\beta}{\sqrt{3}}u_{yx} \sigma_y \\
+	\langle \delta H_0 \rangle_{\{\vec{w}_1, \vec{w}_2\}} &= \sqrt{3}\frac{2\pi}{3}u_{xx}\sigma_x + \sqrt{3}\frac{2\pi}{3}u_{yx}\sigma_y.
 \end{align}
 
 Thus, the final result is 
@@ -268,8 +270,10 @@ Thus, the final result is
 	\end{pmatrix}
 \end{align}
 
+This is the result they found in \cite{Liu2020}.
+
 \begin{equation}
-	\Rightarrow \vec{B}(\vec{K}) = - \frac{\beta}{2\sqrt{3}}(\partial_x \partial_y U_y - \partial_x^2 U_x)
+	\Rightarrow \vec{B}(\vec{K}) = - \frac{\beta}{2\sqrt{3}}(\partial_x\partial_y U_x + [2\partial_x^2 - \partial_y^2] U_y)
 \end{equation}
 
 \end{document}
