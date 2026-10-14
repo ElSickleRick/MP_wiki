@@ -8,3 +8,5 @@
 \contentsline {subsection}{\numberline {0.2}0-$\pi $ State on Strained Lattice}{12}{subsection.0.2}%
 \contentsline {subsubsection}{\numberline {0.2.1}Basics of Strain}{12}{subsubsection.0.2.1}%
 \contentsline {subsubsection}{\numberline {0.2.2}Straining the 0-$\pi $-State}{13}{subsubsection.0.2.2}%
+\contentsline {subsection}{\numberline {0.3}Strain Engineering and other Games with the 0-$\pi $-State}{14}{subsection.0.3}%
+\contentsline {subsection}{\numberline {0.4}Strain games}{14}{subsection.0.4}%

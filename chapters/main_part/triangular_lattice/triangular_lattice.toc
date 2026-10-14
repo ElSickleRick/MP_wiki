@@ -1,0 +1,23 @@
+\thispagestyle {empty}
+\contentsline {subsection}{\numberline {0.1}Construction of Hamiltonian}{2}{subsection.0.1}%
+\contentsline {subsubsection}{\numberline {0.1.1}Construction of the Hamiltonian}{2}{subsubsection.0.1.1}%
+\contentsline {subsubsection}{\numberline {0.1.2}Continuity equation and probability current}{3}{subsubsection.0.1.2}%
+\contentsline {subsection}{\numberline {0.2}0-0 and $\pi $-$\pi $ States}{5}{subsection.0.2}%
+\contentsline {subsubsection}{\numberline {0.2.1}Pedestrian method}{5}{subsubsection.0.2.1}%
+\contentsline {subsubsection}{\numberline {0.2.2}Pedro's method}{8}{subsubsection.0.2.2}%
+\contentsline {subsection}{\numberline {0.3}$\pi /2$-$\pi /2$ and $-\pi /2$ - $-\pi /2$ States}{9}{subsection.0.3}%
+\contentsline {subsubsection}{\numberline {0.3.1}Pedestrian Method}{9}{subsubsection.0.3.1}%
+\contentsline {subsubsection}{\numberline {0.3.2}Pedro's Method}{11}{subsubsection.0.3.2}%
+\contentsline {subsubsection}{\numberline {0.3.3}Chern number}{11}{subsubsection.0.3.3}%
+\contentsline {subsection}{\numberline {0.4}0-$\pi $ and $\pi $-0 States}{12}{subsection.0.4}%
+\contentsline {subsubsection}{\numberline {0.4.1}pedestrian method}{12}{subsubsection.0.4.1}%
+\contentsline {subsubsection}{\numberline {0.4.2}Pedro's method}{17}{subsubsection.0.4.2}%
+\contentsline {subsubsection}{\numberline {0.4.3}fermi surface}{18}{subsubsection.0.4.3}%
+\contentsline {subsubsection}{\numberline {0.4.4}small momentum expansion}{19}{subsubsection.0.4.4}%
+\contentsline {subsubsection}{\numberline {0.4.5}Continuum Model/ Gradient Expansion}{20}{subsubsection.0.4.5}%
+\contentsline {subsection}{\numberline {0.5}0-$\pi $ State on Strained Lattice}{22}{subsection.0.5}%
+\contentsline {subsubsection}{\numberline {0.5.1}Basics of Strain}{22}{subsubsection.0.5.1}%
+\contentsline {subsubsection}{\numberline {0.5.2}Straining the 0-$\pi $-State}{23}{subsubsection.0.5.2}%
+\contentsline {subsection}{\numberline {0.6}Strain Engineering and other Games with the 0-$\pi $-State}{24}{subsection.0.6}%
+\contentsline {subsubsection}{\numberline {0.6.1}Uniform Hopping: Towards the Square Lattice}{24}{subsubsection.0.6.1}%
+\contentsline {paragraph}{Towards the square lattice}{25}{equation.0.193}%
