@@ -19,5 +19,8 @@
 \contentsline {subsubsection}{\numberline {0.5.1}Basics of Strain}{22}{subsubsection.0.5.1}%
 \contentsline {subsubsection}{\numberline {0.5.2}Straining the 0-$\pi $-State}{23}{subsubsection.0.5.2}%
 \contentsline {subsection}{\numberline {0.6}Strain Engineering and other Games with the 0-$\pi $-State}{24}{subsection.0.6}%
-\contentsline {subsubsection}{\numberline {0.6.1}Uniform Hopping: Towards the Square Lattice}{24}{subsubsection.0.6.1}%
-\contentsline {paragraph}{Towards the square lattice}{25}{equation.0.193}%
+\contentsline {subsubsection}{\numberline {0.6.1}Uniform Hopping}{24}{subsubsection.0.6.1}%
+\contentsline {paragraph}{$\mathbf {\boldsymbol {\eta } = \boldsymbol {\gamma }}$: Towards the square lattice}{26}{equation.0.200}%
+\contentsline {paragraph}{$\mathbf {\boldsymbol {\eta } + \boldsymbol {\gamma } = 1}$}{27}{equation.0.204}%
+\contentsline {subsubsection}{\numberline {0.6.2}Staggered Hopping}{28}{subsubsection.0.6.2}%
+\contentsline {subsubsection}{\numberline {0.6.3}On-Site Potential}{28}{subsubsection.0.6.3}%
