@@ -22,5 +22,5 @@
 \contentsline {subsubsection}{\numberline {0.6.1}Uniform Hopping}{24}{subsubsection.0.6.1}%
 \contentsline {paragraph}{$\mathbf {\boldsymbol {\eta } = \boldsymbol {\gamma }}$: Towards the square lattice}{26}{equation.0.200}%
 \contentsline {paragraph}{$\mathbf {\boldsymbol {\eta } + \boldsymbol {\gamma } = 1}$}{27}{equation.0.204}%
-\contentsline {subsubsection}{\numberline {0.6.2}Staggered Hopping}{28}{subsubsection.0.6.2}%
-\contentsline {subsubsection}{\numberline {0.6.3}On-Site Potential}{28}{subsubsection.0.6.3}%
+\contentsline {subsubsection}{\numberline {0.6.2}Staggered Hopping}{29}{subsubsection.0.6.2}%
+\contentsline {subsubsection}{\numberline {0.6.3}On-Site Potential}{29}{subsubsection.0.6.3}%

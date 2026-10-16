@@ -9,7 +9,7 @@ This section was mostly inspired by \cite{Sun2023}.
 I investigate the effect of uniformly varying hopping amplitudes with one edge case reproducing a lattice topolgically equivalent to the square lattice. . I modify the hopping amplitudes in the unit cell of the two-site unit cell as follows 
 
 \begin{center}
-	\includegraphics[width = \textwidth]{uniform_hopping_games.jpeg}
+	\includegraphics[width = \textwidth]{uniform_hopping_lattice.jpeg}
 \end{center}
 
 This gives the real space Hamiltonian 
@@ -149,12 +149,24 @@ are insensible to sign of the hopping direction, this reproduces the entries of 
 
 \paragraph{$\mathbf{\boldsymbol{\eta} + \boldsymbol{\gamma} = 1}$} \hfill \\
 
-\textcolor{red}{Apparently this case is not connected (in parameter space) to $\eta = \gamma = 0$?} \\
+This choice of parameters leads to:
+
+\begin{equation}
+	t(1-2\eta) \overset{\eta = 1-\gamma}{\longrightarrow} -t(1-2\gamma).
+\end{equation}
+
+meaning that the hoppin amplitudes along $\pm\vec{\delta}_3$, however the hopping phases alternate between $0$ and $\pi$. This of course alters the flux pattern of the lattice. Acknowledging this fact it is clear that this lattice can not be transformed into the $\pi$-flux triangular lattice by choice of paramter. (This is actaully trivial, considering that $\eta = \gamma = 0$ does not satisfy $\eta + \gamma = 1$.) 
+
+\begin{center}
+	\includegraphics[width=\textwidth]{uniform_hopping_flux_pattern.jpeg}
+\end{center}
+
+The picture shows the flux pattern in the case that $\gamma < \frac12$. \\
 
 The Hamiltonian reads 
 
 \begin{equation}
-	\vec{h}(\vec{q}) = 
+	\vec{h}(\vec{q}) = 2t 
 	\begin{pmatrix}
 		0 \\
 		\sin(q_3) + (1-2\gamma)\sin(q_2) \\
@@ -162,44 +174,9 @@ The Hamiltonian reads
 	\end{pmatrix}
 \end{equation}
 
-Coming from the discussion in the last paragraph I expect that this Hamitlonian should be able to display pseudo-magnetic fields, since the (non-parallel!) hopping-directions $\vec{q}_3$ and $\vec{q}_2$ mix in the second component. Furthermore, since in the third component only $q_1 = q_x$ appears, that should mean $A_x = 0$. \\
+Coming from the discussion in the last paragraph I expect that this Hamitlonian should be able to display pseudo-magnetic fields, since the (non-parallel!) hopping-directions $\vec{q}_3$ and $\vec{q}_2$ mix in the second component. Furthermore, since in the third component only $q_1 = q_x$ appears, I expect $A_x = 0$. \\
 
-I begin by linearizing the Hamiltonian: 
-
-\begin{align}
-	h_{\vec{D}}^0 &= 2t
-	\begin{pmatrix}
-		0 \\
-		\sin(D_3) + (1-2\gamma)\sin(D_2) \\
-		\cos(D_1) 
-	\end{pmatrix} \\
-	\vec{h}_{\vec{D}}^1 &= 2t 
-	\begin{pmatrix}
-		0 \\
-		\cos(D_3)p_3 + (1-2\gamma)\cos(D_2)p_2 \\
-		-\sin(D_1)p_1
-	\end{pmatrix}.
-\end{align}	
-
-Next step is to reinstate the hopping directions. Starting with the $\sigma_y$ components I have 
-
-\begin{equation}
-	-i\left[t(\vec{\delta}_3)e^{i\vec{D}\cdot\vec{\delta}_3} - t(-\vec{\delta}_3)e^{-i\vec{D}\cdot\vec{\delta}_3}\right] + -i(1-2\gamma)\left[ t(\vec{\delta}_2)e^{i\vec{D}\cdot\vec{\delta}_2} - t(-\vec{\delta}_2)e^{-i\vec{D}\cdot\vec{\delta}_2} \right]
-\end{equation}
-
-Expanding in strain gives (I only write dowh the relevant term here)
-
-\begin{equation}
-	-2t\beta\left(\sin(D_3)\left(\vec{\delta}_3 \cdot \underline{u} \cdot \vec{\delta}_3\right)+ (1-2\gamma)\sin(D_2)\left( \vec{\delta}_2 \cdot \underline{u} \cdot \vec{\delta}_2\right)\right)
-\end{equation}
-
-Doing the same for the $\sigma_z$ component I get
-
-\begin{equation}
-	 -2t\beta\cos(D_1)\left( \vec{\delta}_1 \cdot \underline{u} \cdot \vec{\delta}_1 \right).
-\end{equation}
-
-The ladder trivialy vanishes. To evaluate the other expressions at $\vec{D}$, use 
+Helpful identities: 
 
 \begin{align}
 	\begin{split}
@@ -217,31 +194,78 @@ and
 	\end{split}
 \end{align}
 
-\begin{equation}
-	\Rightarrow \vec{h}_{\vec{D}}^1 = 
+
+I begin by linearizing the Hamiltonian: 
+
+\begin{align}
+	h_{\vec{D}}^0 &= 2t
+	\begin{pmatrix}
+		0 \\
+		\sin(D_3) + (1-2\gamma)\sin(D_2) \\
+		\cos(D_1) 
+	\end{pmatrix}  = 0\\
+	\vec{h}_{\vec{D}}^1 &= 2t 
+	\begin{pmatrix}
+		0 \\
+		\cos(D_3)p_3 + (1-2\gamma)\cos(D_2)p_2 \\
+		-\sin(D_1)p_1
+	\end{pmatrix} = 
 	\begin{pmatrix}
 		0 \\
 		f(\gamma) p_y\\
 		-p_x
-	\end{pmatrix}
-\end{equation}
+	\end{pmatrix},
+\end{align}	
 
-with
+with 
 
 \begin{equation}
-	f(\gamma) = \frac{\sqrt{3}}{\sqrt{2}}\frac{2\gamma-1}{\sqrt{\gamma^2 + (1-\gamma)^2}}
+	f(\gamma) = \frac{\sqrt{3}}{\sqrt{2}}\frac{2\gamma-1}{\sqrt{\gamma^2 + (1-\gamma)^2}}.
 \end{equation}
 
-The $\sigma_y$-strain term evaluates to
+The next step is to reinstate the hopping directions. Starting with the $\sigma_z$ components I have 
+
+\begin{equation}
+	t(\vec{\delta}_1)e^{i\vec{D}\cdot\vec{\delta}_1} + t(-\vec{\delta}_1)e^{-i\vec{D}\cdot\vec{\delta}_1}.
+\end{equation}
+
+Expanding in strain (and only keeping the relevant term) I get
+
+\begin{equation}
+	-t\beta \cos(D_1) \left( \vec{\delta}_1 \cdot \underline{u} \cdot \vec{\delta}_1\right) = 0,
+\end{equation}
+
+as was expected. Doing the same for the $\sigma_y$-component I get
+
+\begin{equation}
+	-i\left[t(\vec{\delta}_3)e^{i\vec{D}\cdot\vec{\delta}_3} - t(-\vec{\delta}_3)e^{-i\vec{D}\cdot\vec{\delta}_3}\right] + -i(1-2\gamma)\left[ t(\vec{\delta}_2)e^{i\vec{D}\cdot\vec{\delta}_2} - t(-\vec{\delta}_2)e^{-i\vec{D}\cdot\vec{\delta}_2} \right]
+\end{equation}
+
+and
+
+\begin{equation}
+	-2t\beta\left(\sin(D_3)\left(\vec{\delta}_3 \cdot \underline{u} \cdot \vec{\delta}_3\right)+ (1-2\gamma)\sin(D_2)\left( \vec{\delta}_2 \cdot \underline{u} \cdot \vec{\delta}_2\right)\right)
+\end{equation}
+
+
+This term can be evaluated to
 
 \begin{equation}
 	-f(\gamma)\frac{t\beta}{2(2\gamma-1)}\left(\frac{1-(2\gamma-1)^2}{\sqrt{3}}(u_{xx} + 3u_{yy}) - (1+(2\gamma-1)^2)(u_{xy}+u_{yx})\right),
 \end{equation}
 
-which is by all means ugly but still a pseudo vectorpotential. \textcolor{red}{This calculation is rather involved. I should check it using a CAS.}
+which is by all means ugly but still a pseudo vectorpotential. \textcolor{red}{This calculation is rather involved. I should check it using a CAS. Thi should vanish at $\eta = \gamma = \frac12$ (or alternatively can be gauged away). Why is this not the case?}
 
 \subsubsection{Staggered Hopping}
 
+\textcolor{red}{Is it necessary to consider this? In the reference \cite{Sun2023} it doesnt look like the space-dependence plays a crucial role. I guess I automatically covered this case with the unifrom hopping stuff.} \\
+
+\textcolor{red}{Staggered hoppig in the way that it was introduced in \cite{Sun2023} manifestly doesnt work in the thermodynamic limit since there must be a $x$ after which (coming from 0) the sign of the hopping (and with it the flux pattern) flips.} \\
+
+\textcolor{red}{On the other hand one could interpret this as the linear approximation of the strain-effect on $t$. So the real question would be which strain pattern produces this. It is however, questionable if such a pattern physcially exist (judging from the form of the modified $t$). Does this mean this approach is more honest than uniformly chanigng the hopping amplitudes? Of course, there the argmument is that such a lattice can in principle exist.}
+
 \subsubsection{On-Site Potential}
+
+
 
 \end{document}
