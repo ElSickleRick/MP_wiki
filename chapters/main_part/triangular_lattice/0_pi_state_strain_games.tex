@@ -169,7 +169,7 @@ The Hamiltonian reads
 	\vec{h}(\vec{q}) = 2t 
 	\begin{pmatrix}
 		0 \\
-		\sin(q_3) + (1-2\gamma)\sin(q_2) \\
+		\sin(q_2) + (1-2\gamma)\sin(q_3) \\
 		\cos(q_1)
 	\end{pmatrix}
 \end{equation}
@@ -201,27 +201,21 @@ I begin by linearizing the Hamiltonian:
 	h_{\vec{D}}^0 &= 2t
 	\begin{pmatrix}
 		0 \\
-		\sin(D_3) + (1-2\gamma)\sin(D_2) \\
+		\sin(D_2) + (1-2\gamma)\sin(D_3) \\
 		\cos(D_1) 
 	\end{pmatrix}  = 0\\
 	\vec{h}_{\vec{D}}^1 &= 2t 
 	\begin{pmatrix}
 		0 \\
-		\cos(D_3)p_3 + (1-2\gamma)\cos(D_2)p_2 \\
+		\cos(D_2)p_2 + (1-2\gamma)\cos(D_3)p_3 \\
 		-\sin(D_1)p_1
 	\end{pmatrix} = 
 	\begin{pmatrix}
 		0 \\
-		f(\gamma) p_y\\
+		? \\
 		-p_x
-	\end{pmatrix},
+	\end{pmatrix}
 \end{align}	
-
-with 
-
-\begin{equation}
-	f(\gamma) = \frac{\sqrt{3}}{\sqrt{2}}\frac{2\gamma-1}{\sqrt{\gamma^2 + (1-\gamma)^2}}.
-\end{equation}
 
 The next step is to reinstate the hopping directions. Starting with the $\sigma_z$ components I have 
 
@@ -238,23 +232,24 @@ Expanding in strain (and only keeping the relevant term) I get
 as was expected. Doing the same for the $\sigma_y$-component I get
 
 \begin{equation}
-	-i\left[t(\vec{\delta}_3)e^{i\vec{D}\cdot\vec{\delta}_3} - t(-\vec{\delta}_3)e^{-i\vec{D}\cdot\vec{\delta}_3}\right] + -i(1-2\gamma)\left[ t(\vec{\delta}_2)e^{i\vec{D}\cdot\vec{\delta}_2} - t(-\vec{\delta}_2)e^{-i\vec{D}\cdot\vec{\delta}_2} \right]
+	-i\left[t(\vec{\delta}_2)e^{i\vec{D}\cdot\vec{\delta}_2} - t(-\vec{\delta}_2)e^{-i\vec{D}\cdot\vec{\delta}_2}\right] + -i(1-2\gamma)\left[ t(\vec{\delta}_3)e^{i\vec{D}\cdot\vec{\delta}_3} - t(-\vec{\delta}_3)e^{-i\vec{D}\cdot\vec{\delta}_3} \right]
 \end{equation}
 
 and
 
 \begin{equation}
-	-2t\beta\left(\sin(D_3)\left(\vec{\delta}_3 \cdot \underline{u} \cdot \vec{\delta}_3\right)+ (1-2\gamma)\sin(D_2)\left( \vec{\delta}_2 \cdot \underline{u} \cdot \vec{\delta}_2\right)\right)
+	-2t\beta\left(\sin(D_2)\left(\vec{\delta}_2 \cdot \underline{u} \cdot \vec{\delta}_2\right)+ (1-2\gamma)\sin(D_3)\left( \vec{\delta}_3 \cdot \underline{u} \cdot \vec{\delta}_3\right)\right)
 \end{equation}
 
 
 This term can be evaluated to
 
 \begin{equation}
-	-f(\gamma)\frac{t\beta}{2(2\gamma-1)}\left(\frac{1-(2\gamma-1)^2}{\sqrt{3}}(u_{xx} + 3u_{yy}) - (1+(2\gamma-1)^2)(u_{xy}+u_{yx})\right),
+	-\frac{\sqrt{3}}{2\sqrt{2}}\frac{1-2\gamma}{\sqrt{\gamma^2 + (1-\gamma)^2}}(u_{xy} + u_{yx}).
 \end{equation}
 
-which is by all means ugly but still a pseudo vectorpotential. \textcolor{red}{This calculation is rather involved. I should check it using a CAS. Thi should vanish at $\eta = \gamma = \frac12$ (or alternatively can be gauged away). Why is this not the case?}
+\textcolor{blue}{The pseudo-megnetic potential vanishes at $\gamma = \frac12$ as expected.}
+
 
 \subsubsection{Staggered Hopping}
 
