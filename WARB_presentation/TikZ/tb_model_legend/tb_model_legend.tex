@@ -1,0 +1,30 @@
+\documentclass[tikz, border = 5pt]{standalone}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes.geometric}
+
+\begin{document}
+
+\begin{tikzpicture}[scale = 1.0]
+
+	% model Parameters
+	\def \tone{4}	% number of sites in t_1 direction
+	\def \ttwo{5} 	% number of sites in t_2 direction
+	\def \a{1}	% lattice paramters
+
+	% artistic parameters
+	\def \ls{dashed}
+	\def \lw{1.5pt}
+	\def \bzlw{1.25pt}
+
+	% custom colors
+	\definecolor{mygrey}{HTML}{d3d3d3}
+	\def \bzfill{mygrey}
+
+	\draw[\lw] (0,0) -- (\linelength, 0) -- cycle,
+
+\end{tikzpicture}
+
+\end{document}
+

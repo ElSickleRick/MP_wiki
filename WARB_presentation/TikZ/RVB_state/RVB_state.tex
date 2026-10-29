@@ -2,6 +2,8 @@
 \usepackage{tikz}
 
 \usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes.geometric}
+
 
 \begin{document}
 
@@ -13,6 +15,11 @@
 
 	% artistic parameters
 	\def \lw{1pt}
+	\def \ellength{0.8} % in units of a!
+	\def \elheigth{0.25} % in units of a!
+	\def \elfillcolor{blue}
+	\def \ellinecolor{black}
+	\def \ellinewidth{1}
 
 	% get physical coordiantes of points from i and j
 	\newcommand{\getpoint}[2]{%
@@ -26,8 +33,21 @@
 	% optional parameters: color, line width
 
 	\NewDocumentCommand{\drawarrow}{m m m m O{black} O{0.4pt}}{
-	\getpoint{#1}{#2}
-	\draw[-{Stealth}, line width = #6, draw = #5]({\X - #3*cos(#4)/3}, {\Y - #3*sin(#4)/3}) -- ({\X + 2*#3*cos(#4)/3}, {\Y + 2*#3*sin(#4)/3});
+		\getpoint{#1}{#2}
+		\draw[-{Stealth}, line width = #6, draw = #5]({\X - #3*cos(#4)/3}, {\Y - #3*sin(#4)/3}) -- ({\X + 2*#3*cos(#4)/3}, {\Y + 2*#3*sin(#4)/3});
+	}
+
+	
+	% define ellipse, used for RVB state illustrations
+	% parameters: t_1 coeff first point, t_2 coeff first point, t_1 coefff second point, t_2 coeff second point
+
+	\NewDocumentCommand{\drawellipse}{m m m m}{
+
+		\pgfmathsetmacro{\X}{\a*(#1+#3-(#2+#4)/2)/2}
+		\pgfmathsetmacro{\Y}{\a*sqrt(3)*(#2+#4)/4}
+		\pgfmathsetmacro{\rot}{\a*atan(sqrt(3)*(#4-#2)/(2*(#3-#1-#4/2+#2/2)))}
+
+		\draw[draw=\ellinecolor, fill=\elfillcolor, line width = \ellinewidth, rotate around={\rot: (\X, \Y)}] (\X, \Y) ellipse[x radius = \a*\ellength, y radius = \a*\elheigth];
 	}
 
 
@@ -76,6 +96,25 @@
 		\draw[line width = \lw] (P-\i-\i) -- ++ (-0.5*\a, 0);
 		\draw[line width = \lw](P-\i-\i) -- ++ (-0.25*\a, {sqrt(3)*\a/4});
 	}
+	
+	% draw ellipses
+	\drawellipse{1}{1}{2}{1}
+	\drawellipse{3}{2}{4}{2}
+	\drawellipse{2}{2}{3}{3}
+	\drawellipse{3}{1}{4}{1}
+	\drawellipse{4}{3}{4}{4}
+	\drawellipse{5}{5}{6}{6}
+	\drawellipse{5}{4}{6}{5}
+	\drawellipse{5}{3}{6}{4}	
+	\drawellipse{5}{1}{5}{2}
+	\drawellipse{6}{2}{6}{3}
+	
+	% draw clipped ellipse in the bottom right corner:
+	\begin{scope}
+		\clip ({\a*(6 - 1.25*\ellength)}, {\a*sqrt(3)/2-\elheigth-\ellinewidth/2}) rectangle ({\a*6.1}, {\a*sqrt(3)/2+\elheigth+\ellinewidth/2});
+		\drawellipse{6}{1}{7}{1}	
+	\end{scope}
+
 
 
 \end{tikzpicture}

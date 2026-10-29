@@ -2,6 +2,7 @@
 \usepackage{tikz}
 
 \usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes.geometric}
 
 \begin{document}
 
@@ -21,7 +22,7 @@
 	}
 
 
-	% define arrow 
+	% define arrow, used to represent spins
 	% parmeters: coeff t_1/a = x, coeff t_2/a = -x/2 + y*sqrt(3)/2, length, rotation angle in degree (0 is positive x-direction)
 	% optional parameters: color, line width
 
@@ -30,6 +31,44 @@
 	\draw[-{Stealth}, line width = #6, draw = #5]({\X - #3*cos(#4)/3}, {\Y - #3*sin(#4)/3}) -- ({\X + 2*#3*cos(#4)/3}, {\Y + 2*#3*sin(#4)/3});
 	}
 
+		
+	% define ellipse, used for RVB state illustrations 
+	% parameters: t_1 coeff first point, t_2 coeff first point, t_1 coefff second point, t_2 coeff second point
+
+	\NewDocumentCommand{\drawellipse}{m m m m}{
+
+		\pgfmathsetmacro{\X}{\a*(#1+#3-(#2+#4)/2)/2}
+		\pgfmathsetmacro{\Y}{\a*sqrt(3)*(#2+#4)/4}
+		\pgfmathsetmacro{\rot}{atan(sqrt(3)*(#4-#2)/(2*(#3-#1-#4/2+#2/2)))}
+
+		\draw[draw = black, fill = cyan, line width = 0.8, rotate around={\rot: (\X, \Y)}] (\X, \Y) ellipse[x radius = \a*0.75, y radius = \a*0.25];
+	}
+
+
+		
+	% draw clipped ellipse in the top corner at a 60 degree angle:
+	% parametrs: t_1, t_2 coeff of site in the frame, rotation angle (wrt positive x axis)
+
+	\NewDocumentCommand{\drawclippedellipse}{m m m}{
+
+    		\pgfmathsetmacro{\X}{\a*(#1-0.5*#2)}
+    		\pgfmathsetmacro{\Y}{\a*#2*sqrt(3)/2}	
+		\pgfmathsetmacro{\Xmid}{\a*(#1-0.5*#2+0.5)}
+
+		\pgfmathsetmacro{\next}{#1+1}
+
+
+		\begin{scope}[rotate around = {#3:(\X, \Y)}]
+			\clip ({\Xmid - 1.25*\ellength}, {\Y-3*\elheigth}) rectangle ({\Xmid}, {\Y+3*\elheigth});
+			\drawellipse{#1}{#2}{\next}{#2}	
+		\end{scope}
+	}
+
+
+	
+	%"""""""""""""""""""""""""""""""""
+	%    Triangular sample shape
+	%""""""""""""""""""""""""""""""""""
 
 	% Create lattice points 
 	\foreach \i in {1,...,\base}{
@@ -86,6 +125,7 @@
 	}
 
 
+
 	% Draw arrows compatible with 120 - Neel order at sites
 	\foreach \i in {1,...,\base}{
 		\foreach \j in {1,...,\i}{
@@ -94,6 +134,11 @@
 			\drawarrow{\i}{\j}{\arrowlength}{\rot}[\arrowcolor][\arrowwidth]
 		}
 	}
+
+
+	%""""""""""""""""""""""""""""""""""
+	%      Rhombic sample shape
+	%""""""""""""""""""""""""""""""""""
 	
 
 \end{tikzpicture}
