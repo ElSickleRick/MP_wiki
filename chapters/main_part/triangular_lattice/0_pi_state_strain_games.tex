@@ -155,7 +155,7 @@ This choice of parameters leads to:
 	t(1-2\eta) \overset{\eta = 1-\gamma}{\longrightarrow} -t(1-2\gamma).
 \end{equation}
 
-meaning that the hoppin amplitudes along $\pm\vec{\delta}_3$, however the hopping phases alternate between $0$ and $\pi$. This of course alters the flux pattern of the lattice. Acknowledging this fact it is clear that this lattice can not be transformed into the $\pi$-flux triangular lattice by choice of paramter. (This is actaully trivial, considering that $\eta = \gamma = 0$ does not satisfy $\eta + \gamma = 1$.) 
+meaning that the hoppin amplitudes along $\pm\vec{\delta}_3$, however the hopping phases alternate between $0$ and $\pi$. This of course alters the flux pattern of the lattice. Acknowledging this fact it is clear that this lattice can not be transformed into the $\pi$-flux triangular lattice by choice of paramter. (This is actaully trivial, considering that $\eta = \gamma = 0$ does not satisfy $\eta + \gamma = 1$.) \textcolor{red}{I guess that the points $\eta = 1$ and $\gamma = 1$ are the interesting ones, but that remains to be seen.} 
 
 \begin{center}
 	\includegraphics[width=\textwidth]{uniform_hopping_flux_pattern.jpeg}
@@ -212,7 +212,7 @@ I begin by linearizing the Hamiltonian:
 	\end{pmatrix} = 
 	\begin{pmatrix}
 		0 \\
-		? \\
+		c_x p_x + c_y p_y \\
 		-p_x
 	\end{pmatrix}
 \end{align}	
@@ -250,6 +250,36 @@ This term can be evaluated to
 
 \textcolor{blue}{The pseudo-megnetic potential vanishes at $\gamma = \frac12$ as expected.}
 
+Calcuating the dispersion of the linearized Hamiltonian gives
+
+\begin{equation}
+	\varepsilon(\vec{p}) = \sqrt{p_x^2(1+c_x^2) + 2c_x c_y p_x p_y + c_y^2 p_y^2}
+\end{equation}
+
+I try the following Idea to bring this into the usual form: I postulate that the Dirac-cones are non-isotropic and the $p_x$ and $p_y$ are just not there major- and minor-axes. Therefore, I propose a rotation of the coordinate system
+
+\begin{align}
+	\begin{split}
+		p_x &= a \cos(\phi) - b\sin(\phi) \\
+		p_y &= a \sin(\phi) + b \cos(\phi).
+	\end{split}
+\end{align}
+
+This gives the duispersion
+
+\begin{align}
+	\begin{split}
+		\varepsilon^2(\vec{p}) = &a^2 (\cos^2(\phi) + (c_x \sin(\phi) + c_y \cos(\phi)^2) \\
+		+ &b^2 (\sin^2(\phi) + (c_x \sin(\phi) + c_y \cos(\phi))^2) \\
+		+ &ab (\sin(2\phi)(-1-c_x^2+c_y^2)+2\cos(2\phi)c_xc_y)
+	\end{split}
+\end{align}
+
+If a and b are the correct axes, the $ab$ term must vanish, this yields the formula for $\phi$
+
+\begin{equation}
+	\phi = \frac12 \arctan(\frac{2c_x c_y}{1+c_x^2-c_y^2}) = \frac12 \arctan(\sqrt{3}\left(1+\frac{4(1-2\gamma)^2}{5-(2+(1-2\gamma)^2)^2}\right))
+\end{equation}	
 
 \subsubsection{Staggered Hopping}
 
