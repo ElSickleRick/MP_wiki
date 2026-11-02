@@ -15,7 +15,7 @@ from analysis import post_analysis
 
 path_head = "/home/kuerschner/Documents/Master-Project/data/strain_var"
 
-save_path = "/home/kuerschner/Documents/Master-Project/wiki/WARB_presentation/pictures/gif"
+save_path = "/home/kuerschner/Documents/Master-Project/wiki/WARB_presentation/pictures"
 
 
 def sort(arr):
@@ -29,7 +29,164 @@ def sort(arr):
     return sorted_arr
 
 
+def real_space(C):
 
+    gif, ax = plt.subplots()
+
+    with open(os.path.join(size_path, "pop_link_dict.pkl"), "rb") as f:
+        pop_link_dict = pickle.load(f)
+
+    with open(os.path.join(size_path, "mu_arr.pkl"), "rb") as f:
+        mu_arr = pickle.load(f)
+
+    with open(os.path.join(size_path, "eival.pkl"), "rb") as f:
+        eival = pickle.load(f)
+
+    with open(os.path.join(size_path, "eivec.pkl"), "rb") as f:
+        eivec = pickle.load(f)
+
+    eivec_avs = np.absolute(eivec)**2
+
+    with open(os.path.join(size_path, "info.pkl"), "rb") as f:
+        info = pickle.load(f)
+
+    T = info["T"]
+    kappa = info["kappa"]
+    beta = info["beta"]
+    C = info["C"]
+    mag_elas = info["mag_elas"]
+    theta = info["theta"]
+
+    with open(os.path.join(size_path, "miscellaneous.pkl"), "rb") as f:
+        miscellaneous = pickle.load(f)
+
+    seed = miscellaneous["seed"]
+    chi_init, elas_variant, chi_noise_scale, mu_noise_scale = miscellaneous["init paras"]
+        
+    rng = np.random.default_rng(seed) # This is possably questionable but the functions I want to call actually does not need rng       
+    sys_init = system_init(T, kappa, rng, C, mag_elas, theta, elas_variant)
+    strain_cord_dict = sys_init.strain_cord_gen()
+    plaqu_dict = sys_init.plaqu_dict_gen()
+    ul_dict = sys_init.link_dict_gen()
+
+    grid = np.empty((0,2))
+
+    for i in range(1, int((T+1)*(T+2)/2+1)):
+            
+        cords = np.array([strain_cord_dict[i][1]])
+        grid = np.append(grid, cords, axis = 0)
+
+    pos = int(np.floor(2*T/3)*(np.floor(2*T/3)-1)/2 + np.ceil(T/3)+1)
+    
+    def real_space_plot(i):
+
+        lw = 2
+
+        cmap = clr.LinearSegmentedColormap.from_list("greenred", ["purple", "blue", "green", "yellow", "red"])
+        norm = clr.Normalize(vmin = 0.33, vmax = 1.66)
+
+        for link in pop_link_dict:
+
+            s, e, J, chi = pop_link_dict[link]
+
+            x = [grid[s-1][0], grid[e-1][0]]
+            y = [grid[s-1][1], grid[e-1][1]]
+            length = np.sqrt((x[1]-x[0])**2 + (y[1]-y[0])**2)
+            color = cmap(norm(length))
+
+
+            ax.plot(x, y, c = color, linewidth = lw, zorder = 3)
+            ax.scatter(grid[pos-1][0], grid[pos-1][1], c = "red", zorder = 4) 
+        return
+
+    lim = 2*T/(2*np.sqrt(3))
+    y_offset = T/(4*np.sqrt(3))
+
+    ax.set_xlim(-lim, lim)
+    ax.set_ylim(-lim+y_offset, lim+y_offset)
+    
+    ax.axis('off')
+    
+    real_space_plot(C)
+
+    plt.tight_layout()
+
+    picture_path = os.path.join(save_path, f"reals_space_C={C}.pdf")
+    plt.savefig(picture_path, dpi = 600, facecolor = "white")
+
+    plt.show()
+    plt.close()
+
+
+def LDOS(C):
+    
+    fig, ax = plt.subplots()
+
+    with open(os.path.join(size_path, "pop_link_dict.pkl"), "rb") as f:
+        pop_link_dict = pickle.load(f)
+
+    with open(os.path.join(size_path, "mu_arr.pkl"), "rb") as f:
+        mu_arr = pickle.load(f)
+
+    with open(os.path.join(size_path, "eival.pkl"), "rb") as f:
+        eival = pickle.load(f)
+
+    with open(os.path.join(size_path, "eivec.pkl"), "rb") as f:
+        eivec = pickle.load(f)
+
+    eivec_avs = np.absolute(eivec)**2
+
+    with open(os.path.join(size_path, "info.pkl"), "rb") as f:
+        info = pickle.load(f)
+
+    T = info["T"]
+    kappa = info["kappa"]
+    beta = info["beta"]
+    C = info["C"]
+    mag_elas = info["mag_elas"]
+    theta = info["theta"]
+
+    with open(os.path.join(size_path, "miscellaneous.pkl"), "rb") as f:
+        miscellaneous = pickle.load(f)
+
+    seed = miscellaneous["seed"]
+    chi_init, elas_variant, chi_noise_scale, mu_noise_scale = miscellaneous["init paras"]
+        
+    rng = np.random.default_rng(seed) # This is possably questionable but the functions I want to call actually does not need rng       
+    sys_init = system_init(T, kappa, rng, C, mag_elas, theta, elas_variant)
+    strain_cord_dict = sys_init.strain_cord_gen()
+    plaqu_dict = sys_init.plaqu_dict_gen()
+    ul_dict = sys_init.link_dict_gen()
+
+    grid = np.empty((0,2))
+
+    for i in range(1, int((T+1)*(T+2)/2+1)):
+            
+        cords = np.array([strain_cord_dict[i][1]])
+        grid = np.append(grid, cords, axis = 0)
+
+    pos = int(np.floor(2*T/3)*(np.floor(2*T/3)-1)/2 + np.ceil(T/3)+1)
+    bins = 120
+
+    ax.hist(eival, bins = bins, weights = eivec_avs[pos-1, :], ec = 'black', fc = 'green')
+    
+    ax.set_xlim(-3, 3.5)
+    ax.set_ylim(0, 0.065)
+    
+    ax.set_xticks([0])
+    ax.set_xticklabels([r"$E_F$"])
+    ax.set_yticks([])
+
+    plt.tight_layout()
+
+    picture_path = os.path.join(save_path, f"LDOS_C={C}.pdf")
+    plt.savefig(picture_path, dpi = 300, facecolor = "white")
+
+    plt.show()
+    plt.close()
+
+
+    return 
 
 def plot(C):
     
@@ -162,7 +319,8 @@ if __name__ == "__main__":
             # 'T=65_exp_rot_up_1808_01' : "T=65 exp, rot, up",
 
             }
-
+    
+    """
     for project in projects:
         project_path = os.path.join(path_head, project)
        
@@ -176,17 +334,18 @@ if __name__ == "__main__":
 
         plot(C)
 
-        
     """ 
-    C = 0.6
 
-    for project in projects:
-        project_path = os.path.join(path_head, project) 
+    for C in [0, 0.3, 0.65]:
 
-    size_path = os.path.join(project_path, f"C = {C}")
+        for project in projects:
+            project_path = os.path.join(path_head, project) 
 
-    plot(C)
-    """
+        size_path = os.path.join(project_path, f"C = {C}")
+    
+        real_space(C)
+        LDOS(C)
+
 
 
 
