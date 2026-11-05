@@ -112,7 +112,7 @@ def real_space(C):
     plt.tight_layout()
 
     picture_path = os.path.join(save_path, f"reals_space_C={C}.pdf")
-    plt.savefig(picture_path, dpi = 600, facecolor = "white")
+    # plt.savefig(picture_path, dpi = 600, facecolor = "white")
 
     plt.show()
     plt.close()
@@ -175,7 +175,11 @@ def LDOS(C):
     
     ax.set_xticks([0])
     ax.set_xticklabels([r"$E_F$"])
+    plt.xticks(fontsize = "x-large")
+    ax.set_xlabel("E", fontsize = "x-large", loc = "right")
+    ax.xaxis.set_label_coords(1.0, -0.02)
     ax.set_yticks([])
+    ax.set_ylabel("LDOS", fontsize = "x-large")
 
     plt.tight_layout()
 
@@ -343,7 +347,7 @@ if __name__ == "__main__":
 
         size_path = os.path.join(project_path, f"C = {C}")
     
-        real_space(C)
+        # real_space(C)
         LDOS(C)
 
 
